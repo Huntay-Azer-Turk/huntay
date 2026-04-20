@@ -2,6 +2,7 @@ import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Download } from "lucide-react";
+import Image from "next/image";
 
 export async function Hero() {
   const locale = (await getLocale()) as "en" | "tr";
@@ -15,6 +16,16 @@ export async function Hero() {
       <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
       <div className="pointer-events-none absolute -left-40 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
       <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
+        <div className="mb-8">
+          <Image
+            src="/cv/me.png"
+            alt="Huntay AzerTürk"
+            width={96}
+            height={96}
+            className="rounded-full border-2 border-border object-cover shadow-sm"
+            priority
+          />
+        </div>
         <p className="mb-4 inline-flex max-w-3xl flex-wrap items-center rounded-full border border-border bg-card px-3 py-1 font-mono text-[11px] uppercase leading-relaxed tracking-widest text-muted-foreground sm:text-xs">
           {t("eyebrow")}
         </p>
