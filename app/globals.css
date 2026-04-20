@@ -1,26 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Base tokens — Bare Metal (dark, neon accent) */
+:root,
+[data-theme="bare-metal"] {
+  --color-bg: #070a0f;
+  --color-bg-elevated: #0d1219;
+  --color-fg: #e8edf5;
+  --color-muted: #8b98ab;
+  --color-accent: #22d3ee;
+  --color-accent-dim: rgba(34, 211, 238, 0.15);
+  --color-border: rgba(148, 163, 184, 0.12);
+  --color-glow: rgba(34, 211, 238, 0.35);
+  --color-on-accent: #0a0a0a;
+  --font-display: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --radius: 0.75rem;
+}
+
+/* Corporate (light, professional) */
+[data-theme="corporate"] {
+  --color-bg: #f8fafc;
+  --color-bg-elevated: #ffffff;
+  --color-fg: #0f172a;
+  --color-muted: #475569;
+  --color-accent: #0f766e;
+  --color-accent-dim: rgba(15, 118, 110, 0.1);
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-glow: rgba(15, 118, 110, 0.2);
+  --color-on-accent: #f8fafc;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-bg);
+  --color-card: var(--color-bg-elevated);
+  --color-foreground: var(--color-fg);
+  --color-muted-foreground: var(--color-muted);
+  --color-accent: var(--color-accent);
+  --color-border: var(--color-border);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-display);
+}
+
+/* Klavye erişilebilirliği — yaygın “focus ring yok” hatasını önler */
+:where(a, button, select, input, textarea):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--color-accent-dim);
+  color: var(--color-fg);
+}
+
+/* Subtle grid for bare-metal theme */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(148, 163, 184, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+[data-theme="corporate"] .bg-grid {
+  background-image: linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+}
+
+.glow-ring {
+  box-shadow: 0 0 0 1px var(--color-border), 0 0 40px -12px var(--color-glow);
 }

@@ -1,0 +1,87 @@
+{
+  "Metadata": {
+    "title": "Huntay AzerTürk — Fractional CTO & Principal Architect",
+    "description": "Scaling AI & IoT systems, reducing cloud costs, hardened architectures, and high-performing engineering teams."
+  },
+  "Nav": {
+    "about": "About",
+    "metrics": "Proof",
+    "cases": "Case studies",
+    "stack": "Stack",
+    "timeline": "Experience",
+    "featured": "Writing",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "ariaMain": "Primary",
+    "ariaMobile": "Mobile"
+  },
+  "Hero": {
+    "eyebrow": "Software & Digital Solutions Manager · Principal Systems Architect",
+    "role": "Fractional CTO & Principal Architect",
+    "valueProp": "Scaling AI & IoT systems, reducing cloud costs, and building high-performing teams.",
+    "ctaCv": "Download CV",
+    "ctaContact": "Get in touch",
+    "mailtoSubject": "Hello Huntay"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you’re looking for doesn’t exist or has moved.",
+    "backHome": "Back to home"
+  },
+  "About": {
+    "title": "About",
+    "subtitle": "Depth beyond the résumé",
+    "philosophyTitle": "Bare Metal philosophy",
+    "academicTitle": "Academic lens",
+    "securityTitle": "Security-first architecture",
+    "aiTitle": "Applied AI — proven delivery",
+    "researchTitle": "Writing & research",
+    "disciplineTitle": "Discipline as a system",
+    "partnerTitle": "Strategic partnership"
+  },
+  "Metrics": {
+    "title": "Proof in numbers",
+    "subtitle": "Outcomes engineered, not buzzwords."
+  },
+  "Cases": {
+    "title": "Case studies",
+    "subtitle": "Three representative wins.",
+    "action": "Action",
+    "result": "Outcome"
+  },
+  "Stack": {
+    "title": "Technical stack",
+    "subtitle": "Cloud, AI, and leadership—where I operate."
+  },
+  "Timeline": {
+    "experienceTitle": "Experience",
+    "educationTitle": "Education",
+    "credentialsTitle": "Certifications & interests"
+  },
+  "Featured": {
+    "title": "Selected writing",
+    "subtitle": "Articles and posts (Medium)."
+  },
+  "Contact": {
+    "title": "Contact",
+    "subtitle": "Let’s talk architecture, AI adoption, or fractional CTO engagements.",
+    "linkedin": "LinkedIn",
+    "medium": "Medium",
+    "email": "Email"
+  },
+  "Footer": {
+    "rights": "All rights reserved.",
+    "built": "Built with Next.js — lean by design."
+  },
+  "Theme": {
+    "bareMetal": "Bare Metal",
+    "corporate": "Corporate",
+    "toggleTheme": "Switch visual theme"
+  },
+  "Locale": {
+    "switch": "Language",
+    "en": "English",
+    "tr": "Türkçe"
+  }
+}
