@@ -1,0 +1,87 @@
+{
+  "Metadata": {
+    "title": "Huntay AzerTürk — Fractional CTO & Principal Mimari",
+    "description": "AI ve IoT sistemlerini ölçeklemek, bulut maliyetlerini düşürmek, sertleştirilmiş mimariler ve yüksek performanslı mühendislik ekipleri."
+  },
+  "Nav": {
+    "about": "Hakkında",
+    "metrics": "Kanıt",
+    "cases": "Vaka analizleri",
+    "stack": "Teknoloji",
+    "timeline": "Deneyim",
+    "featured": "Yazılar",
+    "contact": "İletişim",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "ariaMain": "Ana menü",
+    "ariaMobile": "Mobil menü"
+  },
+  "Hero": {
+    "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Mimarı",
+    "role": "Fractional CTO & Principal Mimari",
+    "valueProp": "AI ve IoT sistemlerini ölçeklemek, bulut maliyetlerini düşürmek ve yüksek performanslı ekipler kurmak.",
+    "ctaCv": "CV indir",
+    "ctaContact": "İletişime geç",
+    "mailtoSubject": "Merhaba Huntay"
+  },
+  "NotFound": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa yok veya taşınmış olabilir.",
+    "backHome": "Ana sayfaya dön"
+  },
+  "About": {
+    "title": "Hakkında",
+    "subtitle": "Özgeçmişin ötesinde derinlik",
+    "philosophyTitle": "Bare Metal felsefesi",
+    "academicTitle": "Akademik bakış",
+    "securityTitle": "Güvenlik öncelikli mimari",
+    "aiTitle": "Uygulamalı yapay zeka — somut teslimat",
+    "researchTitle": "Yazı ve araştırma",
+    "disciplineTitle": "Sistem olarak disiplin",
+    "partnerTitle": "Stratejik ortaklık"
+  },
+  "Metrics": {
+    "title": "Rakamlarla kanıt",
+    "subtitle": "Üretilen sonuçlar, boş sloganlar değil."
+  },
+  "Cases": {
+    "title": "Vaka analizleri",
+    "subtitle": "Üç temsilî başarı.",
+    "action": "Aksiyon",
+    "result": "Sonuç"
+  },
+  "Stack": {
+    "title": "Teknik cephanelik",
+    "subtitle": "Bulut, yapay zeka ve liderlik — çalıştığım alanlar."
+  },
+  "Timeline": {
+    "experienceTitle": "Deneyim",
+    "educationTitle": "Eğitim",
+    "credentialsTitle": "Sertifikalar ve ilgi alanları"
+  },
+  "Featured": {
+    "title": "Seçili yazılar",
+    "subtitle": "Makaleler ve gönderiler (Medium)."
+  },
+  "Contact": {
+    "title": "İletişim",
+    "subtitle": "Mimari, yapay zeka dönüşümü veya fractional CTO iş birlikleri için konuşalım.",
+    "linkedin": "LinkedIn",
+    "medium": "Medium",
+    "email": "E-posta"
+  },
+  "Footer": {
+    "rights": "Tüm hakları saklıdır.",
+    "built": "Next.js ile — tasarımda yalınlık."
+  },
+  "Theme": {
+    "bareMetal": "Bare Metal",
+    "corporate": "Kurumsal",
+    "toggleTheme": "Görsel temayı değiştir"
+  },
+  "Locale": {
+    "switch": "Dil",
+    "en": "English",
+    "tr": "Türkçe"
+  }
+}
