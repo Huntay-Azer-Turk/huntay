@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
+import { LinkedinIcon, MediumIcon } from "@/components/icons";
 
 export async function Hero() {
   const locale = (await getLocale()) as "en" | "tr";
@@ -62,18 +63,20 @@ export async function Hero() {
         <div className="mt-16 flex flex-wrap gap-6 text-sm text-muted-foreground">
           <a
             href={siteConfig.linkedin}
-            className="hover:text-accent"
+            className="group flex items-center gap-2 hover:text-accent"
             rel="noopener noreferrer"
             target="_blank"
           >
+            <LinkedinIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
             LinkedIn
           </a>
           <a
             href={siteConfig.medium}
-            className="hover:text-accent"
+            className="group flex items-center gap-2 hover:text-accent"
             rel="noopener noreferrer"
             target="_blank"
           >
+            <MediumIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
             Medium
           </a>
         </div>
