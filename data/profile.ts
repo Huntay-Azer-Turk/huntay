@@ -2,44 +2,44 @@ import type { Localized } from "./types";
 
 /** CV SUMMARY özeti (PDF ile uyumlu) */
 export const heroLead: Localized = {
-  en: "Engineering leader and systems architect with 13+ years building, scaling, and modernizing software—across backend, cloud, IoT, and AI—with a focus on turning fragile legacy stacks into stable production systems. Led teams of up to 8 engineers while staying hands-on in architecture and delivery.",
-  tr: "13+ yıllık deneyimle yazılım sistemlerini kurma, ölçeklendirme ve modernize etme konusunda mühendislik lideri ve sistem mimarıyım; backend, bulut, IoT ve yapay zeka süreçlerinde, kırılgan eski yapıları stabil prodüksiyona dönüştürmeye odaklanıyorum. 8 kişiye varan ekipleri yönetirken mimari ve teslimatta sahada kalmaya devam ediyorum.",
+  en: "I'm a software architect and engineering leader with over 13 years of experience. I specialize in taking fragile, complex systems and turning them into stable, scalable products. Whether it's cloud infrastructure, IoT, or AI integrations, I love getting my hands dirty with the code while guiding teams to build things that actually work.",
+  tr: "13 yılı aşkın süredir yazılım mimarisi ve mühendislik liderliği yapıyorum. Karmaşık ve kırılgan sistemleri alıp, tıkır tıkır çalışan, ölçeklenebilir ürünlere dönüştürmeyi seviyorum. Bulut altyapılarından IoT ve yapay zeka entegrasyonlarına kadar her aşamada hem kodun içinde kalıyor hem de ekiplere rehberlik ediyorum.",
 };
 
 export const philosophy: Localized = {
-  en: 'I reject bloatware and unnecessary layers. My target is always "Bare Metal" efficiency: maximum performance, minimum cost, and architectures that unlock the real power of hardware and engineering teams.',
-  tr: "Karmaşayı (bloatware) ve gereksiz katmanları reddederim. Hedefim her zaman ‘Bare Metal’ verimliliğidir: maksimum performans, minimum maliyet ve donanım ile yazılım ekibinin gerçek gücünü ortaya çıkaran mimariler.",
+  en: "I'm not a fan of over-engineering. I believe in keeping things simple, fast, and cost-effective. My goal is to build architectures that get out of the way and let the hardware—and the team—do their best work.",
+  tr: "Gereksiz karmaşadan ve aşırı mühendislikten (over-engineering) hiç hoşlanmam. İşi basit, hızlı ve maliyet etkin tutmaya inanıyorum. Amacım, donanımın ve ekibin gerçek potansiyelini ortaya çıkaran, sade ama güçlü mimariler kurmak.",
 };
 
 /** linkedin-profile-full-export.md — Boğaziçi / bilişsel bilimler vurgusu */
 export const aboutAcademic: Localized = {
-  en: "I ground computer engineering and information security in a Cognitive Science perspective (Boğaziçi University). I treat AI not merely as a tool, but as a discipline for designing autonomous, high-impact systems aligned with human cognition.",
-  tr: "Bilgisayar mühendisliği ve bilgi güvenliği temellerimi, Boğaziçi Üniversitesi’nde odaklandığım bilişsel bilimler perspektifiyle birleştiriyorum. Yapay zekayı yalnızca bir araç değil, insan bilişiyle uyumlu, otonom ve yüksek etkili sistemler tasarlamak için bir disiplin olarak ele alıyorum.",
+  en: "I studied Cognitive Science at Boğaziçi University, which gave me a unique perspective on software. I don't just see AI as a tool; I see it as a way to design systems that align with how humans actually think and work.",
+  tr: "Boğaziçi Üniversitesi'nde Bilişsel Bilimler okudum ve bu bana yazılıma çok farklı bir açıdan bakma şansı verdi. Yapay zekayı sadece bir kod parçası olarak değil, insan zihniyle uyumlu çalışan sistemler tasarlamanın bir yolu olarak görüyorum.",
 };
 
 export const aboutSecurity: Localized = {
-  en: "Information Security sits at the center of my designs. I harden infrastructures to security standards (CEH)—resilient architectures for crisis moments, not only scalable ones.",
-  tr: "Bilgi güvenliği tasarımlarımın merkezindedir. Altyapıları yalnızca ölçeklenebilir değil, CEH disipliniyle siber güvenlik standartlarında sertleştirerek kriz anlarına dayanıklı mimariler kurarım.",
+  en: "Security isn't an afterthought for me—it's the foundation. I build systems that don't just scale when things go right, but hold strong when things go wrong.",
+  tr: "Güvenlik benim için sonradan eklenen bir yama değil, işin temelidir. Sadece işler yolundayken değil, kriz anlarında da ayakta kalan sağlam altyapılar kurarım.",
 };
 
 /** CV — RAG, Dialogflow CX, Meta WhatsApp; LinkedIn özetinde Chatwoot */
 export const aboutAiProject: Localized = {
-  en: "Autonomous technical support: Meta WhatsApp, Chatwoot, and Dialogflow CX integrated with a RAG architecture—reducing resolution time by ~80% on complex technical requests while driving toward fully autonomous resolution paths.",
-  tr: "Otonom teknik destek: Meta WhatsApp, Chatwoot ve Dialogflow CX ile RAG mimarisi—karmaşık teknik taleplerde çözüm süresini yaklaşık %80 azaltarak tam otonom çözüm yollarına doğru ilerleyen bir ekosistem.",
+  en: "I've built autonomous support systems using Meta WhatsApp, Chatwoot, and Dialogflow CX. By integrating RAG architectures, we managed to cut resolution times by 80% for complex technical requests.",
+  tr: "Meta WhatsApp, Chatwoot ve Dialogflow CX kullanarak otonom destek sistemleri geliştirdim. RAG mimarilerini entegre ederek, karmaşık teknik sorunların çözüm süresini %80 oranında kısalttık.",
 };
 
 export const aboutDiscipline: Localized = {
-  en: "The same ‘Bare Metal’ mindset extends to daily life: CrossFit and boxing sharpen focus and sustain high performance—disciplined living, disciplined code, and robust architecture.",
-  tr: "Aynı ‘Bare Metal’ yaklaşımını günlük hayata da taşıyorum: CrossFit ve boks disiplini zihinsel odağımı keskinleştirir; disiplinli yaşam, disiplinli kod ve sağlam mimari demektir.",
+  en: "I bring the same discipline from my CrossFit and boxing routines into my code. High performance requires focus, consistency, and a strong foundation—whether in the gym or in system architecture.",
+  tr: "CrossFit ve boks antrenmanlarımdaki disiplini doğrudan yazdığım koda da yansıtıyorum. Yüksek performans; odaklanma, tutarlılık ve sağlam bir temel gerektirir—ister spor salonunda ister sistem mimarisinde.",
 };
 
 export const strategicPartner: Localized = {
-  en: "As a founder or executive, focus on the business—not technical uncertainty. With 10,000+ connected devices in hybrid cloud operations and event-driven microservices on GCP, I remove ambiguity and deliver a clear technical roadmap.",
-  tr: "Kurucu veya yönetici olarak işinize odaklanın—teknik belirsizliklere değil. GCP üzerinde 10.000+ bağlı cihazlı hibrit bulut operasyonları ve olay güdümlü mikroservis tecrübemle belirsizlikleri kaldırıp net bir teknik yol haritası sunuyorum.",
+  en: "If you're a founder or executive, you should be focusing on your business, not worrying about technical bottlenecks. I step in to clear the fog, map out a solid technical strategy, and make sure your product scales smoothly.",
+  tr: "Bir kurucu veya yönetici olarak teknik pürüzlerle değil, işinizi büyütmekle ilgilenmelisiniz. Ben tam bu noktada devreye girip teknik belirsizlikleri ortadan kaldırıyor, net bir yol haritası çiziyor ve ürününüzün sorunsuz ölçeklenmesini sağlıyorum.",
 };
 
 /** CV — Writing & Research */
 export const aboutResearch: Localized = {
-  en: 'Published on Medium (e.g. RAG chunking, nature-inspired networks, "Is AGI Really Possible?"). Research interest: deep learning for neural signal processing and early diagnosis in neurodevelopmental conditions.',
-  tr: "Medium’da teknik yazılar (RAG parçalama, doğadan ilhamlı ağlar, “AGI gerçekten mümkün mü?” vb.). Araştırma ilgisi: nöral sinyal işlemede derin öğrenme ve nörogelişimsel durumlarda erken tanı.",
+  en: "I regularly write on Medium about things like RAG chunking, nature-inspired networks, and the reality of AGI. I'm also deeply interested in using deep learning for neural signal processing and early diagnosis in neurodevelopmental conditions.",
+  tr: "Medium'da RAG parçalama, doğadan ilhamlı ağlar ve AGI'nin gerçekliği gibi konularda teknik yazılar yazıyorum. Ayrıca nöral sinyal işleme ve nörogelişimsel durumlarda erken tanı için derin öğrenme kullanımıyla yakından ilgileniyorum.",
 };

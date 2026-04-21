@@ -19,7 +19,7 @@
   "Hero": {
     "eyebrow": "Software & Digital Solutions Manager · Principal Systems Architect",
     "role": "Fractional CTO & Principal Architect",
-    "valueProp": "Scaling AI & IoT systems, reducing cloud costs, and building high-performing teams.",
+    "valueProp": "I help companies scale their systems, cut down cloud costs, and build engineering teams that actually deliver.",
     "ctaCv": "Download CV",
     "ctaContact": "Get in touch",
     "mailtoSubject": "Hello Huntay"
@@ -65,10 +65,11 @@
   },
   "Contact": {
     "title": "Contact",
-    "subtitle": "Let’s talk architecture, AI adoption, or fractional CTO engagements.",
+    "subtitle": "Let's talk about architecture, AI adoption, or fractional CTO engagements. Reach out directly.",
     "linkedin": "LinkedIn",
     "medium": "Medium",
-    "email": "Email"
+    "email": "Email",
+    "whatsapp": "WhatsApp"
   },
   "Footer": {
     "rights": "All rights reserved.",

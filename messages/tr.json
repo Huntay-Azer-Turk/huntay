@@ -19,7 +19,7 @@
   "Hero": {
     "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Mimarı",
     "role": "Fractional CTO & Principal Mimari",
-    "valueProp": "AI ve IoT sistemlerini ölçeklemek, bulut maliyetlerini düşürmek ve yüksek performanslı ekipler kurmak.",
+    "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
     "ctaCv": "CV indir",
     "ctaContact": "İletişime geç",
     "mailtoSubject": "Merhaba Huntay"
@@ -65,10 +65,11 @@
   },
   "Contact": {
     "title": "İletişim",
-    "subtitle": "Mimari, yapay zeka dönüşümü veya fractional CTO iş birlikleri için konuşalım.",
+    "subtitle": "Mimari, yapay zeka dönüşümü veya fractional CTO iş birlikleri için doğrudan bana ulaşın.",
     "linkedin": "LinkedIn",
     "medium": "Medium",
-    "email": "E-posta"
+    "email": "E-posta",
+    "whatsapp": "WhatsApp"
   },
   "Footer": {
     "rights": "Tüm hakları saklıdır.",

@@ -1,6 +1,6 @@
 import { siteConfig } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 export async function ContactFooter() {
   const t = await getTranslations("Contact");
@@ -38,6 +38,17 @@ export async function ContactFooter() {
               >
                 <Phone className="h-4 w-4" aria-hidden />
                 {siteConfig.phoneDisplay}
+              </a>
+            ) : null}
+            {siteConfig.whatsappUrl ? (
+              <a
+                href={siteConfig.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium transition hover:border-accent"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden />
+                {t("whatsapp")}
               </a>
             ) : null}
             {siteConfig.contactEmail ? (

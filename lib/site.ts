@@ -15,7 +15,8 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_PHONE_TEL === ""
       ? ""
       : (process.env.NEXT_PUBLIC_PHONE_TEL ?? "+905538328477"),
-  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "",
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "huntay.azerturk@gmail.com",
+  whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/905538328477",
   cvPath: process.env.NEXT_PUBLIC_CV_PATH ?? "/cv/cv.pdf",
   /** `<a download>` ve Content-Disposition için tutarlı dosya adı (ASCII, boşluksuz). */
   cvDownloadFileName: "Huntay-AzerTurk-CV.pdf",
