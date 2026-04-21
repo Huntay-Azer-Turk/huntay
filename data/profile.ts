@@ -11,10 +11,10 @@ export const philosophy: Localized = {
   tr: "Gereksiz karmaşadan ve aşırı mühendislikten (over-engineering) hiç hoşlanmam. İşi basit, hızlı ve maliyet etkin tutmaya inanıyorum. Amacım, donanımın ve ekibin gerçek potansiyelini ortaya çıkaran, sade ama güçlü mimariler kurmak.",
 };
 
-/** linkedin-profile-full-export.md — Boğaziçi / bilişsel bilimler vurgusu */
+/** Bilişsel bilimler: araştırma / güncel okuma alanı (üniversite iddiası yok) */
 export const aboutAcademic: Localized = {
-  en: "I studied Cognitive Science at Boğaziçi University, which gave me a unique perspective on software. I don't just see AI as a tool; I see it as a way to design systems that align with how humans actually think and work.",
-  tr: "Boğaziçi Üniversitesi'nde Bilişsel Bilimler okudum ve bu bana yazılıma çok farklı bir açıdan bakma şansı verdi. Yapay zekayı sadece bir kod parçası olarak değil, insan zihniyle uyumlu çalışan sistemler tasarlamanın bir yolu olarak görüyorum.",
+  en: "Cognitive science is my research focus and a field I keep studying and reading about—it gives me a distinct angle on software. I don't just see AI as a tool; I see it as a way to design systems that align with how humans actually think and work.",
+  tr: "Bilişsel bilimler araştırma alanım ve güncel olarak derinlemesine okuduğum bir konu; bu da bana yazılıma çok farklı bir açıdan bakma şansı veriyor. Yapay zekayı sadece bir kod parçası olarak değil, insan zihniyle uyumlu çalışan sistemler tasarlamanın bir yolu olarak görüyorum.",
 };
 
 export const aboutSecurity: Localized = {
