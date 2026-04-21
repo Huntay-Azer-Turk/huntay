@@ -22,5 +22,5 @@ export const siteConfig = {
   cvDownloadFileName: "Huntay-AzerTurk-CV.pdf",
   baseUrl:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-    "http://localhost:3000",
+    "https://huntayazerturk.com",
 } as const;
