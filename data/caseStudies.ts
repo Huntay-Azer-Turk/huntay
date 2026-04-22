@@ -40,6 +40,44 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
+    id: "ai-ops",
+    title: {
+      en: "Agentic AI: LangChain & LangGraph Orchestration",
+      tr: "Agentic AI: LangChain ve LangGraph Orkestrasyonu",
+    },
+    action: {
+      en: "Built a true 'Agentic' architecture using LangChain and LangGraph for chain-of-thought reasoning, looping, and branching, backed by Python vector DBs. Later deployed to GCP with Dialogflow CX and Chatwoot.",
+      tr: "Python vektör veritabanlarıyla desteklenen; chain-of-thought, looping ve branching yeteneklerine sahip LangChain ve LangGraph tabanlı gerçek bir 'Agentic' mimari kurdum. Ardından GCP, Dialogflow CX ve Chatwoot ile canlıya aldım.",
+    },
+    result: {
+      en: "An autonomous network that reads technical docs and resolves user issues step-by-step like an expert—handling a 100,000-user load with just 3 engineers.",
+      tr: "Teknik dokümanları okuyup kullanıcı sorunlarını bir uzman gibi adım adım çözen otonom bir ağ—3 mühendisle 100.000 kullanıcılı yükü kaldırıyor.",
+    },
+    tags: {
+      en: "LangChain · LangGraph · RAG · Dialogflow CX",
+      tr: "LangChain · LangGraph · RAG · Dialogflow CX",
+    },
+  },
+  {
+    id: "enmos-meta",
+    title: {
+      en: "Meta-programming: Autonomous Dynamic Reporting",
+      tr: "Meta-programlama: Otonom Dinamik Raporlama",
+    },
+    action: {
+      en: "Enterprise reporting required constant developer intervention. I built a runtime SQL generation engine using .NET, Blazor, React, DevExpress, and NoSQL.",
+      tr: "Kurumsal raporlama sürekli yazılımcı müdahalesi gerektiriyordu. .NET, Blazor, React, DevExpress ve NoSQL kullanarak çalışma zamanında (runtime) SQL üreten bir motor geliştirdim.",
+    },
+    result: {
+      en: "Users can now dynamically filter and schedule complex reports autonomously. Eliminated developer bottleneck entirely.",
+      tr: "Kullanıcılar artık karmaşık raporları otonom olarak dinamik filtreleyebiliyor ve zamanlayabiliyor. Yazılımcı darboğazı tamamen ortadan kalktı.",
+    },
+    tags: {
+      en: ".NET · Blazor · React · DevExpress · NoSQL",
+      tr: ".NET · Blazor · React · DevExpress · NoSQL",
+    },
+  },
+  {
     id: "iot-cloud",
     title: {
       en: "Multi-platform IoT cloud (10,000+ devices, 100,000+ users)",
@@ -56,44 +94,6 @@ export const caseStudies: CaseStudy[] = [
     tags: {
       en: "Kubernetes · GCP · MQTT · React · Flutter",
       tr: "Kubernetes · GCP · MQTT · React · Flutter",
-    },
-  },
-  {
-    id: "cloud-cost",
-    title: {
-      en: "75% cloud cost reduction with event-driven microservices",
-      tr: "Olay güdümlü mikroservislerle %75 bulut maliyet düşüşü",
-    },
-    action: {
-      en: "Migrated legacy monoliths to event-driven microservices on GCP with Kubernetes and Terraform.",
-      tr: "Eski monolit yapıları, GCP üzerinde Kubernetes ve Terraform ile olay güdümlü mikroservislere taşıdım.",
-    },
-    result: {
-      en: "Roughly 75% infrastructure cost reduction while maintaining 99.9% high-availability.",
-      tr: "Altyapı maliyetlerinde yaklaşık %75 düşüş ve %99.9 yüksek erişilebilirlik.",
-    },
-    tags: {
-      en: "Kubernetes · Terraform · GCP · Event-driven",
-      tr: "Kubernetes · Terraform · GCP · Olay güdümlü",
-    },
-  },
-  {
-    id: "ai-ops",
-    title: {
-      en: "Autonomous support: 80% faster ticket resolution",
-      tr: "Otonom destek: %80 daha hızlı çözüm",
-    },
-    action: {
-      en: "Started with LangChain/LangGraph RAG tests, then moved to GCP for zero-maintenance. Integrated Meta WhatsApp, Chatwoot, and Dialogflow CX.",
-      tr: "LangChain/LangGraph tabanlı RAG testleriyle başlayıp bakım maliyetini sıfırlamak için GCP'ye geçtim. Meta WhatsApp, Chatwoot ve Dialogflow CX entegre ettim.",
-    },
-    result: {
-      en: "An autonomous network that reads the company's technical docs and resolves user issues without human involvement—handling a 100,000-user load with just 3 engineers.",
-      tr: "İnsan müdahalesine ihtiyaç duymadan firmanın teknik dokümanlarını anlayıp kullanıcı sorunlarını kendi başına çözen otonom bir ağ—3 mühendislik ekibi ile 100.000 kullanıcılı yükü kaldırıyor.",
-    },
-    tags: {
-      en: "RAG · LLM · Dialogflow CX · WhatsApp · Chatwoot",
-      tr: "RAG · LLM · Dialogflow CX · WhatsApp · Chatwoot",
     },
   },
   {
