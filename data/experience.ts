@@ -23,17 +23,17 @@ export const experience: TimelineEntry[] = [
         tr: "Yangın güvenliği operasyonlarındaki tüm IoT ve backend altyapısının liderliğini yapıyorum—ölçeklenebilirlik, güvenilirlik ve yeni pazarlara açılım odaklı.",
       },
       {
-        en: "Managing 5 engineers and owning the digital roadmap across all software and system initiatives.",
-        tr: "5 mühendisten oluşan bir ekibi yönetiyor ve tüm yazılım/sistem girişimlerinin dijital yol haritasına sahiplik ediyorum.",
+        en: "Architected an 'Agentic' support system using LangChain and LangGraph for complex chain-of-thought reasoning, looping, and branching, powered by Python vector databases (RAG).",
+        tr: "Karmaşık karar verme süreçleri (chain of thought, looping, branching) için LangChain ve LangGraph kullanarak 'Agentic' bir destek sistemi tasarladım; Python tabanlı vektör veritabanlarıyla (RAG) güçlendirdim."
       },
       {
-        en: "Built an LLM-powered support system using RAG, Google Dialogflow CX, and Meta WhatsApp—roughly 80% faster ticket resolution.",
-        tr: "RAG, Google Dialogflow CX ve Meta WhatsApp ile LLM tabanlı bir destek sistemi kurdum—talep çözüm sürelerinde yaklaşık %80 iyileşme sağladık.",
+        en: "Later integrated this autonomous architecture into GCP with Dialogflow CX, Chatwoot, and Meta WhatsApp, achieving roughly 80% faster ticket resolution.",
+        tr: "Bu otonom mimariyi daha sonra GCP üzerinde Dialogflow CX, Chatwoot ve Meta WhatsApp ile entegre ederek talep çözüm sürelerinde yaklaşık %80 iyileşme sağladım."
       },
       {
-        en: "Next: migrating the full ERP and platform data to BigQuery and deploying AI agent swarms for sales forecasting and stock management.",
-        tr: "Sıradaki: ERP ve platform verilerini Google BigQuery'ye taşıyıp satış tahmini ve stok yönetimi için AI ajan sürüleri (swarm) konuşlandırmak.",
-      },
+        en: "Future projection: migrating ERP data to BigQuery for AI agent swarms, and conducting R&D on Brain-Computer Interfaces (BCI) using EEG signals and LLMs for neurodivergent individuals.",
+        tr: "Gelecek vizyonu: ERP verilerini BigQuery'ye taşıyarak AI ajan sürüleri (swarm) kurmak ve nöroçeşitlilik için EEG sinyallerini LLM'ler ile işleyen Beyin-Bilgisayar Arayüzü (BCI) Ar-Ge'si yapmak."
+      }
     ],
   },
   {
@@ -70,6 +70,23 @@ export const experience: TimelineEntry[] = [
         tr: "Production'daki 10.000+ cihazı kesintiye uğratmadan, arıza yapan tek bir cihazı veya kullanıcıyı tek tıkla sandbox/debug ortamına yönlendiren bir mimari kurdum.",
       },
     ],
+  },
+  {
+    id: "enmos",
+    org: { en: "Enmos", tr: "Enmos" },
+    role: { en: "Software Architect — Dynamic Systems", tr: "Yazılım Mimarı — Dinamik Sistemler" },
+    period: { en: "2022", tr: "2022" },
+    location: { en: "Istanbul, Turkey", tr: "İstanbul, Türkiye" },
+    highlights: [
+      {
+        en: "Designed a meta-programming layer: a runtime SQL query and reporting engine using .NET, Blazor, React, DevExpress, and NoSQL.",
+        tr: ".NET, Blazor, React, DevExpress ve NoSQL kullanarak çalışma zamanında (runtime) SQL sorgusu ve rapor üreten bir meta-programlama katmanı tasarladım."
+      },
+      {
+        en: "Eliminated developer dependency for new reports by implementing dynamic filtering and scheduled cron-jobs for enterprise data analysis.",
+        tr: "Dinamik filtreleme ve zamanlanmış görevler (cron-jobs) ekleyerek, kurumsal veri analizi ve yeni rapor ihtiyaçlarında yazılımcı bağımlılığını %100 ortadan kaldırdım."
+      }
+    ]
   },
   {
     id: "teknim-sse",
