@@ -28,6 +28,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className="shrink-0 font-mono text-sm font-semibold tracking-tight text-foreground"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           {siteConfig.name.split(" ")[0]}
           <span className="text-accent">.</span>
