@@ -30,7 +30,7 @@ export async function Hero() {
         <p className="mb-4 inline-flex max-w-3xl flex-wrap items-center rounded-full border border-border bg-card px-3 py-1 font-mono text-[11px] uppercase leading-relaxed tracking-widest text-muted-foreground sm:text-xs">
           {t("eyebrow")}
         </p>
-        <h1 className="max-w-full min-w-0 text-balance break-words text-3xl font-semibold tracking-tight text-foreground sm:text-4xl md:max-w-4xl md:text-5xl lg:text-6xl">
+        <h1 className="max-w-full min-w-0 text-balance break-words text-2xl font-semibold tracking-tight text-foreground sm:text-3xl md:max-w-4xl md:text-4xl lg:text-5xl">
           {t("role")}
         </h1>
         <p className="mt-4 max-w-full min-w-0 text-balance text-xl font-medium leading-snug text-muted-foreground sm:text-2xl md:max-w-4xl md:text-3xl">
