@@ -17,7 +17,7 @@ export const featured: FeaturedItem[] = [
     id: "rag-chunking",
     title: {
       en: "The Weakest Link in RAG: Advanced Document Chunking",
-      tr: "RAG’de En Zayıf Halka: Gelişmiş Belge Parçalama",
+      tr: "RAG’de En Zayıf Halka: Advanced Document Chunking",
     },
     href: "https://lnkd.in/dQwWTzbw",
     source: "Medium",
@@ -35,7 +35,7 @@ export const featured: FeaturedItem[] = [
     id: "nature-nn",
     title: {
       en: "Nature-Inspired Neural Networks (graph-based connectivity, mini memory)",
-      tr: "Doğadan İlhamlı Sinir Ağları (graf tabanlı bağlantı, mini bellek)",
+      tr: "Nature-Inspired Neural Networks (graph-based connectivity, mini memory)",
     },
     href: "https://medium.com/@Huntay.AzerTurk",
     source: "Medium",

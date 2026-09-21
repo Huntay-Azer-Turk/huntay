@@ -6,12 +6,12 @@ const L = (en: string, tr: string) => ({ en, tr });
 export const techStack: TechGroup[] = [
   {
     id: "core",
-    title: L("Core Engineering & Languages", "Çekirdek Mühendislik ve Diller"),
+    title: L("Core Engineering & Languages", "Core Engineering & Languages"),
     items: [
       L(".NET / C#", ".NET / C#"),
       L("Python", "Python"),
       L("C / C++ (Hardware/Legacy)", "C / C++ (Donanım/Legacy)"),
-      L("Java (Low-level/Android)", "Java (Düşük seviye/Android)"),
+      L("Java (Low-level/Android)", "Java (Low-level/Android)"),
       L("TypeScript / React / Blazor", "TypeScript / React / Blazor"),
       L("SQL / NoSQL", "SQL / NoSQL"),
     ],
@@ -22,10 +22,10 @@ export const techStack: TechGroup[] = [
     items: [
       L("LangChain & LangGraph", "LangChain & LangGraph"),
       L("RAG & Vector Databases", "RAG ve Vektör Veritabanları"),
-      L("LLM Orchestration", "LLM Orkestrasyonu"),
+      L("LLM Orchestration", "LLM Orchestration"),
       L("Computer Vision (YOLOv8)", "Bilgisayarlı Görü (YOLOv8)"),
       L("Dialogflow CX", "Dialogflow CX"),
-      L("AI Agents in ERP", "ERP Süreçlerinde AI Ajanları"),
+      L("AI Agents in ERP", "ERP süreçlerinde AI Agents"),
     ],
   },
   {
@@ -43,11 +43,11 @@ export const techStack: TechGroup[] = [
     id: "architecture",
     title: L("Architecture & Leadership", "Mimari ve Liderlik"),
     items: [
-      L("Hexagonal Architecture", "Hexagonal Mimari"),
-      L("Bare Metal Optimization", "Bare Metal Optimizasyonu"),
-      L("Event-driven Design", "Olay Güdümlü Tasarım"),
-      L("High-availability (Zero-downtime)", "Yüksek Erişilebilirlik (Sıfır Kesinti)"),
-      L("CEH / Security-first approach", "CEH / Güvenlik Öncelikli Yaklaşım"),
+      L("Hexagonal Architecture", "Hexagonal Architecture"),
+      L("Bare Metal Optimization", "Bare Metal Optimization"),
+      L("Event-driven Design", "Event-driven Design"),
+      L("High-availability (Zero-downtime)", "High-availability (Zero-downtime)"),
+      L("CEH / Security-first approach", "CEH / Security-first approach"),
       L("Engineering Management", "Mühendislik Yönetimi"),
     ],
   },

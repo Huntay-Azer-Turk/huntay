@@ -9,7 +9,7 @@ export const education: TimelineEntry[] = [
     },
     role: {
       en: "B.Sc., Computer and Information Systems Security / Information Assurance",
-      tr: "Lisans, Bilgisayar ve Bilgi Sistemleri Güvenliği / Bilgi Güvencesi",
+      tr: "Lisans, Computer and Information Systems Security / Information Assurance",
     },
     period: { en: "2012 – 2015", tr: "2012 – 2015" },
   },
@@ -24,7 +24,7 @@ export const credentials: { certs: Localized[]; interests: Localized } = {
     },
     {
       en: "Software Architectural Design",
-      tr: "Yazılım Mimari Tasarımı (Software Architectural Design)",
+      tr: "Software Architectural Design",
     },
   ],
   interests: {

@@ -121,7 +121,7 @@ export const experience: TimelineEntry[] = [
     org: { en: "Kassara.app", tr: "Kassara.app" },
     role: {
       en: "Founder & Lead Architect",
-      tr: "Kurucu ve Baş Mimari",
+      tr: "Kurucu ve Baş Mimar",
     },
     period: { en: "2023 – 2025", tr: "2023 – 2025" },
     location: { en: "Istanbul, Turkey", tr: "İstanbul, Türkiye" },
@@ -211,7 +211,7 @@ export const experience: TimelineEntry[] = [
     org: { en: "Cyber Crime Unit Project", tr: "Siber Suçlarla Mücadele Projesi" },
     role: {
       en: "Mobile Threat Intelligence Engineer",
-      tr: "Mobil Tehdit İstihbaratı Mühendisi",
+      tr: "Mobile Threat Intelligence Engineer",
     },
     period: { en: "2011", tr: "2011" },
     location: { en: "Iran", tr: "İran" },
@@ -231,7 +231,7 @@ export const experience: TimelineEntry[] = [
     org: { en: "Academic Research", tr: "Akademik Araştırma" },
     role: {
       en: "Algorithm Engineer — Heuristic Optimization",
-      tr: "Algoritma Mühendisi — Heuristik Optimizasyon",
+      tr: "Algoritma Mühendisi — Heuristic Optimization",
     },
     period: { en: "2009", tr: "2009" },
     location: { en: "Iran", tr: "İran" },

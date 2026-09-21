@@ -5,9 +5,9 @@
   },
   "Nav": {
     "about": "Hakkında",
-    "metrics": "Kanıt",
-    "cases": "Vaka analizleri",
-    "stack": "Teknoloji",
+    "metrics": "Proof",
+    "cases": "Case studies",
+    "stack": "Stack",
     "timeline": "Deneyim",
     "featured": "Yazılar",
     "contact": "İletişim",
@@ -17,7 +17,7 @@
     "ariaMobile": "Mobil menü"
   },
   "Hero": {
-    "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Mimarı",
+    "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Architect",
     "role": "Software Development Manager | Software Architect | Cloud, AI & IoT",
     "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
     "ctaCv": "CV indir",
@@ -32,26 +32,26 @@
   "About": {
     "title": "Hakkında",
     "subtitle": "Özgeçmişin ötesinde derinlik",
-    "philosophyTitle": "Bare Metal felsefesi",
-    "academicTitle": "Akademik bakış",
-    "securityTitle": "Güvenlik öncelikli mimari",
-    "aiTitle": "Uygulamalı yapay zeka — somut teslimat",
+    "philosophyTitle": "Bare Metal philosophy",
+    "academicTitle": "Academic lens",
+    "securityTitle": "Security-first architecture",
+    "aiTitle": "Applied AI — proven delivery",
     "researchTitle": "Yazı ve araştırma",
-    "disciplineTitle": "Sistem olarak disiplin",
+    "disciplineTitle": "Discipline as a system",
     "partnerTitle": "Stratejik ortaklık"
   },
   "Metrics": {
-    "title": "Rakamlarla kanıt",
+    "title": "Proof in numbers",
     "subtitle": "Üretilen sonuçlar, boş sloganlar değil."
   },
   "Cases": {
-    "title": "Vaka analizleri",
+    "title": "Case studies",
     "subtitle": "13 yıllık sahanın mimari kazanımları — bare-metal, hexagonal ve AI odaklı.",
-    "action": "Aksiyon",
+    "action": "Action",
     "result": "Sonuç"
   },
   "Stack": {
-    "title": "Teknik cephanelik",
+    "title": "Technical stack",
     "subtitle": "Bulut, yapay zeka ve liderlik — çalıştığım alanlar."
   },
   "Timeline": {
@@ -60,7 +60,7 @@
     "credentialsTitle": "Sertifikalar ve ilgi alanları"
   },
   "Featured": {
-    "title": "Seçili yazılar",
+    "title": "Seçilmiş yazılar",
     "subtitle": "Makaleler ve gönderiler (Medium)."
   },
   "Contact": {
