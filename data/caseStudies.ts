@@ -5,7 +5,7 @@ export const caseStudies: CaseStudy[] = [
     id: "bare-metal",
     title: {
       en: "Bare Metal: 4x throughput on a single-core Celeron",
-      tr: "Bare Metal: Tek çekirdekli Celeron'da 4 kat hız",
+      tr: "Bare Metal: Tek çekirdekli Celeron'da 4x throughput",
     },
     action: {
       en: "Inherited a centrifuge/spectrometer control system that crashed on i7 + 8GB RAM. Stripped out the bloat, made the mechanical and optical pipelines fully async, and pulled analysis to the core.",
@@ -43,7 +43,7 @@ export const caseStudies: CaseStudy[] = [
     id: "ai-ops",
     title: {
       en: "Agentic AI: LangChain & LangGraph Orchestration",
-      tr: "Agentic AI: LangChain ve LangGraph Orkestrasyonu",
+      tr: "Agentic AI: LangChain & LangGraph Orchestration",
     },
     action: {
       en: "Built a true 'Agentic' architecture using LangChain and LangGraph for chain-of-thought reasoning, looping, and branching, backed by Python vector DBs. Later deployed to GCP with Dialogflow CX and Chatwoot.",
@@ -62,7 +62,7 @@ export const caseStudies: CaseStudy[] = [
     id: "enmos-meta",
     title: {
       en: "Meta-programming: Autonomous Dynamic Reporting",
-      tr: "Meta-programlama: Otonom Dinamik Raporlama",
+      tr: "Meta-programming: Otonom Dinamik Raporlama",
     },
     action: {
       en: "Enterprise reporting required constant developer intervention. I built a runtime SQL generation engine using .NET, Blazor, React, DevExpress, and NoSQL.",
