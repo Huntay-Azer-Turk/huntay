@@ -12,18 +12,22 @@ export async function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden border-b border-border"
+      className="relative border-b border-border"
     >
-      <div className="bg-grid pointer-events-none absolute inset-0 opacity-40" />
-      <div className="pointer-events-none absolute -left-40 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="bg-grid absolute inset-0 opacity-40" />
+        <div className="absolute -left-40 top-20 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+      </div>
       <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
-        <div className="mb-8">
+        <div className="relative z-10 mb-8">
           <Image
             src="/cv/me.jpg"
             alt="Huntay AzerTürk"
-            width={96}
-            height={96}
-            className="rounded-full border-2 border-border object-cover shadow-sm"
+            width={640}
+            height={640}
+            quality={92}
+            sizes="220px"
+            className="h-36 w-36 origin-center rounded-full border-2 border-border object-cover shadow-sm transition duration-300 ease-out hover:z-20 hover:scale-125 hover:shadow-xl sm:h-44 sm:w-44 sm:hover:scale-150"
             priority
           />
         </div>
