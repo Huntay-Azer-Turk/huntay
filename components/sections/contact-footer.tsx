@@ -1,7 +1,7 @@
 import { siteConfig } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { Mail, Phone, MessageCircle } from "lucide-react";
-import { LinkedinIcon, MediumIcon } from "@/components/icons";
+import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
 export async function ContactFooter() {
   const t = await getTranslations("Contact");
@@ -33,6 +33,15 @@ export async function ContactFooter() {
             >
               <MediumIcon className="h-4 w-4" aria-hidden />
               {t("medium")}
+            </a>
+            <a
+              href={siteConfig.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium transition hover:border-accent"
+            >
+              <InstagramIcon className="h-4 w-4" aria-hidden />
+              {t("instagram")}
             </a>
             {siteConfig.phoneDisplay ? (
               <a

@@ -3,6 +3,7 @@ export const siteConfig = {
   handle: "huntay",
   linkedin: "https://www.linkedin.com/in/huntay/",
   medium: "https://medium.com/@Huntay.AzerTurk",
+  instagram: "https://www.instagram.com/huntay.azerturk/",
   /**
    * CV’deki telefon. `NEXT_PUBLIC_PHONE_DISPLAY=` (boş) verilirse gizlenir;
    * tanımsızsa CV’deki varsayılan kullanılır.
