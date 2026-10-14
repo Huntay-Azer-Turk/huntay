@@ -34,12 +34,12 @@ export const aboutDiscipline: Localized = {
 };
 
 export const strategicPartner: Localized = {
-  en: "If you're a founder or executive, you should be focusing on your business, not worrying about technical bottlenecks. I step in to clear the fog, map out a solid technical strategy, and make sure your product scales smoothly.",
-  tr: "Bir kurucu veya yönetici olarak teknik pürüzlerle değil, işinizi büyütmekle ilgilenmelisiniz. Ben tam bu noktada devreye girip teknik belirsizlikleri ortadan kaldırıyor, net bir yol haritası çiziyor ve ürününüzün sorunsuz ölçeklenmesini sağlıyorum.",
+  en: "For years I have advised startups and backed them technically. If you're a founder or executive, you should be focusing on your business, not worrying about technical bottlenecks. I step in to clear the fog, map out a solid technical strategy, and make sure your product scales smoothly.",
+  tr: "Yıllardır startup'lara danışmanlık yapıyor ve teknik olarak destek veriyorum. Bir kurucu veya yönetici olarak teknik pürüzlerle değil, işinizi büyütmekle ilgilenmelisiniz. Ben tam bu noktada devreye girip teknik belirsizlikleri ortadan kaldırıyor, net bir yol haritası çiziyor ve ürününüzün sorunsuz ölçeklenmesini sağlıyorum.",
 };
 
 /** CV — Writing & Research */
 export const aboutResearch: Localized = {
-  en: "I regularly write on Medium about things like RAG chunking, nature-inspired networks, and the reality of AGI. I'm also deeply interested in using deep learning for neural signal processing and early diagnosis in neurodevelopmental conditions.",
-  tr: "Medium'da RAG parçalama, doğadan ilhamlı ağlar ve AGI'nin gerçekliği gibi konularda teknik yazılar yazıyorum. Ayrıca nöral sinyal işleme ve nörogelişimsel durumlarda erken tanı için derin öğrenme kullanımıyla yakından ilgileniyorum.",
+  en: "I regularly write on Medium about things like RAG chunking, nature-inspired networks, and the reality of AGI. In my spare time I also work independently on Brain-Computer Interfaces (BCI) using EEG signals and LLMs for neurodivergent individuals.",
+  tr: "Medium'da RAG parçalama, doğadan ilhamlı ağlar ve AGI'nin gerçekliği gibi konularda teknik yazılar yazıyorum. Boş zamanlarımda, bağımsız olarak, nöroçeşitli bireyler için EEG sinyalleri ve LLM'ler kullanan Brain-Computer Interfaces (BCI) üzerinde çalışıyorum.",
 };

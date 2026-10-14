@@ -31,9 +31,39 @@ export const experience: TimelineEntry[] = [
         tr: "Bu otonom mimariyi daha sonra GCP üzerinde Dialogflow CX, Chatwoot ve Meta WhatsApp ile entegre ederek talep çözüm sürelerinde yaklaşık %80 iyileşme sağladım."
       },
       {
-        en: "Future projection: migrating ERP data to BigQuery for AI agent swarms, and conducting R&D on Brain-Computer Interfaces (BCI) using EEG signals and LLMs for neurodivergent individuals.",
-        tr: "Gelecek vizyonu: ERP verilerini BigQuery'ye taşıyarak AI ajan sürüleri (swarm) kurmak ve nöroçeşitlilik için EEG sinyallerini LLM'ler ile işleyen Beyin-Bilgisayar Arayüzü (BCI) Ar-Ge'si yapmak."
+        en: "Future projection: migrating ERP data to BigQuery for AI agent swarms.",
+        tr: "Gelecek vizyonu: ERP verilerini BigQuery'ye taşıyarak AI ajan sürüleri (swarm) kurmak."
       }
+    ],
+  },
+  {
+    id: "independent-bci",
+    org: { en: "Independent", tr: "Bağımsız" },
+    role: {
+      en: "Brain-Computer Interfaces (BCI)",
+      tr: "Brain-Computer Interfaces (BCI)",
+    },
+    period: { en: "Ongoing · spare time", tr: "Devam ediyor · boş zaman" },
+    highlights: [
+      {
+        en: "I work on this on my own, in my spare time: Brain-Computer Interfaces (BCI) using EEG signals and LLMs for neurodivergent individuals.",
+        tr: "Bunu bağımsız olarak, boş zamanlarımda yürütüyorum: nöroçeşitli bireyler için EEG sinyalleri ve LLM'ler kullanan Brain-Computer Interfaces (BCI).",
+      },
+    ],
+  },
+  {
+    id: "startup-advisory",
+    org: { en: "Startups", tr: "Startup'lar" },
+    role: {
+      en: "Advisor & Technical Support",
+      tr: "Danışman ve Teknik Destek",
+    },
+    period: { en: "For years · ongoing", tr: "Yıllardır · devam ediyor" },
+    highlights: [
+      {
+        en: "For years I have advised startups and supported them technically—architecture, shipping, and the decisions that keep a product moving.",
+        tr: "Yıllardır startup'lara danışmanlık yapıyor ve teknik olarak destek veriyorum—mimari, ürünün hayata geçmesi ve onu ileride tutan kararlar.",
+      },
     ],
   },
   {
@@ -113,26 +143,6 @@ export const experience: TimelineEntry[] = [
       {
         en: "Refactored critical C++ components into maintainable .NET Core microservices with Redis and RabbitMQ for high-throughput hardware messaging.",
         tr: "Kritik C++ bileşenlerini sürdürülebilir .NET Core mikroservislerine dönüştürdüm; Redis ve RabbitMQ ile yüksek hacimli donanım mesajlaşması.",
-      },
-    ],
-  },
-  {
-    id: "kassara",
-    org: { en: "Kassara.app", tr: "Kassara.app" },
-    role: {
-      en: "Founder & Lead Architect",
-      tr: "Kurucu ve Baş Mimar",
-    },
-    period: { en: "2023 – 2025", tr: "2023 – 2025" },
-    location: { en: "Istanbul, Turkey", tr: "İstanbul, Türkiye" },
-    highlights: [
-      {
-        en: "Founded a B2C AI product combining computer vision (YOLOv8) with behavioral profiling—architecture, AI infrastructure, and business model entirely my own.",
-        tr: "Bilgisayarlı görü (YOLOv8) ve davranış profillemesini birleştiren B2C bir yapay zeka ürünü kurdum—mimarisi, AI altyapısı ve iş modeli tamamen bana ait.",
-      },
-      {
-        en: "Took the product from concept to live production with a 6-person team.",
-        tr: "Ürünü 6 kişilik bir ekiple kavramdan canlı prodüksiyona kadar getirdim.",
       },
     ],
   },

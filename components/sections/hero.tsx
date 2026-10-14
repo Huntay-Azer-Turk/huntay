@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, Download } from "lucide-react";
 import Image from "next/image";
-import { LinkedinIcon, MediumIcon } from "@/components/icons";
+import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
 export async function Hero() {
   const locale = (await getLocale()) as "en" | "tr";
@@ -19,7 +19,7 @@ export async function Hero() {
       <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-32">
         <div className="mb-8">
           <Image
-            src="/cv/me.png"
+            src="/cv/me.jpg"
             alt="Huntay AzerTürk"
             width={96}
             height={96}
@@ -78,6 +78,15 @@ export async function Hero() {
           >
             <MediumIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
             Medium
+          </a>
+          <a
+            href={siteConfig.instagram}
+            className="group flex items-center gap-2 hover:text-accent"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <InstagramIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
+            Instagram
           </a>
         </div>
       </div>

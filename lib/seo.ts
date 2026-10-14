@@ -67,7 +67,7 @@ export function personJsonLd(locale: string) {
     ...(siteConfig.phoneDisplay
       ? { telephone: siteConfig.phoneTel }
       : {}),
-    sameAs: [siteConfig.linkedin, siteConfig.medium],
+    sameAs: [siteConfig.linkedin, siteConfig.medium, siteConfig.instagram],
     description,
   };
 }
