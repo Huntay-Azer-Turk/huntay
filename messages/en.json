@@ -5,6 +5,7 @@
   },
   "Nav": {
     "about": "About",
+    "services": "Services",
     "metrics": "Proof",
     "cases": "Case studies",
     "stack": "Stack",
@@ -12,6 +13,7 @@
     "featured": "Writing",
     "faq": "FAQ",
     "contact": "Contact",
+    "book": "Book a call",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "ariaMain": "Primary",
@@ -22,8 +24,8 @@
     "role": "Software Development Manager | Software Architect | Cloud, AI & IoT",
     "valueProp": "I help companies scale their systems, cut down cloud costs, and build engineering teams that actually deliver.",
     "ctaCv": "Download CV",
-    "ctaContact": "Get in touch",
-    "mailtoSubject": "Hello Huntay"
+    "ctaBook": "Book a call",
+    "ctaServices": "Services"
   },
   "NotFound": {
     "title": "Page not found",
@@ -68,9 +70,76 @@
     "title": "Frequently asked questions",
     "subtitle": "Quick answers about my work and how I can help."
   },
+  "BookPage": {
+    "metaTitle": "Book a Call | Huntay AzerTürk",
+    "metaDescription": "Book a 30-minute intro call with Huntay AzerTürk about AI agents, product development, cloud and DevOps, or digital transformation.",
+    "eyebrow": "Intro call · 30 min",
+    "title": "Book a call",
+    "intro": "Pick a time that works for you. In 30 minutes we'll discuss your goals, constraints and the best next step.",
+    "expectTitle": "What to expect",
+    "expect1": "A 30-minute video call in English or Turkish",
+    "expect2": "We talk about your goals, current situation and constraints",
+    "expect3": "You get honest first recommendations",
+    "expect4": "If it's a fit, I follow up with a short proposal",
+    "calendarTitle": "Choose a time",
+    "iframeTitle": "Booking calendar",
+    "openCalendar": "Open the booking page",
+    "requestTitle": "Request a time",
+    "requestText": "Send a short message with your topic and a few times that suit you, and I'll get back to you with a confirmation.",
+    "requestWhatsapp": "Request via WhatsApp",
+    "requestEmail": "Request via email",
+    "requestMessage": "Hello Huntay, I'd like to book an intro call. Topic: ",
+    "requestSubject": "Intro call request",
+    "otherTitle": "Other ways to reach me"
+  },
+  "Cta": {
+    "title": "Let's talk about your project",
+    "text": "Book a 30-minute intro call. You'll get honest first recommendations and a clear next step.",
+    "book": "Book an intro call",
+    "whatsapp": "Message on WhatsApp",
+    "services": "See all services"
+  },
+  "ServicePage": {
+    "titleSuffix": "Huntay AzerTürk",
+    "forWhom": "Who it's for",
+    "deliverables": "What you get",
+    "useCases": "Typical projects",
+    "tech": "Technologies",
+    "proof": "Proven in practice",
+    "proofSubtitle": "Related case studies from my work.",
+    "caseLink": "Read the case study",
+    "faq": "Frequently asked questions",
+    "other": "Other services"
+  },
+  "ServicesPage": {
+    "metaTitle": "AI, Cloud & Product Development Services | Huntay AzerTürk",
+    "metaDescription": "Consulting and development: AI agents, fractional CTO, startup MVPs, web and mobile apps, DevOps, microservices, IoT and digital transformation for SMEs.",
+    "eyebrow": "Consulting & development",
+    "title": "Services",
+    "intro": "Consulting and hands-on development for companies and startups—from strategy and architecture to AI agents, apps and cloud platforms running in production.",
+    "waysTitle": "Ways to work together",
+    "waysSubtitle": "Start small, scale when it works.",
+    "processTitle": "How we work",
+    "processSubtitle": "A simple, transparent process from first call to production.",
+    "faqTitle": "Questions about working together"
+  },
+  "ServicesSection": {
+    "title": "Services",
+    "subtitle": "How I can help your company or startup—from strategy to production.",
+    "details": "Details",
+    "viewAll": "All services",
+    "book": "Book a call"
+  },
+  "Breadcrumbs": {
+    "label": "Breadcrumb",
+    "home": "Home",
+    "services": "Services",
+    "book": "Book a call"
+  },
   "Contact": {
     "title": "Contact",
     "subtitle": "Let's talk about architecture, AI adoption, or fractional CTO engagements. Reach out directly.",
+    "book": "Book a call",
     "linkedin": "LinkedIn",
     "medium": "Medium",
     "instagram": "Instagram",

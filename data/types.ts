@@ -44,3 +44,41 @@ export type FaqItem = {
   question: Localized;
   answer: Localized;
 };
+
+export type ServiceIcon =
+  | "bot"
+  | "compass"
+  | "rocket"
+  | "devices"
+  | "cloud"
+  | "boxes"
+  | "cpu"
+  | "building";
+
+export type ServiceItem = {
+  /** URL parçası: /services/<slug> (EN) ve /tr/services/<slug> (TR) */
+  slug: string;
+  icon: ServiceIcon;
+  title: Localized;
+  /** <title> için daha kısa başlık (opsiyonel; yoksa `title` kullanılır) */
+  metaTitle?: Localized;
+  /** Kartlarda görünen tek cümlelik özet */
+  tagline: Localized;
+  /** Hizmet sayfasının giriş paragrafı */
+  summary: Localized;
+  /** <meta name="description"> — ~150 karakter */
+  metaDescription: Localized;
+  forWhom: Localized[];
+  deliverables: Localized[];
+  useCases: Localized[];
+  tech: string[];
+  /** data/caseStudies.ts id’leri — "sahada kanıtlanmış" bölümü */
+  relatedCases: string[];
+  faq: FaqItem[];
+};
+
+export type StepItem = {
+  id: string;
+  title: Localized;
+  body: Localized;
+};

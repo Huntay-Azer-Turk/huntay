@@ -2,7 +2,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SiteHeader } from "@/components/layout/site-header";
 import { routing } from "@/i18n/routing";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, buildSiteGraph, type AppLocale } from "@/lib/seo";
 import { Geist, Geist_Mono } from "next/font/google";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     locale,
     title: t("title"),
     description: t("description"),
+    ogType: "profile",
   });
 }
 
@@ -45,6 +46,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   }
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tMeta = await getTranslations({ locale, namespace: "Metadata" });
 
   return (
     <html
@@ -55,7 +57,8 @@ export default async function LocaleLayout({ children, params }: Props) {
       <body className="min-h-screen overflow-x-hidden bg-background font-sans text-foreground antialiased">
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
-            <JsonLd locale={locale} />
+            {/* Site geneli: Person + WebSite (+ hizmet kataloğu). Sayfaya özel şemalar sayfalarda. */}
+            <JsonLd data={buildSiteGraph(locale as AppLocale, tMeta("description"))} />
             <SiteHeader />
             <main>{children}</main>
           </ThemeProvider>
