@@ -1,0 +1,113 @@
+import { JsonLd } from "@/components/seo/json-ld";
+import { Booking } from "@/components/services/booking";
+import { Breadcrumbs } from "@/components/services/breadcrumbs";
+import { InstagramIcon, LinkedinIcon } from "@/components/icons";
+import { buildBookGraph, buildMetadata, type AppLocale } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
+import { containerClass } from "@/lib/ui";
+import { Check, Mail, MessageCircle } from "lucide-react";
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "BookPage" });
+  return buildMetadata({
+    locale,
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+    path: "/book",
+  });
+}
+
+const expectKeys = ["expect1", "expect2", "expect3", "expect4"] as const;
+
+export default async function BookPage({ params }: Props) {
+  const { locale: rawLocale } = await params;
+  setRequestLocale(rawLocale);
+  const locale = rawLocale as AppLocale;
+  const t = await getTranslations({ locale, namespace: "BookPage" });
+  const tb = await getTranslations({ locale, namespace: "Breadcrumbs" });
+  const tc = await getTranslations({ locale, namespace: "Contact" });
+
+  const contactLink =
+    "flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent";
+
+  return (
+    <>
+      <JsonLd
+        data={buildBookGraph(
+          locale,
+          { title: t("metaTitle"), description: t("metaDescription") },
+          { home: tb("home"), book: tb("book") },
+        )}
+      />
+
+      <section className="relative">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden">
+          <div className="bg-grid absolute inset-0 opacity-40" />
+          <div className="absolute -left-40 top-10 h-72 w-72 rounded-full bg-accent/10 blur-3xl" />
+        </div>
+        <div className={`relative ${containerClass} py-16 sm:py-24`}>
+          <Breadcrumbs label={tb("label")} items={[{ name: tb("home"), href: "/" }, { name: tb("book") }]} />
+          <p className="mt-10 font-mono text-xs uppercase tracking-widest text-accent">
+            {t("eyebrow")}
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+            {t("title")}
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            {t("intro")}
+          </p>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-3">
+            <div className="space-y-8 lg:order-2 lg:col-span-1">
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h2 className="font-semibold text-foreground">{t("expectTitle")}</h2>
+                <ul className="mt-4 space-y-3">
+                  {expectKeys.map((key) => (
+                    <li key={key} className="flex gap-3 text-sm text-muted-foreground">
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                      <span>{t(key)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h2 className="font-semibold text-foreground">{t("otherTitle")}</h2>
+                <div className="mt-4 grid gap-3">
+                  {siteConfig.whatsappUrl ? (
+                    <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                      <MessageCircle className="h-4 w-4 text-accent" aria-hidden />
+                      {tc("whatsapp")}
+                    </a>
+                  ) : null}
+                  {siteConfig.contactEmail ? (
+                    <a href={`mailto:${siteConfig.contactEmail}`} className={contactLink}>
+                      <Mail className="h-4 w-4 text-accent" aria-hidden />
+                      {tc("email")}
+                    </a>
+                  ) : null}
+                  <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                    <LinkedinIcon className="h-4 w-4 text-accent" aria-hidden />
+                    {tc("linkedin")}
+                  </a>
+                  <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                    <InstagramIcon className="h-4 w-4 text-accent" aria-hidden />
+                    {tc("instagram")}
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="lg:order-1 lg:col-span-2">
+              <h2 className="sr-only">{t("calendarTitle")}</h2>
+              <Booking />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

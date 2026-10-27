@@ -5,6 +5,7 @@
   },
   "Nav": {
     "about": "Hakkında",
+    "services": "Hizmetler",
     "metrics": "Rakamlar",
     "cases": "Projeler",
     "stack": "Teknolojiler",
@@ -12,6 +13,7 @@
     "featured": "Yazılar",
     "faq": "SSS",
     "contact": "İletişim",
+    "book": "Görüşme planla",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
     "ariaMain": "Ana menü",
@@ -22,8 +24,8 @@
     "role": "Yazılım Geliştirme Müdürü | Yazılım Mimarı | Bulut, Yapay Zeka ve IoT",
     "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
     "ctaCv": "CV indir",
-    "ctaContact": "İletişime geç",
-    "mailtoSubject": "Merhaba Huntay"
+    "ctaBook": "Görüşme planla",
+    "ctaServices": "Hizmetler"
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",
@@ -68,9 +70,76 @@
     "title": "Sık sorulan sorular",
     "subtitle": "Çalışmalarım ve nasıl yardımcı olabileceğim hakkında kısa cevaplar."
   },
+  "BookPage": {
+    "metaTitle": "Görüşme Planlayın | Huntay AzerTürk",
+    "metaDescription": "Yapay zeka ajanları, ürün geliştirme, bulut ve DevOps ya da dijital dönüşüm hakkında Huntay AzerTürk ile 30 dakikalık tanışma görüşmesi planlayın.",
+    "eyebrow": "Tanışma görüşmesi · 30 dk",
+    "title": "Görüşme planlayın",
+    "intro": "Size uygun bir zaman seçin. 30 dakikada hedeflerinizi, kısıtlarınızı ve en doğru sonraki adımı konuşalım.",
+    "expectTitle": "Görüşmede neler olacak?",
+    "expect1": "Türkçe veya İngilizce 30 dakikalık görüntülü görüşme",
+    "expect2": "Hedeflerinizi, mevcut durumu ve kısıtlarınızı konuşuruz",
+    "expect3": "Dürüst ilk önerilerimi alırsınız",
+    "expect4": "Uygun görürsek kısa bir teklifle dönüş yaparım",
+    "calendarTitle": "Bir zaman seçin",
+    "iframeTitle": "Randevu takvimi",
+    "openCalendar": "Randevu sayfasını aç",
+    "requestTitle": "Zaman talep edin",
+    "requestText": "Konunuzu ve size uygun birkaç zamanı içeren kısa bir mesaj gönderin; teyit için size dönüş yapayım.",
+    "requestWhatsapp": "WhatsApp ile talep et",
+    "requestEmail": "E-posta ile talep et",
+    "requestMessage": "Merhaba Huntay, tanışma görüşmesi planlamak istiyorum. Konu: ",
+    "requestSubject": "Tanışma görüşmesi talebi",
+    "otherTitle": "Diğer iletişim yolları"
+  },
+  "Cta": {
+    "title": "Projenizi konuşalım",
+    "text": "30 dakikalık bir tanışma görüşmesi planlayın. Dürüst ilk önerileri ve net bir sonraki adımı alırsınız.",
+    "book": "Tanışma görüşmesi planla",
+    "whatsapp": "WhatsApp'tan yaz",
+    "services": "Tüm hizmetleri gör"
+  },
+  "ServicePage": {
+    "titleSuffix": "Huntay AzerTürk",
+    "forWhom": "Kimler için",
+    "deliverables": "Neler alırsınız",
+    "useCases": "Örnek projeler",
+    "tech": "Teknolojiler",
+    "proof": "Sahada kanıtlanmış",
+    "proofSubtitle": "Çalışmalarımdan ilgili vaka çalışmaları.",
+    "caseLink": "Vaka çalışmasını oku",
+    "faq": "Sık sorulan sorular",
+    "other": "Diğer hizmetler"
+  },
+  "ServicesPage": {
+    "metaTitle": "Yapay Zeka, Bulut ve Yazılım Hizmetleri | Huntay AzerTürk",
+    "metaDescription": "Danışmanlık ve geliştirme: yapay zeka ajanları, fractional CTO, MVP, web ve mobil uygulama, DevOps, mikroservis, IoT ve KOBİ dijital dönüşüm.",
+    "eyebrow": "Danışmanlık ve geliştirme",
+    "title": "Hizmetler",
+    "intro": "Şirketler ve startup'lar için danışmanlık ve uygulamalı geliştirme: stratejiden ve mimariden, canlıda çalışan yapay zeka ajanlarına, uygulamalara ve bulut platformlarına.",
+    "waysTitle": "Birlikte çalışma modelleri",
+    "waysSubtitle": "Küçük başlayın, işe yaradıkça büyütün.",
+    "processTitle": "Nasıl çalışıyoruz",
+    "processSubtitle": "İlk görüşmeden canlıya kadar sade ve şeffaf bir süreç.",
+    "faqTitle": "Birlikte çalışma hakkında sorular"
+  },
+  "ServicesSection": {
+    "title": "Hizmetler",
+    "subtitle": "Şirketinize veya startup'ınıza stratejiden canlı ürüne kadar nasıl yardımcı olabilirim?",
+    "details": "Detaylar",
+    "viewAll": "Tüm hizmetler",
+    "book": "Görüşme planla"
+  },
+  "Breadcrumbs": {
+    "label": "Sayfa konumu",
+    "home": "Ana sayfa",
+    "services": "Hizmetler",
+    "book": "Görüşme planla"
+  },
   "Contact": {
     "title": "İletişim",
     "subtitle": "Mimari, yapay zeka dönüşümü veya fractional CTO iş birlikleri için doğrudan bana ulaşın.",
+    "book": "Görüşme planla",
     "linkedin": "LinkedIn",
     "medium": "Medium",
     "instagram": "Instagram",

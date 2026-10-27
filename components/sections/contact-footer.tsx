@@ -1,6 +1,7 @@
 import { siteConfig } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
-import { Mail, Phone, MessageCircle } from "lucide-react";
+import { CalendarClock, Mail, Phone, MessageCircle } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
 export async function ContactFooter() {
@@ -16,6 +17,13 @@ export async function ContactFooter() {
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">{t("subtitle")}</p>
           <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/book"
+              className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
+            >
+              <CalendarClock className="h-4 w-4" aria-hidden />
+              {t("book")}
+            </Link>
             <a
               href={siteConfig.linkedin}
               target="_blank"

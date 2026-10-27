@@ -1,7 +1,8 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight, CalendarClock, Download } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
@@ -49,17 +50,20 @@ export async function Hero() {
           {heroLead[locale]}
         </p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <a
-            href={
-              siteConfig.contactEmail
-                ? `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(t("mailtoSubject"))}`
-                : "#contact"
-            }
+          <Link
+            href="/book"
             className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
           >
-            {t("ctaContact")}
+            <CalendarClock className="h-4 w-4" aria-hidden />
+            {t("ctaBook")}
+          </Link>
+          <Link
+            href="/services"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+          >
+            {t("ctaServices")}
             <ArrowRight className="h-4 w-4" aria-hidden />
-          </a>
+          </Link>
           <a
             href={siteConfig.cvPath}
             download={siteConfig.cvDownloadFileName}

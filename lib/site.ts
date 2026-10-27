@@ -18,6 +18,24 @@ export const siteConfig = {
    */
   contentUpdatedAt: "2026-10-27",
   /**
+   * Randevu takvimi (/book sayfası).
+   * - bookingUrl: takvim sayfasının paylaşım linki (ör. Google Takvim "Randevu planı" ya da Cal.com linki)
+   * - bookingEmbedUrl: sayfaya iframe olarak gömülecek adres.
+   *   Google Takvim için: https://calendar.google.com/calendar/appointments/schedules/<ID>?gv=true
+   * İkisi de boşsa /book sayfası WhatsApp ve e-posta ile randevu isteme seçeneklerini gösterir.
+   */
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
+  bookingEmbedUrl: process.env.NEXT_PUBLIC_BOOKING_EMBED_URL ?? "",
+  /** Google Search Console → "HTML etiketi" doğrulamasındaki content değeri. */
+  googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
+  /** Bing Webmaster Tools → "msvalidate.01" meta etiketindeki content değeri. */
+  bingSiteVerification: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ?? "",
+  /**
+   * IndexNow (Bing, Yandex vb.) anahtarı — /public/<anahtar>.txt dosyasıyla aynı olmalı.
+   * Yeni içerik yayınlandığında bu anahtarla URL'ler arama motorlarına anında bildirilebilir.
+   */
+  indexNowKey: "74ea8b75679df426cd03c5965620d3e7",
+  /**
    * CV’deki telefon. `NEXT_PUBLIC_PHONE_DISPLAY=` (boş) verilirse gizlenir;
    * tanımsızsa CV’deki varsayılan kullanılır.
    */

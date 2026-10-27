@@ -40,14 +40,25 @@ export const faq: FaqItem[] = [
     },
   },
   {
+    id: "services",
+    question: {
+      en: "What services does Huntay AzerTürk offer?",
+      tr: "Huntay AzerTürk hangi hizmetleri sunuyor?",
+    },
+    answer: {
+      en: "He offers AI agents and automation, fractional CTO and technical consulting, end-to-end startup product development, web and mobile app development, cloud and DevOps with cost optimization, microservices and legacy modernization, IoT platform development, and digital transformation for SMEs.",
+      tr: "Yapay zeka ajanları ve otomasyon, fractional CTO ve teknik danışmanlık, uçtan uca startup ürün geliştirme, web ve mobil uygulama geliştirme, maliyet optimizasyonuyla bulut ve DevOps, mikroservis mimarisi ve legacy modernizasyon, IoT platform geliştirme ve KOBİ'ler için dijital dönüşüm hizmetleri sunuyor.",
+    },
+  },
+  {
     id: "consulting",
     question: {
       en: "Is Huntay AzerTürk available for consulting or fractional CTO work?",
       tr: "Huntay AzerTürk danışmanlık veya fractional CTO olarak çalışıyor mu?",
     },
     answer: {
-      en: "Yes. He has advised and technically supported startups for years and is open to conversations about architecture, AI adoption and fractional CTO engagements. The fastest way to reach him is LinkedIn, WhatsApp or email, all listed in the contact section of this site.",
-      tr: "Evet. Yıllardır startup'lara danışmanlık ve teknik destek veriyor; mimari, yapay zeka dönüşümü ve fractional CTO iş birlikleri için görüşmelere açık. En hızlı ulaşım yolu, bu sitenin iletişim bölümünde yer alan LinkedIn, WhatsApp veya e-posta.",
+      en: "Yes. He has advised and technically supported startups for years and is open to conversations about architecture, AI adoption and fractional CTO engagements. The fastest way to start is to book a 30-minute intro call on this site; LinkedIn, WhatsApp and email are listed in the contact section.",
+      tr: "Evet. Yıllardır startup'lara danışmanlık ve teknik destek veriyor; mimari, yapay zeka dönüşümü ve fractional CTO iş birlikleri için görüşmelere açık. Başlamanın en hızlı yolu bu siteden 30 dakikalık bir tanışma görüşmesi planlamak; LinkedIn, WhatsApp ve e-posta iletişim bölümünde yer alıyor.",
     },
   },
   {

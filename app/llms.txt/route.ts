@@ -3,6 +3,7 @@ import { experience } from "@/data/experience";
 import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
+import { services } from "@/data/services";
 import { absoluteUrl, localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -21,6 +22,15 @@ export function GET() {
     `> ${faq[0].answer.en}`,
     "",
     heroLead.en,
+    "",
+    "## Services",
+    "",
+    `Overview: ${localeUrl("en", "/services")} · Book a 30-minute intro call: ${localeUrl("en", "/book")}`,
+    "",
+    ...services.map(
+      (item) =>
+        `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}`,
+    ),
     "",
     "## Experience",
     "",
@@ -46,6 +56,7 @@ export function GET() {
     "",
     `- [Website (English)](${home})`,
     `- [Website (Türkçe)](${localeUrl("tr")})`,
+    `- [Book a call](${localeUrl("en", "/book")})`,
     `- [CV (PDF)](${absoluteUrl(siteConfig.cvPath)})`,
     `- [LinkedIn](${siteConfig.linkedin})`,
     `- [Medium](${siteConfig.medium})`,
