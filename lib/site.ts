@@ -16,16 +16,27 @@ export const siteConfig = {
    * İçerik her güncellendiğinde değiştirin: sitemap `lastmod` ve JSON-LD `dateModified` buradan beslenir.
    * (Her build'de "şimdi" vermek arama motorlarının bu sinyale güvenmemesine yol açar.)
    */
-  contentUpdatedAt: "2026-10-27",
+  contentUpdatedAt: "2026-10-28",
   /**
-   * Randevu takvimi (/book sayfası).
-   * - bookingUrl: takvim sayfasının paylaşım linki (ör. Google Takvim "Randevu planı" ya da Cal.com linki)
-   * - bookingEmbedUrl: sayfaya iframe olarak gömülecek adres.
-   *   Google Takvim için: https://calendar.google.com/calendar/appointments/schedules/<ID>?gv=true
-   * İkisi de boşsa /book sayfası WhatsApp ve e-posta ile randevu isteme seçeneklerini gösterir.
+   * Randevu takvimi: Cal.com (https://cal.com/huntay/intro-call — 30 dk, hafta içi 10:00–18:00 İstanbul,
+   * Google Meet, Google Takvim’e bağlı). /book sayfası bu takvimi gömer; AI asistanları (MCP: /mcp)
+   * boş saatleri buradan okur ve randevuyu buraya yazar. Herkese açık randevu tipleri için
+   * Cal.com API anahtarı gerekmez (kodda gizli bilgi yok).
+   * Kullanıcı adı boş verilirse (`NEXT_PUBLIC_CAL_USERNAME=`) aşağıdaki yedek seçenekler kullanılır.
+   */
+  calUsername: process.env.NEXT_PUBLIC_CAL_USERNAME ?? "huntay",
+  calEventSlug: process.env.NEXT_PUBLIC_CAL_EVENT_SLUG ?? "intro-call",
+  /**
+   * Cal.com kullanılmıyorsa:
+   * - bookingEmbedUrl: sayfaya iframe olarak gömülecek takvim
+   *   (Google Takvim için: https://calendar.google.com/calendar/appointments/schedules/<ID>?gv=true)
+   * - bookingUrl: yalnızca link (yeni sekmede açılır)
+   * Hiçbiri yoksa /book sayfası WhatsApp ve e-posta ile randevu isteme seçeneklerini gösterir.
    */
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
   bookingEmbedUrl: process.env.NEXT_PUBLIC_BOOKING_EMBED_URL ?? "",
+  /** Randevu saatlerinin varsayılan saat dilimi (kullanıcı başka bir dilim belirtmezse). */
+  timeZone: "Europe/Istanbul",
   /** Google Search Console → "HTML etiketi" doğrulamasındaki content değeri. */
   googleSiteVerification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ?? "",
   /** Bing Webmaster Tools → "msvalidate.01" meta etiketindeki content değeri. */

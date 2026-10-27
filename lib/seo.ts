@@ -244,6 +244,19 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
           },
         })),
       },
+      // Randevu: /book sayfası (Cal.com). AI asistanları için ayrıca MCP sunucusu: /mcp
+      potentialAction: {
+        "@type": "ReserveAction",
+        name: locale === "tr" ? "30 dakikalık tanışma görüşmesi planla" : "Book a 30-minute intro call",
+        target: {
+          "@type": "EntryPoint",
+          urlTemplate: localeUrl(locale, "/book"),
+          actionPlatform: [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform",
+          ],
+        },
+      },
     },
     {
       "@type": "WebSite",

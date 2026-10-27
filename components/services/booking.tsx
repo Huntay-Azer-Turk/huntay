@@ -1,3 +1,5 @@
+import { CalEmbed } from "@/components/services/cal-embed";
+import { calBookingPageUrl, calLink, isCalConfigured } from "@/lib/cal";
 import { siteConfig } from "@/lib/site";
 import { buttonPrimary, buttonSecondary } from "@/lib/ui";
 import { CalendarClock, Mail, MessageCircle } from "lucide-react";
@@ -5,13 +7,32 @@ import { getTranslations } from "next-intl/server";
 
 /**
  * Randevu alanı (/book). lib/site.ts:
- * - bookingEmbedUrl varsa takvim sayfaya gömülür (Google Takvim randevu planı, Cal.com vb.)
+ * - Cal.com kullanıcı adı varsa Cal.com takvimi sayfaya gömülür (+ Cal.com sayfası linki)
+ * - yoksa bookingEmbedUrl varsa o takvim iframe ile gömülür (ör. Google Takvim randevu planı)
  * - yalnızca bookingUrl varsa takvim yeni sekmede açılır
- * - ikisi de yoksa WhatsApp / e-posta ile hazır mesajlı randevu talebi gösterilir
+ * - hiçbiri yoksa WhatsApp / e-posta ile hazır mesajlı randevu talebi gösterilir
  */
 export async function Booking() {
   const t = await getTranslations("BookPage");
   const { bookingEmbedUrl, bookingUrl, whatsappUrl, contactEmail } = siteConfig;
+
+  if (isCalConfigured()) {
+    return (
+      <div className="overflow-hidden rounded-2xl border border-border bg-card">
+        <CalEmbed calLink={calLink()} />
+        <div className="border-t border-border p-4 text-center">
+          <a
+            href={calBookingPageUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-accent hover:underline"
+          >
+            {t("openCalendar")}
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (bookingEmbedUrl) {
     return (

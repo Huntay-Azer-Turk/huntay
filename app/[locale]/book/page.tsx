@@ -4,8 +4,8 @@ import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { InstagramIcon, LinkedinIcon } from "@/components/icons";
 import { buildBookGraph, buildMetadata, type AppLocale } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { containerClass } from "@/lib/ui";
-import { Check, Mail, MessageCircle } from "lucide-react";
+import { containerClass, h2Class } from "@/lib/ui";
+import { Bot, Check, Mail, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const expectKeys = ["expect1", "expect2", "expect3", "expect4"] as const;
+const assistantKeys = ["aiClaude", "aiChatgpt", "aiGemini"] as const;
 
 export default async function BookPage({ params }: Props) {
   const { locale: rawLocale } = await params;
@@ -105,6 +106,32 @@ export default async function BookPage({ params }: Props) {
               <h2 className="sr-only">{t("calendarTitle")}</h2>
               <Booking />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sohbet içinden randevu: MCP sunucusu (app/mcp/route.ts) */}
+      <section id="ai-assistants" className="scroll-mt-20 border-t border-border py-16 sm:py-20">
+        <div className={`${containerClass} grid gap-8 lg:grid-cols-5`}>
+          <div className="lg:col-span-3">
+            <h2 className={h2Class}>{t("aiTitle")}</h2>
+            <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{t("aiText")}</p>
+            <p className="mt-8 text-sm font-medium text-foreground">{t("aiUrlLabel")}</p>
+            <code className="mt-2 block select-all break-all rounded-xl border border-border bg-card px-4 py-3 font-mono text-sm text-accent">
+              {`${siteConfig.baseUrl}/mcp`}
+            </code>
+            <p className="mt-3 text-sm text-muted-foreground">{t("aiNote")}</p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6 lg:col-span-2">
+            <h3 className="font-semibold text-foreground">{t("aiStepsTitle")}</h3>
+            <ul className="mt-4 space-y-3">
+              {assistantKeys.map((key) => (
+                <li key={key} className="flex gap-3 text-sm text-muted-foreground">
+                  <Bot className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                  <span>{t(key)}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
