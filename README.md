@@ -8,7 +8,7 @@ A modern, bilingual (English & Turkish) personal landing page and CV portfolio b
 - **Theming:** Dark ("Bare Metal") and Light ("Corporate") modes using `next-themes`.
 - **Responsive Design:** Fully optimized for mobile, tablet, and desktop viewing.
 - **Performance:** Statically generated pages (SSG) with optimized fonts and layouts.
-- **SEO Ready:** Configured with metadata, canonical links, sitemap, robots.txt, and JSON-LD schema.
+- **SEO & AEO Ready:** Metadata with canonical + hreflang (incl. `x-default`), per-locale Open Graph images (`app/[locale]/opengraph-image.tsx`), sitemap with language alternates, robots.txt (AI crawlers explicitly allowed), `/llms.txt`, a visible FAQ section, and a Person + WebSite + ProfilePage + FAQPage JSON-LD graph — all generated from the same `data/*` sources. Update `siteConfig.contentUpdatedAt` in `lib/site.ts` whenever content changes.
 - **CV Download:** Direct download link for the latest PDF CV with correct Content-Disposition headers.
 
 ## Tech Stack

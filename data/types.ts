@@ -38,3 +38,9 @@ export type FeaturedItem = {
   href: string;
   source: string;
 };
+
+export type FaqItem = {
+  id: string;
+  question: Localized;
+  answer: Localized;
+};

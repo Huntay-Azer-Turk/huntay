@@ -1,6 +1,7 @@
 import { About } from "@/components/sections/about";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ContactFooter } from "@/components/sections/contact-footer";
+import { Faq } from "@/components/sections/faq";
 import { Featured } from "@/components/sections/featured";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
@@ -23,6 +24,7 @@ export default async function HomePage({ params }: Props) {
       <TechStack />
       <Timeline />
       <Featured />
+      <Faq />
       <ContactFooter />
     </>
   );
