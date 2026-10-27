@@ -17,9 +17,11 @@ import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-/** Yalnızca data/services.ts’deki hizmetler; bilinmeyen slug → 404. */
-export const dynamicParams = false;
-
+/**
+ * Not: `dynamicParams = false` KULLANMAYIN — Cloudflare Workers (OpenNext) varsayılan ayarlarında
+ * önceden üretilmiş sayfalar önbellekte olmadığı için tüm hizmet sayfaları 404 döner.
+ * Bilinmeyen slug’lar aşağıda `notFound()` ile zaten 404 veriyor.
+ */
 export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }

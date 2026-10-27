@@ -1,11 +1,10 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
-import { profileImagePath } from "./seo";
+import { ogPhotoDataUri } from "./og-photo";
 
 /**
  * Paylaşım görselleri (1200×630) için ortak çizici — ana sayfa, /services, hizmet sayfaları ve /book.
  * Font: next/og içindeki Geist (Türkçe karakterleri kapsar). Renkler: "Bare Metal" teması (app/globals.css).
+ * Fotoğraf koda gömülü (lib/og-photo.ts): Cloudflare Workers’ta dosya sisteminden okuma yapılamıyor.
  */
 export const ogSize = { width: 1200, height: 630 };
 export const ogContentType = "image/png";
@@ -30,8 +29,7 @@ type OgCard = {
 };
 
 export async function renderOgCard({ kicker, title, subtitle, tagline, chips = [] }: OgCard) {
-  const photo = await readFile(join(process.cwd(), "public", profileImagePath), "base64");
-  const photoSrc = `data:image/jpeg;base64,${photo}`;
+  const photoSrc = ogPhotoDataUri;
   // Uzun hizmet başlıkları iki satıra sığsın diye font boyutu başlık uzunluğuna göre küçülür.
   const titleSize = title.length <= 18 ? 80 : title.length <= 34 ? 60 : 50;
 
