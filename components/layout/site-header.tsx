@@ -15,6 +15,7 @@ const navKeys = [
   "stack",
   "timeline",
   "featured",
+  "faq",
   "contact",
 ] as const;
 
@@ -34,7 +35,8 @@ export function SiteHeader() {
           <span className="text-accent">.</span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label={t("ariaMain")}>
+        {/* lg: 8 bağlantı + dil seçici + tema düğmesi 768–1023px aralığına sığmıyor; tablette hamburger menü. */}
+        <nav className="hidden items-center gap-1 lg:flex" aria-label={t("ariaMain")}>
           {navKeys.map((key) => (
             <a
               key={key}
@@ -53,7 +55,7 @@ export function SiteHeader() {
           </div>
           <button
             type="button"
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-border bg-card md:hidden sm:h-9 sm:w-9 sm:min-h-0 sm:min-w-0"
+            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-border bg-card lg:hidden sm:h-9 sm:w-9 sm:min-h-0 sm:min-w-0"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-label={open ? t("closeMenu") : t("openMenu")}
@@ -68,7 +70,7 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div className="border-t border-border bg-background px-4 py-4 md:hidden">
+        <div className="border-t border-border bg-background px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label={t("ariaMobile")}>
             {navKeys.map((key) => (
               <a

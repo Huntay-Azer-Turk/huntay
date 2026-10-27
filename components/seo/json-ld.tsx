@@ -1,11 +1,18 @@
-import { personJsonLd } from "@/lib/seo";
+import { buildStructuredData, type AppLocale } from "@/lib/seo";
+import { getTranslations } from "next-intl/server";
 
-export function JsonLd({ locale }: { locale: string }) {
-  const data = personJsonLd(locale);
+export async function JsonLd({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  const data = buildStructuredData(locale as AppLocale, {
+    title: t("title"),
+    description: t("description"),
+  });
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+      // `<` kaçışı: Next.js JSON-LD rehberindeki XSS önlemi
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }}
     />
   );
 }

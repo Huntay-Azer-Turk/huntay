@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Software Development Manager | Software Architect | Cloud, AI & IoT",
-    "description": "Scaling AI & IoT systems, reducing cloud costs, hardened architectures, and high-performing engineering teams."
+    "title": "Huntay AzerTürk — Software Architect · Cloud, AI & IoT",
+    "description": "Huntay AzerTürk is an Istanbul-based software architect and engineering leader with 13+ years in cloud, AI and IoT: scaling systems, cutting cloud costs."
   },
   "Nav": {
     "about": "About",
@@ -10,6 +10,7 @@
     "stack": "Stack",
     "timeline": "Experience",
     "featured": "Writing",
+    "faq": "FAQ",
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -62,6 +63,10 @@
   "Featured": {
     "title": "Selected writing",
     "subtitle": "Articles and posts (Medium)."
+  },
+  "Faq": {
+    "title": "Frequently asked questions",
+    "subtitle": "Quick answers about my work and how I can help."
   },
   "Contact": {
     "title": "Contact",

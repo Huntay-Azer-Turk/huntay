@@ -1,9 +1,22 @@
 export const siteConfig = {
   name: "Huntay AzerTürk",
+  givenName: "Huntay",
+  familyName: "AzerTürk",
+  /** Arama motorları / AI asistanları için yazım varyantları (ASCII vb.). */
+  alternateNames: ["Huntay AzerTurk"],
   handle: "huntay",
   linkedin: "https://www.linkedin.com/in/huntay/",
   medium: "https://medium.com/@Huntay.AzerTurk",
   instagram: "https://www.instagram.com/huntay.azerturk/",
+  github: "https://github.com/Huntay-Azer-Turk",
+  /** JSON-LD `address` için (şehir + ISO ülke kodu). */
+  locality: "Istanbul",
+  countryCode: "TR",
+  /**
+   * İçerik her güncellendiğinde değiştirin: sitemap `lastmod` ve JSON-LD `dateModified` buradan beslenir.
+   * (Her build'de "şimdi" vermek arama motorlarının bu sinyale güvenmemesine yol açar.)
+   */
+  contentUpdatedAt: "2026-10-27",
   /**
    * CV’deki telefon. `NEXT_PUBLIC_PHONE_DISPLAY=` (boş) verilirse gizlenir;
    * tanımsızsa CV’deki varsayılan kullanılır.

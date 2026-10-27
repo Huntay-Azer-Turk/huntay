@@ -1,15 +1,16 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Software Development Manager | Software Architect | Cloud, AI & IoT",
-    "description": "AI ve IoT sistemlerini ölçeklemek, bulut maliyetlerini düşürmek, sertleştirilmiş mimariler ve yüksek performanslı mühendislik ekipleri."
+    "title": "Huntay AzerTürk — Yazılım Mimarı · Bulut, Yapay Zeka ve IoT",
+    "description": "Huntay AzerTürk; bulut, yapay zeka ve IoT alanında 13+ yıllık deneyime sahip, İstanbul merkezli yazılım mimarı ve mühendislik lideri."
   },
   "Nav": {
     "about": "Hakkında",
-    "metrics": "Proof",
-    "cases": "Case studies",
-    "stack": "Stack",
+    "metrics": "Rakamlar",
+    "cases": "Projeler",
+    "stack": "Teknolojiler",
     "timeline": "Deneyim",
     "featured": "Yazılar",
+    "faq": "SSS",
     "contact": "İletişim",
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
@@ -18,7 +19,7 @@
   },
   "Hero": {
     "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Architect",
-    "role": "Software Development Manager | Software Architect | Cloud, AI & IoT",
+    "role": "Yazılım Geliştirme Müdürü | Yazılım Mimarı | Bulut, Yapay Zeka ve IoT",
     "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
     "ctaCv": "CV indir",
     "ctaContact": "İletişime geç",
@@ -32,26 +33,26 @@
   "About": {
     "title": "Hakkında",
     "subtitle": "Özgeçmişin ötesinde derinlik",
-    "philosophyTitle": "Bare Metal philosophy",
-    "academicTitle": "Academic lens",
-    "securityTitle": "Security-first architecture",
-    "aiTitle": "Applied AI — proven delivery",
+    "philosophyTitle": "Bare Metal felsefesi",
+    "academicTitle": "Akademik bakış",
+    "securityTitle": "Güvenlik öncelikli mimari",
+    "aiTitle": "Uygulamalı yapay zeka — kanıtlanmış sonuçlar",
     "researchTitle": "Yazı ve araştırma",
-    "disciplineTitle": "Discipline as a system",
+    "disciplineTitle": "Bir sistem olarak disiplin",
     "partnerTitle": "Stratejik ortaklık"
   },
   "Metrics": {
-    "title": "Proof in numbers",
+    "title": "Rakamlarla kanıt",
     "subtitle": "Üretilen sonuçlar, boş sloganlar değil."
   },
   "Cases": {
-    "title": "Case studies",
+    "title": "Vaka çalışmaları",
     "subtitle": "13 yıllık sahanın mimari kazanımları — bare-metal, hexagonal ve AI odaklı.",
-    "action": "Action",
+    "action": "Yapılan",
     "result": "Sonuç"
   },
   "Stack": {
-    "title": "Technical stack",
+    "title": "Teknoloji yığını",
     "subtitle": "Bulut, yapay zeka ve liderlik — çalıştığım alanlar."
   },
   "Timeline": {
@@ -62,6 +63,10 @@
   "Featured": {
     "title": "Seçilmiş yazılar",
     "subtitle": "Makaleler ve gönderiler (Medium)."
+  },
+  "Faq": {
+    "title": "Sık sorulan sorular",
+    "subtitle": "Çalışmalarım ve nasıl yardımcı olabileceğim hakkında kısa cevaplar."
   },
   "Contact": {
     "title": "İletişim",

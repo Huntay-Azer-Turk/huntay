@@ -1,9 +1,12 @@
 import type { Localized } from "./types";
 
-/** CV SUMMARY özeti (PDF ile uyumlu) */
+/**
+ * CV SUMMARY özeti (PDF ile uyumlu).
+ * İlk cümle ismi içerir: arama motorları ve AI asistanları genelde ilk cümleyi "kim" cevabı olarak alıntılar.
+ */
 export const heroLead: Localized = {
-  en: "I'm a software architect and engineering leader with over 13 years of experience. I specialize in taking fragile, complex systems and turning them into stable, scalable products. Whether it's cloud infrastructure, IoT, or AI integrations, I love getting my hands dirty with the code while guiding teams to build things that actually work.",
-  tr: "13 yılı aşkın süredir yazılım mimarisi ve mühendislik liderliği yapıyorum. Karmaşık ve kırılgan sistemleri alıp, tıkır tıkır çalışan, ölçeklenebilir ürünlere dönüştürmeyi seviyorum. Bulut altyapılarından IoT ve yapay zeka entegrasyonlarına kadar her aşamada hem kodun içinde kalıyor hem de ekiplere rehberlik ediyorum.",
+  en: "I'm Huntay AzerTürk, an Istanbul-based software architect and engineering leader with over 13 years of experience. I specialize in taking fragile, complex systems and turning them into stable, scalable products. Whether it's cloud infrastructure, IoT, or AI integrations, I love getting my hands dirty with the code while guiding teams to build things that actually work.",
+  tr: "Ben Huntay AzerTürk; İstanbul merkezli, 13 yılı aşkın deneyime sahip bir yazılım mimarı ve mühendislik lideriyim. Karmaşık ve kırılgan sistemleri alıp, tıkır tıkır çalışan, ölçeklenebilir ürünlere dönüştürmeyi seviyorum. Bulut altyapılarından IoT ve yapay zeka entegrasyonlarına kadar her aşamada hem kodun içinde kalıyor hem de ekiplere rehberlik ediyorum.",
 };
 
 export const philosophy: Localized = {

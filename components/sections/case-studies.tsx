@@ -16,7 +16,8 @@ export async function CaseStudies() {
           {caseStudies.map((c) => (
             <article
               key={c.id}
-              className="flex flex-col rounded-2xl border border-border bg-card p-6"
+              id={`case-${c.id}`}
+              className="flex scroll-mt-24 flex-col rounded-2xl border border-border bg-card p-6"
             >
               <h3 className="text-lg font-semibold text-foreground">
                 {c.title[locale]}
