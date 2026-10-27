@@ -1,5 +1,6 @@
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { JsonLd } from "@/components/seo/json-ld";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { routing } from "@/i18n/routing";
 import { buildMetadata, buildSiteGraph, type AppLocale } from "@/lib/seo";
@@ -61,6 +62,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <JsonLd data={buildSiteGraph(locale as AppLocale, tMeta("description"))} />
             <SiteHeader />
             <main>{children}</main>
+            <SiteFooter />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

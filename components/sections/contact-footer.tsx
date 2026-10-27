@@ -4,13 +4,13 @@ import { CalendarClock, Mail, Phone, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
+/** İletişim bölümü (ana sayfa). Alt bilgi tüm sayfalarda: components/layout/site-footer.tsx */
 export async function ContactFooter() {
   const t = await getTranslations("Contact");
-  const tf = await getTranslations("Footer");
 
   return (
     <>
-      <section id="contact" className="border-b border-border py-20 sm:py-28">
+      <section id="contact" className="py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-3xl font-semibold tracking-tight text-foreground">
             {t("title")}
@@ -83,14 +83,6 @@ export async function ContactFooter() {
           </div>
         </div>
       </section>
-      <footer className="py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 text-center text-sm text-muted-foreground sm:flex-row sm:text-left sm:px-6">
-          <p>
-            © {new Date().getFullYear()} {siteConfig.name}. {tf("rights")}
-          </p>
-          <p className="font-mono text-xs">{tf("built")}</p>
-        </div>
-      </footer>
     </>
   );
 }

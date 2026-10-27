@@ -4,6 +4,7 @@ import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
 import { services } from "@/data/services";
+import { calBookingPageUrl, isCalConfigured } from "@/lib/cal";
 import { absoluteUrl, localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
@@ -32,6 +33,13 @@ export function GET() {
         `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}`,
     ),
     "",
+    "## Book from an AI assistant (MCP)",
+    "",
+    `- MCP server (Streamable HTTP, no authentication): ${siteConfig.baseUrl}/mcp`,
+    "- Tools: get_profile, list_services, get_service, get_availability (live free times), book_intro_call (books a 30-minute Google Meet intro call)",
+    '- Add it as a custom connector in ChatGPT, Claude or Gemini, then ask: "Book an intro call with Huntay AzerTürk".',
+    ...(isCalConfigured() ? [`- Booking calendar: ${calBookingPageUrl()}`] : []),
+    "",
     "## Experience",
     "",
     ...experience.map(
@@ -57,6 +65,7 @@ export function GET() {
     `- [Website (English)](${home})`,
     `- [Website (Türkçe)](${localeUrl("tr")})`,
     `- [Book a call](${localeUrl("en", "/book")})`,
+    `- [Privacy policy](${localeUrl("en", "/privacy")})`,
     `- [CV (PDF)](${absoluteUrl(siteConfig.cvPath)})`,
     `- [LinkedIn](${siteConfig.linkedin})`,
     `- [Medium](${siteConfig.medium})`,

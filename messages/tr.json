@@ -90,7 +90,15 @@
     "requestEmail": "E-posta ile talep et",
     "requestMessage": "Merhaba Huntay, tanışma görüşmesi planlamak istiyorum. Konu: ",
     "requestSubject": "Tanışma görüşmesi talebi",
-    "otherTitle": "Diğer iletişim yolları"
+    "otherTitle": "Diğer iletişim yolları",
+    "aiTitle": "ChatGPT, Claude veya Gemini üzerinden randevu alın",
+    "aiText": "Asistanım yapay zeka sohbetlerinde de çalışıyor. Aşağıdaki adresi özel bağlayıcı (connector) olarak ekleyin, sonra sadece isteyin; örneğin: “Huntay ile gelecek hafta tanışma görüşmesi ayarla.” Boş saatlerimi sohbetin içinde gösterir ve randevuyu sizin için oluşturur.",
+    "aiUrlLabel": "Bağlayıcı (MCP sunucusu) adresi",
+    "aiStepsTitle": "Nereye eklenir?",
+    "aiClaude": "Claude: Settings → Connectors → Add custom connector",
+    "aiChatgpt": "ChatGPT: Settings → Apps → Developer mode → Create app",
+    "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
+    "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır."
   },
   "Cta": {
     "title": "Projenizi konuşalım",
@@ -134,7 +142,8 @@
     "label": "Sayfa konumu",
     "home": "Ana sayfa",
     "services": "Hizmetler",
-    "book": "Görüşme planla"
+    "book": "Görüşme planla",
+    "privacy": "Gizlilik politikası"
   },
   "Contact": {
     "title": "İletişim",
@@ -148,7 +157,12 @@
   },
   "Footer": {
     "rights": "Tüm hakları saklıdır.",
-    "built": "Next.js ile — tasarımda yalınlık."
+    "built": "Next.js ile — tasarımda yalınlık.",
+    "privacy": "Gizlilik politikası",
+    "assistant": "ChatGPT ve Claude'da kullan",
+    "services": "Hizmetler",
+    "book": "Görüşme planla",
+    "navLabel": "Alt menü"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -159,5 +173,11 @@
     "switch": "Dil",
     "en": "English",
     "tr": "Türkçe"
+  },
+  "Privacy": {
+    "metaTitle": "Gizlilik Politikası | Huntay AzerTürk",
+    "metaDescription": "huntayazerturk.com, randevu takvimi ve yapay zeka asistanı (MCP sunucusu) verilerinizi nasıl işler: görüşme planlarken toplanan bilgiler ve haklarınız.",
+    "title": "Gizlilik politikası",
+    "updated": "Son güncelleme"
   }
 }
