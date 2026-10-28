@@ -64,48 +64,48 @@ export default async function BookPage({ params }: Props) {
             {t("intro")}
           </p>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            <div className="order-2 space-y-8 lg:col-span-1">
-              <div className="rounded-2xl border border-border bg-card p-6">
-                <h2 className="font-semibold text-foreground">{t("expectTitle")}</h2>
-                <ul className="mt-4 space-y-3">
-                  {expectKeys.map((key) => (
-                    <li key={key} className="flex gap-3 text-sm text-muted-foreground">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                      <span>{t(key)}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h2 className="font-semibold text-foreground">{t("otherTitle")}</h2>
-                <div className="mt-4 grid gap-3">
-                  {siteConfig.whatsappUrl ? (
-                    <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className={contactLink}>
-                      <MessageCircle className="h-4 w-4 text-accent" aria-hidden />
-                      {tc("whatsapp")}
-                    </a>
-                  ) : null}
-                  {siteConfig.contactEmail ? (
-                    <a href={`mailto:${siteConfig.contactEmail}`} className={contactLink}>
-                      <Mail className="h-4 w-4 text-accent" aria-hidden />
-                      {tc("email")}
-                    </a>
-                  ) : null}
-                  <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className={contactLink}>
-                    <LinkedinIcon className="h-4 w-4 text-accent" aria-hidden />
-                    {tc("linkedin")}
-                  </a>
-                  <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className={contactLink}>
-                    <InstagramIcon className="h-4 w-4 text-accent" aria-hidden />
-                    {tc("instagram")}
-                  </a>
-                </div>
-              </div>
+          {/* Takvim tam genişlikte: Cal.com ay görünümü ancak ~1000px üstünde yan yana (kısa) düzene geçiyor. */}
+          <div className="mt-12">
+            <h2 className="sr-only">{t("calendarTitle")}</h2>
+            <Booking />
+          </div>
+
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-semibold text-foreground">{t("expectTitle")}</h2>
+              <ul className="mt-4 space-y-3">
+                {expectKeys.map((key) => (
+                  <li key={key} className="flex gap-3 text-sm text-muted-foreground">
+                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                    <span>{t(key)}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="order-1 lg:col-span-2">
-              <h2 className="sr-only">{t("calendarTitle")}</h2>
-              <Booking />
+            <div>
+              <h2 className="font-semibold text-foreground">{t("otherTitle")}</h2>
+              <div className="mt-4 grid gap-3">
+                {siteConfig.whatsappUrl ? (
+                  <a href={siteConfig.whatsappUrl} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                    <MessageCircle className="h-4 w-4 text-accent" aria-hidden />
+                    {tc("whatsapp")}
+                  </a>
+                ) : null}
+                {siteConfig.contactEmail ? (
+                  <a href={`mailto:${siteConfig.contactEmail}`} className={contactLink}>
+                    <Mail className="h-4 w-4 text-accent" aria-hidden />
+                    {tc("email")}
+                  </a>
+                ) : null}
+                <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                  <LinkedinIcon className="h-4 w-4 text-accent" aria-hidden />
+                  {tc("linkedin")}
+                </a>
+                <a href={siteConfig.instagram} target="_blank" rel="noopener noreferrer" className={contactLink}>
+                  <InstagramIcon className="h-4 w-4 text-accent" aria-hidden />
+                  {tc("instagram")}
+                </a>
+              </div>
             </div>
           </div>
         </div>
