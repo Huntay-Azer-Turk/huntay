@@ -166,7 +166,8 @@
     "assistant": "Use in ChatGPT & Claude (MCP)",
     "services": "Services",
     "book": "Book a call",
-    "navLabel": "Footer"
+    "navLabel": "Footer",
+    "cookies": "Cookie settings"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -211,5 +212,20 @@
     "supportText": "Questions, problems or feedback about the connector:",
     "versionLabel": "Version",
     "bookCta": "Book on the website instead"
+  },
+  "Consent": {
+    "title": "Cookie preferences",
+    "body": "With your permission, I use analytics cookies to improve the site and see which channels bring visitors. If you decline, the site works exactly the same.",
+    "policy": "Details",
+    "necessary": "Necessary",
+    "necessaryDesc": "Your theme and this choice. Always on; no tracking.",
+    "analytics": "Analytics (Google Analytics)",
+    "analyticsDesc": "Visits, where they come from and which pages lead to a booked call. Not used for personalized ads.",
+    "marketing": "Marketing",
+    "marketingDesc": "Measuring which ads lead to booked calls (Google Ads, Meta, LinkedIn).",
+    "reject": "Decline",
+    "accept": "Accept",
+    "customize": "Show options",
+    "save": "Save my choice"
   }
 }

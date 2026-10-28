@@ -23,12 +23,34 @@ export const privacySections: LegalSection[] = [
     title: { en: "Visiting the website", tr: "Web sitesini ziyaret ettiğinizde" },
     body: [
       {
-        en: "The website has no user accounts or contact forms and does not use advertising or tracking cookies. Your light/dark theme choice is stored only in your own browser.",
-        tr: "Sitede kullanıcı hesabı veya iletişim formu yoktur; reklam ya da takip çerezi kullanılmaz. Açık/koyu tema tercihiniz yalnızca kendi tarayıcınızda saklanır.",
+        en: "The website has no user accounts or contact forms. Your light/dark theme choice and your cookie choice are stored only in your own browser. Analytics and advertising cookies are used only if you allow them (see Cookies and analytics below).",
+        tr: "Sitede kullanıcı hesabı veya iletişim formu yoktur. Açık/koyu tema tercihiniz ve çerez tercihiniz yalnızca kendi tarayıcınızda saklanır. Analitik ve reklam çerezleri yalnızca izin verirseniz kullanılır (aşağıda “Çerezler ve analiz”).",
       },
       {
         en: "The site is hosted on Cloudflare, which processes technical data such as IP address, browser type and request logs to deliver and protect the site.",
         tr: "Site Cloudflare üzerinde barındırılır; Cloudflare, siteyi sunmak ve korumak için IP adresi, tarayıcı türü ve istek kayıtları gibi teknik verileri işler.",
+      },
+    ],
+  },
+  {
+    id: "cookies",
+    title: { en: "Cookies and analytics", tr: "Çerezler ve analiz" },
+    body: [
+      {
+        en: "Cloudflare Web Analytics counts page views without cookies and without identifying you; it needs no consent.",
+        tr: "Cloudflare Web Analytics, sayfa görüntülemelerini çerez kullanmadan ve sizi tanımlamadan sayar; izin gerektirmez.",
+      },
+      {
+        en: "Google Analytics 4 is loaded only after you choose “Accept” or turn on Analytics in the cookie window. It sets cookies (_ga, _ga_*, stored for up to 2 years) to measure visits, traffic sources, and which pages lead to a booked call. Google Signals and ad personalization are off; the data is kept for 14 months. Google may process this data outside Turkey (for example in the USA); your consent also covers this transfer. Google's policy: https://policies.google.com/privacy",
+        tr: "Google Analytics 4, yalnızca çerez penceresinde “Kabul et”i seçtiğinizde veya Analitik seçeneğini açtığınızda yüklenir. Ziyaretleri, gelinen kaynakları ve hangi sayfaların görüşme randevusuna dönüştüğünü ölçmek için çerez kullanır (_ga, _ga_*; en fazla 2 yıl saklanır). Google Signals ve kişiselleştirilmiş reklam kapalıdır; veriler 14 ay tutulur. Google bu verileri Türkiye dışında (ör. ABD) işleyebilir; verdiğiniz açık rıza bu aktarımı da kapsar. Google'ın politikası: https://policies.google.com/privacy",
+      },
+      {
+        en: "When advertising campaigns run, marketing tags (Google Ads, Meta Pixel, LinkedIn Insight Tag) are loaded only with your separate Marketing consent, to measure which ads lead to a booked call.",
+        tr: "Reklam kampanyası yürütüldüğünde pazarlama etiketleri (Google Ads, Meta Pixel, LinkedIn Insight Tag) yalnızca ayrıca verdiğiniz Pazarlama izniyle, hangi reklamın görüşme randevusuna dönüştüğünü ölçmek için yüklenir.",
+      },
+      {
+        en: "Without your consent, no request is sent to Google, Meta or LinkedIn. You can change or withdraw your choice at any time with “Cookie settings” at the bottom of every page; withdrawing deletes these cookies. Your choice is asked again after 12 months.",
+        tr: "İzniniz olmadan Google, Meta veya LinkedIn'e hiçbir istek gönderilmez. Tercihinizi her sayfanın altındaki “Çerez ayarları” ile istediğiniz zaman değiştirebilir veya geri alabilirsiniz; geri aldığınızda bu çerezler silinir. Tercihiniz 12 ay sonra yeniden sorulur.",
       },
     ],
   },
@@ -65,8 +87,8 @@ export const privacySections: LegalSection[] = [
     title: { en: "Service providers", tr: "Hizmet sağlayıcılar" },
     body: [
       {
-        en: "Cal.com (scheduling, https://cal.com/privacy), Google (Calendar and Meet, https://policies.google.com/privacy) and Cloudflare (hosting, https://www.cloudflare.com/privacypolicy/). Each processes data under its own privacy policy.",
-        tr: "Cal.com (randevu, https://cal.com/privacy), Google (Takvim ve Meet, https://policies.google.com/privacy) ve Cloudflare (barındırma, https://www.cloudflare.com/privacypolicy/). Her biri verileri kendi gizlilik politikasına göre işler.",
+        en: "Cal.com (scheduling, https://cal.com/privacy), Google (Calendar, Meet and, with your consent, Analytics, https://policies.google.com/privacy) and Cloudflare (hosting and cookie-free Web Analytics, https://www.cloudflare.com/privacypolicy/). Each processes data under its own privacy policy.",
+        tr: "Cal.com (randevu, https://cal.com/privacy), Google (Takvim, Meet ve izninizle Analytics, https://policies.google.com/privacy) ve Cloudflare (barındırma ve çerezsiz Web Analytics, https://www.cloudflare.com/privacypolicy/). Her biri verileri kendi gizlilik politikasına göre işler.",
       },
     ],
   },

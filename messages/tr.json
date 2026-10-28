@@ -166,7 +166,8 @@
     "assistant": "ChatGPT ve Claude'da kullan (MCP)",
     "services": "Hizmetler",
     "book": "Görüşme planla",
-    "navLabel": "Alt menü"
+    "navLabel": "Alt menü",
+    "cookies": "Çerez ayarları"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -211,5 +212,20 @@
     "supportText": "Bağlayıcıyla ilgili soru, sorun veya geri bildirim için:",
     "versionLabel": "Sürüm",
     "bookCta": "Bunun yerine web sitesinden randevu alın"
+  },
+  "Consent": {
+    "title": "Çerez tercihleri",
+    "body": "Siteyi geliştirmek ve hangi kanaldan gelindiğini ölçmek için, yalnızca izin verirsen analitik çerezler kullanıyorum. Reddedersen site aynı şekilde çalışır.",
+    "policy": "Ayrıntılar",
+    "necessary": "Gerekli",
+    "necessaryDesc": "Tema ve bu tercihin kaydı. Her zaman açık; ölçüm yapmaz.",
+    "analytics": "Analitik (Google Analytics)",
+    "analyticsDesc": "Ziyaret sayısı, gelinen kaynak ve hangi sayfaların randevuya dönüştüğü. Kişisel reklam için kullanılmaz.",
+    "marketing": "Pazarlama",
+    "marketingDesc": "Reklamlardan gelen randevuların ölçülmesi (Google Ads, Meta, LinkedIn).",
+    "reject": "Reddet",
+    "accept": "Kabul et",
+    "customize": "Seçenekleri göster",
+    "save": "Seçimimi kaydet"
   }
 }

@@ -1,3 +1,4 @@
+import { ConsentManager } from "@/components/analytics/consent-manager";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <SiteHeader />
             <main>{children}</main>
             <SiteFooter />
+            <ConsentManager />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
