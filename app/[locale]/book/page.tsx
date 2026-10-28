@@ -64,7 +64,7 @@ export default async function BookPage({ params }: Props) {
           </p>
 
           <div className="mt-12 grid gap-8 lg:grid-cols-3">
-            <div className="space-y-8 lg:order-2 lg:col-span-1">
+            <div className="order-2 space-y-8 lg:col-span-1">
               <div className="rounded-2xl border border-border bg-card p-6">
                 <h2 className="font-semibold text-foreground">{t("expectTitle")}</h2>
                 <ul className="mt-4 space-y-3">
@@ -102,7 +102,7 @@ export default async function BookPage({ params }: Props) {
                 </div>
               </div>
             </div>
-            <div className="lg:order-1 lg:col-span-2">
+            <div className="order-1 lg:col-span-2">
               <h2 className="sr-only">{t("calendarTitle")}</h2>
               <Booking />
             </div>

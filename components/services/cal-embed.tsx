@@ -22,6 +22,12 @@ declare global {
 
 const EMBED_SCRIPT = "https://app.cal.com/embed/embed.js";
 
+/** Takvimdeki vurgu renkleri site temasıyla aynı (app/globals.css). */
+const cssVarsPerTheme = {
+  dark: { "cal-brand": "#22d3ee", "cal-brand-emphasis": "#67e8f9", "cal-brand-text": "#0a0a0a" },
+  light: { "cal-brand": "#0f766e", "cal-brand-emphasis": "#115e59", "cal-brand-text": "#f8fafc" },
+};
+
 /** Cal.com’un resmi yükleyici kodunun okunur hâli: komutları kuyruğa alır, betik yüklenince işler. */
 function getCal(): CalFn {
   if (window.Cal) return window.Cal;
@@ -82,7 +88,12 @@ export function CalEmbed({ calLink }: Props) {
         config: { layout: "month_view", theme },
       });
     }
-    Cal.ns?.[namespace]?.("ui", { theme, hideEventTypeDetails: false, layout: "month_view" });
+    Cal.ns?.[namespace]?.("ui", {
+      theme,
+      cssVarsPerTheme,
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
   }, [resolvedTheme, theme, calLink, namespace, containerId]);
 
   return <div id={containerId} className="min-h-[560px] w-full overflow-auto" />;
