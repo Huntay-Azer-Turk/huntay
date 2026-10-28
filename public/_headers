@@ -2,3 +2,12 @@
 # https://opennext.js.org/cloudflare/caching#static-assets-caching
 /_next/static/*
   Cache-Control: public,max-age=31536000,immutable
+
+# Dizin başvuruları (Claude/ChatGPT/MCP dizinleri) için ikon ve tanıtım görselleri başka sitelerden okunabilsin.
+/icons/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public,max-age=86400
+
+/press/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public,max-age=86400
