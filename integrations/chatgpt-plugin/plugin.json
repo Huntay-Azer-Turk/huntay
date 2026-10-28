@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "huntay-azerturk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check Huntay AzerTürk's availability, book a 30-minute intro call, and look up his services.",
   "author": {
     "name": "Huntay AzerTürk",
@@ -57,9 +57,9 @@
             },
             {
               "description": "Book an intro call only after explicit confirmation",
-              "prompt": "Book an intro call with Huntay AzerTürk at the earliest open time next week. My name is Jordan Lee, my email is jordan.lee@example.com, and I want to talk about an AI agent for our support team.",
+              "prompt": "Book an intro call with Huntay AzerTürk at the earliest open time next week. My name is Jordan Lee, my email is huntay.azerturk+review@gmail.com, and I want to talk about an AI agent for our support team.",
               "tools_triggered": "get_availability, book_intro_call",
-              "expected_behavior": "Calls get_availability, proposes the earliest open slot and summarizes the time, time zone, name, email and topic, then asks the user to confirm. Only after the user confirms (for example \"Yes, book it\") does it call book_intro_call; it then shows a confirmation card with the booked date and time and says the calendar invitation with the Google Meet link was emailed to jordan.lee@example.com. Test bookings can be cancelled with the link in the confirmation email."
+              "expected_behavior": "Calls get_availability, proposes the earliest open slot and summarizes the time, time zone, name, email and topic, then asks the user to confirm. Only after the user confirms (for example \"Yes, book it\") does it call book_intro_call; it then shows a confirmation card with the booked date and time and says the calendar invitation with the Google Meet link was emailed to huntay.azerturk+review@gmail.com. Use this deliverable test address: the scheduler rejects undeliverable domains such as example.com. Test bookings are cancelled by the developer."
             },
             {
               "description": "Match services to the user's need and explain the match",
