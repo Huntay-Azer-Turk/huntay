@@ -67,6 +67,7 @@ export function GET() {
     `- [Website (Türkçe)](${localeUrl("tr")})`,
     `- [Book a call](${localeUrl("en", "/book")})`,
     `- [Privacy policy](${localeUrl("en", "/privacy")})`,
+    `- [Terms of use](${localeUrl("en", "/terms")})`,
     `- [Full content for LLMs](${siteConfig.baseUrl}/llms-full.txt)`,
     `- [CV (PDF)](${absoluteUrl(siteConfig.cvPath)})`,
     `- [LinkedIn](${siteConfig.linkedin})`,

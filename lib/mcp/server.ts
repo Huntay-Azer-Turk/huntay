@@ -99,6 +99,27 @@ function statusMeta(invoking: string, invoked: string) {
   };
 }
 
+/**
+ * Arayüz kaynağının `_meta`'sı. Arayüz dışarıdan hiçbir şey yüklemez (bağlantı/kaynak listeleri boş).
+ * `ui.domain` her host için farklı biçim beklediğinden (Claude ve ChatGPT ayrı alt alan adları türetir)
+ * yalnızca ChatGPT'nin kendi anahtarları kullanılır: `openai/widgetDomain` (dizin başvurusunda istenir,
+ * eklentiye özgü olmalı) ve `openai/widgetCSP.redirect_domains` (kartın açtığı site sayfaları ve WhatsApp).
+ */
+const WIDGET_RESOURCE_META = {
+  ui: { prefersBorder: true },
+  "openai/widgetDomain": siteConfig.baseUrl,
+  "openai/widgetCSP": {
+    connect_domains: [],
+    resource_domains: [],
+    redirect_domains: [
+      siteConfig.baseUrl,
+      ...(siteConfig.whatsappUrl ? [new URL(siteConfig.whatsappUrl).origin] : []),
+    ],
+  },
+  "openai/widgetDescription":
+    "Card showing Huntay AzerTürk's profile, matching services, open time slots or a booking confirmation. Choosing a time slot sends it back to the chat; buttons open pages on huntayazerturk.com.",
+};
+
 const READ_ONLY = {
   readOnlyHint: true,
   destructiveHint: false,
@@ -159,7 +180,7 @@ export function createMcpServer(): McpServer {
       title: "Huntay AzerTürk card",
       description: "In-chat card for profile, services, open time slots and booking confirmation.",
       mimeType: WIDGET_MIME_TYPE,
-      _meta: { ui: { prefersBorder: true } },
+      _meta: WIDGET_RESOURCE_META,
     },
     async () => ({
       contents: [
@@ -167,7 +188,7 @@ export function createMcpServer(): McpServer {
           uri: WIDGET_URI,
           mimeType: WIDGET_MIME_TYPE,
           text: widgetHtml,
-          _meta: { ui: { prefersBorder: true } },
+          _meta: WIDGET_RESOURCE_META,
         },
       ],
     }),

@@ -10,6 +10,8 @@ import { experience } from "@/data/experience";
 import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { privacySections, privacyUpdatedAt } from "@/data/privacy";
+import { termsSections, termsUpdatedAt } from "@/data/terms";
+import type { LegalSection } from "@/data/types";
 import {
   aboutAiProject,
   aboutResearch,
@@ -63,6 +65,7 @@ const H = {
     data: "Data handling",
     support: "Support",
     privacyTitle: "Privacy policy",
+    termsTitle: "Terms of use",
     updated: "Last updated",
     read: "read",
     write: "write",
@@ -99,6 +102,7 @@ const H = {
     data: "Veri kullanımı",
     support: "Destek",
     privacyTitle: "Gizlilik politikası",
+    termsTitle: "Kullanım koşulları",
     updated: "Son güncelleme",
     read: "okuma",
     write: "yazma",
@@ -281,6 +285,7 @@ export function assistantMarkdown(lang: Lang): string {
     "",
     dataHandling[lang],
     `${h.privacyTitle}: ${localeUrl(lang, "/privacy")}`,
+    `${h.termsTitle}: ${localeUrl(lang, "/terms")}`,
     "",
     `## ${h.support}`,
     "",
@@ -289,19 +294,26 @@ export function assistantMarkdown(lang: Lang): string {
   ].join("\n");
 }
 
-export function privacyMarkdown(lang: Lang): string {
-  const h = H[lang];
+function legalMarkdown(title: string, updatedAt: string, sections: LegalSection[], lang: Lang): string {
   return [
-    `# ${h.privacyTitle} — ${siteConfig.name}`,
+    `# ${title} — ${siteConfig.name}`,
     "",
-    `${h.updated}: ${privacyUpdatedAt}`,
+    `${H[lang].updated}: ${updatedAt}`,
     "",
-    ...privacySections.flatMap((section) => [
+    ...sections.flatMap((section) => [
       `## ${section.title[lang]}`,
       "",
       ...section.body.flatMap((paragraph) => [paragraph[lang], ""]),
     ]),
   ].join("\n");
+}
+
+export function privacyMarkdown(lang: Lang): string {
+  return legalMarkdown(H[lang].privacyTitle, privacyUpdatedAt, privacySections, lang);
+}
+
+export function termsMarkdown(lang: Lang): string {
+  return legalMarkdown(H[lang].termsTitle, termsUpdatedAt, termsSections, lang);
 }
 
 /** URL yolu → o sayfanın Markdown sürümü (bilinmeyen yollar için null). */
@@ -317,6 +329,7 @@ export function markdownForPath(pathname: string): string | null {
   if (path === "/book") return bookMarkdown(lang);
   if (path === "/assistant") return assistantMarkdown(lang);
   if (path === "/privacy") return privacyMarkdown(lang);
+  if (path === "/terms") return termsMarkdown(lang);
   return null;
 }
 

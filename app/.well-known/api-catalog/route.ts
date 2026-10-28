@@ -16,6 +16,9 @@ export function GET() {
           ],
           "service-doc": [{ href: docs, type: "text/html" }],
           "service-meta": [{ href: `${siteConfig.baseUrl}/privacy`, type: "text/html" }],
+          // RFC 6903 bağlantı ilişkileri
+          "privacy-policy": [{ href: `${siteConfig.baseUrl}/privacy`, type: "text/html" }],
+          "terms-of-service": [{ href: `${siteConfig.baseUrl}/terms`, type: "text/html" }],
         },
         {
           anchor: `${siteConfig.baseUrl}/llms.txt`,

@@ -95,6 +95,7 @@ export function GET(request: Request) {
       ],
       documentation: `${siteConfig.baseUrl}${mcpDocsPath}`,
       privacyPolicy: `${siteConfig.baseUrl}/privacy`,
+      termsOfService: `${siteConfig.baseUrl}/terms`,
       website: siteConfig.baseUrl,
     }),
   );
