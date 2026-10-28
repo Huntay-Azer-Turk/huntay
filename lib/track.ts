@@ -14,6 +14,7 @@ declare global {
     gtag?: Gtag;
     fbq?: ((...args: unknown[]) => void) & { callMethod?: unknown; queue?: unknown[] };
     _fbq?: unknown;
+    clarity?: ((...args: unknown[]) => void) & { q?: unknown[] };
     lintrk?: ((...args: unknown[]) => void) & { q?: unknown[] };
     _linkedin_partner_id?: string;
     _linkedin_data_partner_ids?: string[];
@@ -24,6 +25,9 @@ export function track(event: AnalyticsEvent) {
   if (typeof window === "undefined") return;
   const { gtag, fbq } = window;
   gtag?.("event", event.name, event.params);
+
+  // Clarity'de kayıtları bu olaylara göre süzebilmek için.
+  window.clarity?.("event", event.name);
 
   if (event.name === "generate_lead" && event.params.method === "booking") {
     const { googleAdsId, googleAdsBookingLabel } = analyticsConfig;

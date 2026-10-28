@@ -45,12 +45,16 @@ export const privacySections: LegalSection[] = [
         tr: "Google Analytics 4, yalnızca çerez penceresinde “Kabul et”i seçtiğinizde veya Analitik seçeneğini açtığınızda yüklenir. Ziyaretleri, gelinen kaynakları ve hangi sayfaların görüşme randevusuna dönüştüğünü ölçmek için çerez kullanır (_ga, _ga_*; en fazla 2 yıl saklanır). Google Signals ve kişiselleştirilmiş reklam kapalıdır; veriler 14 ay tutulur. Google bu verileri Türkiye dışında (ör. ABD) işleyebilir; verdiğiniz açık rıza bu aktarımı da kapsar. Google'ın politikası: https://policies.google.com/privacy",
       },
       {
+        en: "Microsoft Clarity is also loaded only with your Analytics consent. It records how pages are used (clicks, scrolling, mouse movement) as anonymous session replays and heatmaps so I can see where the site is unclear; text you type and sensitive content are masked and never recorded. It sets cookies (_clck for up to 1 year, _clsk for 1 day). Microsoft may process this data outside Turkey; your consent also covers this transfer. Microsoft's policy: https://privacy.microsoft.com/privacystatement",
+        tr: "Microsoft Clarity de yalnızca Analitik izninizle yüklenir. Sayfaların nasıl kullanıldığını (tıklama, kaydırma, fare hareketi) anonim oturum kayıtları ve ısı haritaları olarak tutar; böylece sitede anlaşılmayan yerleri görebilirim. Yazdığınız metinler ve hassas içerik maskelenir, kaydedilmez. Çerez kullanır (_clck en fazla 1 yıl, _clsk 1 gün). Microsoft bu verileri Türkiye dışında işleyebilir; verdiğiniz açık rıza bu aktarımı da kapsar. Microsoft'un politikası: https://privacy.microsoft.com/privacystatement",
+      },
+      {
         en: "When advertising campaigns run, marketing tags (Google Ads, Meta Pixel, LinkedIn Insight Tag) are loaded only with your separate Marketing consent, to measure which ads lead to a booked call.",
         tr: "Reklam kampanyası yürütüldüğünde pazarlama etiketleri (Google Ads, Meta Pixel, LinkedIn Insight Tag) yalnızca ayrıca verdiğiniz Pazarlama izniyle, hangi reklamın görüşme randevusuna dönüştüğünü ölçmek için yüklenir.",
       },
       {
-        en: "Without your consent, no request is sent to Google, Meta or LinkedIn. You can change or withdraw your choice at any time with “Cookie settings” at the bottom of every page; withdrawing deletes these cookies. Your choice is asked again after 12 months.",
-        tr: "İzniniz olmadan Google, Meta veya LinkedIn'e hiçbir istek gönderilmez. Tercihinizi her sayfanın altındaki “Çerez ayarları” ile istediğiniz zaman değiştirebilir veya geri alabilirsiniz; geri aldığınızda bu çerezler silinir. Tercihiniz 12 ay sonra yeniden sorulur.",
+        en: "Without your consent, no request is sent to Google, Microsoft, Meta or LinkedIn. You can change or withdraw your choice at any time with “Cookie settings” at the bottom of every page; withdrawing deletes these cookies. Your choice is asked again after 12 months.",
+        tr: "İzniniz olmadan Google, Microsoft, Meta veya LinkedIn'e hiçbir istek gönderilmez. Tercihinizi her sayfanın altındaki “Çerez ayarları” ile istediğiniz zaman değiştirebilir veya geri alabilirsiniz; geri aldığınızda bu çerezler silinir. Tercihiniz 12 ay sonra yeniden sorulur.",
       },
     ],
   },
@@ -87,8 +91,8 @@ export const privacySections: LegalSection[] = [
     title: { en: "Service providers", tr: "Hizmet sağlayıcılar" },
     body: [
       {
-        en: "Cal.com (scheduling, https://cal.com/privacy), Google (Calendar, Meet and, with your consent, Analytics, https://policies.google.com/privacy) and Cloudflare (hosting and cookie-free Web Analytics, https://www.cloudflare.com/privacypolicy/). Each processes data under its own privacy policy.",
-        tr: "Cal.com (randevu, https://cal.com/privacy), Google (Takvim, Meet ve izninizle Analytics, https://policies.google.com/privacy) ve Cloudflare (barındırma ve çerezsiz Web Analytics, https://www.cloudflare.com/privacypolicy/). Her biri verileri kendi gizlilik politikasına göre işler.",
+        en: "Cal.com (scheduling, https://cal.com/privacy), Google (Calendar, Meet and, with your consent, Analytics, https://policies.google.com/privacy) and Cloudflare (hosting and cookie-free Web Analytics, https://www.cloudflare.com/privacypolicy/) and, with your consent, Microsoft Clarity (https://privacy.microsoft.com/privacystatement). Each processes data under its own privacy policy.",
+        tr: "Cal.com (randevu, https://cal.com/privacy), Google (Takvim, Meet ve izninizle Analytics, https://policies.google.com/privacy) ve Cloudflare (barındırma ve çerezsiz Web Analytics, https://www.cloudflare.com/privacypolicy/) ve izninizle Microsoft Clarity (https://privacy.microsoft.com/privacystatement). Her biri verileri kendi gizlilik politikasına göre işler.",
       },
     ],
   },

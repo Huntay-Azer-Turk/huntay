@@ -103,6 +103,24 @@ function loadMeta() {
   fbq("track", "PageView");
 }
 
+/** Microsoft Clarity: yalnızca analitik izniyle; reklam depolaması reddedilmiş olarak işaretlenir. */
+function loadClarity(choice: ConsentChoice) {
+  const id = analyticsConfig.clarityId;
+  if (!id || !choice.analytics) return;
+  if (!window.clarity) {
+    const clarity = function (...args: unknown[]) {
+      clarity.q!.push(args);
+    } as NonNullable<Window["clarity"]>;
+    clarity.q = [];
+    window.clarity = clarity;
+    loadScript(`https://www.clarity.ms/tag/${id}`);
+  }
+  window.clarity("consentv2", {
+    ad_Storage: choice.marketing ? "granted" : "denied",
+    analytics_Storage: "granted",
+  });
+}
+
 function loadLinkedIn() {
   const id = analyticsConfig.linkedinPartnerId;
   if (!id || window.lintrk) return;
@@ -118,6 +136,7 @@ function loadLinkedIn() {
 
 function applyChoice(choice: ConsentChoice) {
   loadGoogle(choice);
+  loadClarity(choice);
   if (choice.marketing) {
     loadMeta();
     loadLinkedIn();
@@ -130,7 +149,7 @@ function clearTrackingCookies() {
   const domains = ["", host, `.${host}`, `.${host.replace(/^www\./, "")}`];
   for (const cookie of document.cookie.split(";")) {
     const name = cookie.split("=")[0]?.trim();
-    if (!name || !/^(_ga|_gid|_gcl_|_fbp|_fbc|li_|lidc|bcookie|_uet)/.test(name)) continue;
+    if (!name || !/^(_ga|_gid|_gcl_|_fbp|_fbc|li_|lidc|bcookie|_uet|_clck|_clsk|CLID)/.test(name)) continue;
     for (const domain of domains) {
       document.cookie = `${name}=; Max-Age=0; path=/${domain ? `; domain=${domain}` : ""}`;
     }
@@ -222,6 +241,7 @@ export function ConsentManager() {
         ad_personalization: choice.marketing ? "granted" : "denied",
       });
       window.fbq?.("consent", "revoke");
+      window.clarity?.("consentv2", { ad_Storage: "denied", analytics_Storage: "denied" });
       clearTrackingCookies();
       // Yüklenmiş etiketler bellekten ancak sayfa yenilenince tamamen çıkar.
       window.location.reload();
