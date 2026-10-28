@@ -38,4 +38,5 @@ export const mcpRegistryAuthRecord =
   process.env.MCP_REGISTRY_AUTH_RECORD ?? "v=MCPv1; k=ed25519; p=SjfmoF0d3Z7/ca6oOok5kvBaovUckDPclkr/DCxbnpc=";
 
 /** ChatGPT uygulama dizini alan adı doğrulaması: /.well-known/openai-apps-challenge */
-export const openaiAppsChallenge = process.env.OPENAI_APPS_CHALLENGE ?? "";
+export const openaiAppsChallenge =
+  process.env.OPENAI_APPS_CHALLENGE ?? "rUJ89WDvPFhazcd44eaoF7k6Zyu-r7rrM8dX5jY68Wo";
