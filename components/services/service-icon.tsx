@@ -8,6 +8,7 @@ import {
   Cpu,
   MonitorSmartphone,
   Rocket,
+  ShieldCheck,
 } from "lucide-react";
 
 const icons = {
@@ -19,6 +20,7 @@ const icons = {
   boxes: Boxes,
   cpu: Cpu,
   building: Building2,
+  shield: ShieldCheck,
 } satisfies Record<ServiceIconKey, unknown>;
 
 export function ServiceIcon({ icon, className }: { icon: ServiceIconKey; className?: string }) {
