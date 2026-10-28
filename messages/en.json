@@ -99,7 +99,8 @@
     "aiChatgpt": "ChatGPT: Settings → Apps → Developer mode → Create app",
     "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
     "aiNote": "No sign-up or API key needed. Works with any MCP-compatible assistant.",
-    "aiDocs": "Setup guide, tools and example prompts"
+    "aiDocs": "Setup guide, tools and example prompts",
+    "loading": "Loading calendar…"
   },
   "Cta": {
     "title": "Let's talk about your project",
