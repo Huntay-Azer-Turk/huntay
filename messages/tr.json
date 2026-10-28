@@ -99,7 +99,8 @@
     "aiChatgpt": "ChatGPT: Settings → Apps → Developer mode → Create app",
     "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
     "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır.",
-    "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar"
+    "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar",
+    "loading": "Takvim yükleniyor…"
   },
   "Cta": {
     "title": "Projenizi konuşalım",

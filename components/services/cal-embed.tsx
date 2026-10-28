@@ -1,8 +1,9 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { track } from "@/lib/track";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Cal.com satır içi (inline) randevu takvimi — resmi embed.js betiğiyle.
@@ -72,9 +73,11 @@ type Props = {
 
 export function CalEmbed({ calLink }: Props) {
   const { resolvedTheme } = useTheme();
+  const t = useTranslations("BookPage");
   const namespace = calLink.split("/").pop() || "booking";
   const containerId = `cal-inline-${namespace}`;
   const initialized = useRef(false);
+  const [ready, setReady] = useState(false);
   const theme = resolvedTheme === "corporate" ? "light" : "dark";
 
   useEffect(() => {
@@ -88,6 +91,10 @@ export function CalEmbed({ calLink }: Props) {
         calLink,
         config: { layout: "month_view", theme },
       });
+      // Cal.com'un kendi yükleyicisi kaybolurken takvimi aşağı itiyor (CLS). Takvim hazır olana kadar
+      // görünmez tutulur; görünmez öğelerin kayması ölçüme girmez. Olay gelmezse 10 sn sonra yine gösterilir.
+      Cal.ns?.[namespace]?.("on", { action: "linkReady", callback: () => setReady(true) });
+      window.setTimeout(() => setReady(true), 10_000);
       // Randevu tamamlanınca dönüşüm olayı (ziyaretçi izin vermediyse hiçbir yere gönderilmez).
       Cal.ns?.[namespace]?.("on", {
         action: "bookingSuccessful",
@@ -105,5 +112,17 @@ export function CalEmbed({ calLink }: Props) {
   // Takvim yüklenmeden önce son yüksekliği kadar yer ayrılır; aksi hâlde sayfa aşağı kayar (CLS).
   // Ölçümler (Cal.com ay görünümü): telefonda ~1600px, 640–1023px arası ~1740px (alt alta düzen),
   // ≥1024px'te (kapsayıcı ~960px+) yan yana düzen ~570px.
-  return <div id={containerId} className="min-h-[1600px] w-full overflow-auto sm:min-h-[1720px] lg:min-h-[570px]" />;
+  return (
+    <div className="relative">
+      {!ready ? (
+        <p className="absolute inset-x-0 top-16 text-center text-sm text-muted-foreground" aria-live="polite">
+          {t("loading")}
+        </p>
+      ) : null}
+      <div
+        id={containerId}
+        className={`min-h-[1600px] w-full overflow-auto sm:min-h-[1720px] lg:min-h-[570px] ${ready ? "" : "invisible"}`}
+      />
+    </div>
+  );
 }
