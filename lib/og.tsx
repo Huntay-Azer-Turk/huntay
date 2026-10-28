@@ -18,7 +18,7 @@ const colors = {
   border: "rgba(148, 163, 184, 0.22)",
 };
 
-type OgCard = {
+export type OgCard = {
   kicker: string;
   title: string;
   /** Vurgulu ikinci satır (accent rengi) */
@@ -33,7 +33,7 @@ export async function renderOgCard({ kicker, title, subtitle, tagline, chips = [
   // Uzun hizmet başlıkları iki satıra sığsın diye font boyutu başlık uzunluğuna göre küçülür.
   const titleSize = title.length <= 18 ? 80 : title.length <= 34 ? 60 : 50;
 
-  return new ImageResponse(
+  const image = new ImageResponse(
     (
       <div
         style={{
@@ -87,4 +87,14 @@ export async function renderOgCard({ kicker, title, subtitle, tagline, chips = [
     ),
     ogSize,
   );
+  // Akış (chunked) yerine tamponlanmış yanıt: LinkedIn gibi bazı tarayıcılar Content-Length'i olmayan
+  // görselleri kabul etmiyor. Görsel içerik değişmedikçe aynı kaldığı için uzun önbellek de verilir.
+  const body = await image.arrayBuffer();
+  return new Response(body, {
+    headers: {
+      "Content-Type": "image/png",
+      "Content-Length": String(body.byteLength),
+      "Cache-Control": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400",
+    },
+  });
 }
