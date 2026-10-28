@@ -5,6 +5,7 @@ import { faq } from "@/data/faq";
 import { services, servicesFaq } from "@/data/services";
 import { techStack } from "@/data/techStack";
 import type { FaqItem, ServiceItem } from "@/data/types";
+import { ogImagePath } from "./og-cards";
 import { siteConfig } from "./site";
 
 export type AppLocale = "en" | "tr";
@@ -60,6 +61,16 @@ export function buildMetadata({
   const url = localeUrl(locale, path);
   const ogLocale = locale === "tr" ? "tr_TR" : "en_US";
   const ogAlternateLocale = locale === "tr" ? ["en_US"] : ["tr_TR"];
+  // Statik paylaşım görseli (public/og): LinkedIn akışla üretilen görselleri okuyamıyor.
+  const images = [
+    {
+      url: absoluteUrl(ogImagePath(locale === "tr" ? "tr" : "en", path)),
+      width: 1200,
+      height: 630,
+      alt: title,
+      type: "image/png",
+    },
+  ];
 
   const openGraph: Metadata["openGraph"] =
     ogType === "profile"
@@ -74,6 +85,7 @@ export function buildMetadata({
           siteName: siteConfig.name,
           locale: ogLocale,
           alternateLocale: ogAlternateLocale,
+          images,
         }
       : {
           type: "website",
@@ -83,6 +95,7 @@ export function buildMetadata({
           siteName: siteConfig.name,
           locale: ogLocale,
           alternateLocale: ogAlternateLocale,
+          images,
         };
 
   return {
@@ -97,12 +110,12 @@ export function buildMetadata({
       canonical: url,
       languages: hreflangAlternates(path),
     },
-    // og:image → ilgili segmentteki opengraph-image.tsx (dosya kuralı, otomatik eklenir)
     openGraph,
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: images.map((image) => image.url),
     },
     robots: {
       index: true,
