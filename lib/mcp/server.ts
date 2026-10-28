@@ -41,7 +41,22 @@ const languageField = z
   .optional()
   .describe('Response language: "tr" for Turkish, otherwise "en".');
 
-const serviceSlugs = services.map((service) => service.slug) as [string, ...string[]];
+/**
+ * MCP'de sunulan hizmetler. Claude ve ChatGPT dizin incelemeleri sürerken araç şemaları (get_service enum'u)
+ * değişmesin diye sabit tutuluyor. İncelemeler bitince "cybersecurity" eklenecek (ya da tekrar
+ * services.map(s => s.slug) yapılacak) ve yeni sürüm olarak gönderilecek.
+ */
+const serviceSlugs = [
+  "ai-agents",
+  "fractional-cto",
+  "startup-product-development",
+  "web-mobile-development",
+  "cloud-devops",
+  "microservices-modernization",
+  "iot-platforms",
+  "digital-transformation",
+] as [string, ...string[]];
+const mcpServices = services.filter((service) => serviceSlugs.includes(service.slug));
 
 const headline: Record<Lang, string> = {
   en: "Software architect · AI, cloud & IoT · Istanbul",
@@ -445,8 +460,10 @@ export function createMcpServer(): McpServer {
     },
     async ({ need, language }) => {
       const lang = pickLang(language);
-      const ranked = need?.trim() ? matchServices(need, lang) : [];
-      const ordered = ranked.length ? ranked : services.map((service) => ({ service, score: 0, reason: "" }));
+      const ranked = need?.trim()
+        ? matchServices(need, lang).filter((match) => serviceSlugs.includes(match.service.slug))
+        : [];
+      const ordered = ranked.length ? ranked : mcpServices.map((service) => ({ service, score: 0, reason: "" }));
       const items = ordered.map(({ service, reason }) => ({
         slug: service.slug,
         title: service.title[lang],
@@ -502,7 +519,7 @@ export function createMcpServer(): McpServer {
     },
     async ({ slug, language }) => {
       const lang = pickLang(language);
-      const service = getService(slug);
+      const service = serviceSlugs.includes(slug) ? getService(slug) : undefined;
       if (!service) {
         return result(`Unknown service "${slug}". Valid slugs: ${serviceSlugs.join(", ")}.`, undefined, true);
       }
@@ -548,7 +565,7 @@ export function createMcpServer(): McpServer {
               heroLead.tr,
               sentence(`Güncel rol: ${role.role.tr}, ${role.org.tr}`),
               `Öne çıkanlar: ${highlights.tr.join(" · ")}.`,
-              `Hizmetler: ${services.map((service) => service.title.tr).join("; ")}.`,
+              `Hizmetler: ${mcpServices.map((service) => service.title.tr).join("; ")}.`,
               `Web: ${l.website} · LinkedIn: ${siteConfig.linkedin} · E-posta: ${siteConfig.contactEmail}`,
               scheduleHint.tr,
             ].join("\n")
@@ -557,7 +574,7 @@ export function createMcpServer(): McpServer {
               heroLead.en,
               sentence(`Current role: ${role.role.en}, ${role.org.en}`),
               `Highlights: ${highlights.en.join(" · ")}.`,
-              `Services: ${services.map((service) => service.title.en).join("; ")}.`,
+              `Services: ${mcpServices.map((service) => service.title.en).join("; ")}.`,
               `Web: ${l.website} · LinkedIn: ${siteConfig.linkedin} · Email: ${siteConfig.contactEmail}`,
               scheduleHint.en,
             ].join("\n");

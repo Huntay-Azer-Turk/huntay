@@ -548,6 +548,129 @@ export const services: ServiceItem[] = [
     ],
   },
   {
+    slug: "cybersecurity",
+    icon: "shield",
+    title: {
+      en: "Cybersecurity: Penetration Testing & Secure Code",
+      tr: "Siber Güvenlik: Sızma Testi ve Güvenli Kod",
+    },
+    metaTitle: {
+      en: "Penetration Testing, Encryption & Secure Code Review",
+      tr: "Sızma Testi, Şifreleme ve Güvenli Kod İncelemesi",
+    },
+    tagline: {
+      en: "Find the weak points before attackers do—then fix them in the code, the data and the infrastructure.",
+      tr: "Zayıf noktaları saldırganlardan önce bulun; sonra kodda, veride ve altyapıda kalıcı olarak kapatın.",
+    },
+    summary: {
+      en: "I test and harden web applications, APIs, mobile apps and cloud setups: authorized penetration tests, secure code reviews, and encryption of data in transit and at rest. You get a prioritized report written for both engineers and management, and—unlike a test-only engagement—hands-on help fixing what was found, from code changes to key management and CI/CD security checks.",
+      tr: "Web uygulamalarını, API'leri, mobil uygulamaları ve bulut altyapılarını test ediyor ve güçlendiriyorum: yetkilendirilmiş sızma testleri, güvenli kod incelemeleri ve aktarılan ile saklanan verinin şifrelenmesi. Hem mühendislerin hem yönetimin okuyabileceği, önceliklendirilmiş bir rapor alırsınız; yalnızca test yapılan bir çalışmanın aksine, kod değişikliklerinden anahtar yönetimine ve CI/CD güvenlik kontrollerine kadar bulunan açıkların kapatılmasında da birebir destek veririm.",
+    },
+    metaDescription: {
+      en: "Penetration testing for web apps, APIs and mobile apps, secure code review, encryption and key management, and DevSecOps for startups and SMEs.",
+      tr: "Web uygulaması, API ve mobil uygulama sızma testi, güvenli kod incelemesi, şifreleme ve anahtar yönetimi, DevSecOps. Startup ve KOBİ'ler için siber güvenlik.",
+    },
+    forWhom: [
+      {
+        en: "Companies launching a product that handles customer or payment data",
+        tr: "Müşteri veya ödeme verisi işleyen bir ürünü yayına alacak şirketler",
+      },
+      {
+        en: "Teams preparing for a customer security review, an audit or KVKK/GDPR compliance",
+        tr: "Müşteri güvenlik değerlendirmesine, denetime veya KVKK/GDPR uyumuna hazırlanan ekipler",
+      },
+      {
+        en: "Startups without an in-house security engineer",
+        tr: "Şirket içinde güvenlik mühendisi olmayan startup'lar",
+      },
+      {
+        en: "Businesses that suspect a vulnerability or recently had a security incident",
+        tr: "Bir güvenlik açığından şüphelenen veya yakın zamanda güvenlik olayı yaşamış işletmeler",
+      },
+    ],
+    deliverables: [
+      {
+        en: "Scoping and written authorization before any test",
+        tr: "Her testten önce kapsam belirleme ve yazılı yetkilendirme",
+      },
+      {
+        en: "Penetration test of web apps, APIs, mobile apps or cloud configuration (OWASP-based)",
+        tr: "Web uygulaması, API, mobil uygulama veya bulut yapılandırması sızma testi (OWASP tabanlı)",
+      },
+      {
+        en: "Secure code review of authentication, authorization, input handling and secrets",
+        tr: "Kimlik doğrulama, yetkilendirme, girdi işleme ve gizli anahtarlar için güvenli kod incelemesi",
+      },
+      {
+        en: "Encryption design: TLS, data at rest, password hashing and key management",
+        tr: "Şifreleme tasarımı: TLS, saklanan verinin şifrelenmesi, parola özetleme ve anahtar yönetimi",
+      },
+      {
+        en: "Prioritized report with risk levels, evidence and concrete fixes",
+        tr: "Risk seviyeleri, kanıtlar ve somut çözümlerle önceliklendirilmiş rapor",
+      },
+      {
+        en: "Remediation support, a retest, and security checks in your CI/CD pipeline",
+        tr: "Açıkların kapatılmasında destek, yeniden test ve CI/CD hattınıza güvenlik kontrolleri",
+      },
+    ],
+    useCases: [
+      {
+        en: "Pre-launch penetration test of a SaaS web app and its API",
+        tr: "Bir SaaS web uygulamasının ve API'sinin yayın öncesi sızma testi",
+      },
+      {
+        en: "Mobile app (Android/iOS) and backend test for insecure storage and broken access control",
+        tr: "Mobil uygulama (Android/iOS) ve backend'inde güvensiz veri saklama ve hatalı erişim kontrolü testi",
+      },
+      {
+        en: "Encrypting personal data and moving secrets out of code into a managed vault",
+        tr: "Kişisel verilerin şifrelenmesi ve koddaki gizli anahtarların yönetilen bir kasaya taşınması",
+      },
+      {
+        en: "Hardening cloud and Kubernetes configuration: IAM, network exposure and secrets",
+        tr: "Bulut ve Kubernetes yapılandırmasının güçlendirilmesi: IAM, ağ erişimi ve gizli anahtarlar",
+      },
+    ],
+    tech: [
+      "OWASP Top 10 / ASVS",
+      "Burp Suite",
+      "OWASP ZAP",
+      "Nmap",
+      "SAST / DAST",
+      "TLS",
+      "AES / RSA",
+      "KMS / Vault",
+      "Kubernetes",
+      "GCP",
+    ],
+    relatedCases: [],
+    faq: [
+      {
+        id: "cybersecurity-authorization",
+        question: {
+          en: "Is a penetration test safe for my live system?",
+          tr: "Sızma testi canlı sistemim için güvenli mi?",
+        },
+        answer: {
+          en: "Testing starts only after we agree in writing on the scope, the time window and what is off-limits. Where possible I test on a staging copy; on production I avoid destructive tests and coordinate with your team so nothing is disrupted.",
+          tr: "Test, kapsam, zaman aralığı ve dokunulmayacak alanlar üzerinde yazılı olarak anlaştıktan sonra başlar. Mümkünse staging kopyasında test ediyorum; canlı ortamda yıkıcı testlerden kaçınır ve hiçbir şeyin aksamaması için ekibinizle koordineli çalışırım.",
+        },
+      },
+      {
+        id: "cybersecurity-fix",
+        question: {
+          en: "Do you only report problems, or also fix them?",
+          tr: "Sadece açıkları mı raporluyorsunuz, yoksa kapatıyor musunuz da?",
+        },
+        answer: {
+          en: "Both. As a software architect I work directly with your engineers on the fixes—code changes, encryption, key management and pipeline checks—and then retest to confirm each issue is closed.",
+          tr: "İkisini de. Yazılım mimarı olarak düzeltmelerde (kod değişiklikleri, şifreleme, anahtar yönetimi ve CI/CD kontrolleri) doğrudan mühendislerinizle çalışır, ardından her açığın kapandığını yeniden test ederek doğrularım.",
+        },
+      },
+    ],
+  },
+  {
     slug: "microservices-modernization",
     icon: "boxes",
     title: {

@@ -53,7 +53,8 @@ export type ServiceIcon =
   | "cloud"
   | "boxes"
   | "cpu"
-  | "building";
+  | "building"
+  | "shield";
 
 export type ServiceItem = {
   /** URL parçası: /services/<slug> (EN) ve /tr/services/<slug> (TR) */
