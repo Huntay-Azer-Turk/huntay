@@ -102,5 +102,8 @@ export function CalEmbed({ calLink }: Props) {
     });
   }, [resolvedTheme, theme, calLink, namespace, containerId]);
 
-  return <div id={containerId} className="min-h-[560px] w-full overflow-auto" />;
+  // Takvim yüklenmeden önce son yüksekliği kadar yer ayrılır; aksi hâlde sayfa aşağı kayar (CLS).
+  // Ölçümler (Cal.com ay görünümü): telefonda ~1600px, 640–1023px arası ~1740px (alt alta düzen),
+  // ≥1024px'te (kapsayıcı ~960px+) yan yana düzen ~570px.
+  return <div id={containerId} className="min-h-[1600px] w-full overflow-auto sm:min-h-[1720px] lg:min-h-[570px]" />;
 }
