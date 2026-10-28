@@ -1,6 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { track } from "@/lib/track";
 import { useEffect, useRef } from "react";
 
 /**
@@ -86,6 +87,11 @@ export function CalEmbed({ calLink }: Props) {
         elementOrSelector: `#${containerId}`,
         calLink,
         config: { layout: "month_view", theme },
+      });
+      // Randevu tamamlanınca dönüşüm olayı (ziyaretçi izin vermediyse hiçbir yere gönderilmez).
+      Cal.ns?.[namespace]?.("on", {
+        action: "bookingSuccessful",
+        callback: () => track({ name: "generate_lead", params: { method: "booking", source: "book_page" } }),
       });
     }
     Cal.ns?.[namespace]?.("ui", {
