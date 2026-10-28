@@ -300,7 +300,8 @@ export function matchServices(need: string, lang: Lang): ServiceMatch[] {
       const hits = tokens.filter((token) => countToken(folded, token) > 0).length;
       // Başlık ve özet satırları daha ağır sayılır.
       score += hits * (index < 2 ? 3 : 1);
-      if (index >= 2 && hits > best.hits && line !== service.summary[lang]) best = { line, hits };
+      // Gerekçe: kimler için / kullanım senaryosu / çıktı satırlarından biri (özet ve teknoloji listesi değil).
+      if (index >= 2 && index < lines.length - 2 && hits > best.hits) best = { line, hits };
     });
     if (score > 0) {
       matches.push({ service, score, reason: best.line || service.tagline[lang] });
