@@ -1,5 +1,6 @@
 import { WebStandardStreamableHTTPServerTransport } from "@modelcontextprotocol/sdk/server/webStandardStreamableHttp.js";
-import { createMcpServer, MCP_SERVER_VERSION } from "@/lib/mcp/server";
+import { MCP_SERVER_VERSION, mcpDescription, mcpDocsPath, mcpEndpoint } from "@/lib/mcp/meta";
+import { createMcpServer } from "@/lib/mcp/server";
 import { siteConfig } from "@/lib/site";
 
 /**
@@ -78,14 +79,22 @@ export function GET(request: Request) {
   return withCors(
     Response.json({
       name: siteConfig.name,
-      description:
-        "MCP server for AI assistants (ChatGPT, Claude, Gemini…): Huntay AzerTürk's profile, services and live calendar — book a 30-minute intro call from the chat.",
+      description: mcpDescription,
       version: MCP_SERVER_VERSION,
-      endpoint: `${siteConfig.baseUrl}/mcp`,
+      endpoint: mcpEndpoint,
       transport: "streamable-http",
       authentication: "none",
-      tools: ["get_profile", "list_services", "get_service", "get_availability", "book_intro_call"],
-      howToConnect: `${siteConfig.baseUrl}/book#ai-assistants`,
+      tools: [
+        "get_availability",
+        "book_intro_call",
+        "list_services",
+        "get_service",
+        "get_profile",
+        "search",
+        "fetch",
+      ],
+      documentation: `${siteConfig.baseUrl}${mcpDocsPath}`,
+      privacyPolicy: `${siteConfig.baseUrl}/privacy`,
       website: siteConfig.baseUrl,
     }),
   );
