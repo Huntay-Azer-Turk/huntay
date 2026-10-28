@@ -153,11 +153,16 @@ export default async function AssistantPage({ params }: Props) {
             <div>
               <h2 className={h2Class}>{t("dataTitle")}</h2>
               <p className="mt-6 leading-relaxed text-muted-foreground">{dataHandling[locale]}</p>
-              <Link href="/privacy" className="mt-3 inline-block text-sm font-medium text-accent hover:underline">
-                {t("privacyLink")}
-              </Link>
+              <div className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
+                <Link href="/privacy" className="text-accent hover:underline">
+                  {t("privacyLink")}
+                </Link>
+                <Link href="/terms" className="text-accent hover:underline">
+                  {t("termsLink")}
+                </Link>
+              </div>
             </div>
-            <div>
+            <div id="support" className="scroll-mt-24">
               <h2 className={h2Class}>{t("supportTitle")}</h2>
               <p className="mt-6 text-muted-foreground">{t("supportText")}</p>
               <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

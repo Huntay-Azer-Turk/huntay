@@ -145,6 +145,7 @@
     "services": "Hizmetler",
     "book": "Görüşme planla",
     "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
     "assistant": "Yapay zeka asistanları (MCP)"
   },
   "Contact": {
@@ -161,6 +162,7 @@
     "rights": "Tüm hakları saklıdır.",
     "built": "Next.js ile — tasarımda yalınlık.",
     "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
     "assistant": "ChatGPT ve Claude'da kullan (MCP)",
     "services": "Hizmetler",
     "book": "Görüşme planla",
@@ -182,6 +184,12 @@
     "title": "Gizlilik politikası",
     "updated": "Son güncelleme"
   },
+  "Terms": {
+    "metaTitle": "Kullanım Koşulları | Huntay AzerTürk",
+    "metaDescription": "huntayazerturk.com'u kullanma, tanışma görüşmesi planlama ve Huntay AzerTürk'ün yapay zeka asistanını (MCP sunucusu) ChatGPT, Claude veya Gemini'ye bağlama koşulları.",
+    "title": "Kullanım koşulları",
+    "updated": "Son güncelleme"
+  },
   "Assistant": {
     "metaTitle": "MCP Sunucusu: ChatGPT ve Claude'dan Huntay AzerTürk'e Randevu",
     "metaDescription": "Huntay AzerTürk'ün MCP sunucusunu ChatGPT, Claude veya Gemini'ye bağlayın: sohbetten çıkmadan boş saatleri görün, 30 dakikalık tanışma görüşmesi planlayın ve hizmetlere göz atın.",
@@ -198,6 +206,7 @@
     "troubleshootingTitle": "Sorun giderme",
     "dataTitle": "Veri kullanımı",
     "privacyLink": "Gizlilik politikasını okuyun",
+    "termsLink": "Kullanım koşulları",
     "supportTitle": "Destek",
     "supportText": "Bağlayıcıyla ilgili soru, sorun veya geri bildirim için:",
     "versionLabel": "Sürüm",

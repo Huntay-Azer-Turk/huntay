@@ -82,3 +82,6 @@ export type StepItem = {
   title: Localized;
   body: Localized;
 };
+
+/** Gizlilik politikası ve kullanım koşulları gibi hukuki sayfaların bölümleri. */
+export type LegalSection = { id: string; title: Localized; body: Localized[] };

@@ -145,6 +145,7 @@
     "services": "Services",
     "book": "Book a call",
     "privacy": "Privacy policy",
+    "terms": "Terms of use",
     "assistant": "AI assistants (MCP)"
   },
   "Contact": {
@@ -161,6 +162,7 @@
     "rights": "All rights reserved.",
     "built": "Built with Next.js — lean by design.",
     "privacy": "Privacy policy",
+    "terms": "Terms of use",
     "assistant": "Use in ChatGPT & Claude (MCP)",
     "services": "Services",
     "book": "Book a call",
@@ -182,6 +184,12 @@
     "title": "Privacy policy",
     "updated": "Last updated"
   },
+  "Terms": {
+    "metaTitle": "Terms of Use | Huntay AzerTürk",
+    "metaDescription": "Terms for using huntayazerturk.com, booking an intro call and connecting Huntay AzerTürk's AI assistant (MCP server) to ChatGPT, Claude or Gemini.",
+    "title": "Terms of use",
+    "updated": "Last updated"
+  },
   "Assistant": {
     "metaTitle": "MCP Server: Book Huntay AzerTürk from ChatGPT & Claude",
     "metaDescription": "Connect Huntay AzerTürk's MCP server to ChatGPT, Claude or Gemini: check his availability, book a 30-minute intro call and look up his services from the chat.",
@@ -198,6 +206,7 @@
     "troubleshootingTitle": "Troubleshooting",
     "dataTitle": "Data handling",
     "privacyLink": "Read the privacy policy",
+    "termsLink": "Terms of use",
     "supportTitle": "Support",
     "supportText": "Questions, problems or feedback about the connector:",
     "versionLabel": "Version",

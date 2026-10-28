@@ -1,4 +1,4 @@
-import type { Localized } from "./types";
+import type { LegalSection } from "./types";
 
 /**
  * Gizlilik politikası (/privacy). ChatGPT uygulama dizini gibi platformlar MCP sunucusu için
@@ -7,9 +7,7 @@ import type { Localized } from "./types";
  */
 export const privacyUpdatedAt = "2026-10-28";
 
-export type PrivacySection = { id: string; title: Localized; body: Localized[] };
-
-export const privacySections: PrivacySection[] = [
+export const privacySections: LegalSection[] = [
   {
     id: "who",
     title: { en: "Who is responsible", tr: "Sorumlu kişi" },

@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 
-/** Tüm sayfalarda görünen alt bilgi: önemli sayfalara iç linkler, gizlilik politikası ve telif. */
+/** Tüm sayfalarda görünen alt bilgi: önemli sayfalara iç linkler, gizlilik/kullanım koşulları ve telif. */
 export async function SiteFooter() {
   const t = await getTranslations("Footer");
   const linkClass = "transition hover:text-accent";
@@ -11,6 +11,7 @@ export async function SiteFooter() {
     { href: "/book", label: t("book") },
     { href: "/assistant", label: t("assistant") },
     { href: "/privacy", label: t("privacy") },
+    { href: "/terms", label: t("terms") },
   ];
 
   return (

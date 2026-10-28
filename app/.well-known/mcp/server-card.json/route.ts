@@ -36,6 +36,7 @@ export function GET() {
       authentication: { required: false },
       documentation: `${siteConfig.baseUrl}${mcpDocsPath}`,
       privacyPolicy: `${siteConfig.baseUrl}/privacy`,
+      termsOfService: `${siteConfig.baseUrl}/terms`,
       contact: siteConfig.contactEmail,
     },
     { headers: { "Access-Control-Allow-Origin": "*" } },
