@@ -98,7 +98,8 @@
     "aiClaude": "Claude: Settings → Connectors → Add custom connector",
     "aiChatgpt": "ChatGPT: Settings → Apps → Developer mode → Create app",
     "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
-    "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır."
+    "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır.",
+    "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar"
   },
   "Cta": {
     "title": "Projenizi konuşalım",
@@ -143,7 +144,8 @@
     "home": "Ana sayfa",
     "services": "Hizmetler",
     "book": "Görüşme planla",
-    "privacy": "Gizlilik politikası"
+    "privacy": "Gizlilik politikası",
+    "assistant": "Yapay zeka asistanları (MCP)"
   },
   "Contact": {
     "title": "İletişim",
@@ -159,7 +161,7 @@
     "rights": "Tüm hakları saklıdır.",
     "built": "Next.js ile — tasarımda yalınlık.",
     "privacy": "Gizlilik politikası",
-    "assistant": "ChatGPT ve Claude'da kullan",
+    "assistant": "ChatGPT ve Claude'da kullan (MCP)",
     "services": "Hizmetler",
     "book": "Görüşme planla",
     "navLabel": "Alt menü"
@@ -179,5 +181,26 @@
     "metaDescription": "huntayazerturk.com, randevu takvimi ve yapay zeka asistanı (MCP sunucusu) verilerinizi nasıl işler: görüşme planlarken toplanan bilgiler ve haklarınız.",
     "title": "Gizlilik politikası",
     "updated": "Son güncelleme"
+  },
+  "Assistant": {
+    "metaTitle": "MCP Sunucusu: ChatGPT ve Claude'dan Huntay AzerTürk'e Randevu",
+    "metaDescription": "Huntay AzerTürk'ün MCP sunucusunu ChatGPT, Claude veya Gemini'ye bağlayın: sohbetten çıkmadan boş saatleri görün, 30 dakikalık tanışma görüşmesi planlayın ve hizmetlere göz atın.",
+    "eyebrow": "MCP sunucusu",
+    "title": "ChatGPT, Claude veya Gemini'den randevu alın",
+    "intro": "Bu uzak MCP sunucusu, yapay zeka asistanlarının boş saatlerimi görmesini, 30 dakikalık tanışma görüşmesi oluşturmasını ve hizmetlerime, vaka çalışmalarıma ve SSS'ye sohbetin içinden bakmasını sağlar.",
+    "serverUrl": "Sunucu adresi",
+    "transport": "Streamable HTTP · Kayıt veya API anahtarı gerekmez",
+    "setupTitle": "Kurulum",
+    "toolsTitle": "Araçlar",
+    "read": "Okuma",
+    "write": "Yazma",
+    "promptsTitle": "Örnek komutlar",
+    "troubleshootingTitle": "Sorun giderme",
+    "dataTitle": "Veri kullanımı",
+    "privacyLink": "Gizlilik politikasını okuyun",
+    "supportTitle": "Destek",
+    "supportText": "Bağlayıcıyla ilgili soru, sorun veya geri bildirim için:",
+    "versionLabel": "Sürüm",
+    "bookCta": "Bunun yerine web sitesinden randevu alın"
   }
 }

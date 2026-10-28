@@ -2,6 +2,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Booking } from "@/components/services/booking";
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { InstagramIcon, LinkedinIcon } from "@/components/icons";
+import { Link } from "@/i18n/navigation";
 import { buildBookGraph, buildMetadata, type AppLocale } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { containerClass, h2Class } from "@/lib/ui";
@@ -121,6 +122,9 @@ export default async function BookPage({ params }: Props) {
               {`${siteConfig.baseUrl}/mcp`}
             </code>
             <p className="mt-3 text-sm text-muted-foreground">{t("aiNote")}</p>
+            <Link href="/assistant" className="mt-4 inline-block text-sm font-medium text-accent hover:underline">
+              {t("aiDocs")} →
+            </Link>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6 lg:col-span-2">
             <h3 className="font-semibold text-foreground">{t("aiStepsTitle")}</h3>

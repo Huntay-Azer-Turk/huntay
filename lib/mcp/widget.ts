@@ -10,7 +10,7 @@ import { avatarDataUri } from "./avatar";
 export const WIDGET_MIME_TYPE = "text/html;profile=mcp-app";
 
 // Arayüz değiştiğinde URI’deki sürümü artırın: hostlar şablonları önbelleğe alabilir.
-export const WIDGET_URI = "ui://huntayazerturk/assistant-v1.html";
+export const WIDGET_URI = "ui://huntayazerturk/assistant-v2.html";
 
 export const widgetHtml = String.raw`<!doctype html>
 <html>
@@ -36,6 +36,7 @@ export const widgetHtml = String.raw`<!doctype html>
   .item:hover { border-color:var(--accent); }
   .item b { display:block; font-weight:600; }
   .item span { color:var(--muted); font-size:13px; }
+  .item .why { display:block; margin-top:4px; font-size:12px; color:var(--accent); }
   ul { margin:6px 0 0; padding-left:18px; color:var(--muted); }
   .actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
   .btn { border:1px solid var(--border); background:var(--card); color:var(--fg); border-radius:10px; padding:8px 12px; cursor:pointer; font:inherit; font-weight:500; }
@@ -56,8 +57,8 @@ export const widgetHtml = String.raw`<!doctype html>
 (function () {
   var AVATAR = "${avatarDataUri}";
   var T = {
-    en: { book: "Book a 30-min call", services: "All services", website: "Website", details: "Details", pick: "Pick a time (times in", calendar: "Open full calendar", noSlots: "No free times in this range. Open the calendar to see more dates.", booked: "Your intro call is booked", meet: "Join link", sent: "A confirmation email with the calendar invite is on its way.", whatsapp: "WhatsApp", want: "I'd like to book the intro call on ", at: " at ", start: " (start: ", tz: ", time zone: ", end: ").", fallback: "Online booking isn't available right now. Pick a time on the booking page or send a quick message.", failed: "This time could not be booked.", tip: "Tip: click a time and I'll book it for you." },
-    tr: { book: "30 dk görüşme planla", services: "Tüm hizmetler", website: "Web sitesi", details: "Detaylar", pick: "Bir saat seçin (saatler:", calendar: "Takvimin tamamını aç", noSlots: "Bu aralıkta boş saat yok. Diğer tarihler için takvimi açın.", booked: "Tanışma görüşmeniz planlandı", meet: "Görüşme linki", sent: "Takvim davetini içeren onay e-postası gönderiliyor.", whatsapp: "WhatsApp", want: "Tanışma görüşmesini şu saate almak istiyorum: ", at: " ", start: " (başlangıç: ", tz: ", saat dilimi: ", end: ").", fallback: "Çevrim içi randevu şu an kullanılamıyor. Randevu sayfasından bir saat seçin veya kısa bir mesaj gönderin.", failed: "Bu saat için randevu oluşturulamadı.", tip: "İpucu: bir saate tıklayın, randevuyu sizin için oluşturayım." }
+    en: { book: "Book a 30-min call", services: "All services", website: "Website", details: "Details", pick: "Pick a time (times in", calendar: "Booking page", noSlots: "No open times in this range. Open the booking page to see more dates.", fitFor: "Best fit for: ", noMatch: "No direct match for your need; all services:", match: "Match: ", booked: "Your intro call is booked", meet: "Join link", sent: "A confirmation email with the calendar invite is on its way.", whatsapp: "WhatsApp", want: "I'd like to book the intro call on ", at: " at ", start: " (start: ", tz: ", time zone: ", end: ").", fallback: "Online booking isn't available right now. Pick a time on the booking page or send a quick message.", failed: "This time could not be booked.", tip: "Tip: click a time and I'll book it for you." },
+    tr: { book: "30 dk görüşme planla", services: "Tüm hizmetler", website: "Web sitesi", details: "Detaylar", pick: "Bir saat seçin (saatler:", calendar: "Randevu sayfası", noSlots: "Bu aralıkta boş saat yok. Diğer tarihler için randevu sayfasını açın.", fitFor: "İhtiyacınıza en uygun: ", noMatch: "İhtiyacınızla doğrudan eşleşen hizmet yok; tüm hizmetler:", match: "Eşleşen: ", booked: "Tanışma görüşmeniz planlandı", meet: "Görüşme linki", sent: "Takvim davetini içeren onay e-postası gönderiliyor.", whatsapp: "WhatsApp", want: "Tanışma görüşmesini şu saate almak istiyorum: ", at: " ", start: " (başlangıç: ", tz: ", saat dilimi: ", end: ").", fallback: "Çevrim içi randevu şu an kullanılamıyor. Randevu sayfasından bir saat seçin veya kısa bir mesaj gönderin.", failed: "Bu saat için randevu oluşturulamadı.", tip: "İpucu: bir saate tıklayın, randevuyu sizin için oluşturayım." }
   };
   var data = null, lang = "en", nextId = 1, pending = {};
   var root = document.getElementById("root");
@@ -144,11 +145,13 @@ export const widgetHtml = String.raw`<!doctype html>
     }
 
     if (data.kind === "services") {
+      if (data.need) root.appendChild(el("p", null, data.matched ? t.fitFor + "“" + data.need + "”" : t.noMatch));
       var list = el("div", "list");
       (data.services || []).forEach(function (s) {
         var b = button("", "item", function () { openLink(s.url); });
         b.appendChild(el("b", null, s.title));
         b.appendChild(el("span", null, s.tagline));
+        if (s.reason) b.appendChild(el("span", "why", t.match + s.reason));
         list.appendChild(b);
       });
       root.appendChild(list);
@@ -190,7 +193,7 @@ export const widgetHtml = String.raw`<!doctype html>
         if (days.length) root.appendChild(el("p", "muted", t.tip));
       }
       var extra = [];
-      if (links.calendar) extra.push(button(t.calendar, "btn", function () { openLink(links.calendar); }));
+      if (links.calendar && links.calendar !== links.book) extra.push(button(t.calendar, "btn", function () { openLink(links.calendar); }));
       root.appendChild(actions(data, extra));
     }
 
@@ -206,7 +209,7 @@ export const widgetHtml = String.raw`<!doctype html>
         ok.appendChild(el("b", null, t.failed));
         if (data.message) ok.appendChild(el("p", null, data.message));
         root.appendChild(ok);
-        root.appendChild(actions(data, links.calendar ? [button(t.calendar, "btn", function () { openLink(links.calendar); })] : []));
+        root.appendChild(actions(data, links.calendar && links.calendar !== links.book ? [button(t.calendar, "btn", function () { openLink(links.calendar); })] : []));
       }
     }
     resize();

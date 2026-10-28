@@ -137,6 +137,7 @@ export function buildMetadata({
 
 const personId = `${siteConfig.baseUrl}/#person`;
 const websiteId = `${siteConfig.baseUrl}/#website`;
+const businessId = `${siteConfig.baseUrl}/#business`;
 
 /** Dil bağımsız hizmet kimliği (iki dildeki sayfa aynı hizmeti anlatır). */
 export function serviceId(slug: string): string {
@@ -181,8 +182,41 @@ function graph(nodes: object[]) {
   return { "@context": "https://schema.org", "@graph": nodes };
 }
 
+function offerCatalog(locale: AppLocale) {
+  return {
+    "@type": "OfferCatalog",
+    name: locale === "tr" ? "Hizmetler" : "Services",
+    url: localeUrl(locale, "/services"),
+    itemListElement: services.map((service) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        "@id": serviceId(service.slug),
+        name: service.title[locale],
+        url: localeUrl(locale, `/services/${service.slug}`),
+      },
+    })),
+  };
+}
+
+/** Randevu: /book sayfası (Cal.com). AI asistanları için ayrıca MCP sunucusu: /mcp */
+function reserveAction(locale: AppLocale) {
+  return {
+    "@type": "ReserveAction",
+    name: locale === "tr" ? "30 dakikalık tanışma görüşmesi planla" : "Book a 30-minute intro call",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: localeUrl(locale, "/book"),
+      actionPlatform: [
+        "https://schema.org/DesktopWebPlatform",
+        "https://schema.org/MobileWebPlatform",
+      ],
+    },
+  };
+}
+
 /**
- * Site geneli (layout): Person + WebSite.
+ * Site geneli (layout): Person + ProfessionalService + WebSite.
  * Person, sunduğu hizmetleri `hasOfferCatalog` ile listeler — AI asistanlarının
  * "Huntay AzerTürk ne iş yapıyor / hangi hizmetleri veriyor" sorusuna doğrudan cevap.
  */
@@ -230,33 +264,41 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
         siteConfig.instagram,
         siteConfig.github,
       ],
-      hasOfferCatalog: {
-        "@type": "OfferCatalog",
-        name: locale === "tr" ? "Hizmetler" : "Services",
-        url: localeUrl(locale, "/services"),
-        itemListElement: services.map((service) => ({
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            "@id": serviceId(service.slug),
-            name: service.title[locale],
-            url: localeUrl(locale, `/services/${service.slug}`),
-          },
-        })),
+      hasOfferCatalog: offerCatalog(locale),
+      potentialAction: reserveAction(locale),
+    },
+    {
+      // Danışmanlık işi: yerel ve "İstanbul'da yazılım/yapay zeka danışmanı" aramaları için iş varlığı.
+      "@type": "ProfessionalService",
+      "@id": businessId,
+      name:
+        locale === "tr"
+          ? `${siteConfig.name} — Yazılım ve Yapay Zeka Danışmanlığı`
+          : `${siteConfig.name} — Software & AI Consulting`,
+      url: localeUrl(locale, "/services"),
+      image: absoluteUrl(profileImagePath),
+      description:
+        locale === "tr"
+          ? "Yapay zeka ajanları, fractional CTO, startup ürün geliştirme, web ve mobil uygulamalar, bulut ve DevOps, mikroservis modernizasyonu, IoT ve KOBİ'ler için dijital dönüşüm."
+          : "AI agents, fractional CTO, startup product development, web and mobile apps, cloud and DevOps, microservices modernization, IoT and digital transformation for SMEs.",
+      founder: { "@id": personId },
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.locality,
+        addressCountry: siteConfig.countryCode,
       },
-      // Randevu: /book sayfası (Cal.com). AI asistanları için ayrıca MCP sunucusu: /mcp
-      potentialAction: {
-        "@type": "ReserveAction",
-        name: locale === "tr" ? "30 dakikalık tanışma görüşmesi planla" : "Book a 30-minute intro call",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: localeUrl(locale, "/book"),
-          actionPlatform: [
-            "https://schema.org/DesktopWebPlatform",
-            "https://schema.org/MobileWebPlatform",
-          ],
-        },
+      areaServed: "Worldwide",
+      availableLanguage: ["en", "tr"],
+      email: siteConfig.contactEmail,
+      ...(siteConfig.phoneDisplay && siteConfig.phoneTel ? { telephone: siteConfig.phoneTel } : {}),
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "18:00",
       },
+      hasOfferCatalog: offerCatalog(locale),
+      potentialAction: reserveAction(locale),
     },
     {
       "@type": "WebSite",
@@ -390,6 +432,55 @@ export function buildBookGraph(
     breadcrumbNode(pageUrl, [
       { name: labels.home, url: localeUrl(locale) },
       { name: labels.book, url: pageUrl },
+    ]),
+  ]);
+}
+
+/** /assistant: WebPage + SoftwareApplication (MCP bağlayıcısı) + BreadcrumbList. */
+export function buildAssistantGraph(
+  locale: AppLocale,
+  page: PageInfo,
+  labels: { home: string; assistant: string },
+  app: { version: string; endpoint: string },
+) {
+  const pageUrl = localeUrl(locale, "/assistant");
+  return graph([
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: page.title,
+      description: page.description,
+      inLanguage: locale,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": `${siteConfig.baseUrl}/assistant#app` },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      dateModified: siteConfig.contentUpdatedAt,
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteConfig.baseUrl}/assistant#app`,
+      name: `${siteConfig.name} MCP server`,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Any MCP client (ChatGPT, Claude, Gemini, Cursor, VS Code)",
+      softwareVersion: app.version,
+      url: pageUrl,
+      installUrl: app.endpoint,
+      description: page.description,
+      author: { "@id": personId },
+      provider: { "@id": personId },
+      isAccessibleForFree: true,
+      offers: { "@type": "Offer", price: 0, priceCurrency: "USD" },
+      featureList: [
+        "Check availability",
+        "Book a 30-minute intro call",
+        "Service catalog and matching",
+        "Search case studies and FAQ",
+      ],
+    },
+    breadcrumbNode(pageUrl, [
+      { name: labels.home, url: localeUrl(locale) },
+      { name: labels.assistant, url: pageUrl },
     ]),
   ]);
 }

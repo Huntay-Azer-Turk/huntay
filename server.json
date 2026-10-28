@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.huntayazerturk/assistant",
+  "title": "Huntay AzerTürk",
+  "description": "Check Huntay AzerTürk's availability, book a 30-minute intro call, and look up his services.",
+  "version": "1.1.0",
+  "websiteUrl": "https://huntayazerturk.com/assistant",
+  "repository": {
+    "url": "https://github.com/Huntay-Azer-Turk/huntay",
+    "source": "github"
+  },
+  "icons": [
+    { "src": "https://huntayazerturk.com/icons/huntay-512.png", "mimeType": "image/png", "sizes": ["512x512"] },
+    { "src": "https://huntayazerturk.com/icons/huntay-192.png", "mimeType": "image/png", "sizes": ["192x192"] }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://huntayazerturk.com/mcp"
+    }
+  ]
+}
