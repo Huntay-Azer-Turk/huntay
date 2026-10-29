@@ -14,9 +14,10 @@ export const siteConfig = {
   countryCode: "TR",
   /**
    * İçerik her güncellendiğinde değiştirin: sitemap `lastmod` ve JSON-LD `dateModified` buradan beslenir.
+   * Saat ve saat dilimiyle tam ISO 8601 olmalı (Google ProfilePage yalnızca tarihi "geçersiz" sayıyor).
    * (Her build'de "şimdi" vermek arama motorlarının bu sinyale güvenmemesine yol açar.)
    */
-  contentUpdatedAt: "2026-10-28",
+  contentUpdatedAt: "2026-10-29T09:00:00+03:00",
   /**
    * Randevu takvimi: Cal.com (https://cal.com/huntay/intro-call — 30 dk, hafta içi 10:00–18:00 İstanbul,
    * Google Meet, Google Takvim’e bağlı). /book sayfası bu takvimi gömer; AI asistanları (MCP: /mcp)
