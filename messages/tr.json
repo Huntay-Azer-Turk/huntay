@@ -17,7 +17,8 @@
     "openMenu": "Menüyü aç",
     "closeMenu": "Menüyü kapat",
     "ariaMain": "Ana menü",
-    "ariaMobile": "Mobil menü"
+    "ariaMobile": "Mobil menü",
+    "packages": "Paketler"
   },
   "Hero": {
     "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Architect",
@@ -101,7 +102,9 @@
     "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır.",
     "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar",
     "loading": "Takvim yükleniyor…",
-    "openInChatgpt": "ChatGPT'de aç"
+    "openInChatgpt": "ChatGPT'de aç",
+    "packageNotePrefix": "Paket",
+    "selectedPackage": "Seçilen paket"
   },
   "Cta": {
     "title": "Projenizi konuşalım",
@@ -139,7 +142,8 @@
     "subtitle": "Şirketinize veya startup'ınıza stratejiden canlı ürüne kadar nasıl yardımcı olabilirim?",
     "details": "Detaylar",
     "viewAll": "Tüm hizmetler",
-    "book": "Görüşme planla"
+    "book": "Görüşme planla",
+    "packages": "Paketler ve fiyatlar"
   },
   "Breadcrumbs": {
     "label": "Sayfa konumu",
@@ -148,7 +152,8 @@
     "book": "Görüşme planla",
     "privacy": "Gizlilik politikası",
     "terms": "Kullanım koşulları",
-    "assistant": "Yapay zeka asistanları (MCP)"
+    "assistant": "Yapay zeka asistanları (MCP)",
+    "packages": "Paketler"
   },
   "Contact": {
     "title": "İletişim",
@@ -169,7 +174,8 @@
     "services": "Hizmetler",
     "book": "Görüşme planla",
     "navLabel": "Alt menü",
-    "cookies": "Çerez ayarları"
+    "cookies": "Çerez ayarları",
+    "packages": "Paketler ve fiyatlar"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -230,5 +236,20 @@
     "accept": "Kabul et",
     "customize": "Seçenekleri göster",
     "save": "Seçimimi kaydet"
+  },
+  "PackagesPage": {
+    "metaTitle": "Paketler ve Fiyatlar | Huntay AzerTürk",
+    "metaDescription": "Net kapsamlı, sabit fiyatlı paketler: teknik check-up, güvenlik taraması ve sızma testi, mimari ve bulut maliyet incelemesi, yapay zeka ajanı pilotu, fractional CTO ve MVP.",
+    "eyebrow": "Paketler ve fiyatlar",
+    "title": "Net kapsam, net fiyat",
+    "intro": "Küçük ve net bir paketle başlayın; işe yararsa birlikte büyütelim. Paketinizi seçin, kısa bir görüşmede kapsamı teyit edip başlayalım.",
+    "featured": "Öne çıkan",
+    "from": "Başlangıç fiyatı",
+    "choose": "Bu paketi seç",
+    "aboutService": "Hizmet hakkında",
+    "empty": "Paketler şu an güncelleniyor. Görüşme planlayarak ihtiyacınıza uygun teklif alabilirsiniz.",
+    "noteReference": "Referans indirimi: Sonuçları vaka çalışması olarak paylaşmamıza izin verirseniz %10 indirim.",
+    "noteCustom": "Paketlere uymayan işler için ücretsiz 30 dakikalık görüşmeden sonra yazılı teklif hazırlıyorum.",
+    "noteTerms": "Fiyatlara vergiler dahil değildir. Kapsam, başlamadan önce yazılı olarak netleştirilir."
   }
 }

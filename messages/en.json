@@ -17,7 +17,8 @@
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "ariaMain": "Primary",
-    "ariaMobile": "Mobile"
+    "ariaMobile": "Mobile",
+    "packages": "Packages"
   },
   "Hero": {
     "eyebrow": "Software & Digital Solutions Manager · Principal Systems Architect",
@@ -101,7 +102,9 @@
     "aiNote": "No sign-up or API key needed. Works with any MCP-compatible assistant.",
     "aiDocs": "Setup guide, tools and example prompts",
     "loading": "Loading calendar…",
-    "openInChatgpt": "Open in ChatGPT"
+    "openInChatgpt": "Open in ChatGPT",
+    "packageNotePrefix": "Package",
+    "selectedPackage": "Selected package"
   },
   "Cta": {
     "title": "Let's talk about your project",
@@ -139,7 +142,8 @@
     "subtitle": "How I can help your company or startup—from strategy to production.",
     "details": "Details",
     "viewAll": "All services",
-    "book": "Book a call"
+    "book": "Book a call",
+    "packages": "Packages & pricing"
   },
   "Breadcrumbs": {
     "label": "Breadcrumb",
@@ -148,7 +152,8 @@
     "book": "Book a call",
     "privacy": "Privacy policy",
     "terms": "Terms of use",
-    "assistant": "AI assistants (MCP)"
+    "assistant": "AI assistants (MCP)",
+    "packages": "Packages"
   },
   "Contact": {
     "title": "Contact",
@@ -169,7 +174,8 @@
     "services": "Services",
     "book": "Book a call",
     "navLabel": "Footer",
-    "cookies": "Cookie settings"
+    "cookies": "Cookie settings",
+    "packages": "Packages & pricing"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -230,5 +236,20 @@
     "accept": "Accept",
     "customize": "Show options",
     "save": "Save my choice"
+  },
+  "PackagesPage": {
+    "metaTitle": "Packages & Pricing | Huntay AzerTürk",
+    "metaDescription": "Fixed-scope, fixed-price packages: technical check-up, security scan and penetration test, architecture and cloud cost review, AI agent pilot, fractional CTO and MVP.",
+    "eyebrow": "Packages & pricing",
+    "title": "Clear scope, clear price",
+    "intro": "Start with a small, well-defined package and grow it together if it works. Pick a package, confirm the scope in a short call, and we start.",
+    "featured": "Featured",
+    "from": "Starting at",
+    "choose": "Choose this package",
+    "aboutService": "About the service",
+    "empty": "Packages are being updated. Book a call and I'll send a proposal that fits your needs.",
+    "noteReference": "Reference discount: 10% off if you let us publish the results as a case study.",
+    "noteCustom": "For work that doesn't fit a package, I send a written proposal after a free 30-minute call.",
+    "noteTerms": "Prices exclude taxes. Scope is agreed in writing before work starts."
   }
 }

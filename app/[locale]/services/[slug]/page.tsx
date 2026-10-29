@@ -110,6 +110,9 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {tc("whatsapp")}
               </a>
             ) : null}
+            <Link href="/packages" className={buttonSecondary}>
+              {ts("packages")}
+            </Link>
           </div>
         </div>
       </section>

@@ -9,6 +9,7 @@ export async function SiteFooter() {
   const linkClass = "transition hover:text-accent";
   const links = [
     { href: "/services", label: t("services") },
+    { href: "/packages", label: t("packages") },
     { href: "/book", label: t("book") },
     { href: "/assistant", label: t("assistant") },
     { href: "/privacy", label: t("privacy") },

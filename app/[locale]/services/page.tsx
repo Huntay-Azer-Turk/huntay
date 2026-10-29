@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/services/service-card";
 import { engagementModels, processSteps, services, servicesFaq } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, buildServicesHubGraph, type AppLocale } from "@/lib/seo";
-import { buttonPrimary, containerClass, h2Class, sectionClass } from "@/lib/ui";
+import { buttonPrimary, buttonSecondary, containerClass, h2Class, sectionClass } from "@/lib/ui";
 import { CalendarClock } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -58,10 +58,13 @@ export default async function ServicesPage({ params }: Props) {
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             {t("intro")}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href="/book" className={buttonPrimary}>
               <CalendarClock className="h-4 w-4" aria-hidden />
               {ts("book")}
+            </Link>
+            <Link href="/packages" className={buttonSecondary}>
+              {ts("packages")}
             </Link>
           </div>
         </div>
