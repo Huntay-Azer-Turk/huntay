@@ -250,6 +250,9 @@
     "empty": "Packages are being updated. Book a call and I'll send a proposal that fits your needs.",
     "noteReference": "Reference discount: 10% off if you let us publish the results as a case study.",
     "noteCustom": "For work that doesn't fit a package, I send a written proposal after a free 30-minute call.",
-    "noteTerms": "Prices exclude taxes. Scope is agreed in writing before work starts."
+    "noteTerms": "Prices exclude taxes. Scope is agreed in writing before work starts.",
+    "serviceTitle": "Packages for this service",
+    "serviceSubtitle": "Start right away with a clear scope and price.",
+    "allPackages": "All packages"
   }
 }
