@@ -110,12 +110,12 @@ export function CalEmbed({ calLink }: Props) {
   }, [resolvedTheme, theme, calLink, namespace, containerId]);
 
   // Takvim yüklenmeden önce son yüksekliği kadar yer ayrılır; aksi hâlde sayfa aşağı kayar (CLS).
-  // Ölçümler (Cal.com ay görünümü): telefonda ~1600px, 640–1023px arası ~1740px (alt alta düzen),
-  // ≥1024px'te (kapsayıcı ~960px+) yan yana düzen ~570px.
+  // Ölçümler (29 Ekim, Cal.com ay görünümü): telefonda ~1260px, 640–815px arası ~1450px (alt alta düzen),
+  // ≥816px'te (kapsayıcı ~768px+) yan yana düzen ~560px.
   return (
     // Yer ayırma (min-height) dış kapsayıcıda: Cal.com'un <cal-inline> öğesi min-height'i iç kutudan
     // miras alıyor ve takvimi o yüksekliğin ortasına yerleştiriyor (üstte boşluk kalıyordu).
-    <div className="relative min-h-[1600px] sm:min-h-[1720px] lg:min-h-[570px]">
+    <div className="relative min-h-[1250px] sm:min-h-[1440px] min-[816px]:min-h-[560px]">
       {!ready ? (
         <p className="absolute inset-x-0 top-16 text-center text-sm text-muted-foreground" aria-live="polite">
           {t("loading")}
