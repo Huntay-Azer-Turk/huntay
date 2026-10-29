@@ -14,6 +14,9 @@ import { ArrowRight, CalendarClock, Check, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { connection } from "next/server";
+import { ServicePackages } from "@/components/services/service-packages";
+import { getPackages } from "@/lib/packages";
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
@@ -47,6 +50,13 @@ export default async function ServiceDetailPage({ params }: Props) {
   if (!service) notFound();
 
   const locale = rawLocale as AppLocale;
+  // Paketler veritabanından (her istekte) okunur; /admin'deki değişiklik hemen görünür.
+  await connection();
+  const allPackages = await getPackages(locale);
+  const ownPackages = allPackages.filter((pkg) => pkg.serviceSlug === service.slug);
+  // Hizmete bağlı paket yoksa en uygun fiyatlı giriş paketi (ör. Teknik Check-up) gösterilir.
+  const entry = [...allPackages].filter((pkg) => !pkg.priceFrom).sort((a, b) => a.price - b.price)[0];
+  const servicePackages = ownPackages.length ? ownPackages : entry ? [entry] : [];
   const t = await getTranslations({ locale, namespace: "ServicePage" });
   const tb = await getTranslations({ locale, namespace: "Breadcrumbs" });
   const tc = await getTranslations({ locale, namespace: "Cta" });
@@ -170,6 +180,8 @@ export default async function ServiceDetailPage({ params }: Props) {
           </ul>
         </div>
       </section>
+
+      <ServicePackages packages={servicePackages} locale={locale} />
 
       {related.length > 0 ? (
         <section className={sectionClass}>

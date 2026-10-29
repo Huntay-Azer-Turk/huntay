@@ -250,6 +250,9 @@
     "empty": "Paketler şu an güncelleniyor. Görüşme planlayarak ihtiyacınıza uygun teklif alabilirsiniz.",
     "noteReference": "Referans indirimi: Sonuçları vaka çalışması olarak paylaşmamıza izin verirseniz %10 indirim.",
     "noteCustom": "Paketlere uymayan işler için ücretsiz 30 dakikalık görüşmeden sonra yazılı teklif hazırlıyorum.",
-    "noteTerms": "Fiyatlara vergiler dahil değildir. Kapsam, başlamadan önce yazılı olarak netleştirilir."
+    "noteTerms": "Fiyatlara vergiler dahil değildir. Kapsam, başlamadan önce yazılı olarak netleştirilir.",
+    "serviceTitle": "Bu hizmetin paketleri",
+    "serviceSubtitle": "Net kapsam ve fiyatla hemen başlayın.",
+    "allPackages": "Tüm paketler"
   }
 }
