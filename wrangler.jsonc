@@ -30,8 +30,8 @@
   // /admin: Cloudflare Access ile korunur (lib/admin-auth.ts). Değerler gizli değildir.
   "vars": {
     "ADMIN_EMAILS": "huntay.azerturk@gmail.com",
-    "ACCESS_TEAM_DOMAIN": "",
-    "ACCESS_AUD": ""
+    "ACCESS_TEAM_DOMAIN": "nameless-flower-a39f.cloudflareaccess.com",
+    "ACCESS_AUD": "60319b766c6d63b8d24cdecd80c2d5de7c084140260fa885f6f4a95563a86e02"
   },
   "observability": {
     "enabled": true
