@@ -479,6 +479,7 @@ export function buildAssistantGraph(
       softwareVersion: app.version,
       url: pageUrl,
       installUrl: app.endpoint,
+      sameAs: [siteConfig.chatgptAppUrl],
       description: page.description,
       author: { "@id": personId },
       provider: { "@id": personId },

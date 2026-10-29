@@ -103,8 +103,8 @@ export const setupSteps: SetupStep[] = [
   {
     client: "ChatGPT",
     steps: {
-      en: "Settings → Apps → Advanced settings → turn on Developer mode → Create app. Paste the server address and choose “No authentication”.",
-      tr: "Settings → Apps → Advanced settings → Developer mode'u açın → Create app. Sunucu adresini yapıştırın ve “No authentication” seçin.",
+      en: "Open the Huntay AzerTürk app in ChatGPT's app directory (button above) and add it. No sign-in is needed.",
+      tr: "ChatGPT uygulama dizinindeki Huntay AzerTürk uygulamasını açın (yukarıdaki buton) ve ekleyin. Giriş gerekmez.",
     },
   },
   {

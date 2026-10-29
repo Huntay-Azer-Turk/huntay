@@ -35,6 +35,7 @@ export function GET() {
     "",
     "## Book from an AI assistant (MCP)",
     "",
+    `- ChatGPT app: ${siteConfig.chatgptAppUrl}`,
     `- MCP server (Streamable HTTP, no authentication): ${siteConfig.baseUrl}/mcp`,
     `- Documentation, setup and example prompts: ${localeUrl("en", "/assistant")}`,
     "- Tools: get_availability (live open times), book_intro_call (30-minute Google Meet call), list_services (optionally ranked by need), get_service, get_profile, search, fetch",

@@ -100,7 +100,8 @@
     "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
     "aiNote": "No sign-up or API key needed. Works with any MCP-compatible assistant.",
     "aiDocs": "Setup guide, tools and example prompts",
-    "loading": "Loading calendar…"
+    "loading": "Loading calendar…",
+    "openInChatgpt": "Open in ChatGPT"
   },
   "Cta": {
     "title": "Let's talk about your project",
@@ -212,7 +213,8 @@
     "supportTitle": "Support",
     "supportText": "Questions, problems or feedback about the connector:",
     "versionLabel": "Version",
-    "bookCta": "Book on the website instead"
+    "bookCta": "Book on the website instead",
+    "openInChatgpt": "Open in ChatGPT"
   },
   "Consent": {
     "title": "Cookie preferences",

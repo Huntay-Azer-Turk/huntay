@@ -5,7 +5,7 @@ import { InstagramIcon, LinkedinIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import { buildBookGraph, buildMetadata, type AppLocale } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { containerClass, h2Class } from "@/lib/ui";
+import { buttonPrimary, containerClass, h2Class } from "@/lib/ui";
 import { Bot, Check, Mail, MessageCircle } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -117,6 +117,14 @@ export default async function BookPage({ params }: Props) {
           <div className="lg:col-span-3">
             <h2 className={h2Class}>{t("aiTitle")}</h2>
             <p className="mt-4 max-w-2xl leading-relaxed text-muted-foreground">{t("aiText")}</p>
+            <a
+              href={siteConfig.chatgptAppUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${buttonPrimary} mt-6`}
+            >
+              {t("openInChatgpt")}
+            </a>
             <p className="mt-8 text-sm font-medium text-foreground">{t("aiUrlLabel")}</p>
             <code className="mt-2 block select-all break-all rounded-xl border border-border bg-card px-4 py-3 font-mono text-sm text-accent">
               {`${siteConfig.baseUrl}/mcp`}

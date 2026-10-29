@@ -11,7 +11,7 @@ import { Link } from "@/i18n/navigation";
 import { MCP_SERVER_VERSION, mcpEndpoint } from "@/lib/mcp/meta";
 import { buildAssistantGraph, buildMetadata, type AppLocale } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { buttonSecondary, containerClass, h2Class } from "@/lib/ui";
+import { buttonPrimary, buttonSecondary, containerClass, h2Class } from "@/lib/ui";
 import { CalendarClock, Mail, MessageSquareText } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -72,6 +72,11 @@ export default async function AssistantPage({ params }: Props) {
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             {t("intro")}
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={siteConfig.chatgptAppUrl} target="_blank" rel="noopener noreferrer" className={buttonPrimary}>
+              {t("openInChatgpt")}
+            </a>
+          </div>
           <p className="mt-10 text-sm font-medium text-foreground">{t("serverUrl")}</p>
           <code className="mt-2 block max-w-xl select-all break-all rounded-xl border border-border bg-card px-4 py-3 font-mono text-sm text-accent">
             {mcpEndpoint}
