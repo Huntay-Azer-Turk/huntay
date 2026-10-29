@@ -19,6 +19,20 @@
   "images": {
     "binding": "IMAGES"
   },
+  // Paketler/fiyatlar veritabanı (lib/packages.ts). Tablo ilk istekte kendiliğinden oluşur.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "huntay-site",
+      "database_id": "3c6c0890-5692-4d7e-9598-c3105e861dd8"
+    }
+  ],
+  // /admin: Cloudflare Access ile korunur (lib/admin-auth.ts). Değerler gizli değildir.
+  "vars": {
+    "ADMIN_EMAILS": "huntay.azerturk@gmail.com",
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  },
   "observability": {
     "enabled": true
   }

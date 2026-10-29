@@ -1,3 +1,4 @@
+import type { PackageView } from "@/lib/packages";
 import type { Metadata } from "next";
 import { credentials, education } from "@/data/education";
 import { experience } from "@/data/experience";
@@ -445,6 +446,63 @@ export function buildBookGraph(
     breadcrumbNode(pageUrl, [
       { name: labels.home, url: localeUrl(locale) },
       { name: labels.book, url: pageUrl },
+    ]),
+  ]);
+}
+
+/** /packages: WebPage + OfferCatalog (fiyatlı paketler) + BreadcrumbList. Paketler veritabanından gelir. */
+export function buildPackagesGraph(
+  locale: AppLocale,
+  page: PageInfo,
+  labels: { home: string; packages: string },
+  packages: PackageView[],
+) {
+  const pageUrl = localeUrl(locale, "/packages");
+  return graph([
+    {
+      "@type": "WebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: page.title,
+      description: page.description,
+      inLanguage: locale,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": businessId },
+      mainEntity: { "@id": `${pageUrl}#catalog` },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": `${pageUrl}#catalog`,
+      name: page.title,
+      itemListElement: packages.map((pkg) => ({
+        "@type": "Offer",
+        "@id": `${pageUrl}#${pkg.id}`,
+        url: `${pageUrl}#${pkg.id}`,
+        name: pkg.name,
+        description: pkg.summary,
+        seller: { "@id": personId },
+        ...(pkg.priceFrom
+          ? {
+              priceSpecification: {
+                "@type": "PriceSpecification",
+                minPrice: pkg.price,
+                priceCurrency: pkg.currency,
+              },
+            }
+          : { price: pkg.price, priceCurrency: pkg.currency }),
+        itemOffered: {
+          "@type": "Service",
+          name: pkg.name,
+          description: pkg.summary,
+          provider: { "@id": personId },
+          ...(pkg.serviceSlug ? { isRelatedTo: { "@id": serviceId(pkg.serviceSlug) } } : {}),
+        },
+      })),
+    },
+    breadcrumbNode(pageUrl, [
+      { name: labels.home, url: localeUrl(locale) },
+      { name: labels.packages, url: pageUrl },
     ]),
   ]);
 }

@@ -78,18 +78,25 @@ export function CalEmbed({ calLink }: Props) {
   const containerId = `cal-inline-${namespace}`;
   const initialized = useRef(false);
   const [ready, setReady] = useState(false);
+  // /packages sayfasından gelindiyse (?package=<paket adı>) seçilen paket randevu notuna yazılır.
+  const [selectedPackage, setSelectedPackage] = useState("");
   const theme = resolvedTheme === "corporate" ? "light" : "dark";
 
   useEffect(() => {
     if (!resolvedTheme) return;
     const Cal = getCal();
+    const pkg = (new URLSearchParams(window.location.search).get("package") ?? "").slice(0, 80);
     if (!initialized.current) {
       initialized.current = true;
       Cal("init", namespace, { origin: "https://app.cal.com" });
       Cal.ns?.[namespace]?.("inline", {
         elementOrSelector: `#${containerId}`,
         calLink,
-        config: { layout: "month_view", theme },
+        config: {
+          layout: "month_view",
+          theme,
+          ...(pkg ? { notes: `${t("packageNotePrefix")}: ${pkg}` } : {}),
+        },
       });
       // Cal.com'un kendi yükleyicisi kaybolurken takvimi aşağı itiyor (CLS). Takvim hazır olana kadar
       // görünmez tutulur; görünmez öğelerin kayması ölçüme girmez. Olay gelmezse 10 sn sonra yine gösterilir.
@@ -107,7 +114,14 @@ export function CalEmbed({ calLink }: Props) {
       hideEventTypeDetails: false,
       layout: "month_view",
     });
-  }, [resolvedTheme, theme, calLink, namespace, containerId]);
+  }, [resolvedTheme, theme, calLink, namespace, containerId, t]);
+
+  useEffect(() => {
+    const pkg = (new URLSearchParams(window.location.search).get("package") ?? "").slice(0, 80);
+    // Adres çubuğu yalnızca tarayıcıda okunabilir; bilgi satırı ilk çizimden sonra eklenir.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (pkg) setSelectedPackage(pkg);
+  }, []);
 
   // Takvim yüklenmeden önce son yüksekliği kadar yer ayrılır; aksi hâlde sayfa aşağı kayar (CLS).
   // Ölçümler (29 Ekim, Cal.com ay görünümü): telefonda ~1260px, 640–815px arası ~1450px (alt alta düzen),
@@ -116,6 +130,11 @@ export function CalEmbed({ calLink }: Props) {
     // Yer ayırma (min-height) dış kapsayıcıda: Cal.com'un <cal-inline> öğesi min-height'i iç kutudan
     // miras alıyor ve takvimi o yüksekliğin ortasına yerleştiriyor (üstte boşluk kalıyordu).
     <div className="relative min-h-[1250px] sm:min-h-[1440px] min-[816px]:min-h-[560px]">
+      {selectedPackage ? (
+        <p className="border-b border-border px-4 py-3 text-sm text-foreground">
+          {t("selectedPackage")}: <strong>{selectedPackage}</strong>
+        </p>
+      ) : null}
       {!ready ? (
         <p className="absolute inset-x-0 top-16 text-center text-sm text-muted-foreground" aria-live="polite">
           {t("loading")}

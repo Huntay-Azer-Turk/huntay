@@ -34,6 +34,9 @@ export async function ServicesSection() {
             {t("viewAll")}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
+          <Link href="/packages" className={buttonSecondary}>
+            {t("packages")}
+          </Link>
         </div>
       </div>
     </section>

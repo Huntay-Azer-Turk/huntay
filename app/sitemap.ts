@@ -7,6 +7,7 @@ import type { MetadataRoute } from "next";
 const pages: { path: string; priority: number; changeFrequency: "monthly" | "yearly" }[] = [
   { path: "", priority: 1, changeFrequency: "monthly" },
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
+  { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
   ...services.map((service) => ({
     path: `/services/${service.slug}`,
     priority: 0.8,

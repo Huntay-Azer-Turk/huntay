@@ -38,5 +38,6 @@ export const config = {
   // varsayılan dil önekini kaldıran 307 yönlendirmesine takılmadan doğrudan sunulsun.
   // `mcp`: AI asistanları için MCP uç noktası (app/mcp/route.ts) dil yönlendirmesine girmesin.
   // Noktalı yollar (/llms.txt, /.well-known/..., görseller) hiç middleware’e girmez.
-  matcher: ["/((?!api|mcp|_next|_vercel|.*opengraph-image|.*\\..*).*)"],
+  // `admin`: yönetim paneli (app/admin) dil yönlendirmesine girmesin.
+  matcher: ["/((?!api|mcp|admin|_next|_vercel|.*opengraph-image|.*\\..*).*)"],
 };

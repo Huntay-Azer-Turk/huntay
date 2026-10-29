@@ -16,6 +16,8 @@ import { ThemeToggle } from "@/components/interactive/theme-toggle";
  * Hizmetler ve "Görüşme planla" eklenince menü tek satıra sığsın diye.
  */
 const sectionKeys = ["about", "cases", "timeline", "featured", "faq", "contact"] as const;
+/** Masaüstü menüde yer kalsın diye (Paketler eklendi) "Deneyim" ve "Yazılar" yalnızca mobil menüde. */
+const desktopSectionKeys = ["cases", "faq", "contact"] as const;
 
 const linkClass =
   "whitespace-nowrap rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-card hover:text-foreground";
@@ -30,6 +32,7 @@ export function SiteHeader() {
   const home = locale === routing.defaultLocale ? "" : `/${locale}`;
   const sectionHref = (key: string) => (home ? `${home}#${key}` : `/#${key}`);
   const onServices = pathname.startsWith("/services");
+  const onPackages = pathname.startsWith("/packages");
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
@@ -55,7 +58,14 @@ export function SiteHeader() {
           >
             {t("services")}
           </Link>
-          {sectionKeys.slice(1).map((key) => (
+          <Link
+            href="/packages"
+            className={`${linkClass} ${onPackages ? "text-foreground" : ""}`}
+            aria-current={onPackages ? "page" : undefined}
+          >
+            {t("packages")}
+          </Link>
+          {desktopSectionKeys.map((key) => (
             <NextLink key={key} href={sectionHref(key)} className={linkClass}>
               {t(key)}
             </NextLink>
@@ -102,6 +112,13 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
             >
               {t("services")}
+            </Link>
+            <Link
+              href="/packages"
+              className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
+              onClick={() => setOpen(false)}
+            >
+              {t("packages")}
             </Link>
             {sectionKeys.slice(1).map((key) => (
               <NextLink

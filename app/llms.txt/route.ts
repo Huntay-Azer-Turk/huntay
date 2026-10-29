@@ -33,6 +33,8 @@ export function GET() {
         `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}`,
     ),
     "",
+    `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (technical check-up, security scan, penetration test, architecture & cloud cost review, AI agent pilot, fractional CTO, MVP)`,
+    "",
     "## Book from an AI assistant (MCP)",
     "",
     `- ChatGPT app: ${siteConfig.chatgptAppUrl}`,
