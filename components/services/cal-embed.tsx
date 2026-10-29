@@ -113,7 +113,9 @@ export function CalEmbed({ calLink }: Props) {
   // Ölçümler (Cal.com ay görünümü): telefonda ~1600px, 640–1023px arası ~1740px (alt alta düzen),
   // ≥1024px'te (kapsayıcı ~960px+) yan yana düzen ~570px.
   return (
-    <div className="relative">
+    // Yer ayırma (min-height) dış kapsayıcıda: Cal.com'un <cal-inline> öğesi min-height'i iç kutudan
+    // miras alıyor ve takvimi o yüksekliğin ortasına yerleştiriyor (üstte boşluk kalıyordu).
+    <div className="relative min-h-[1600px] sm:min-h-[1720px] lg:min-h-[570px]">
       {!ready ? (
         <p className="absolute inset-x-0 top-16 text-center text-sm text-muted-foreground" aria-live="polite">
           {t("loading")}
@@ -121,7 +123,7 @@ export function CalEmbed({ calLink }: Props) {
       ) : null}
       <div
         id={containerId}
-        className={`min-h-[1600px] w-full overflow-auto sm:min-h-[1720px] lg:min-h-[570px] ${ready ? "" : "invisible"}`}
+        className={`w-full overflow-auto ${ready ? "" : "invisible"}`}
       />
     </div>
   );
