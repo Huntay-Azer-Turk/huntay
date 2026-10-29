@@ -46,6 +46,8 @@ export const siteConfig = {
    * IndexNow (Bing, Yandex vb.) anahtarı — /public/<anahtar>.txt dosyasıyla aynı olmalı.
    * Yeni içerik yayınlandığında bu anahtarla URL'ler arama motorlarına anında bildirilebilir.
    */
+  /** ChatGPT uygulama dizinindeki sayfa (29 Ekim 2026'da yayınlandı). */
+  chatgptAppUrl: "https://chatgpt.com/plugins/plugin_asdk_app_6ae1c947a1d88191a9da39819af029d1",
   indexNowKey: "74ea8b75679df426cd03c5965620d3e7",
   /**
    * CV’deki telefon. `NEXT_PUBLIC_PHONE_DISPLAY=` (boş) verilirse gizlenir;

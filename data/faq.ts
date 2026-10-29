@@ -68,8 +68,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk ile ChatGPT, Claude veya Gemini üzerinden görüşme planlayabilir miyim?",
     },
     answer: {
-      en: "Yes. Huntay AzerTürk's assistant is available as an MCP server at https://huntayazerturk.com/mcp. Add this address as a custom connector or app in ChatGPT, Claude, Gemini or any MCP-compatible assistant and ask it to book an intro call: it shows his free times in the chat and books the 30-minute Google Meet call for you. You can also book directly on the Book a call page.",
-      tr: "Evet. Huntay AzerTürk'ün asistanı https://huntayazerturk.com/mcp adresinde bir MCP sunucusu olarak çalışıyor. Bu adresi ChatGPT, Claude, Gemini veya MCP uyumlu herhangi bir asistana özel bağlayıcı (connector) ya da uygulama olarak ekleyip tanışma görüşmesi istemeniz yeterli: boş saatlerini sohbetin içinde gösterir ve 30 dakikalık Google Meet görüşmesini sizin için oluşturur. Dilerseniz doğrudan Görüşme planla sayfasından da randevu alabilirsiniz.",
+      en: "Yes. In ChatGPT, add the Huntay AzerTürk app from the app directory: https://chatgpt.com/plugins/plugin_asdk_app_6ae1c947a1d88191a9da39819af029d1. His assistant is also available as an MCP server at https://huntayazerturk.com/mcp; add this address as a custom connector or app in ChatGPT, Claude, Gemini or any MCP-compatible assistant and ask it to book an intro call: it shows his free times in the chat and books the 30-minute Google Meet call for you. You can also book directly on the Book a call page.",
+      tr: "Evet. ChatGPT'de uygulama dizininden Huntay AzerTürk uygulamasını eklemeniz yeterli: https://chatgpt.com/plugins/plugin_asdk_app_6ae1c947a1d88191a9da39819af029d1. Asistan ayrıca https://huntayazerturk.com/mcp adresinde bir MCP sunucusu olarak çalışıyor; bu adresi ChatGPT, Claude, Gemini veya MCP uyumlu herhangi bir asistana özel bağlayıcı (connector) ya da uygulama olarak ekleyip tanışma görüşmesi istemeniz yeterli: boş saatlerini sohbetin içinde gösterir ve 30 dakikalık Google Meet görüşmesini sizin için oluşturur. Dilerseniz doğrudan Görüşme planla sayfasından da randevu alabilirsiniz.",
     },
   },
   {

@@ -261,6 +261,7 @@ export function assistantMarkdown(lang: Lang): string {
     "",
     h.assistantIntro,
     "",
+    `- ChatGPT: ${siteConfig.chatgptAppUrl}`,
     `- ${h.serverUrl}: ${mcpEndpoint}`,
     `- ${h.transport}`,
     "",

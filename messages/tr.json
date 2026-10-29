@@ -100,7 +100,8 @@
     "aiGemini": "Gemini: Settings → Connected Apps → Add a custom app",
     "aiNote": "Kayıt veya API anahtarı gerekmez. MCP uyumlu her asistanla çalışır.",
     "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar",
-    "loading": "Takvim yükleniyor…"
+    "loading": "Takvim yükleniyor…",
+    "openInChatgpt": "ChatGPT'de aç"
   },
   "Cta": {
     "title": "Projenizi konuşalım",
@@ -212,7 +213,8 @@
     "supportTitle": "Destek",
     "supportText": "Bağlayıcıyla ilgili soru, sorun veya geri bildirim için:",
     "versionLabel": "Sürüm",
-    "bookCta": "Bunun yerine web sitesinden randevu alın"
+    "bookCta": "Bunun yerine web sitesinden randevu alın",
+    "openInChatgpt": "ChatGPT'de aç"
   },
   "Consent": {
     "title": "Çerez tercihleri",
