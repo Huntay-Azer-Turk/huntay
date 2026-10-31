@@ -26,7 +26,10 @@
     "valueProp": "I help companies scale their systems, cut down cloud costs, and build engineering teams that actually deliver.",
     "ctaCv": "Download CV",
     "ctaBook": "Book a call",
-    "ctaServices": "Services"
+    "ctaServices": "Services",
+    "ctaPackages": "Packages & pricing",
+    "linkChatgpt": "Open in ChatGPT",
+    "linkClaude": "Claude & other assistants"
   },
   "NotFound": {
     "title": "Page not found",

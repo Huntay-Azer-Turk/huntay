@@ -26,7 +26,10 @@
     "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
     "ctaCv": "CV indir",
     "ctaBook": "Görüşme planla",
-    "ctaServices": "Hizmetler"
+    "ctaServices": "Hizmetler",
+    "ctaPackages": "Paketler ve fiyatlar",
+    "linkChatgpt": "ChatGPT'de aç",
+    "linkClaude": "Claude ve diğer asistanlar"
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",

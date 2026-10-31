@@ -1,7 +1,7 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, CalendarClock, Download } from "lucide-react";
+import { ArrowRight, Bot, CalendarClock, Download, MessageCircle, Tag } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
@@ -58,6 +58,13 @@ export async function Hero() {
             {t("ctaBook")}
           </Link>
           <Link
+            href="/packages"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+          >
+            <Tag className="h-4 w-4" aria-hidden />
+            {t("ctaPackages")}
+          </Link>
+          <Link
             href="/services"
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
           >
@@ -73,7 +80,33 @@ export async function Hero() {
             {t("ctaCv")}
           </a>
         </div>
-        <div className="mt-16 flex flex-wrap gap-6 text-sm text-muted-foreground">
+        {/* Hızlı bağlantılar: yapay zeka asistanları ve iletişim (kartvizitteki karekodlarla aynı hedefler). */}
+        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
+          <a
+            href={siteConfig.chatgptAppUrl}
+            className="group flex items-center gap-2 hover:text-accent"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Bot className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
+            {t("linkChatgpt")}
+          </a>
+          <Link href="/assistant" className="group flex items-center gap-2 hover:text-accent">
+            <Bot className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
+            {t("linkClaude")}
+          </Link>
+          {siteConfig.whatsappUrl ? (
+            <a
+              href={siteConfig.whatsappUrl}
+              className="group flex items-center gap-2 hover:text-accent"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <MessageCircle className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
+              WhatsApp
+            </a>
+          ) : null}
+
           <a
             href={siteConfig.linkedin}
             className="group flex items-center gap-2 hover:text-accent"
