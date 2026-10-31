@@ -218,21 +218,21 @@ export const experience: TimelineEntry[] = [
   },
   {
     id: "early-cyber",
-    org: { en: "Cyber Crime Unit Project", tr: "Siber Suçlarla Mücadele Projesi" },
+    org: { en: "Law Enforcement Cyber Crime Project", tr: "Kolluk Siber Suçlarla Mücadele Projesi" },
     role: {
-      en: "Mobile Threat Intelligence Engineer",
-      tr: "Mobile Threat Intelligence Engineer",
+      en: "Mobile Security Engineer — Digital Forensics",
+      tr: "Mobil Güvenlik Mühendisi — Dijital Adli Bilişim",
     },
     period: { en: "2011", tr: "2011" },
     location: { en: "Iran", tr: "İran" },
     highlights: [
       {
-        en: "Designed a low-level Android (Java) intelligence application disguised as a harmless reading app—asynchronously collecting data with root-level access.",
-        tr: "Java kullanarak Android üzerinde, zararsız bir kitap uygulamasının arkasına gizlenmiş ve root erişimi olan asenkron bir istihbarat yazılımı tasarladım.",
+        en: "Developed an Android (Java) application for authorized mobile forensics and evidence collection, built for a law enforcement cyber crime unit.",
+        tr: "Bir kolluk siber suçlarla mücadele birimi için, yetkili mobil adli bilişim ve delil toplama amaçlı bir Android (Java) uygulaması geliştirdim.",
       },
       {
-        en: "Used in active operations by Cyber Crime units. This deep dive into vulnerability and zero-trust thinking still shapes my security architecture today.",
-        tr: "Siber Suçlarla Mücadele birimleri tarafından aktif operasyonlarda kullanıldı. Zafiyet (vulnerability) ve zero-trust düşüncesindeki bu derin tecrübe, bugünkü güvenlik mimarimin temelini oluşturuyor.",
+        en: "Hands-on work with Android internals, permission models and vulnerabilities shaped the zero-trust approach I bring to security architecture today.",
+        tr: "Android iç yapısı, yetki modelleri ve zafiyetler üzerindeki bu deneyim, bugün güvenlik mimarisinde uyguladığım zero-trust yaklaşımının temelini oluşturdu.",
       },
     ],
   },
