@@ -81,6 +81,9 @@ export default async function BookPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+              <p className="mt-4 rounded-xl border border-border px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+                {t("capacity")}
+              </p>
             </div>
             <div>
               <h2 className="font-semibold text-foreground">{t("otherTitle")}</h2>
