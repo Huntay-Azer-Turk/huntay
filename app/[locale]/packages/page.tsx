@@ -22,7 +22,7 @@ type Props = { params: Promise<{ locale: string }> };
  * Check-up vitrinin altında kısa bir şerit olarak gösterilir; diğer paketler "devamı" bölümündedir.
  * Paket kimliği D1'de değişirse veya paket pasifse vitrinden düşer, sayfa yine çalışır.
  */
-const SHOWCASE_IDS = ["security-quick-scan", "architecture-cloud-review", "ai-agent-pilot"] as const;
+const SHOWCASE_IDS = ["security-quick-scan", "architecture-cloud-review", "ai-opportunity-scan"] as const;
 const CHECKUP_ID = "technical-checkup";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

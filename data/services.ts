@@ -46,6 +46,7 @@ export const services: ServiceItem[] = [
           en: "Which processes would gain most from AI, how ready your data and team are, and a prioritized roadmap with expected impact.",
           tr: "Hangi süreçlerin yapay zekadan en çok kazanacağı, verinizin ve ekibinizin ne kadar hazır olduğu ve beklenen etkiyle önceliklendirilmiş bir yol haritası.",
         },
+        packageId: "ai-opportunity-scan",
       },
       {
         id: "ai-sales",
