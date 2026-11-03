@@ -72,6 +72,8 @@ export type Assessment = {
   cta: [CtaRule[], CtaRule[], CtaRule[], CtaRule[]];
   /** Ayrı alt puan grupları (ör. IoT) */
   groups?: { id: string; label: Localized }[];
+  /** Ziyaretçinin seçtiği hedefe göre ikinci öneriye öncelik verilecek boyut */
+  goal?: { q: string; dimensions: Record<string, string> };
 };
 
 const L = (tr: string, en: string): Localized => ({ tr, en });
@@ -255,6 +257,10 @@ const ai: Assessment = {
     ],
   },
   cta: [[{ packageId: "ai-opportunity-scan" }], [{ packageId: "ai-opportunity-scan" }], [], []],
+  goal: {
+    q: "goal",
+    dimensions: { sales: "customer", support: "customer", backoffice: "process", knowledge: "data", training: "people" },
+  },
 };
 
 /* ================================================================== */

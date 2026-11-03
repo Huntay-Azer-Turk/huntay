@@ -108,7 +108,12 @@ export function scoreAssessment(
     .filter((q) => q.critical && (answers[q.id] ?? 0) === 0)
     .map((q) => q.dimension);
   const byScore = [...dimensions].filter((d) => d.score < 100).sort((a, b) => a.score - b.score).map((d) => d.id);
-  const order = [...new Set([...criticalZeroDims, ...byScore])];
+  // Ziyaretçinin hedefine uyan boyut (100 değilse) en zayıf boyuttan hemen sonra gelir.
+  const goalDim = assessment.goal
+    ? assessment.goal.dimensions[(profile[assessment.goal.q] ?? [])[0] ?? ""]
+    : undefined;
+  const goalFirst = goalDim && byScore.includes(goalDim) ? [byScore[0], goalDim] : [];
+  const order = [...new Set([...criticalZeroDims, ...goalFirst, ...byScore])];
   const recommendations: AssessmentResult["recommendations"] = [];
   for (const dimensionId of order) {
     if (recommendations.length >= 3) break;
