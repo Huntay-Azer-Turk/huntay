@@ -2,7 +2,7 @@ import { siteConfig } from "@/lib/site";
 import { getTranslations } from "next-intl/server";
 import { CalendarClock, Mail, Phone, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
+import { InstagramIcon, LinkedinIcon, MediumIcon, YoutubeIcon } from "@/components/icons";
 
 /** İletişim bölümü (ana sayfa). Alt bilgi tüm sayfalarda: components/layout/site-footer.tsx */
 export async function ContactFooter() {
@@ -50,6 +50,15 @@ export async function ContactFooter() {
             >
               <InstagramIcon className="h-4 w-4" aria-hidden />
               {t("instagram")}
+            </a>
+            <a
+              href={siteConfig.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium transition hover:border-accent"
+            >
+              <YoutubeIcon className="h-4 w-4" aria-hidden />
+              {t("youtube")}
             </a>
             {siteConfig.phoneDisplay ? (
               <a

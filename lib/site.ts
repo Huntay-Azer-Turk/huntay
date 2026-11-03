@@ -8,6 +8,7 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/huntay/",
   medium: "https://medium.com/@Huntay.AzerTurk",
   instagram: "https://www.instagram.com/huntay.azerturk/",
+  youtube: "https://www.youtube.com/@huntayazerturk",
   github: "https://github.com/Huntay-Azer-Turk",
   /** JSON-LD `address` için (şehir + ISO ülke kodu). */
   locality: "Istanbul",

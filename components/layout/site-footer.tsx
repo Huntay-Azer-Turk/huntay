@@ -29,6 +29,11 @@ export async function SiteFooter() {
               </li>
             ))}
             <li>
+              <a href={siteConfig.youtube} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                YouTube
+              </a>
+            </li>
+            <li>
               <ConsentSettingsButton label={t("cookies")} className={linkClass} />
             </li>
           </ul>

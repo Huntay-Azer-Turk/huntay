@@ -276,6 +276,7 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
         siteConfig.linkedin,
         siteConfig.medium,
         siteConfig.instagram,
+        siteConfig.youtube,
         siteConfig.github,
       ],
       hasOfferCatalog: offerCatalog(locale),

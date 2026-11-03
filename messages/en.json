@@ -175,7 +175,8 @@
     "medium": "Medium",
     "instagram": "Instagram",
     "email": "Email",
-    "whatsapp": "WhatsApp"
+    "whatsapp": "WhatsApp",
+    "youtube": "YouTube"
   },
   "Footer": {
     "rights": "All rights reserved.",
@@ -275,7 +276,7 @@
     "moreTitle": "Deeper reviews, implementation and ongoing advice",
     "moreSubtitle": "Work that usually follows a review.",
     "guaranteeTitle": "Diagnosis guarantee",
-    "guaranteeText": "For the Technical Check-up, Security Quick Scan and Architecture & Cloud Cost Review: if I can't give you at least 5 actionable, prioritized findings specific to your system, I refund the full fee. If we continue together, the review fee is credited toward the next engagement, as noted on each package.",
+    "guaranteeText": "For the Technical Check-up, Security Quick Scan, Architecture & Cloud Cost Review and AI Opportunity Scan: if I can't give you at least 5 actionable, prioritized findings specific to your system, I refund the full fee. If we continue together, the review fee is credited toward the next engagement, as noted on each package.",
     "noteCapacity": "Capacity: because I do every engagement myself, I take on at most 2 new reviews a month and only 1 implementation or Fractional CTO engagement at a time.",
     "pillar_ai-opportunity-scan": "AI"
   },
