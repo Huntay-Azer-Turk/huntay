@@ -2,29 +2,102 @@ import type { FaqItem, ServiceItem, StepItem } from "./types";
 
 /**
  * Hizmetler — /services, /services/<slug>, ana sayfa “Hizmetler” bölümü, JSON-LD (Service, OfferCatalog),
- * sitemap ve /llms.txt bu tek kaynaktan beslenir. Yeni hizmet eklemek için bu diziye bir öğe eklemek yeterli.
+ * sitemap, /llms.txt, Markdown sürümleri ve MCP bu tek kaynaktan beslenir.
+ *
+ * Yapı (Kasım 2026): 3 uzmanlık alanı (pillar) + Fractional CTO çalışma modeli (model) + alanların
+ * derinlemesine alt sayfaları (deep-dive). Kaldırılan eski hizmet adresleri ve MCP'nin donmuş slug listesi
+ * data/catalog.ts'deki uyumluluk katmanında yeni sayfalara eşlenir — bir hizmeti silerken oraya da bakın.
+ *
  * Sayılar (75%, 80%, 10.000+ ...) yalnızca sitede zaten yer alan vaka çalışmalarından alınmıştır.
  */
 export const services: ServiceItem[] = [
+  /* ------------------------------------------------------------------ */
+  /* Alan 1 — Yapay zeka                                                 */
+  /* ------------------------------------------------------------------ */
   {
     slug: "ai-agents",
+    role: "pillar",
     icon: "bot",
     title: {
       en: "AI Agents & Automation",
       tr: "Yapay Zeka Ajanları ve Otomasyon",
     },
+    metaTitle: {
+      en: "AI Agents, Automation & AI Transformation for SMEs",
+      tr: "Yapay Zeka Ajanları, Otomasyon ve KOBİ'ler için Yapay Zeka Dönüşümü",
+    },
     tagline: {
-      en: "Customer support, sales and operations agents that work 24/7—connected to your own data.",
-      tr: "Kendi verilerinize bağlı, 7/24 çalışan müşteri destek, satış ve operasyon ajanları.",
+      en: "AI transformation for SMEs and growing companies: from an opportunity scan to working agents and automation.",
+      tr: "KOBİ'ler ve büyüyen şirketler için yapay zeka dönüşümü: fırsat taramasından çalışan ajanlara ve otomasyona.",
     },
     summary: {
-      en: "I design and build production-grade AI agents: assistants that answer customers on WhatsApp and your website, qualify and follow up leads, search your documents and ERP data, and automate repetitive back-office work. They are built on RAG, LangChain/LangGraph and Dialogflow CX, and integrated with the tools you already use.",
-      tr: "Canlı ortama hazır yapay zeka ajanları tasarlıyor ve geliştiriyorum: WhatsApp'ta ve web sitenizde müşterilere cevap veren, potansiyel müşterileri değerlendirip takip eden, dokümanlarınızda ve ERP verilerinizde arama yapan, tekrarlayan ofis işlerini otomatikleştiren asistanlar. RAG, LangChain/LangGraph ve Dialogflow CX üzerine kurulur ve zaten kullandığınız araçlara entegre edilir.",
+      en: "I help companies put AI to work where it pays off: first finding the processes with the highest return, then building production-grade agents and automation connected to your own data and tools—assistants that answer customers on WhatsApp and your website, qualify leads, search your documents and ERP data, and take repetitive back-office work off your team. Your staff also learn to use AI tools safely and within KVKK/GDPR rules.",
+      tr: "Şirketlerin yapay zekayı gerçekten getiri sağladığı yerde kullanmasına yardımcı oluyorum: önce getirisi en yüksek süreçleri buluyor, ardından kendi verilerinize ve araçlarınıza bağlı, canlı ortama hazır ajanlar ve otomasyonlar kuruyorum. WhatsApp'ta ve web sitenizde müşterilere cevap veren, talepleri nitelendiren, dokümanlarınızda ve ERP verilerinizde arama yapan, tekrarlayan ofis işlerini ekibinizin üzerinden alan asistanlar. Çalışanlarınız da yapay zeka araçlarını güvenli ve KVKK'ya uygun kullanmayı öğrenir.",
     },
     metaDescription: {
-      en: "AI agent development for businesses: WhatsApp and web support agents, sales agents, RAG knowledge assistants and workflow automation, built for production.",
-      tr: "İşletmeler için yapay zeka ajanı geliştirme: WhatsApp ve web destek asistanı, satış ajanı, RAG bilgi asistanı ve iş akışı otomasyonu.",
+      en: "AI for SMEs: opportunity scan, sales and support agents for WhatsApp and web, internal knowledge assistants, workflow automation and staff AI training.",
+      tr: "KOBİ'ler için yapay zeka: fırsat taraması, WhatsApp ve web satış/destek asistanları, şirket içi bilgi asistanı, iş akışı otomasyonu ve çalışan eğitimi.",
     },
+    offerings: [
+      {
+        id: "ai-scan",
+        title: { en: "AI maturity & opportunity scan", tr: "Yapay zeka olgunluk ve fırsat taraması" },
+        body: {
+          en: "Which processes would gain most from AI, how ready your data and team are, and a prioritized roadmap with expected impact.",
+          tr: "Hangi süreçlerin yapay zekadan en çok kazanacağı, verinizin ve ekibinizin ne kadar hazır olduğu ve beklenen etkiyle önceliklendirilmiş bir yol haritası.",
+        },
+      },
+      {
+        id: "ai-sales",
+        title: { en: "Sales assistant", tr: "Satış asistanı" },
+        body: {
+          en: "Answers inquiries from your website, WhatsApp and Instagram, qualifies leads, moves them to a quote or a meeting and records them in your CRM.",
+          tr: "Web sitenizden, WhatsApp'tan ve Instagram'dan gelen talepleri karşılar, nitelendirir, teklife veya randevuya taşır ve CRM'inize işler.",
+        },
+        packageId: "ai-agent-pilot",
+      },
+      {
+        id: "ai-support",
+        title: { en: "Customer support & technical service assistant", tr: "Müşteri destek ve teknik servis asistanı" },
+        body: {
+          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In a previous project this approach made ticket resolution about 80% faster.",
+          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
+        },
+        packageId: "ai-agent-pilot",
+      },
+      {
+        id: "ai-knowledge",
+        title: { en: "Internal knowledge assistant", tr: "Şirket içi bilgi asistanı" },
+        body: {
+          en: "Staff ask in plain language and get answers from procedures, documents, price lists and ERP data—with the source shown.",
+          tr: "Çalışanlar günlük dille sorar; prosedürlerden, dokümanlardan, fiyat listelerinden ve ERP verilerinden kaynağı gösterilerek cevap alır.",
+        },
+      },
+      {
+        id: "ai-automation",
+        title: { en: "Workflow automation", tr: "İş akışı otomasyonu" },
+        body: {
+          en: "Quotes, orders, stock, invoices and reports without retyping: ERP, CRM, e-commerce and marketplace (e.g. Trendyol, Hepsiburada) integrations plus AI steps where they help.",
+          tr: "Teklif, sipariş, stok, fatura ve raporlar elle yeniden yazılmadan: ERP, CRM, e-ticaret ve pazaryeri (ör. Trendyol, Hepsiburada) entegrasyonları ve gerektiği yerde yapay zeka adımları.",
+        },
+      },
+      {
+        id: "ai-training",
+        title: { en: "AI training for office teams", tr: "Beyaz yaka çalışanlar için yapay zeka eğitimi" },
+        body: {
+          en: "Hands-on training on tools such as ChatGPT and Claude for real daily tasks, how to check their output, and clear rules on which data may go into them (KVKK/GDPR).",
+          tr: "ChatGPT ve Claude gibi araçlarla gerçek günlük işler üzerinde uygulamalı eğitim, çıktılarını kontrol etme ve hangi verinin bu araçlara girebileceğine dair net kurallar (KVKK).",
+        },
+      },
+      {
+        id: "ai-measure",
+        title: { en: "Measurement & improvement", tr: "Ölçüm ve iyileştirme" },
+        body: {
+          en: "Before/after metrics, conversation analytics and regular improvement rounds, so you can see what each change actually delivered.",
+          tr: "Önce/sonra ölçümleri, konuşma analitiği ve düzenli iyileştirme turları; böylece her değişikliğin gerçekte ne kazandırdığını görürsünüz.",
+        },
+      },
+    ],
     forWhom: [
       {
         en: "Teams answering the same customer questions every day",
@@ -33,6 +106,10 @@ export const services: ServiceItem[] = [
       {
         en: "Sales teams losing leads because follow-up is slow",
         tr: "Takip yavaş kaldığı için potansiyel müşteri kaybeden satış ekipleri",
+      },
+      {
+        en: "SMEs running on spreadsheets, email and manual data entry",
+        tr: "Excel, e-posta ve elle veri girişiyle yürüyen KOBİ'ler",
       },
       {
         en: "Companies whose knowledge is scattered across documents, emails and ERP",
@@ -53,16 +130,16 @@ export const services: ServiceItem[] = [
         tr: "Verilerinize (RAG) ve araçlarınıza bağlı, çalışan bir yapay zeka ajanı",
       },
       {
-        en: "Channels: WhatsApp, website chat, Chatwoot or your CRM",
-        tr: "Kanallar: WhatsApp, web sitesi sohbeti, Chatwoot veya CRM'iniz",
+        en: "Channels: WhatsApp, website chat, Instagram, Chatwoot or your CRM",
+        tr: "Kanallar: WhatsApp, web sitesi sohbeti, Instagram, Chatwoot veya CRM'iniz",
       },
       {
         en: "Human handover, guardrails and conversation analytics",
         tr: "İnsana devir, güvenlik sınırları (guardrails) ve konuşma analitiği",
       },
       {
-        en: "Deployment, monitoring and continuous improvement",
-        tr: "Canlıya alma, izleme ve sürekli iyileştirme",
+        en: "Deployment, monitoring, team training and continuous improvement",
+        tr: "Canlıya alma, izleme, ekip eğitimi ve sürekli iyileştirme",
       },
     ],
     useCases: [
@@ -75,8 +152,8 @@ export const services: ServiceItem[] = [
         tr: "Ürün sorularını cevaplayan, potansiyel müşterileri değerlendiren ve toplantı ayarlayan satış ajanı",
       },
       {
-        en: "Internal assistant that answers staff questions from manuals, policies and technical docs",
-        tr: "Çalışanların sorularını kılavuzlardan, prosedürlerden ve teknik dokümanlardan cevaplayan şirket içi asistan",
+        en: "Syncing orders and stock between your online store, marketplaces and your ERP",
+        tr: "Online mağazanız, pazaryerleri ve ERP'niz arasında sipariş ve stok senkronizasyonu",
       },
       {
         en: "Operations agent that reads ERP data, prepares reports and flags anomalies",
@@ -91,11 +168,23 @@ export const services: ServiceItem[] = [
       "Dialogflow CX",
       "Chatwoot",
       "WhatsApp Business API",
+      "REST APIs",
       "Python",
       "GCP",
     ],
-    relatedCases: ["ai-ops"],
+    relatedCases: ["ai-ops", "enmos-meta"],
     faq: [
+      {
+        id: "sme-start",
+        question: {
+          en: "Where should an SME start with AI?",
+          tr: "KOBİ'ler yapay zekaya nereden başlamalı?",
+        },
+        answer: {
+          en: "With the process that costs the most time or money today—often customer messages, order handling or reporting. A short scan identifies quick wins first, so early results build momentum for the next steps.",
+          tr: "Bugün en çok zaman veya para kaybettiren süreçten; çoğu zaman müşteri mesajları, sipariş yönetimi veya raporlama. Kısa bir tarama önce hızlı kazanımları belirler; böylece ilk sonuçlar sonraki adımlar için ivme sağlar.",
+        },
+      },
       {
         id: "ai-agents-data",
         question: {
@@ -118,350 +207,100 @@ export const services: ServiceItem[] = [
           tr: "Hayır. Tekrarlayan soruları üstlenir, karmaşık veya hassas durumları tüm bağlamıyla insanlara aktarır. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
         },
       },
-    ],
-  },
-  {
-    slug: "fractional-cto",
-    icon: "compass",
-    title: {
-      en: "Fractional CTO & Technical Consulting",
-      tr: "Fractional CTO ve Teknik Danışmanlık",
-    },
-    tagline: {
-      en: "Senior technical leadership—without a full-time executive hire.",
-      tr: "Tam zamanlı yönetici işe almadan kıdemli teknik liderlik.",
-    },
-    summary: {
-      en: "I act as your part-time CTO or technical advisor: setting technology strategy, reviewing architecture, choosing vendors and tools, hiring and coaching engineers, and making sure the product can scale. Ideal for founders and executives who need experienced judgment on technical decisions.",
-      tr: "Yarı zamanlı CTO'nuz veya teknik danışmanınız olarak çalışıyorum: teknoloji stratejisini belirlemek, mimariyi incelemek, tedarikçi ve araç seçmek, mühendis işe alımı ve koçluğu yapmak, ürünün ölçeklenebilmesini sağlamak. Teknik kararlarda deneyimli bir bakışa ihtiyaç duyan kurucular ve yöneticiler için ideal.",
-    },
-    metaDescription: {
-      en: "Fractional CTO and technical consulting for startups and SMEs: technology strategy, architecture reviews, team building and scaling. 13+ years of experience.",
-      tr: "Startup ve KOBİ'ler için fractional CTO ve teknik danışmanlık: teknoloji stratejisi, mimari inceleme, ekip kurma ve ölçeklenme. 13+ yıllık deneyim.",
-    },
-    forWhom: [
       {
-        en: "Non-technical founders building a software product",
-        tr: "Yazılım ürünü geliştiren teknik olmayan kurucular",
-      },
-      {
-        en: "Startups preparing to scale or raise investment",
-        tr: "Ölçeklenmeye veya yatırım almaya hazırlanan startup'lar",
-      },
-      {
-        en: "Companies whose outsourced or legacy system keeps failing",
-        tr: "Dış kaynaklı ya da eski sistemi sürekli sorun çıkaran şirketler",
-      },
-      {
-        en: "Teams that want architecture decisions reviewed by a senior engineer",
-        tr: "Mimari kararlarını kıdemli bir mühendise doğrulatmak isteyen ekipler",
-      },
-    ],
-    deliverables: [
-      {
-        en: "Technology strategy and roadmap aligned with business goals",
-        tr: "İş hedefleriyle uyumlu teknoloji stratejisi ve yol haritası",
-      },
-      {
-        en: "Architecture and code reviews with prioritized recommendations",
-        tr: "Önceliklendirilmiş önerilerle mimari ve kod incelemeleri",
-      },
-      {
-        en: "Build-vs-buy and vendor decisions",
-        tr: "Geliştir ya da satın al ve tedarikçi kararları",
-      },
-      {
-        en: "Hiring support, team structure and engineering processes",
-        tr: "İşe alım desteği, ekip yapısı ve mühendislik süreçleri",
-      },
-      {
-        en: "Security-first practices (CEH certified)",
-        tr: "Güvenlik öncelikli uygulamalar (CEH sertifikalı)",
-      },
-    ],
-    useCases: [
-      {
-        en: "Technical due diligence before an investment or acquisition",
-        tr: "Yatırım veya satın alma öncesi teknik inceleme (due diligence)",
-      },
-      {
-        en: "Replacing an unreliable outsourced platform with an in-house one",
-        tr: "Güvenilmez dış kaynaklı bir platformu şirket içi bir platformla değiştirme",
-      },
-      {
-        en: "Setting up an engineering team and delivery process from scratch",
-        tr: "Sıfırdan mühendislik ekibi ve teslimat süreci kurma",
-      },
-      {
-        en: "Regular architecture reviews as a sparring partner for your tech lead",
-        tr: "Teknik liderinize sparring partner olarak düzenli mimari incelemeler",
-      },
-    ],
-    tech: [
-      "Software architecture",
-      "Cloud strategy",
-      "Microservices",
-      "Security",
-      "Team building",
-      "Agile & TDD",
-    ],
-    relatedCases: ["iot-cloud", "hexagonal"],
-    faq: [
-      {
-        id: "fractional-cto-what",
+        id: "sme-replace",
         question: {
-          en: "What is a fractional CTO?",
-          tr: "Fractional CTO nedir?",
+          en: "Do we need to replace our existing software?",
+          tr: "Mevcut yazılımlarımızı değiştirmemiz gerekir mi?",
         },
         answer: {
-          en: "A fractional CTO is an experienced technology leader who works with your company part-time, covering strategy, architecture and team leadership at a fraction of the cost of a full-time executive.",
-          tr: "Fractional CTO, şirketinizle yarı zamanlı çalışan deneyimli bir teknoloji lideridir; strateji, mimari ve ekip liderliğini tam zamanlı bir yöneticinin maliyetinin çok altında üstlenir.",
-        },
-      },
-      {
-        id: "fractional-cto-team",
-        question: {
-          en: "Can you work alongside our existing developers or agency?",
-          tr: "Mevcut yazılımcılarımız veya ajansımızla birlikte çalışabilir misiniz?",
-        },
-        answer: {
-          en: "Yes. I can work with your in-house developers or an external agency: reviewing work, setting standards and making sure the architecture supports where the business is going.",
-          tr: "Evet. Şirket içi yazılımcılarınızla veya dış ajansınızla birlikte çalışabilirim; işleri inceler, standartları belirler ve mimarinin işin gideceği yönü desteklemesini sağlarım.",
+          en: "Rarely. Most of the value comes from connecting the tools you already use—ERP, accounting, e-commerce, CRM—and automating the work between them.",
+          tr: "Nadiren. Değerin çoğu zaten kullandığınız araçları (ERP, muhasebe, e-ticaret, CRM) birbirine bağlamaktan ve aralarındaki işi otomatikleştirmekten gelir.",
         },
       },
     ],
   },
-  {
-    slug: "startup-product-development",
-    icon: "rocket",
-    title: {
-      en: "Startup Product Development: Idea to Scale",
-      tr: "Startup Ürün Geliştirme: Fikirden Ölçeklenmeye",
-    },
-    metaTitle: {
-      en: "Startup Product Development & MVP",
-      tr: "Startup Ürün Geliştirme ve MVP",
-    },
-    tagline: {
-      en: "From idea validation and market research to MVP, launch and growth—end to end.",
-      tr: "Fikir doğrulama ve pazar araştırmasından MVP'ye, lansmana ve büyümeye; uçtan uca.",
-    },
-    summary: {
-      en: "I help founders turn an idea into a working, scalable product step by step: validating the problem and the market, defining the MVP, building it on the right architecture, launching, and iterating on real user data. One partner from the first sketch to a product that can grow.",
-      tr: "Kuruculara bir fikri adım adım çalışan ve ölçeklenebilen bir ürüne dönüştürmelerinde yardımcı oluyorum: problemi ve pazarı doğrulamak, MVP'yi tanımlamak, doğru mimariyle geliştirmek, lansman yapmak ve gerçek kullanıcı verisiyle iyileştirmek. İlk taslaktan büyüyebilen bir ürüne kadar tek bir partner.",
-    },
-    metaDescription: {
-      en: "End-to-end startup development: idea validation, market research, MVP development, launch and growth. Turn your idea into a scalable product.",
-      tr: "Uçtan uca startup geliştirme: fikir doğrulama, pazar araştırması, MVP geliştirme, lansman ve büyüme. Fikrinizi ölçeklenebilir bir ürüne dönüştürün.",
-    },
-    forWhom: [
-      {
-        en: "Founders with an idea who want to validate it before investing heavily",
-        tr: "Büyük yatırım yapmadan önce fikrini doğrulamak isteyen kurucular",
-      },
-      {
-        en: "Early-stage startups that need an MVP built right the first time",
-        tr: "MVP'sini ilk seferde doğru kurmak isteyen erken aşama startup'lar",
-      },
-      {
-        en: "Startups with traction whose product is struggling to scale",
-        tr: "Kullanıcı kazanmış ama ürünü ölçeklenmekte zorlanan startup'lar",
-      },
-      {
-        en: "Corporate teams launching a new digital product",
-        tr: "Yeni bir dijital ürün çıkaran kurumsal ekipler",
-      },
-    ],
-    deliverables: [
-      {
-        en: "Problem, market and competitor research",
-        tr: "Problem, pazar ve rakip araştırması",
-      },
-      {
-        en: "Product definition: MVP scope, user flows and success metrics",
-        tr: "Ürün tanımı: MVP kapsamı, kullanıcı akışları ve başarı metrikleri",
-      },
-      {
-        en: "MVP development (web, mobile, backend and cloud)",
-        tr: "MVP geliştirme (web, mobil, backend ve bulut)",
-      },
-      {
-        en: "Launch plan, analytics and feedback loops",
-        tr: "Lansman planı, analitik ve geri bildirim döngüleri",
-      },
-      {
-        en: "Growth iterations on a scalable architecture",
-        tr: "Ölçeklenebilir mimari üzerinde büyüme iterasyonları",
-      },
-    ],
-    useCases: [
-      {
-        en: "Validating a SaaS idea with a clickable prototype and a landing page",
-        tr: "Bir SaaS fikrini tıklanabilir prototip ve açılış sayfasıyla doğrulama",
-      },
-      {
-        en: "Building a marketplace or booking platform MVP",
-        tr: "Pazaryeri veya rezervasyon platformu MVP'si geliştirme",
-      },
-      {
-        en: "Turning a prototype into a production-ready product",
-        tr: "Bir prototipi canlıya hazır ürüne dönüştürme",
-      },
-      {
-        en: "Adding AI features that make the product stand out",
-        tr: "Ürünü öne çıkaran yapay zeka özellikleri ekleme",
-      },
-    ],
-    tech: ["Next.js", "React", "Flutter", ".NET", "Python", "SQL / NoSQL", "GCP", "Kubernetes"],
-    relatedCases: ["iot-cloud", "ai-ops"],
-    faq: [
-      {
-        id: "startup-idea",
-        question: {
-          en: "Can you help if I only have an idea?",
-          tr: "Sadece bir fikrim varsa yardımcı olabilir misiniz?",
-        },
-        answer: {
-          en: "Yes. We start with research and validation—who has the problem, how they solve it today and what they would pay for—so you invest in an MVP only when the idea holds up.",
-          tr: "Evet. Araştırma ve doğrulamayla başlıyoruz: problemi kim yaşıyor, bugün nasıl çözüyor ve neye para öder. Böylece MVP'ye ancak fikir sağlam çıkarsa yatırım yaparsınız.",
-        },
-      },
-      {
-        id: "startup-growth",
-        question: {
-          en: "Do you only build, or also help with growth?",
-          tr: "Sadece geliştirme mi yapıyorsunuz, büyümede de destek oluyor musunuz?",
-        },
-        answer: {
-          en: "Both. After launch I help set up analytics, interpret user data, prioritize the roadmap and keep the architecture ready for growth.",
-          tr: "İkisi de. Lansmandan sonra analitiği kurmaya, kullanıcı verisini yorumlamaya, yol haritasını önceliklendirmeye ve mimariyi büyümeye hazır tutmaya yardımcı oluyorum.",
-        },
-      },
-    ],
-  },
-  {
-    slug: "web-mobile-development",
-    icon: "devices",
-    title: {
-      en: "Web & Mobile App Development",
-      tr: "Web ve Mobil Uygulama Geliştirme",
-    },
-    tagline: {
-      en: "Fast, SEO-ready websites and cross-platform mobile apps with solid backends.",
-      tr: "Hızlı, SEO uyumlu web siteleri ve sağlam backend'li çok platformlu mobil uygulamalar.",
-    },
-    summary: {
-      en: "I build modern websites, web applications and iOS/Android apps: Next.js and React on the web, Flutter for mobile, and .NET or Python backends in the cloud. Performance, security and search visibility are built in from day one, not added later.",
-      tr: "Modern web siteleri, web uygulamaları ve iOS/Android uygulamaları geliştiriyorum: web'de Next.js ve React, mobilde Flutter, bulutta .NET veya Python backend'ler. Performans, güvenlik ve arama görünürlüğü sonradan eklenmez, ilk günden tasarımın parçasıdır.",
-    },
-    metaDescription: {
-      en: "Web and mobile app development: Next.js websites and web apps, Flutter iOS and Android apps and cloud backends that are fast, secure and SEO-ready.",
-      tr: "Web ve mobil uygulama geliştirme: Next.js web siteleri ve web uygulamaları, Flutter ile iOS ve Android uygulamaları ve bulut backend'leri.",
-    },
-    forWhom: [
-      {
-        en: "Businesses that need a fast, professional website that ranks",
-        tr: "Hızlı, profesyonel ve aramalarda üst sıralara çıkan bir web sitesine ihtiyaç duyan işletmeler",
-      },
-      {
-        en: "Companies digitizing a service with a customer portal or app",
-        tr: "Bir hizmetini müşteri portalı veya uygulamayla dijitalleştiren şirketler",
-      },
-      {
-        en: "Startups that need web and mobile from one product strategy",
-        tr: "Web ve mobili tek bir ürün stratejisiyle isteyen startup'lar",
-      },
-      {
-        en: "Teams replacing a slow or outdated application",
-        tr: "Yavaş veya eskimiş bir uygulamayı yenileyen ekipler",
-      },
-    ],
-    deliverables: [
-      {
-        en: "User flows and a clean, responsive interface",
-        tr: "Kullanıcı akışları ve sade, duyarlı (responsive) arayüz",
-      },
-      {
-        en: "Web apps with Next.js/React or Blazor",
-        tr: "Next.js/React veya Blazor ile web uygulamaları",
-      },
-      {
-        en: "iOS and Android apps with Flutter",
-        tr: "Flutter ile iOS ve Android uygulamaları",
-      },
-      {
-        en: "APIs, admin panels and integrations",
-        tr: "API'ler, yönetim panelleri ve entegrasyonlar",
-      },
-      {
-        en: "Technical SEO, performance and analytics setup",
-        tr: "Teknik SEO, performans ve analitik kurulumu",
-      },
-    ],
-    useCases: [
-      {
-        en: "Corporate website with bilingual content and strong SEO",
-        tr: "Çok dilli içerik ve güçlü SEO'ya sahip kurumsal web sitesi",
-      },
-      {
-        en: "Customer portal for orders, tickets or device monitoring",
-        tr: "Sipariş, destek talebi veya cihaz izleme için müşteri portalı",
-      },
-      {
-        en: "Booking, membership or e-commerce application",
-        tr: "Rezervasyon, üyelik veya e-ticaret uygulaması",
-      },
-      {
-        en: "Mobile companion app for an IoT or SaaS product",
-        tr: "IoT veya SaaS ürünü için mobil yardımcı uygulama",
-      },
-    ],
-    tech: ["Next.js", "React", "TypeScript", "Flutter", "Blazor", ".NET", "Python", "SQL / NoSQL"],
-    relatedCases: ["iot-cloud", "enmos-meta"],
-    faq: [
-      {
-        id: "web-fullstack",
-        question: {
-          en: "Do you build both the website and the backend?",
-          tr: "Hem web sitesini hem backend'i siz mi geliştiriyorsunuz?",
-        },
-        answer: {
-          en: "Yes: frontend, backend, database, cloud deployment and integrations, so you have one accountable partner for the whole product.",
-          tr: "Evet; ön yüz, backend, veritabanı, bulut kurulumu ve entegrasyonlar dahil. Böylece ürünün tamamından sorumlu tek bir partneriniz olur.",
-        },
-      },
-      {
-        id: "web-seo",
-        question: {
-          en: "Will my website be optimized for Google and AI search?",
-          tr: "Web sitem Google ve yapay zeka aramaları için optimize edilecek mi?",
-        },
-        answer: {
-          en: "Yes. Sites are built with technical SEO, structured data, fast loading and a clean multilingual setup, so search engines and AI assistants can understand and recommend them.",
-          tr: "Evet. Siteler teknik SEO, yapılandırılmış veri, hızlı yükleme ve temiz çok dilli yapı ile kurulur; böylece arama motorları ve yapay zeka asistanları onları anlayıp önerebilir.",
-        },
-      },
-    ],
-  },
+
+  /* ------------------------------------------------------------------ */
+  /* Alan 2 — Bulut, IoT ve mimari                                       */
+  /* ------------------------------------------------------------------ */
   {
     slug: "cloud-devops",
+    role: "pillar",
     icon: "cloud",
     title: {
-      en: "Cloud, DevOps & Cost Optimization",
-      tr: "Bulut, DevOps ve Maliyet Optimizasyonu",
+      en: "Cloud, IoT & Architecture",
+      tr: "Bulut, IoT ve Mimari",
+    },
+    metaTitle: {
+      en: "Cloud, IoT & Software Architecture Consulting",
+      tr: "Bulut, IoT ve Yazılım Mimarisi Danışmanlığı",
     },
     tagline: {
-      en: "Reliable infrastructure, automated deployments and a lower cloud bill.",
-      tr: "Güvenilir altyapı, otomatik deployment ve daha düşük bulut faturası.",
+      en: "Systems that scale, keep costs under control and stay up.",
+      tr: "Ölçeklenen, maliyeti kontrol altında ve kesintisiz çalışan sistemler.",
     },
     summary: {
-      en: "I design and run cloud infrastructure that is reliable and affordable: Kubernetes and Docker, CI/CD pipelines, infrastructure as code with Terraform, monitoring and zero-downtime releases. In one of my projects, migrating legacy monoliths to event-driven microservices on GCP cut infrastructure costs by roughly 75%.",
-      tr: "Güvenilir ve uygun maliyetli bulut altyapıları tasarlıyor ve işletiyorum: Kubernetes ve Docker, CI/CD hatları, Terraform ile kod olarak altyapı, izleme ve kesintisiz sürüm çıkarma. Bir projemde eski monolitleri GCP üzerinde olay güdümlü mikroservislere taşımak altyapı maliyetini yaklaşık %75 düşürdü.",
+      en: "I review, design and modernize the systems your business runs on: cloud architecture and costs, the path from a fragile monolith to a maintainable structure, automated delivery and monitoring, IoT platforms and performance under load—in the cloud, on-premises or both. In one project, moving legacy monoliths to event-driven microservices on GCP cut infrastructure costs by roughly 75%; the IoT platform I built runs 10,000+ devices for 100,000+ users.",
+      tr: "İşinizin üzerinde çalıştığı sistemleri inceliyor, tasarlıyor ve modernize ediyorum: bulut mimarisi ve maliyetleri, kırılgan bir monolitten bakımı kolay bir yapıya geçiş, otomatik teslimat ve izleme, IoT platformları ve yük altında performans; bulutta, şirket içinde ya da ikisinde birden. Bir projede eski monolitleri GCP üzerinde olay güdümlü mikroservislere taşımak altyapı maliyetini yaklaşık %75 düşürdü; kurduğum IoT platformu 10.000+ cihazı ve 100.000+ kullanıcıyı çalıştırıyor.",
     },
     metaDescription: {
-      en: "DevOps and cloud consulting: Kubernetes, CI/CD, Terraform, monitoring and cloud cost optimization, with up to 75% lower infrastructure costs in practice.",
-      tr: "DevOps ve bulut danışmanlığı: Kubernetes, CI/CD, Terraform, izleme ve bulut maliyet optimizasyonu. Altyapı maliyetlerinde %75'e varan tasarruf.",
+      en: "Cloud, IoT and architecture consulting: cost reviews, modernization, DevOps, IoT platforms, performance and on-premises deployments. Up to 75% lower cloud costs.",
+      tr: "Bulut, IoT ve mimari danışmanlığı: maliyet incelemesi, modernizasyon, DevOps, IoT platformu, performans ve şirket içi kurulum. %75'e varan maliyet düşüşü.",
     },
+    offerings: [
+      {
+        id: "cloud-review",
+        title: { en: "Architecture & cloud cost review", tr: "Mimari ve bulut maliyet incelemesi" },
+        body: {
+          en: "Where the money and the risk are in your current setup, quick wins and a prioritized roadmap. In one migration, infrastructure costs dropped by roughly 75%.",
+          tr: "Mevcut yapınızda paranın ve riskin nereye gittiği, hızlı kazanımlar ve önceliklendirilmiş bir yol haritası. Bir geçişte altyapı maliyeti yaklaşık %75 düştü.",
+        },
+        packageId: "architecture-cloud-review",
+      },
+      {
+        id: "cloud-modernization",
+        title: { en: "Modernization", tr: "Modernizasyon" },
+        body: {
+          en: "From a monolith to a modular monolith or microservices step by step—without a risky big-bang rewrite—or consolidating too many services into fewer.",
+          tr: "Monolitten modüler monolite veya mikroservislere riskli bir “sıfırdan yazma” yapmadan adım adım geçiş; ya da gereğinden fazla servisi daha aza indirme.",
+        },
+        serviceSlug: "microservices-modernization",
+      },
+      {
+        id: "cloud-devops",
+        title: { en: "DevOps & reliability", tr: "DevOps ve güvenilirlik" },
+        body: {
+          en: "CI/CD, Docker and Kubernetes, infrastructure as code with Terraform, monitoring and alerting, backups and disaster recovery that are actually tested.",
+          tr: "CI/CD, Docker ve Kubernetes, Terraform ile kod olarak altyapı, izleme ve alarm, gerçekten test edilmiş yedekleme ve felaket kurtarma.",
+        },
+      },
+      {
+        id: "cloud-iot",
+        title: { en: "IoT platforms", tr: "IoT platformları" },
+        body: {
+          en: "Device connectivity over MQTT, device management, remote firmware updates, alarms and dashboards—proven with 10,000+ devices and 100,000+ users.",
+          tr: "MQTT ile cihaz bağlantısı, cihaz yönetimi, uzaktan firmware güncelleme, alarmlar ve paneller; 10.000+ cihaz ve 100.000+ kullanıcıyla kanıtlanmış.",
+        },
+        serviceSlug: "iot-platforms",
+      },
+      {
+        id: "cloud-performance",
+        title: { en: "Performance & scaling", tr: "Performans ve ölçeklenme" },
+        body: {
+          en: "Load tests, bottleneck analysis, database tuning and migrations (for example to PostgreSQL), so traffic peaks stop being a risk.",
+          tr: "Yük testleri, darboğaz analizi, veritabanı iyileştirme ve geçişleri (ör. PostgreSQL'e), böylece trafik zirveleri risk olmaktan çıkar.",
+        },
+      },
+      {
+        id: "cloud-onprem",
+        title: { en: "On-premises & closed networks", tr: "Şirket içi ve kapalı ağ kurulumları" },
+        body: {
+          en: "One codebase that runs as a 60+ service cloud platform or as 3 lightweight services at offline, air-gapped sites.",
+          tr: "Aynı kod tabanının hem 60+ servislik bir bulut platformu hem de internetten izole sahalarda 3 hafif servis olarak çalışması.",
+        },
+      },
+    ],
     forWhom: [
       {
         en: "Companies whose cloud bill keeps growing faster than usage",
@@ -472,34 +311,34 @@ export const services: ServiceItem[] = [
         tr: "Elle deployment yapan ve her sürümden çekinen ekipler",
       },
       {
-        en: "Products that need high availability and zero-downtime deploys",
-        tr: "Yüksek erişilebilirlik ve kesintisiz deployment gerektiren ürünler",
+        en: "Hardware manufacturers that need a cloud platform for their devices",
+        tr: "Cihazları için bulut platformuna ihtiyaç duyan donanım üreticileri",
       },
       {
-        en: "Organizations moving between on-premises and the cloud",
-        tr: "Şirket içi sunucular ile bulut arasında geçiş yapan kurumlar",
+        en: "Products that must run in the cloud, on-premises or both",
+        tr: "Bulutta, şirket içinde ya da ikisinde birden çalışması gereken ürünler",
       },
     ],
     deliverables: [
       {
-        en: "Cloud cost and architecture audit with quick wins",
-        tr: "Hızlı kazanımlar içeren bulut maliyet ve mimari denetimi",
+        en: "Architecture and cloud cost assessment with quick wins",
+        tr: "Hızlı kazanımlar içeren mimari ve bulut maliyet değerlendirmesi",
       },
       {
-        en: "Kubernetes/Docker platform and infrastructure as code (Terraform)",
-        tr: "Kubernetes/Docker platformu ve kod olarak altyapı (Terraform)",
+        en: "A step-by-step modernization or migration roadmap",
+        tr: "Adım adım modernizasyon veya geçiş yol haritası",
       },
       {
-        en: "CI/CD pipelines with automated quality gates",
-        tr: "Otomatik kalite kontrollü CI/CD hatları",
+        en: "Kubernetes/Docker platform, CI/CD and infrastructure as code (Terraform)",
+        tr: "Kubernetes/Docker platformu, CI/CD ve kod olarak altyapı (Terraform)",
       },
       {
-        en: "Monitoring, logging and alerting",
-        tr: "İzleme, loglama ve alarm",
+        en: "Monitoring, logging, alerting and disaster-recovery planning",
+        tr: "İzleme, loglama, alarm ve felaket kurtarma planı",
       },
       {
-        en: "Security hardening and disaster-recovery planning",
-        tr: "Güvenlik sıkılaştırma ve felaket kurtarma planı",
+        en: "IoT connectivity, device management and dashboards",
+        tr: "IoT bağlantısı, cihaz yönetimi ve paneller",
       },
     ],
     useCases: [
@@ -516,12 +355,12 @@ export const services: ServiceItem[] = [
         tr: "Aynı sistemi hem bulutta hem çevrimdışı şirket içi tesislerde çalıştırma",
       },
       {
-        en: "Debugging production safely with sandbox routing",
-        tr: "Sandbox yönlendirmesiyle canlı ortamda güvenli hata ayıklama",
+        en: "Remote monitoring and firmware management for thousands of devices",
+        tr: "Binlerce cihazın uzaktan izlenmesi ve firmware yönetimi",
       },
     ],
-    tech: ["GCP", "Kubernetes", "Docker", "Terraform", "CI/CD", "RabbitMQ", "MQTT", "Linux"],
-    relatedCases: ["iot-cloud", "hexagonal", "sandbox"],
+    tech: ["GCP", "Kubernetes", "Docker", "Terraform", "CI/CD", "MQTT", "RabbitMQ", ".NET", "Redis", "Linux"],
+    relatedCases: ["iot-cloud", "hexagonal", "sandbox", "bare-metal"],
     faq: [
       {
         id: "cloud-savings",
@@ -530,8 +369,8 @@ export const services: ServiceItem[] = [
           tr: "Bulut maliyetlerinde ne kadar tasarruf edebiliriz?",
         },
         answer: {
-          en: "It depends on your current setup. Savings usually come from right-sizing, removing idle resources and better architecture; in one migration to event-driven microservices on GCP, infrastructure costs dropped by roughly 75%. An audit shows your realistic potential.",
-          tr: "Mevcut yapınıza bağlı. Tasarruf genellikle doğru boyutlandırma, atıl kaynakları kaldırma ve daha iyi mimariden gelir; GCP'de olay güdümlü mikroservislere yapılan bir geçişte altyapı maliyeti yaklaşık %75 düştü. Bir denetim sizin için gerçekçi potansiyeli gösterir.",
+          en: "It depends on your current setup. Savings usually come from right-sizing, removing idle resources and better architecture; in one migration to event-driven microservices on GCP, infrastructure costs dropped by roughly 75%. A review shows your realistic potential.",
+          tr: "Mevcut yapınıza bağlı. Tasarruf genellikle doğru boyutlandırma, atıl kaynakları kaldırma ve daha iyi mimariden gelir; GCP'de olay güdümlü mikroservislere yapılan bir geçişte altyapı maliyeti yaklaşık %75 düştü. Bir inceleme sizin için gerçekçi potansiyeli gösterir.",
         },
       },
       {
@@ -545,31 +384,115 @@ export const services: ServiceItem[] = [
           tr: "Canlı ortam deneyimimin çoğu GCP ve Kubernetes üzerinde; ancak konteynerler, kod olarak altyapı, CI/CD ve gözlemlenebilirlik prensipleri diğer bulutlarda ve şirket içi ortamlarda da geçerli.",
         },
       },
+      {
+        id: "cloud-microservices",
+        question: {
+          en: "Are microservices always the right choice?",
+          tr: "Mikroservis her zaman doğru seçim mi?",
+        },
+        answer: {
+          en: "No. Microservices add operational cost. I recommend them where independent scaling or deployment really pays off, and a well-structured modular monolith where it doesn't.",
+          tr: "Hayır. Mikroservisler operasyonel maliyet getirir. Bağımsız ölçeklenme veya deployment gerçekten fayda sağladığında öneriyorum; sağlamadığında iyi yapılandırılmış modüler bir monolit daha doğru olur.",
+        },
+      },
     ],
   },
+
+  /* ------------------------------------------------------------------ */
+  /* Alan 3 — Siber güvenlik                                             */
+  /* ------------------------------------------------------------------ */
   {
     slug: "cybersecurity",
+    role: "pillar",
     icon: "shield",
     title: {
-      en: "Cybersecurity: Penetration Testing & Secure Code",
-      tr: "Siber Güvenlik: Sızma Testi ve Güvenli Kod",
+      en: "Cybersecurity & Secure Software",
+      tr: "Siber Güvenlik ve Güvenli Yazılım",
     },
     metaTitle: {
-      en: "Penetration Testing, Encryption & Secure Code Review",
-      tr: "Sızma Testi, Şifreleme ve Güvenli Kod İncelemesi",
+      en: "Penetration Testing, Security Assessments & Secure Code",
+      tr: "Sızma Testi, Güvenlik Değerlendirmesi ve Güvenli Kod",
     },
     tagline: {
       en: "Find the weak points before attackers do—then fix them in the code, the data and the infrastructure.",
       tr: "Zayıf noktaları saldırganlardan önce bulun; sonra kodda, veride ve altyapıda kalıcı olarak kapatın.",
     },
     summary: {
-      en: "I test and harden web applications, APIs, mobile apps and cloud setups: authorized penetration tests, secure code reviews, and encryption of data in transit and at rest. You get a prioritized report written for both engineers and management, and—unlike a test-only engagement—hands-on help fixing what was found, from code changes to key management and CI/CD security checks.",
-      tr: "Web uygulamalarını, API'leri, mobil uygulamaları ve bulut altyapılarını test ediyor ve güçlendiriyorum: yetkilendirilmiş sızma testleri, güvenli kod incelemeleri ve aktarılan ile saklanan verinin şifrelenmesi. Hem mühendislerin hem yönetimin okuyabileceği, önceliklendirilmiş bir rapor alırsınız; yalnızca test yapılan bir çalışmanın aksine, kod değişikliklerinden anahtar yönetimine ve CI/CD güvenlik kontrollerine kadar bulunan açıkların kapatılmasında da birebir destek veririm.",
+      en: "I assess, test and harden what attackers actually target: web applications and APIs, cloud setups, connected devices, backups and the people who receive phishing calls. You get a prioritized report written for both engineers and management, and—unlike a test-only engagement—hands-on help fixing what was found, from code changes to key management, CI/CD security checks and a tested recovery plan.",
+      tr: "Saldırganların gerçekten hedeflediği yerleri değerlendiriyor, test ediyor ve güçlendiriyorum: web uygulamaları ve API'ler, bulut yapılandırmaları, bağlı cihazlar, yedekler ve oltalama aramalarını karşılayan çalışanlar. Hem mühendislerin hem yönetimin okuyabileceği, önceliklendirilmiş bir rapor alırsınız; yalnızca test yapılan bir çalışmanın aksine, kod değişikliklerinden anahtar yönetimine, CI/CD güvenlik kontrollerine ve test edilmiş bir kurtarma planına kadar bulunan açıkların kapatılmasında da birebir destek veririm.",
     },
     metaDescription: {
-      en: "Penetration testing for web apps, APIs and mobile apps, secure code review, encryption and key management, and DevSecOps for startups and SMEs.",
-      tr: "Web uygulaması, API ve mobil uygulama sızma testi, güvenli kod incelemesi, şifreleme ve anahtar yönetimi, DevSecOps. Startup ve KOBİ'ler için siber güvenlik.",
+      en: "Cybersecurity for SMEs: maturity assessment, OWASP web/API scans, penetration testing, cloud and IoT security, secure code, ransomware readiness and training.",
+      tr: "KOBİ'ler için siber güvenlik: olgunluk değerlendirmesi, OWASP web/API taraması, sızma testi, bulut ve IoT güvenliği, güvenli kod, fidye yazılımına hazırlık.",
     },
+    offerings: [
+      {
+        id: "sec-maturity",
+        title: { en: "Security maturity assessment", tr: "Güvenlik olgunluk değerlendirmesi" },
+        body: {
+          en: "Where your company stands on the controls that matter most for SMEs—MFA, backups, updates, access, awareness—with a 90-day roadmap.",
+          tr: "KOBİ'ler için en çok önem taşıyan kontrollerde (MFA, yedekleme, güncellemeler, erişim, farkındalık) şirketinizin nerede durduğu ve 90 günlük bir yol haritası.",
+        },
+      },
+      {
+        id: "sec-scan",
+        title: { en: "Web & API security scan (OWASP Top 10)", tr: "Web ve API güvenlik taraması (OWASP Top 10)" },
+        body: {
+          en: "A fixed-scope check of your web app or API against the most common attack types, with a prioritized report.",
+          tr: "Web uygulamanızın veya API'nizin en yaygın saldırı türlerine karşı kapsamı belli bir kontrolü ve önceliklendirilmiş rapor.",
+        },
+        packageId: "security-quick-scan",
+      },
+      {
+        id: "sec-pentest",
+        title: { en: "Penetration test & retest", tr: "Sızma testi ve yeniden test" },
+        body: {
+          en: "Authorized, in-depth testing of web apps, APIs, mobile apps or cloud configuration—then a retest to confirm each issue is closed.",
+          tr: "Web uygulaması, API, mobil uygulama veya bulut yapılandırmasının yetkilendirilmiş, derinlemesine testi; ardından her açığın kapandığını doğrulayan yeniden test.",
+        },
+        packageId: "penetration-test-standard",
+      },
+      {
+        id: "sec-cloud",
+        title: { en: "Cloud security review", tr: "Bulut güvenliği incelemesi" },
+        body: {
+          en: "Identity and access, network exposure, secrets and Kubernetes configuration in your cloud and SaaS tools.",
+          tr: "Bulutunuzda ve SaaS araçlarınızda kimlik ve erişim, ağ erişimi, gizli anahtarlar ve Kubernetes yapılandırması.",
+        },
+      },
+      {
+        id: "sec-iot",
+        title: { en: "IoT & product security", tr: "IoT ve ürün güvenliği" },
+        body: {
+          en: "Device identity, secure firmware updates and a vulnerability-handling process—important for manufacturers selling into the EU under the Cyber Resilience Act.",
+          tr: "Cihaz kimliği, güvenli firmware güncellemesi ve açık bildirme süreci; AB Siber Dayanıklılık Yasası (CRA) kapsamında AB'ye satış yapan üreticiler için önemli.",
+        },
+      },
+      {
+        id: "sec-code",
+        title: { en: "Secure software development", tr: "Güvenli yazılım geliştirme" },
+        body: {
+          en: "Secure code review of authentication, authorization, input handling and secrets, plus automated code and dependency scanning in CI/CD.",
+          tr: "Kimlik doğrulama, yetkilendirme, girdi işleme ve gizli anahtarlar için güvenli kod incelemesi; CI/CD'de otomatik kod ve bağımlılık taraması.",
+        },
+      },
+      {
+        id: "sec-ransomware",
+        title: { en: "Ransomware readiness", tr: "Fidye yazılımına hazırlık" },
+        body: {
+          en: "Backups with a tested restore, an incident response plan including the KVKK/GDPR notification step, and the technical measures behind them.",
+          tr: "Geri yüklemesi test edilmiş yedekler, KVKK bildirim adımını içeren olay müdahale planı ve bunların arkasındaki teknik tedbirler.",
+        },
+      },
+      {
+        id: "sec-awareness",
+        title: { en: "Employee awareness training", tr: "Çalışan farkındalık eğitimi" },
+        body: {
+          en: "Short, practical sessions on phishing, fake invoices, deepfakes and voice-cloned calls—and what to do when something looks wrong.",
+          tr: "Oltalama, sahte faturalar, deepfake ve ses klonlamalı aramalar üzerine kısa, uygulamalı oturumlar ve şüpheli bir durumda ne yapılacağı.",
+        },
+      },
+    ],
     forWhom: [
       {
         en: "Companies launching a product that handles customer or payment data",
@@ -580,8 +503,8 @@ export const services: ServiceItem[] = [
         tr: "Müşteri güvenlik değerlendirmesine, denetime veya KVKK/GDPR uyumuna hazırlanan ekipler",
       },
       {
-        en: "Startups without an in-house security engineer",
-        tr: "Şirket içinde güvenlik mühendisi olmayan startup'lar",
+        en: "SMEs and startups without an in-house security engineer",
+        tr: "Şirket içinde güvenlik mühendisi olmayan KOBİ'ler ve startup'lar",
       },
       {
         en: "Businesses that suspect a vulnerability or recently had a security incident",
@@ -670,8 +593,292 @@ export const services: ServiceItem[] = [
       },
     ],
   },
+
+  /* ------------------------------------------------------------------ */
+  /* Çalışma modeli — Fractional CTO                                     */
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "fractional-cto",
+    role: "model",
+    icon: "compass",
+    title: {
+      en: "Fractional CTO & Technical Consulting",
+      tr: "Fractional CTO ve Teknik Danışmanlık",
+    },
+    tagline: {
+      en: "Senior technical leadership—without a full-time executive hire.",
+      tr: "Tam zamanlı yönetici işe almadan kıdemli teknik liderlik.",
+    },
+    summary: {
+      en: "I act as your part-time CTO or technical advisor across all three areas—AI, cloud/IoT and security: setting technology strategy, reviewing architecture, choosing vendors and tools, hiring and coaching engineers, and leading the build of a new product from idea to MVP. Ideal for founders and executives who need experienced judgment on technical decisions.",
+      tr: "Üç alanın tamamında (yapay zeka, bulut/IoT ve güvenlik) yarı zamanlı CTO'nuz veya teknik danışmanınız olarak çalışıyorum: teknoloji stratejisini belirlemek, mimariyi incelemek, tedarikçi ve araç seçmek, mühendis işe alımı ve koçluğu yapmak, yeni bir ürünü fikirden MVP'ye kadar yönetmek. Teknik kararlarda deneyimli bir bakışa ihtiyaç duyan kurucular ve yöneticiler için ideal.",
+    },
+    metaDescription: {
+      en: "Fractional CTO and technical consulting for startups and SMEs: technology strategy, architecture reviews, team building and CTO-led MVPs. 13+ years of experience.",
+      tr: "Startup ve KOBİ'ler için fractional CTO ve teknik danışmanlık: teknoloji stratejisi, mimari inceleme, ekip kurma ve CTO liderliğinde MVP. 13+ yıllık deneyim.",
+    },
+    offerings: [
+      {
+        id: "cto-monthly",
+        title: { en: "Monthly technical leadership", tr: "Aylık teknik liderlik" },
+        body: {
+          en: "Technology strategy and roadmap, architecture decisions and regular reviews with your team—at a fraction of a full-time executive's cost.",
+          tr: "Teknoloji stratejisi ve yol haritası, mimari kararlar ve ekibinizle düzenli incelemeler; tam zamanlı bir yöneticinin maliyetinin çok altında.",
+        },
+        packageId: "fractional-cto-monthly",
+      },
+      {
+        id: "cto-checkup",
+        title: { en: "Technical check-up & due diligence", tr: "Teknik check-up ve due diligence" },
+        body: {
+          en: "A short, fixed-price look at your product, code and team—or a technical review before an investment or acquisition.",
+          tr: "Ürününüze, kodunuza ve ekibinize kısa, sabit fiyatlı bir bakış; ya da yatırım veya satın alma öncesi teknik inceleme.",
+        },
+        packageId: "technical-checkup",
+      },
+      {
+        id: "cto-team",
+        title: { en: "Team building & engineering process", tr: "Ekip kurma ve mühendislik süreçleri" },
+        body: {
+          en: "Hiring support, team structure, code standards and a delivery process your team can keep running.",
+          tr: "İşe alım desteği, ekip yapısı, kod standartları ve ekibinizin sürdürebileceği bir teslimat süreci.",
+        },
+      },
+      {
+        id: "cto-mvp",
+        title: { en: "CTO-led MVP", tr: "CTO liderliğinde MVP" },
+        body: {
+          en: "Validating the idea, defining the MVP scope, building it on the right architecture and launching—one accountable lead from the first sketch to a product that can grow.",
+          tr: "Fikri doğrulamak, MVP kapsamını tanımlamak, doğru mimariyle geliştirmek ve yayına almak; ilk taslaktan büyüyebilen bir ürüne kadar sorumluluğu üstlenen tek bir lider.",
+        },
+        packageId: "mvp-development",
+      },
+      {
+        id: "cto-vendors",
+        title: { en: "Agency & vendor oversight", tr: "Ajans ve tedarikçi yönetimi" },
+        body: {
+          en: "Reviewing the work of your outsourced team, setting standards and making build-vs-buy decisions with you.",
+          tr: "Dış ekibinizin işini incelemek, standartları belirlemek ve geliştir-ya-da-satın-al kararlarını sizinle birlikte vermek.",
+        },
+      },
+    ],
+    forWhom: [
+      {
+        en: "Non-technical founders building a software product",
+        tr: "Yazılım ürünü geliştiren teknik olmayan kurucular",
+      },
+      {
+        en: "Startups preparing to scale or raise investment",
+        tr: "Ölçeklenmeye veya yatırım almaya hazırlanan startup'lar",
+      },
+      {
+        en: "Companies whose outsourced or legacy system keeps failing",
+        tr: "Dış kaynaklı ya da eski sistemi sürekli sorun çıkaran şirketler",
+      },
+      {
+        en: "Teams that want architecture decisions reviewed by a senior engineer",
+        tr: "Mimari kararlarını kıdemli bir mühendise doğrulatmak isteyen ekipler",
+      },
+    ],
+    deliverables: [
+      {
+        en: "Technology strategy and roadmap aligned with business goals",
+        tr: "İş hedefleriyle uyumlu teknoloji stratejisi ve yol haritası",
+      },
+      {
+        en: "Architecture and code reviews with prioritized recommendations",
+        tr: "Önceliklendirilmiş önerilerle mimari ve kod incelemeleri",
+      },
+      {
+        en: "Build-vs-buy and vendor decisions",
+        tr: "Geliştir ya da satın al ve tedarikçi kararları",
+      },
+      {
+        en: "Hiring support, team structure and engineering processes",
+        tr: "İşe alım desteği, ekip yapısı ve mühendislik süreçleri",
+      },
+      {
+        en: "Security-first practices (CEH certified)",
+        tr: "Güvenlik öncelikli uygulamalar (CEH sertifikalı)",
+      },
+    ],
+    useCases: [
+      {
+        en: "Technical due diligence before an investment or acquisition",
+        tr: "Yatırım veya satın alma öncesi teknik inceleme (due diligence)",
+      },
+      {
+        en: "Replacing an unreliable outsourced platform with an in-house one",
+        tr: "Güvenilmez dış kaynaklı bir platformu şirket içi bir platformla değiştirme",
+      },
+      {
+        en: "Turning a validated idea or a prototype into a production-ready MVP",
+        tr: "Doğrulanmış bir fikri veya prototipi canlıya hazır bir MVP'ye dönüştürme",
+      },
+      {
+        en: "Regular architecture reviews as a sparring partner for your tech lead",
+        tr: "Teknik liderinize sparring partner olarak düzenli mimari incelemeler",
+      },
+    ],
+    tech: [
+      "Software architecture",
+      "Cloud strategy",
+      "Microservices",
+      "Security",
+      "Team building",
+      "Agile & TDD",
+    ],
+    relatedCases: ["iot-cloud", "hexagonal", "ai-ops"],
+    faq: [
+      {
+        id: "fractional-cto-what",
+        question: {
+          en: "What is a fractional CTO?",
+          tr: "Fractional CTO nedir?",
+        },
+        answer: {
+          en: "A fractional CTO is an experienced technology leader who works with your company part-time, covering strategy, architecture and team leadership at a fraction of the cost of a full-time executive.",
+          tr: "Fractional CTO, şirketinizle yarı zamanlı çalışan deneyimli bir teknoloji lideridir; strateji, mimari ve ekip liderliğini tam zamanlı bir yöneticinin maliyetinin çok altında üstlenir.",
+        },
+      },
+      {
+        id: "fractional-cto-team",
+        question: {
+          en: "Can you work alongside our existing developers or agency?",
+          tr: "Mevcut yazılımcılarımız veya ajansımızla birlikte çalışabilir misiniz?",
+        },
+        answer: {
+          en: "Yes. I can work with your in-house developers or an external agency: reviewing work, setting standards and making sure the architecture supports where the business is going.",
+          tr: "Evet. Şirket içi yazılımcılarınızla veya dış ajansınızla birlikte çalışabilirim; işleri inceler, standartları belirler ve mimarinin işin gideceği yönü desteklemesini sağlarım.",
+        },
+      },
+      {
+        id: "startup-idea",
+        question: {
+          en: "Can you help if I only have an idea?",
+          tr: "Sadece bir fikrim varsa yardımcı olabilir misiniz?",
+        },
+        answer: {
+          en: "Yes. We start with research and validation—who has the problem, how they solve it today and what they would pay for—so you invest in an MVP only when the idea holds up.",
+          tr: "Evet. Araştırma ve doğrulamayla başlıyoruz: problemi kim yaşıyor, bugün nasıl çözüyor ve neye para öder. Böylece MVP'ye ancak fikir sağlam çıkarsa yatırım yaparsınız.",
+        },
+      },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  /* Derinlemesine alt sayfalar (Bulut, IoT ve mimari alanının parçası)   */
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "iot-platforms",
+    role: "deep-dive",
+    parent: "cloud-devops",
+    icon: "cpu",
+    title: {
+      en: "IoT Platform Development",
+      tr: "IoT Platform Geliştirme",
+    },
+    tagline: {
+      en: "Connect, monitor and manage thousands of devices from one secure platform.",
+      tr: "Binlerce cihazı tek ve güvenli bir platformdan bağlayın, izleyin ve yönetin.",
+    },
+    summary: {
+      en: "I build end-to-end IoT platforms: device connectivity over MQTT, real-time monitoring, alarms and remote management, web and mobile apps, and the production-line tooling around them. The fire safety platform I built manages 8 device types for 10,000+ devices and 100,000+ users.",
+      tr: "Uçtan uca IoT platformları geliştiriyorum: MQTT ile cihaz bağlantısı, gerçek zamanlı izleme, alarm ve uzaktan yönetim, web ve mobil uygulamalar ve bunların etrafındaki üretim hattı araçları. Yangın güvenliği için kurduğum platform, 10.000+ cihaz ve 100.000+ kullanıcı için 8 farklı cihaz tipini yönetiyor.",
+    },
+    metaDescription: {
+      en: "IoT platform development: MQTT device connectivity, real-time monitoring, alarms, remote management and mobile apps, proven with 10,000+ devices.",
+      tr: "IoT platform geliştirme: MQTT cihaz bağlantısı, gerçek zamanlı izleme, alarm, uzaktan yönetim ve mobil uygulamalar. 10.000+ cihazda kanıtlanmış deneyim.",
+    },
+    forWhom: [
+      {
+        en: "Hardware manufacturers that need a cloud platform for their devices",
+        tr: "Cihazları için bulut platformuna ihtiyaç duyan donanım üreticileri",
+      },
+      {
+        en: "Companies monitoring equipment across many sites",
+        tr: "Birçok sahadaki ekipmanı izleyen şirketler",
+      },
+      {
+        en: "Teams whose current IoT backend can't keep up with growth",
+        tr: "Mevcut IoT backend'i büyümeye yetişemeyen ekipler",
+      },
+      {
+        en: "Products that need offline or on-premises operation",
+        tr: "Çevrimdışı veya şirket içinde çalışması gereken ürünler",
+      },
+    ],
+    deliverables: [
+      {
+        en: "Device connectivity and messaging (MQTT, RabbitMQ)",
+        tr: "Cihaz bağlantısı ve mesajlaşma (MQTT, RabbitMQ)",
+      },
+      {
+        en: "Real-time dashboards, alarms and notifications",
+        tr: "Gerçek zamanlı paneller, alarmlar ve bildirimler",
+      },
+      {
+        en: "Remote configuration, firmware and license management",
+        tr: "Uzaktan yapılandırma, firmware ve lisans yönetimi",
+      },
+      {
+        en: "Web and mobile apps for customers and technicians",
+        tr: "Müşteriler ve teknisyenler için web ve mobil uygulamalar",
+      },
+      {
+        en: "Scalable, secure cloud or on-premises deployment",
+        tr: "Ölçeklenebilir ve güvenli bulut veya şirket içi kurulum",
+      },
+    ],
+    useCases: [
+      {
+        en: "Remote monitoring of fire panels, intruder alarms and cameras",
+        tr: "Yangın panelleri, hırsız alarmları ve kameraların uzaktan izlenmesi",
+      },
+      {
+        en: "Production-line tool that flashes the correct firmware by serial number",
+        tr: "Seri numarasına göre doğru firmware'i yükleyen üretim hattı aracı",
+      },
+      {
+        en: "Replacing hardware license dongles with an online licensing service",
+        tr: "Donanım lisans anahtarlarını (dongle) çevrim içi lisanslama servisiyle değiştirme",
+      },
+      {
+        en: "Live debugging of a single faulty device without affecting the fleet",
+        tr: "Filoyu etkilemeden tek bir arızalı cihazda canlı hata ayıklama",
+      },
+    ],
+    tech: ["MQTT", "RabbitMQ", ".NET", "React", "Flutter", "Kubernetes", "GCP", "Redis"],
+    relatedCases: ["iot-cloud", "sandbox", "hexagonal"],
+    faq: [
+      {
+        id: "iot-scale",
+        question: {
+          en: "How many devices can the platform handle?",
+          tr: "Platform kaç cihazı kaldırabilir?",
+        },
+        answer: {
+          en: "The architecture scales horizontally. The platform I built runs 10,000+ devices of 8 different types and serves 100,000+ users in production.",
+          tr: "Mimari yatay olarak ölçeklenir. Geliştirdiğim platform canlı ortamda 8 farklı tipte 10.000+ cihazı çalıştırıyor ve 100.000+ kullanıcıya hizmet veriyor.",
+        },
+      },
+      {
+        id: "iot-offline",
+        question: {
+          en: "Can the system work without internet access?",
+          tr: "Sistem internet erişimi olmadan çalışabilir mi?",
+        },
+        answer: {
+          en: "Yes. With a Hexagonal design, the same business logic can run as a cloud platform or as lightweight on-premises services for closed or air-gapped sites.",
+          tr: "Evet. Hexagonal tasarım sayesinde aynı iş mantığı hem bulut platformu hem de kapalı veya internetten izole tesisler için hafif şirket içi servisler olarak çalışabilir.",
+        },
+      },
+    ],
+  },
   {
     slug: "microservices-modernization",
+    role: "deep-dive",
+    parent: "cloud-devops",
     icon: "boxes",
     title: {
       en: "Microservices Architecture & Legacy Modernization",
@@ -778,214 +985,6 @@ export const services: ServiceItem[] = [
       },
     ],
   },
-  {
-    slug: "iot-platforms",
-    icon: "cpu",
-    title: {
-      en: "IoT Platform Development",
-      tr: "IoT Platform Geliştirme",
-    },
-    tagline: {
-      en: "Connect, monitor and manage thousands of devices from one secure platform.",
-      tr: "Binlerce cihazı tek ve güvenli bir platformdan bağlayın, izleyin ve yönetin.",
-    },
-    summary: {
-      en: "I build end-to-end IoT platforms: device connectivity over MQTT, real-time monitoring, alarms and remote management, web and mobile apps, and the production-line tooling around them. The fire safety platform I built manages 8 device types for 10,000+ devices and 100,000+ users.",
-      tr: "Uçtan uca IoT platformları geliştiriyorum: MQTT ile cihaz bağlantısı, gerçek zamanlı izleme, alarm ve uzaktan yönetim, web ve mobil uygulamalar ve bunların etrafındaki üretim hattı araçları. Yangın güvenliği için kurduğum platform, 10.000+ cihaz ve 100.000+ kullanıcı için 8 farklı cihaz tipini yönetiyor.",
-    },
-    metaDescription: {
-      en: "IoT platform development: MQTT device connectivity, real-time monitoring, alarms, remote management and mobile apps, proven with 10,000+ devices.",
-      tr: "IoT platform geliştirme: MQTT cihaz bağlantısı, gerçek zamanlı izleme, alarm, uzaktan yönetim ve mobil uygulamalar. 10.000+ cihazda kanıtlanmış deneyim.",
-    },
-    forWhom: [
-      {
-        en: "Hardware manufacturers that need a cloud platform for their devices",
-        tr: "Cihazları için bulut platformuna ihtiyaç duyan donanım üreticileri",
-      },
-      {
-        en: "Companies monitoring equipment across many sites",
-        tr: "Birçok sahadaki ekipmanı izleyen şirketler",
-      },
-      {
-        en: "Teams whose current IoT backend can't keep up with growth",
-        tr: "Mevcut IoT backend'i büyümeye yetişemeyen ekipler",
-      },
-      {
-        en: "Products that need offline or on-premises operation",
-        tr: "Çevrimdışı veya şirket içinde çalışması gereken ürünler",
-      },
-    ],
-    deliverables: [
-      {
-        en: "Device connectivity and messaging (MQTT, RabbitMQ)",
-        tr: "Cihaz bağlantısı ve mesajlaşma (MQTT, RabbitMQ)",
-      },
-      {
-        en: "Real-time dashboards, alarms and notifications",
-        tr: "Gerçek zamanlı paneller, alarmlar ve bildirimler",
-      },
-      {
-        en: "Remote configuration, firmware and license management",
-        tr: "Uzaktan yapılandırma, firmware ve lisans yönetimi",
-      },
-      {
-        en: "Web and mobile apps for customers and technicians",
-        tr: "Müşteriler ve teknisyenler için web ve mobil uygulamalar",
-      },
-      {
-        en: "Scalable, secure cloud or on-premises deployment",
-        tr: "Ölçeklenebilir ve güvenli bulut veya şirket içi kurulum",
-      },
-    ],
-    useCases: [
-      {
-        en: "Remote monitoring of fire panels, intruder alarms and cameras",
-        tr: "Yangın panelleri, hırsız alarmları ve kameraların uzaktan izlenmesi",
-      },
-      {
-        en: "Production-line tool that flashes the correct firmware by serial number",
-        tr: "Seri numarasına göre doğru firmware'i yükleyen üretim hattı aracı",
-      },
-      {
-        en: "Replacing hardware license dongles with an online licensing service",
-        tr: "Donanım lisans anahtarlarını (dongle) çevrim içi lisanslama servisiyle değiştirme",
-      },
-      {
-        en: "Live debugging of a single faulty device without affecting the fleet",
-        tr: "Filoyu etkilemeden tek bir arızalı cihazda canlı hata ayıklama",
-      },
-    ],
-    tech: ["MQTT", "RabbitMQ", ".NET", "React", "Flutter", "Kubernetes", "GCP", "Redis"],
-    relatedCases: ["iot-cloud", "sandbox", "hexagonal"],
-    faq: [
-      {
-        id: "iot-scale",
-        question: {
-          en: "How many devices can the platform handle?",
-          tr: "Platform kaç cihazı kaldırabilir?",
-        },
-        answer: {
-          en: "The architecture scales horizontally. The platform I built runs 10,000+ devices of 8 different types and serves 100,000+ users in production.",
-          tr: "Mimari yatay olarak ölçeklenir. Geliştirdiğim platform canlı ortamda 8 farklı tipte 10.000+ cihazı çalıştırıyor ve 100.000+ kullanıcıya hizmet veriyor.",
-        },
-      },
-      {
-        id: "iot-offline",
-        question: {
-          en: "Can the system work without internet access?",
-          tr: "Sistem internet erişimi olmadan çalışabilir mi?",
-        },
-        answer: {
-          en: "Yes. With a Hexagonal design, the same business logic can run as a cloud platform or as lightweight on-premises services for closed or air-gapped sites.",
-          tr: "Evet. Hexagonal tasarım sayesinde aynı iş mantığı hem bulut platformu hem de kapalı veya internetten izole tesisler için hafif şirket içi servisler olarak çalışabilir.",
-        },
-      },
-    ],
-  },
-  {
-    slug: "digital-transformation",
-    icon: "building",
-    title: {
-      en: "Digital Transformation for SMEs",
-      tr: "KOBİ'ler için Dijital Dönüşüm",
-    },
-    tagline: {
-      en: "Digitize processes, connect your tools and get real-time reports—step by step.",
-      tr: "Süreçlerinizi dijitalleştirin, araçlarınızı birbirine bağlayın ve anlık raporlara ulaşın; adım adım.",
-    },
-    summary: {
-      en: "I help small and medium-sized businesses replace manual work with connected digital processes: ERP, CRM and e-commerce integrations, automated reporting, workflow automation and practical AI adoption. We start where the impact is highest and build a roadmap your team can actually follow.",
-      tr: "Küçük ve orta ölçekli işletmelerin manuel işleri birbirine bağlı dijital süreçlerle değiştirmesine yardımcı oluyorum: ERP, CRM ve e-ticaret entegrasyonları, otomatik raporlama, iş akışı otomasyonu ve pratik yapay zeka kullanımı. Etkisi en yüksek yerden başlıyor ve ekibinizin gerçekten uygulayabileceği bir yol haritası çıkarıyoruz.",
-    },
-    metaDescription: {
-      en: "Digital transformation for SMEs: process automation, ERP, CRM and e-commerce integrations, automated reporting and practical AI adoption with a clear roadmap.",
-      tr: "KOBİ'ler için dijital dönüşüm: süreç otomasyonu, ERP, CRM ve e-ticaret entegrasyonları, otomatik raporlama ve pratik yapay zeka kullanımı.",
-    },
-    forWhom: [
-      {
-        en: "SMEs running on spreadsheets, email and manual data entry",
-        tr: "Excel, e-posta ve elle veri girişiyle yürüyen KOBİ'ler",
-      },
-      {
-        en: "Companies whose systems don't talk to each other",
-        tr: "Sistemleri birbiriyle konuşmayan şirketler",
-      },
-      {
-        en: "Managers who wait days for reports that should be instant",
-        tr: "Anlık olması gereken raporları günlerce bekleyen yöneticiler",
-      },
-      {
-        en: "Businesses selling on marketplaces and juggling stock and orders by hand",
-        tr: "Pazaryerlerinde satış yapıp stok ve siparişleri elle takip eden işletmeler",
-      },
-    ],
-    deliverables: [
-      {
-        en: "Process analysis and a prioritized digitalization roadmap",
-        tr: "Süreç analizi ve önceliklendirilmiş dijitalleşme yol haritası",
-      },
-      {
-        en: "ERP, CRM, e-commerce and marketplace integrations",
-        tr: "ERP, CRM, e-ticaret ve pazaryeri entegrasyonları",
-      },
-      {
-        en: "Automated reports and dashboards with self-service filtering",
-        tr: "Self-servis filtrelemeli otomatik raporlar ve paneller",
-      },
-      {
-        en: "Workflow automation and AI assistants for daily tasks",
-        tr: "Günlük işler için iş akışı otomasyonu ve yapay zeka asistanları",
-      },
-      {
-        en: "Training and handover so your team owns the result",
-        tr: "Sonucun sahibi ekibiniz olsun diye eğitim ve devir teslim",
-      },
-    ],
-    useCases: [
-      {
-        en: "Syncing orders and stock between your online store, marketplaces such as Trendyol, Hepsiburada or Amazon, and your ERP",
-        tr: "Online mağazanız, Trendyol, Hepsiburada veya Amazon gibi pazaryerleri ve ERP'niz arasında sipariş ve stok senkronizasyonu",
-      },
-      {
-        en: "Replacing manual reports with scheduled, self-service dashboards",
-        tr: "Manuel raporları zamanlanmış, self-servis panellerle değiştirme",
-      },
-      {
-        en: "Automating quotes, invoices or approval workflows",
-        tr: "Teklif, fatura veya onay süreçlerini otomatikleştirme",
-      },
-      {
-        en: "Rolling out an AI assistant for customer messages on WhatsApp",
-        tr: "WhatsApp'taki müşteri mesajları için yapay zeka asistanı devreye alma",
-      },
-    ],
-    tech: [".NET", "Python", "React", "Blazor", "SQL / NoSQL", "BigQuery", "REST APIs", "AI agents"],
-    relatedCases: ["enmos-meta", "ai-ops"],
-    faq: [
-      {
-        id: "sme-start",
-        question: {
-          en: "Where should an SME start with digital transformation?",
-          tr: "KOBİ'ler dijital dönüşüme nereden başlamalı?",
-        },
-        answer: {
-          en: "With the process that costs the most time or money today—often reporting, order handling or customer messages. A short analysis identifies quick wins first, so early results build momentum for the next steps.",
-          tr: "Bugün en çok zaman veya para kaybettiren süreçten; çoğu zaman raporlama, sipariş yönetimi veya müşteri mesajları. Kısa bir analiz önce hızlı kazanımları belirler; böylece ilk sonuçlar sonraki adımlar için ivme sağlar.",
-        },
-      },
-      {
-        id: "sme-replace",
-        question: {
-          en: "Do we need to replace our existing software?",
-          tr: "Mevcut yazılımlarımızı değiştirmemiz gerekir mi?",
-        },
-        answer: {
-          en: "Rarely. Most of the value comes from connecting the tools you already use—ERP, accounting, e-commerce, CRM—and automating the work between them.",
-          tr: "Nadiren. Değerin çoğu zaten kullandığınız araçları (ERP, muhasebe, e-ticaret, CRM) birbirine bağlamaktan ve aralarındaki işi otomatikleştirmekten gelir.",
-        },
-      },
-    ],
-  },
 ];
 
 export function getService(slug: string): ServiceItem | undefined {
@@ -998,24 +997,24 @@ export const engagementModels: StepItem[] = [
     id: "intro-call",
     title: { en: "Intro call (30 min)", tr: "Tanışma görüşmesi (30 dk)" },
     body: {
-      en: "A short video call to understand your situation and see whether, and how, I can help.",
-      tr: "Durumunuzu anlamak ve yardımcı olup olamayacağımı, nasıl olabileceğimi görmek için kısa bir görüntülü görüşme.",
+      en: "We pin down the bottleneck, what it costs you in time and money, and whether my expertise fits your need.",
+      tr: "Darboğazı, bunun size zaman ve para olarak maliyetini ve uzmanlığımın ihtiyacınıza uyup uymadığını netleştiririz.",
     },
   },
   {
     id: "workshop-audit",
-    title: { en: "Workshop or audit", tr: "Atölye veya denetim" },
+    title: { en: "Fixed-scope review", tr: "Sabit kapsamlı inceleme" },
     body: {
-      en: "Fixed-scope deep dives: AI opportunity workshop, architecture review, cloud cost audit or MVP scoping. You get a written report and a prioritized roadmap.",
-      tr: "Kapsamı belli derinlemesine çalışmalar: yapay zeka fırsat atölyesi, mimari inceleme, bulut maliyet denetimi veya MVP kapsamlandırma. Yazılı bir rapor ve önceliklendirilmiş bir yol haritası alırsınız.",
+      en: "Fixed-price deep dives: AI opportunity scan, security scan, architecture and cloud cost review, or a technical check-up. You get a written report and a prioritized roadmap.",
+      tr: "Sabit fiyatlı derinlemesine çalışmalar: yapay zeka fırsat taraması, güvenlik taraması, mimari ve bulut maliyet incelemesi veya teknik check-up. Yazılı bir rapor ve önceliklendirilmiş bir yol haritası alırsınız.",
     },
   },
   {
     id: "project-delivery",
-    title: { en: "Project delivery", tr: "Proje teslimi" },
+    title: { en: "Implementation", tr: "Uygulama" },
     body: {
-      en: "End-to-end design and build: AI agents, web and mobile apps, cloud platforms or IoT systems, delivered together with your team or as a complete package.",
-      tr: "Uçtan uca tasarım ve geliştirme: yapay zeka ajanları, web ve mobil uygulamalar, bulut platformları veya IoT sistemleri; ekibinizle birlikte ya da anahtar teslim.",
+      en: "Building what the review prioritized: AI agents and automation, cloud and IoT platforms, modernization or security fixes—together with your team or as a complete package.",
+      tr: "İncelemenin önceliklendirdiği işin hayata geçirilmesi: yapay zeka ajanları ve otomasyon, bulut ve IoT platformları, modernizasyon veya güvenlik düzeltmeleri; ekibinizle birlikte ya da anahtar teslim.",
     },
   },
   {
@@ -1034,16 +1033,16 @@ export const processSteps: StepItem[] = [
     id: "talk",
     title: { en: "Intro call", tr: "Tanışma görüşmesi" },
     body: {
-      en: "We talk about your goals, constraints and timeline. You get an honest first assessment.",
-      tr: "Hedeflerinizi, kısıtlarınızı ve zamanlamanızı konuşuruz. Dürüst bir ilk değerlendirme alırsınız.",
+      en: "We clarify the bottleneck, its impact on time and cost, and your goals—and whether my expertise is the right fit.",
+      tr: "Darboğazı, zaman ve maliyete etkisini ve hedeflerinizi netleştiririz; uzmanlığımın doğru eşleşme olup olmadığını açıkça değerlendiririz.",
     },
   },
   {
     id: "plan",
-    title: { en: "Discovery & proposal", tr: "Analiz ve teklif" },
+    title: { en: "Review & proposal", tr: "İnceleme ve teklif" },
     body: {
-      en: "I analyse the problem, your existing systems and the options, then send a clear scope, roadmap and proposal.",
-      tr: "Problemi, mevcut sistemlerinizi ve seçenekleri analiz eder; net bir kapsam, yol haritası ve teklif gönderirim.",
+      en: "Usually a fixed-scope review of your systems and options, followed by a clear scope, roadmap and proposal.",
+      tr: "Genellikle sistemlerinizin ve seçeneklerin sabit kapsamlı bir incelemesi; ardından net bir kapsam, yol haritası ve teklif.",
     },
   },
   {
@@ -1081,8 +1080,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Birlikte çalışma nasıl başlar?",
     },
     answer: {
-      en: "Book a 30-minute intro call. We discuss your goals and constraints; afterwards I send a short summary with a suggested approach and, if it makes sense, a proposal.",
-      tr: "30 dakikalık bir tanışma görüşmesi planlayın. Hedeflerinizi ve kısıtlarınızı konuşuruz; ardından önerdiğim yaklaşımı içeren kısa bir özet ve uygunsa bir teklif gönderirim.",
+      en: "Book a 30-minute intro call. We pin down the problem and its impact; if my expertise fits, we agree on the right first step—usually a fixed-scope review package—and you get a written proposal before any work starts.",
+      tr: "30 dakikalık bir tanışma görüşmesi planlayın. Sorunu ve etkisini netleştiririz; uzmanlığım uygunsa doğru ilk adımda (genellikle sabit kapsamlı bir inceleme paketi) anlaşırız ve herhangi bir iş başlamadan önce yazılı bir teklif alırsınız.",
     },
   },
   {
@@ -1092,8 +1091,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Küçük ve orta ölçekli işletmelerle (KOBİ) çalışıyor musunuz?",
     },
     answer: {
-      en: "Yes. Many services—AI customer support and sales agents, process automation, integrations and websites—are designed for SMEs that need results without building a large in-house team.",
-      tr: "Evet. Yapay zeka destekli müşteri hizmetleri ve satış ajanları, süreç otomasyonu, entegrasyonlar ve web siteleri gibi birçok hizmet, büyük bir ekip kurmadan sonuç almak isteyen KOBİ'ler için tasarlandı.",
+      en: "Yes. AI assistants and automation, security assessments and cloud cost reviews are designed for SMEs that need results without building a large in-house team.",
+      tr: "Evet. Yapay zeka asistanları ve otomasyon, güvenlik değerlendirmeleri ve bulut maliyet incelemeleri, büyük bir ekip kurmadan sonuç almak isteyen KOBİ'ler için tasarlandı.",
     },
   },
   {
@@ -1114,8 +1113,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Projeler nasıl fiyatlandırılıyor?",
     },
     answer: {
-      en: "It depends on the scope: workshops and audits have a fixed price, project delivery is quoted after discovery, and fractional CTO work is a monthly arrangement. You always get a written proposal before any work starts.",
-      tr: "Kapsama göre değişir: atölye ve denetimler sabit fiyatlıdır, proje teslimi analizden sonra fiyatlandırılır, fractional CTO çalışması aylık bir düzenlemedir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
+      en: "It depends on the scope: reviews and scans have a fixed price, implementation is quoted after a review, and fractional CTO work is a monthly arrangement. You always get a written proposal before any work starts.",
+      tr: "Kapsama göre değişir: inceleme ve taramalar sabit fiyatlıdır, uygulama bir incelemeden sonra fiyatlandırılır, fractional CTO çalışması aylık bir düzenlemedir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
     },
   },
 ];

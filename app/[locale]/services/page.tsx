@@ -3,7 +3,8 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { CtaBlock } from "@/components/services/cta-block";
 import { ServiceCard } from "@/components/services/service-card";
-import { engagementModels, processSteps, services, servicesFaq } from "@/data/services";
+import { deepDivesOf, engagementModelServices, pillars } from "@/data/catalog";
+import { engagementModels, processSteps, servicesFaq } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, buildServicesHubGraph, type AppLocale } from "@/lib/seo";
 import { buttonPrimary, buttonSecondary, containerClass, h2Class, sectionClass } from "@/lib/ui";
@@ -71,16 +72,46 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       <section className={sectionClass}>
-        <div className={`${containerClass} grid gap-6 sm:grid-cols-2 lg:grid-cols-4`}>
-          {services.map((service) => (
-            <ServiceCard
-              key={service.slug}
-              service={service}
-              locale={locale}
-              detailsLabel={ts("details")}
-              headingLevel="h2"
-            />
-          ))}
+        <div className={containerClass}>
+          <p className="font-mono text-xs uppercase tracking-widest text-accent">{t("pillarsTitle")}</p>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {pillars.map((service) => (
+              <div key={service.slug} className="flex flex-col gap-3">
+                <ServiceCard
+                  service={service}
+                  locale={locale}
+                  detailsLabel={ts("details")}
+                  headingLevel="h2"
+                  highlights={(service.offerings ?? []).map((item) => item.title[locale])}
+                />
+                {deepDivesOf(service.slug).length ? (
+                  <p className="px-1 text-sm text-muted-foreground">
+                    {t("deepDivesTitle")}:{" "}
+                    {deepDivesOf(service.slug).map((item, index) => (
+                      <span key={item.slug}>
+                        {index > 0 ? " · " : null}
+                        <Link href={`/services/${item.slug}`} className="text-accent hover:underline">
+                          {item.title[locale]}
+                        </Link>
+                      </span>
+                    ))}
+                  </p>
+                ) : null}
+              </div>
+            ))}
+          </div>
+          <h2 className={`mt-14 ${h2Class}`}>{t("modelTitle")}</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {engagementModelServices.map((service) => (
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                locale={locale}
+                detailsLabel={ts("details")}
+                highlights={(service.offerings ?? []).map((item) => item.title[locale])}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

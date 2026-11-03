@@ -5,6 +5,7 @@ import { CtaBlock } from "@/components/services/cta-block";
 import { ServiceCard } from "@/components/services/service-card";
 import { ServiceIcon } from "@/components/services/service-icon";
 import { caseStudies } from "@/data/caseStudies";
+import { primaryServices } from "@/data/catalog";
 import { getService, processSteps, services } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, buildServiceGraph, type AppLocale } from "@/lib/seo";
@@ -53,7 +54,10 @@ export default async function ServiceDetailPage({ params }: Props) {
   // Paketler veritabanından (her istekte) okunur; /admin'deki değişiklik hemen görünür.
   await connection();
   const allPackages = await getPackages(locale);
-  const ownPackages = allPackages.filter((pkg) => pkg.serviceSlug === service.slug);
+  // Derinlemesine alt sayfalar, bağlı oldukları alanın paketlerini gösterir.
+  const ownPackages = allPackages.filter(
+    (pkg) => pkg.serviceSlug === service.slug || (service.parent !== undefined && pkg.serviceSlug === service.parent),
+  );
   // Hizmete bağlı paket yoksa en uygun fiyatlı giriş paketi (ör. Teknik Check-up) gösterilir.
   const entry = [...allPackages].filter((pkg) => !pkg.priceFrom).sort((a, b) => a.price - b.price)[0];
   const servicePackages = ownPackages.length ? ownPackages : entry ? [entry] : [];
@@ -64,7 +68,9 @@ export default async function ServiceDetailPage({ params }: Props) {
   const tp = await getTranslations({ locale, namespace: "ServicesPage" });
 
   const related = caseStudies.filter((item) => service.relatedCases.includes(item.id));
-  const others = services.filter((item) => item.slug !== service.slug);
+  const others = primaryServices.filter((item) => item.slug !== service.slug);
+  const parent = service.role === "deep-dive" && service.parent ? getService(service.parent) : undefined;
+  const packageById = new Map(allPackages.map((pkg) => [pkg.id, pkg]));
   const title = `${(service.metaTitle ?? service.title)[locale]} | ${t("titleSuffix")}`;
 
   return (
@@ -89,6 +95,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             items={[
               { name: tb("home"), href: "/" },
               { name: tb("services"), href: "/services" },
+              ...(parent ? [{ name: parent.title[locale], href: `/services/${parent.slug}` }] : []),
               { name: service.title[locale] },
             ]}
           />
@@ -104,6 +111,13 @@ export default async function ServiceDetailPage({ params }: Props) {
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
             {service.summary[locale]}
           </p>
+          {parent ? (
+            <p className="mt-4 text-sm text-muted-foreground">
+              <Link href={`/services/${parent.slug}`} className="text-accent hover:underline">
+                {t("partOf", { name: parent.title[locale] })}
+              </Link>
+            </p>
+          ) : null}
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href="/book" className={buttonPrimary}>
               <CalendarClock className="h-4 w-4" aria-hidden />
@@ -126,6 +140,40 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {service.offerings?.length ? (
+        <section className={sectionClass}>
+          <div className={containerClass}>
+            <h2 className={h2Class}>{service.role === "model" ? t("offeringsModel") : t("offerings")}</h2>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {service.offerings.map((item) => {
+                const pkg = item.packageId ? packageById.get(item.packageId) : undefined;
+                const deepDive = item.serviceSlug ? getService(item.serviceSlug) : undefined;
+                return (
+                  <div key={item.id} className="flex flex-col rounded-2xl border border-border bg-card p-5">
+                    <h3 className="font-semibold text-foreground">{item.title[locale]}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{item.body[locale]}</p>
+                    {pkg || deepDive ? (
+                      <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                        {pkg ? (
+                          <Link href={`/packages#${pkg.id}`} className="text-accent hover:underline">
+                            {t("offeringPackage")}: {pkg.name}
+                          </Link>
+                        ) : null}
+                        {deepDive ? (
+                          <Link href={`/services/${deepDive.slug}`} className="text-accent hover:underline">
+                            {t("offeringMore")} →
+                          </Link>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className={sectionClass}>
         <div className={`${containerClass} grid gap-10 md:grid-cols-2`}>

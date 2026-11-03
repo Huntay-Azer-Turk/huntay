@@ -3,9 +3,10 @@ import { experience } from "@/data/experience";
 import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
+import { primaryServices } from "@/data/catalog";
 import { services } from "@/data/services";
 import { calBookingPageUrl, isCalConfigured } from "@/lib/cal";
-import { absoluteUrl, localeUrl } from "@/lib/seo";
+import { localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 /**
@@ -28,10 +29,22 @@ export function GET() {
     "",
     `Overview: ${localeUrl("en", "/services")} · Book a 30-minute intro call: ${localeUrl("en", "/book")}`,
     "",
-    ...services.map(
+    "Three areas of expertise, plus fractional CTO as the engagement model across all three:",
+    "",
+    ...primaryServices.map(
       (item) =>
-        `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}`,
+        `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}${
+          item.offerings?.length ? ` Includes: ${item.offerings.map((o) => o.title.en).join("; ")}.` : ""
+        }`,
     ),
+    ...services
+      .filter((item) => item.role === "deep-dive")
+      .map(
+        (item) =>
+          `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}) (in depth, part of ${
+            services.find((p) => p.slug === item.parent)?.title.en ?? ""
+          }): ${item.tagline.en}`,
+      ),
     "",
     `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (technical check-up, security scan, penetration test, architecture & cloud cost review, AI agent pilot, fractional CTO, MVP)`,
     "",
@@ -72,7 +85,6 @@ export function GET() {
     `- [Privacy policy](${localeUrl("en", "/privacy")})`,
     `- [Terms of use](${localeUrl("en", "/terms")})`,
     `- [Full content for LLMs](${siteConfig.baseUrl}/llms-full.txt)`,
-    `- [CV (PDF)](${absoluteUrl(siteConfig.cvPath)})`,
     `- [LinkedIn](${siteConfig.linkedin})`,
     `- [Medium](${siteConfig.medium})`,
     `- [GitHub](${siteConfig.github})`,

@@ -20,11 +20,12 @@ import {
   philosophy,
   strategicPartner,
 } from "@/data/profile";
-import { engagementModels, getService, processSteps, services, servicesFaq } from "@/data/services";
+import { deepDivesOf, primaryServices, resolveService } from "@/data/catalog";
+import { engagementModels, processSteps, services, servicesFaq } from "@/data/services";
 import type { FaqItem } from "@/data/types";
 import { serviceText, type Lang } from "@/lib/content";
 import { mcpEndpoint } from "@/lib/mcp/meta";
-import { absoluteUrl, localeUrl } from "@/lib/seo";
+import { localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 
 /**
@@ -51,7 +52,7 @@ const H = {
     servicesTitle: "Services",
     bookTitle: "Book a call",
     bookText:
-      "30-minute video call (Google Meet) in English or Turkish, Monday–Friday 10:00–18:00 Istanbul time. You talk about your goals, current situation and constraints, get honest first recommendations and, if it is a fit, a short written proposal.",
+      "30-minute video call (Google Meet) in English or Turkish, Monday–Friday 10:00–18:00 Istanbul time. Together you pin down the current bottleneck, what it costs the business in time and money, and your goals; if the expertise fits, you agree on the right first step (usually a fixed-scope review package).",
     calendar: "Booking calendar",
     assistantTitle: "MCP server — book a call from ChatGPT, Claude or Gemini",
     assistantIntro:
@@ -88,7 +89,7 @@ const H = {
     servicesTitle: "Hizmetler",
     bookTitle: "Görüşme planlayın",
     bookText:
-      "Türkçe veya İngilizce, 30 dakikalık görüntülü görüşme (Google Meet); hafta içi 10:00–18:00 (İstanbul). Hedeflerinizi, mevcut durumu ve kısıtlarınızı konuşursunuz; dürüst ilk önerileri ve uygunsa kısa bir yazılı teklif alırsınız.",
+      "Türkçe veya İngilizce, 30 dakikalık görüntülü görüşme (Google Meet); hafta içi 10:00–18:00 (İstanbul). Mevcut darboğazı, bunun şirkete zaman ve maliyet etkisini ve hedeflerinizi birlikte netleştirirsiniz; uzmanlık uygunsa doğru ilk adımda (genellikle sabit kapsamlı bir inceleme paketi) anlaşırsınız.",
     calendar: "Randevu takvimi",
     assistantTitle: "MCP sunucusu — ChatGPT, Claude veya Gemini'den randevu",
     assistantIntro:
@@ -151,7 +152,7 @@ export function homeMarkdown(lang: Lang): string {
     "",
     `## ${h.services}`,
     "",
-    ...services.map(
+    ...primaryServices.map(
       (service) =>
         `- [${service.title[lang]}](${localeUrl(lang, `/services/${service.slug}`)}): ${service.tagline[lang]}`,
     ),
@@ -189,12 +190,17 @@ export function servicesMarkdown(lang: Lang): string {
   return [
     `# ${h.servicesTitle} — ${siteConfig.name}`,
     "",
-    ...services.flatMap((service) => [
+    ...primaryServices.flatMap((service) => [
       `## [${service.title[lang]}](${localeUrl(lang, `/services/${service.slug}`)})`,
       "",
       service.tagline[lang],
       "",
       service.summary[lang],
+      "",
+      ...(service.offerings ?? []).map((item) => `- ${item.title[lang]}: ${item.body[lang]}`),
+      ...deepDivesOf(service.slug).map(
+        (item) => `- [${item.title[lang]}](${localeUrl(lang, `/services/${item.slug}`)}): ${item.tagline[lang]}`,
+      ),
       "",
     ]),
     `## ${h.engagement}`,
@@ -213,7 +219,8 @@ export function servicesMarkdown(lang: Lang): string {
 }
 
 export function serviceMarkdown(slug: string, lang: Lang): string | null {
-  const service = getService(slug);
+  // Kaldırılan hizmet adresleri 308 ile yönlenir; Markdown isteği yine de gelirse güncel hizmet döner.
+  const service = resolveService(slug);
   if (!service) return null;
   const h = H[lang];
   const related = caseStudies.filter((item) => service.relatedCases.includes(item.id));
@@ -342,7 +349,7 @@ export function llmsFullText(): string {
     ...services.map((service) => serviceMarkdown(service.slug, "en") ?? ""),
     bookMarkdown("en"),
     assistantMarkdown("en"),
-    `Turkish versions of every page: ${localeUrl("tr")} (CV: ${absoluteUrl(siteConfig.cvPath)})`,
+    `Turkish versions of every page: ${localeUrl("tr")}`,
   ];
   return parts.join("\n\n---\n\n");
 }

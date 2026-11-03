@@ -4,7 +4,8 @@ import { CfWorkerJsonSchemaValidator } from "@modelcontextprotocol/sdk/validatio
 import { z } from "zod";
 import { experience } from "@/data/experience";
 import { heroLead } from "@/data/profile";
-import { getService, services } from "@/data/services";
+import { MCP_FROZEN_SERVICE_SLUGS, resolveService } from "@/data/catalog";
+import { services } from "@/data/services";
 import { CalBookingError, createCalBooking, getCalSlots, isCalConfigured } from "@/lib/cal";
 import {
   detectLang,
@@ -42,20 +43,11 @@ const languageField = z
   .describe('Response language: "tr" for Turkish, otherwise "en".');
 
 /**
- * MCP'de sunulan hizmetler. Claude ve ChatGPT dizin incelemeleri sürerken araç şemaları (get_service enum'u)
- * değişmesin diye sabit tutuluyor. İncelemeler bitince "cybersecurity" eklenecek (ya da tekrar
- * services.map(s => s.slug) yapılacak) ve yeni sürüm olarak gönderilecek.
+ * get_service girdi şeması (enum) — dizin incelemeleri sürerken DEĞİŞMEZ; liste data/catalog.ts'de.
+ * Kaldırılan hizmetlerin slug'ları enum'da kalır ve katalog katmanı tarafından güncel hizmete eşlenir.
+ * list_services yalnızca bu enum'da doğrudan geçen güncel hizmetleri listeler (dönen her slug get_service'e verilebilsin).
  */
-const serviceSlugs = [
-  "ai-agents",
-  "fractional-cto",
-  "startup-product-development",
-  "web-mobile-development",
-  "cloud-devops",
-  "microservices-modernization",
-  "iot-platforms",
-  "digital-transformation",
-] as [string, ...string[]];
+const serviceSlugs = MCP_FROZEN_SERVICE_SLUGS;
 const mcpServices = services.filter((service) => serviceSlugs.includes(service.slug));
 
 const headline: Record<Lang, string> = {
@@ -519,12 +511,25 @@ export function createMcpServer(): McpServer {
     },
     async ({ slug, language }) => {
       const lang = pickLang(language);
-      const service = serviceSlugs.includes(slug) ? getService(slug) : undefined;
+      const service = serviceSlugs.includes(slug) ? resolveService(slug) : undefined;
       if (!service) {
         return result(`Unknown service "${slug}". Valid slugs: ${serviceSlugs.join(", ")}.`, undefined, true);
       }
       const url = localeUrl(lang, `/services/${service.slug}`);
-      const text = [`# ${service.title[lang]}`, serviceText(service, lang), "", url, scheduleHint[lang]].join("\n");
+      const moved =
+        service.slug !== slug
+          ? lang === "tr"
+            ? `"${slug}" hizmeti artık "${service.title[lang]}" kapsamında sunuluyor.`
+            : `"${slug}" is now offered as part of "${service.title[lang]}".`
+          : null;
+      const text = [
+        ...(moved ? [moved, ""] : []),
+        `# ${service.title[lang]}`,
+        serviceText(service, lang),
+        "",
+        url,
+        scheduleHint[lang],
+      ].join("\n");
 
       return result(text, {
         kind: "service",

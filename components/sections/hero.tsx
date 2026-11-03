@@ -1,7 +1,7 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, Bot, CalendarClock, Download, MessageCircle, Tag } from "lucide-react";
+import { ArrowRight, Bot, CalendarClock, MessageCircle, Tag } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
@@ -71,14 +71,6 @@ export async function Hero() {
             {t("ctaServices")}
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
-          <a
-            href={siteConfig.cvPath}
-            download={siteConfig.cvDownloadFileName}
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
-          >
-            <Download className="h-4 w-4" aria-hidden />
-            {t("ctaCv")}
-          </a>
         </div>
         {/* Hızlı bağlantılar: yapay zeka asistanları ve iletişim (kartvizitteki karekodlarla aynı hedefler). */}
         <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">

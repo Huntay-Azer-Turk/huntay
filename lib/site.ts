@@ -17,7 +17,7 @@ export const siteConfig = {
    * Saat ve saat dilimiyle tam ISO 8601 olmalı (Google ProfilePage yalnızca tarihi "geçersiz" sayıyor).
    * (Her build'de "şimdi" vermek arama motorlarının bu sinyale güvenmemesine yol açar.)
    */
-  contentUpdatedAt: "2026-10-29T09:00:00+03:00",
+  contentUpdatedAt: "2026-11-03T09:00:00+03:00",
   /**
    * Randevu takvimi: Cal.com (https://cal.com/huntay/intro-call — 30 dk, hafta içi 10:00–18:00 İstanbul,
    * Google Meet, Google Takvim’e bağlı). /book sayfası bu takvimi gömer; AI asistanları (MCP: /mcp)
@@ -63,9 +63,6 @@ export const siteConfig = {
       : (process.env.NEXT_PUBLIC_PHONE_TEL ?? "+905538328477"),
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "huntay.azerturk@gmail.com",
   whatsappUrl: process.env.NEXT_PUBLIC_WHATSAPP_URL ?? "https://wa.me/905538328477",
-  cvPath: process.env.NEXT_PUBLIC_CV_PATH ?? "/cv/cv.pdf",
-  /** `<a download>` ve Content-Disposition için tutarlı dosya adı (ASCII, boşluksuz). */
-  cvDownloadFileName: "Huntay-AzerTurk-CV.pdf",
   baseUrl:
     process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
     "https://huntayazerturk.com",

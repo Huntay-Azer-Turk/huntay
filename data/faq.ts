@@ -46,8 +46,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi hizmetleri sunuyor?",
     },
     answer: {
-      en: "He offers AI agents and automation, fractional CTO and technical consulting, end-to-end startup product development, web and mobile app development, cloud and DevOps with cost optimization, microservices and legacy modernization, IoT platform development, and digital transformation for SMEs.",
-      tr: "Yapay zeka ajanları ve otomasyon, fractional CTO ve teknik danışmanlık, uçtan uca startup ürün geliştirme, web ve mobil uygulama geliştirme, maliyet optimizasyonuyla bulut ve DevOps, mikroservis mimarisi ve legacy modernizasyon, IoT platform geliştirme ve KOBİ'ler için dijital dönüşüm hizmetleri sunuyor.",
+      en: "He works in three areas: AI agents and automation (opportunity scans, sales and support assistants, workflow automation and staff training); cloud, IoT and architecture (cost reviews, modernization, DevOps, IoT platforms and performance); and cybersecurity (security assessments, web/API scans, penetration tests, secure code and ransomware readiness). Across all three he also works as a fractional CTO.",
+      tr: "Üç alanda çalışıyor: yapay zeka ajanları ve otomasyon (fırsat taraması, satış ve destek asistanları, iş akışı otomasyonu ve çalışan eğitimi); bulut, IoT ve mimari (maliyet incelemesi, modernizasyon, DevOps, IoT platformları ve performans); siber güvenlik (güvenlik değerlendirmesi, web/API taraması, sızma testi, güvenli kod ve fidye yazılımına hazırlık). Bu üç alanda fractional CTO olarak da çalışıyor.",
     },
   },
   {

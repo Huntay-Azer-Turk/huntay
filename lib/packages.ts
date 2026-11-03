@@ -1,3 +1,4 @@
+import { resolveServiceSlug } from "@/data/catalog";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 /** D1'in burada kullanılan kısmı (tam tipler için @cloudflare/workers-types gerekmez). */
@@ -227,7 +228,8 @@ export function toView(row: PackageRow, lang: "en" | "tr"): PackageView {
   const tr = lang === "tr";
   return {
     id: row.id,
-    serviceSlug: row.service_slug,
+    // Eski hizmet slug'ları (ör. "startup-product-development") katalog katmanında güncel hizmete çevrilir.
+    serviceSlug: resolveServiceSlug(row.service_slug) ?? "",
     featured: Boolean(row.featured),
     name: tr ? row.name_tr : row.name_en,
     summary: tr ? row.summary_tr : row.summary_en,

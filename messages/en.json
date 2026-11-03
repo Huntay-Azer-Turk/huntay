@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Software Architect · Cloud, AI & IoT",
-    "description": "Huntay AzerTürk is an Istanbul-based software architect and engineering leader with 13+ years in cloud, AI and IoT: scaling systems, cutting cloud costs."
+    "title": "Huntay AzerTürk — Fractional CTO · AI, Cloud/IoT & Cybersecurity",
+    "description": "Huntay AzerTürk, Istanbul-based software architect and fractional CTO: AI agents and automation, cloud/IoT and architecture, cybersecurity. 13+ years of experience."
   },
   "Nav": {
     "about": "About",
@@ -21,10 +21,9 @@
     "packages": "Packages"
   },
   "Hero": {
-    "eyebrow": "Software & Digital Solutions Manager · Principal Systems Architect",
-    "role": "Software Development Manager | Software Architect | Cloud, AI & IoT",
-    "valueProp": "I help companies scale their systems, cut down cloud costs, and build engineering teams that actually deliver.",
-    "ctaCv": "Download CV",
+    "eyebrow": "Fractional CTO · Software Architect · Istanbul",
+    "role": "AI, Cloud/IoT & Cybersecurity Consultant",
+    "valueProp": "I help your company keep growing without getting stuck on technical risk: AI that pays off, systems that scale at a controlled cost, and security gaps closed before attackers find them.",
     "ctaBook": "Book a call",
     "ctaServices": "Services",
     "ctaPackages": "Packages & pricing",
@@ -76,7 +75,7 @@
   },
   "BookPage": {
     "metaTitle": "Book a Call | Huntay AzerTürk",
-    "metaDescription": "Book a 30-minute intro call with Huntay AzerTürk about AI agents, product development, cloud and DevOps, or digital transformation.",
+    "metaDescription": "Book a 30-minute intro call with Huntay AzerTürk about AI and automation, cloud/IoT and architecture, or cybersecurity.",
     "eyebrow": "Intro call · 30 min",
     "title": "Book a call",
     "intro": "Pick a time that works for you. In 30 minutes we'll pin down your current bottleneck, what it costs your company in time and money, and your goals.",
@@ -127,27 +126,36 @@
     "proofSubtitle": "Related case studies from my work.",
     "caseLink": "Read the case study",
     "faq": "Frequently asked questions",
-    "other": "Other services"
+    "other": "Other areas",
+    "offerings": "What I do in this area",
+    "offeringsModel": "What I do",
+    "offeringPackage": "Fixed-price package",
+    "offeringMore": "In depth",
+    "partOf": "This topic is part of {name}."
   },
   "ServicesPage": {
-    "metaTitle": "AI, Cloud & Product Development Services | Huntay AzerTürk",
-    "metaDescription": "Consulting and development: AI agents, fractional CTO, startup MVPs, web and mobile apps, DevOps, microservices, IoT and digital transformation for SMEs.",
+    "metaTitle": "AI, Cloud/IoT & Cybersecurity Services | Huntay AzerTürk",
+    "metaDescription": "Three areas of expertise: AI agents and automation; cloud, IoT and architecture; cybersecurity. Fixed-price reviews, implementation and fractional CTO.",
     "eyebrow": "Consulting & development",
     "title": "Services",
-    "intro": "Consulting and hands-on development for companies and startups—from strategy and architecture to AI agents, apps and cloud platforms running in production.",
-    "waysTitle": "Ways to work together",
-    "waysSubtitle": "Start small, scale when it works.",
+    "intro": "Consulting and implementation in three areas: AI agents and automation; cloud, IoT and architecture; cybersecurity. We usually start with a fixed-scope review, then build together once it is clear what to do and in which order.",
+    "waysTitle": "How we start",
+    "waysSubtitle": "Start small with a fixed scope, grow what works.",
     "processTitle": "How we work",
     "processSubtitle": "A simple, transparent process from first call to production.",
-    "faqTitle": "Questions about working together"
+    "faqTitle": "Questions about working together",
+    "pillarsTitle": "Areas of expertise",
+    "modelTitle": "Across all three: fractional CTO",
+    "deepDivesTitle": "Deep dives"
   },
   "ServicesSection": {
     "title": "Services",
-    "subtitle": "How I can help your company or startup—from strategy to production.",
+    "subtitle": "Three areas of expertise, one accountable person. We usually start with a fixed-scope review and build together once the priorities are clear.",
     "details": "Details",
-    "viewAll": "All services",
+    "viewAll": "All areas and services",
     "book": "Book a call",
-    "packages": "Packages & pricing"
+    "packages": "Packages & pricing",
+    "modelLabel": "Engagement model"
   },
   "Breadcrumbs": {
     "label": "Breadcrumb",

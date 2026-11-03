@@ -1,4 +1,5 @@
 import { deletePackageAction, savePackageAction, toggleActiveAction } from "./actions";
+import { resolveServiceSlug } from "@/data/catalog";
 import { services } from "@/data/services";
 import { checkAdmin } from "@/lib/admin-auth";
 import { listAllPackages, type PackageRow } from "@/lib/packages";
@@ -164,7 +165,7 @@ function PackageForm({ row }: { row: Partial<PackageRow> }) {
         <div className="grid gap-4 sm:grid-cols-3">
           <label className="block space-y-1">
             <span className={label}>İlgili hizmet</span>
-            <select name="service_slug" defaultValue={row.service_slug ?? ""} className={input}>
+            <select name="service_slug" defaultValue={resolveServiceSlug(row.service_slug) ?? ""} className={input}>
               <option value="">—</option>
               {services.map((s) => (
                 <option key={s.slug} value={s.slug}>{s.title.tr}</option>

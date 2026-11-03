@@ -56,9 +56,33 @@ export type ServiceIcon =
   | "building"
   | "shield";
 
+/**
+ * Hizmetin sitedeki rolü:
+ * - pillar: üç ana uzmanlık alanından biri (ana sayfa ve /services ızgarası)
+ * - model: çalışma modeli (Fractional CTO) — alanların üstünde, ayrı gösterilir
+ * - deep-dive: bir alanın derinlemesine alt sayfası; ana listelerde görünmez, `parent` sayfasından bağlanır
+ */
+export type ServiceRole = "pillar" | "model" | "deep-dive";
+
+/** "Bu alanda neler yapıyorum" listesindeki tek madde */
+export type ServiceOffering = {
+  id: string;
+  title: Localized;
+  body: Localized;
+  /** İlgili derinlemesine sayfa (slug), varsa */
+  serviceSlug?: string;
+  /** İlgili sabit fiyatlı paket (packages.id), varsa */
+  packageId?: string;
+};
+
 export type ServiceItem = {
   /** URL parçası: /services/<slug> (EN) ve /tr/services/<slug> (TR) */
   slug: string;
+  role: ServiceRole;
+  /** deep-dive için bağlı olduğu alanın slug'ı */
+  parent?: string;
+  /** "Bu alanda neler yapıyorum" — alan ve model sayfalarında */
+  offerings?: ServiceOffering[];
   icon: ServiceIcon;
   title: Localized;
   /** <title> için daha kısa başlık (opsiyonel; yoksa `title` kullanılır) */

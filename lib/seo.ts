@@ -26,7 +26,7 @@ export function localeUrl(locale: string, path = ""): string {
   return `${siteConfig.baseUrl}${localePath(locale, path)}`;
 }
 
-/** Göreli yol veya tam URL → tam URL (ör. `cvPath` env ile harici bir adres olabilir). */
+/** Göreli yol veya tam URL → tam URL . */
 export function absoluteUrl(pathOrUrl: string): string {
   return /^https?:\/\//.test(pathOrUrl) ? pathOrUrl : `${siteConfig.baseUrl}${pathOrUrl}`;
 }
@@ -293,8 +293,8 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       image: absoluteUrl(profileImagePath),
       description:
         locale === "tr"
-          ? "Yapay zeka ajanları, fractional CTO, startup ürün geliştirme, web ve mobil uygulamalar, bulut ve DevOps, mikroservis modernizasyonu, IoT ve KOBİ'ler için dijital dönüşüm."
-          : "AI agents, fractional CTO, startup product development, web and mobile apps, cloud and DevOps, microservices modernization, IoT and digital transformation for SMEs.",
+          ? "Yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Sabit fiyatlı incelemeler, uygulama ve fractional CTO."
+          : "AI agents and automation; cloud, IoT and architecture; cybersecurity. Fixed-price reviews, implementation and fractional CTO.",
       founder: { "@id": personId },
       address: {
         "@type": "PostalAddress",

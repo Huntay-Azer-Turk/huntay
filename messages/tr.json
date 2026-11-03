@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Yazılım Mimarı · Bulut, Yapay Zeka ve IoT",
-    "description": "Huntay AzerTürk; bulut, yapay zeka ve IoT alanında 13+ yıllık deneyime sahip, İstanbul merkezli yazılım mimarı ve mühendislik lideri."
+    "title": "Huntay AzerTürk — Fractional CTO · Yapay Zeka, Bulut/IoT ve Siber Güvenlik",
+    "description": "İstanbul merkezli yazılım mimarı ve fractional CTO Huntay AzerTürk: yapay zeka ajanları ve otomasyon, bulut/IoT ve mimari, siber güvenlik. 13+ yıllık deneyim."
   },
   "Nav": {
     "about": "Hakkında",
@@ -21,10 +21,9 @@
     "packages": "Paketler"
   },
   "Hero": {
-    "eyebrow": "Yazılım ve Dijital Çözümler Müdürü · Principal Systems Architect",
-    "role": "Yazılım Geliştirme Müdürü | Yazılım Mimarı | Bulut, Yapay Zeka ve IoT",
-    "valueProp": "Şirketlerin sistemlerini ölçeklemesine, bulut maliyetlerini düşürmesine ve gerçekten iş üreten mühendislik ekipleri kurmasına yardımcı oluyorum.",
-    "ctaCv": "CV indir",
+    "eyebrow": "Fractional CTO · Yazılım Mimarı · İstanbul",
+    "role": "Yapay Zeka, Bulut/IoT ve Siber Güvenlik Danışmanı",
+    "valueProp": "Şirketinizin büyümesini teknik riske takılmadan sürdürmesine yardımcı oluyorum: işe yarayan yapay zeka, ölçeklenen ve maliyeti kontrol altında sistemler, saldırganlardan önce kapatılan açıklar.",
     "ctaBook": "Görüşme planla",
     "ctaServices": "Hizmetler",
     "ctaPackages": "Paketler ve fiyatlar",
@@ -76,7 +75,7 @@
   },
   "BookPage": {
     "metaTitle": "Görüşme Planlayın | Huntay AzerTürk",
-    "metaDescription": "Yapay zeka ajanları, ürün geliştirme, bulut ve DevOps ya da dijital dönüşüm hakkında Huntay AzerTürk ile 30 dakikalık tanışma görüşmesi planlayın.",
+    "metaDescription": "Yapay zeka ve otomasyon, bulut/IoT ve mimari ya da siber güvenlik ihtiyacınız için Huntay AzerTürk ile 30 dakikalık tanışma görüşmesi planlayın.",
     "eyebrow": "Tanışma görüşmesi · 30 dk",
     "title": "Görüşme planlayın",
     "intro": "Size uygun bir zaman seçin. 30 dakikada mevcut darboğazınızı, bunun şirketinize zaman ve maliyet etkisini ve hedeflerinizi birlikte netleştirelim.",
@@ -127,27 +126,36 @@
     "proofSubtitle": "Çalışmalarımdan ilgili vaka çalışmaları.",
     "caseLink": "Vaka çalışmasını oku",
     "faq": "Sık sorulan sorular",
-    "other": "Diğer hizmetler"
+    "other": "Diğer alanlar",
+    "offerings": "Bu alanda neler yapıyorum",
+    "offeringsModel": "Neler yapıyorum",
+    "offeringPackage": "Sabit fiyatlı paket",
+    "offeringMore": "Ayrıntılı sayfa",
+    "partOf": "Bu konu {name} alanının parçasıdır."
   },
   "ServicesPage": {
-    "metaTitle": "Yapay Zeka, Bulut ve Yazılım Hizmetleri | Huntay AzerTürk",
-    "metaDescription": "Danışmanlık ve geliştirme: yapay zeka ajanları, fractional CTO, MVP, web ve mobil uygulama, DevOps, mikroservis, IoT ve KOBİ dijital dönüşüm.",
+    "metaTitle": "Yapay Zeka, Bulut/IoT ve Siber Güvenlik Hizmetleri | Huntay AzerTürk",
+    "metaDescription": "Üç uzmanlık alanı: yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Sabit fiyatlı incelemeler, uygulama ve fractional CTO.",
     "eyebrow": "Danışmanlık ve geliştirme",
     "title": "Hizmetler",
-    "intro": "Şirketler ve startup'lar için danışmanlık ve uygulamalı geliştirme: stratejiden ve mimariden, canlıda çalışan yapay zeka ajanlarına, uygulamalara ve bulut platformlarına.",
-    "waysTitle": "Birlikte çalışma modelleri",
-    "waysSubtitle": "Küçük başlayın, işe yaradıkça büyütün.",
+    "intro": "Üç alanda danışmanlık ve uygulama: yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Genellikle sabit kapsamlı bir incelemeyle başlarız; neyin, hangi sırayla yapılacağı netleşince birlikte uygularız.",
+    "waysTitle": "Nasıl başlarız",
+    "waysSubtitle": "Küçük ve sabit kapsamlı başlayın, işe yaradıkça büyütün.",
     "processTitle": "Nasıl çalışıyoruz",
     "processSubtitle": "İlk görüşmeden canlıya kadar sade ve şeffaf bir süreç.",
-    "faqTitle": "Birlikte çalışma hakkında sorular"
+    "faqTitle": "Birlikte çalışma hakkında sorular",
+    "pillarsTitle": "Uzmanlık alanları",
+    "modelTitle": "Üç alanda da: Fractional CTO",
+    "deepDivesTitle": "Derinlemesine"
   },
   "ServicesSection": {
     "title": "Hizmetler",
-    "subtitle": "Şirketinize veya startup'ınıza stratejiden canlı ürüne kadar nasıl yardımcı olabilirim?",
+    "subtitle": "Üç uzmanlık alanı, tek bir sorumlu kişi. Genellikle sabit kapsamlı bir incelemeyle başlar, öncelikler netleşince birlikte uygularız.",
     "details": "Detaylar",
-    "viewAll": "Tüm hizmetler",
+    "viewAll": "Tüm alanlar ve hizmetler",
     "book": "Görüşme planla",
-    "packages": "Paketler ve fiyatlar"
+    "packages": "Paketler ve fiyatlar",
+    "modelLabel": "Çalışma modeli"
   },
   "Breadcrumbs": {
     "label": "Sayfa konumu",

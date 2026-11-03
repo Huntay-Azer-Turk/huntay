@@ -9,6 +9,7 @@ import {
   philosophy,
   strategicPartner,
 } from "@/data/profile";
+import { resolveServiceSlug } from "@/data/catalog";
 import { processSteps, services, servicesFaq } from "@/data/services";
 import type { ServiceItem } from "@/data/types";
 import { localeUrl } from "@/lib/seo";
@@ -36,6 +37,7 @@ const L = {
   en: {
     profileTitle: `${siteConfig.name} — profile`,
     forWhom: "Who it's for",
+    offerings: "What I do in this area",
     deliverables: "What you get",
     useCases: "Typical use cases",
     tech: "Technologies",
@@ -45,11 +47,12 @@ const L = {
     article: "Article on Medium by",
     process: "How working together works",
     bookingTitle: "How to book an intro call",
-    bookingText: `A 30-minute video call (Google Meet) in English or Turkish, Monday–Friday 10:00–18:00 Istanbul time. Book at ${localeUrl("en", "/book")}, or from an AI assistant connected to ${siteConfig.baseUrl}/mcp. You talk about your goals, current situation and constraints, get honest first recommendations and, if it is a fit, a short written proposal.`,
+    bookingText: `A 30-minute video call (Google Meet) in English or Turkish, Monday–Friday 10:00–18:00 Istanbul time. Book at ${localeUrl("en", "/book")}, or from an AI assistant connected to ${siteConfig.baseUrl}/mcp. Together you pin down the current bottleneck, what it costs the business in time and money, and your goals; if the expertise fits, you agree on the right first step (usually a fixed-scope review package).`,
   },
   tr: {
     profileTitle: `${siteConfig.name} — profil`,
     forWhom: "Kimler için",
+    offerings: "Bu alanda neler yapıyorum",
     deliverables: "Neler alırsınız",
     useCases: "Örnek kullanım senaryoları",
     tech: "Teknolojiler",
@@ -59,7 +62,7 @@ const L = {
     article: "Medium yazısı —",
     process: "Birlikte çalışma süreci",
     bookingTitle: "Tanışma görüşmesi nasıl planlanır?",
-    bookingText: `Türkçe veya İngilizce, 30 dakikalık görüntülü görüşme (Google Meet); hafta içi 10:00–18:00 (İstanbul). Randevu: ${localeUrl("tr", "/book")} ya da ${siteConfig.baseUrl}/mcp adresine bağlı bir yapay zeka asistanı. Hedeflerinizi, mevcut durumu ve kısıtlarınızı konuşursunuz; dürüst ilk önerileri ve uygunsa kısa bir yazılı teklif alırsınız.`,
+    bookingText: `Türkçe veya İngilizce, 30 dakikalık görüntülü görüşme (Google Meet); hafta içi 10:00–18:00 (İstanbul). Randevu: ${localeUrl("tr", "/book")} ya da ${siteConfig.baseUrl}/mcp adresine bağlı bir yapay zeka asistanı. Mevcut darboğazı, bunun şirkete zaman ve maliyet etkisini ve hedeflerinizi birlikte netleştirirsiniz; uzmanlık uygunsa doğru ilk adımda (genellikle sabit kapsamlı bir inceleme paketi) anlaşırsınız.`,
   },
 } as const;
 
@@ -71,6 +74,13 @@ export function serviceText(service: ServiceItem, lang: Lang): string {
     "",
     service.summary[lang],
     "",
+    ...(service.offerings?.length
+      ? [
+          `${l.offerings}:`,
+          ...service.offerings.map((item) => `- ${item.title[lang]}: ${item.body[lang]}`),
+          "",
+        ]
+      : []),
     `${l.forWhom}:`,
     ...service.forWhom.map((item) => `- ${item[lang]}`),
     "",
@@ -260,8 +270,12 @@ function snippetFor(text: string, tokens: string[]): string {
 
 /** "service:ai-agents" veya "service:ai-agents@tr" */
 export function getDoc(id: string): ContentDoc | undefined {
-  const [baseId, suffix] = id.split("@");
+  const [rawId, suffix] = id.split("@");
   const lang: Lang = suffix === "tr" ? "tr" : "en";
+  // Kaldırılan hizmetlerin eski kimlikleri (ör. "service:digital-transformation") yerini alan hizmete gider.
+  const baseId = rawId.startsWith("service:")
+    ? `service:${resolveServiceSlug(rawId.slice("service:".length)) ?? rawId.slice("service:".length)}`
+    : rawId;
   return buildDocs(lang).find((doc) => doc.id === baseId);
 }
 
@@ -287,6 +301,7 @@ export function matchServices(need: string, lang: Lang): ServiceMatch[] {
     const lines = [
       service.title[lang],
       service.tagline[lang],
+      ...(service.offerings ?? []).map((item) => `${item.title[lang]}: ${item.body[lang]}`),
       ...service.forWhom.map((item) => item[lang]),
       ...service.useCases.map((item) => item[lang]),
       ...service.deliverables.map((item) => item[lang]),
