@@ -13,6 +13,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 export async function ServicesSection() {
   const locale = (await getLocale()) as "en" | "tr";
   const t = await getTranslations("ServicesSection");
+  const ta = await getTranslations("Assessment");
 
   return (
     <section id="services" className="scroll-mt-16 border-b border-border py-20 sm:py-28">
@@ -65,6 +66,9 @@ export async function ServicesSection() {
           </Link>
           <Link href="/packages" className={buttonSecondary}>
             {t("packages")}
+          </Link>
+          <Link href="/assessment" className={buttonSecondary}>
+            {ta("sectionLink")}
           </Link>
         </div>
       </div>

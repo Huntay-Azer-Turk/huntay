@@ -50,4 +50,5 @@ export type ConsentChoice = {
 export type AnalyticsEvent =
   | { name: "generate_lead"; params: { method: "booking" | "booking_request"; source: string } }
   | { name: "contact_click"; params: { method: "whatsapp" | "email" | "phone" | "linkedin"; location: string } }
-  | { name: "cta_click"; params: { target: string; location: string } };
+  | { name: "cta_click"; params: { target: string; location: string } }
+  | { name: "assessment_complete"; params: { assessment: string; score: number; level: number } };

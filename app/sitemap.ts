@@ -1,3 +1,4 @@
+import { assessments } from "@/data/assessments";
 import { services } from "@/data/services";
 import { hreflangAlternates, localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
@@ -10,6 +11,12 @@ const pages: { path: string; priority: number; changeFrequency: "monthly" | "yea
   { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
   ...services.map((service) => ({
     path: `/services/${service.slug}`,
+    priority: 0.8,
+    changeFrequency: "monthly" as const,
+  })),
+  { path: "/assessment", priority: 0.8, changeFrequency: "monthly" },
+  ...assessments.map((item) => ({
+    path: `/assessment/${item.slug}`,
     priority: 0.8,
     changeFrequency: "monthly" as const,
   })),

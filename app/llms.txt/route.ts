@@ -3,6 +3,7 @@ import { experience } from "@/data/experience";
 import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
+import { assessments } from "@/data/assessments";
 import { primaryServices } from "@/data/catalog";
 import { services } from "@/data/services";
 import { calBookingPageUrl, isCalConfigured } from "@/lib/cal";
@@ -47,6 +48,12 @@ export function GET() {
       ),
     "",
     `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (technical check-up, security scan, penetration test, architecture & cloud cost review, AI agent pilot, fractional CTO, MVP)`,
+    "",
+    "## Free self-assessments (3 minutes, no sign-up)",
+    "",
+    ...assessments.map(
+      (item) => `- [${item.title.en}](${localeUrl("en", `/assessment/${item.slug}`)}): ${item.metaDescription.en}`,
+    ),
     "",
     "## Book from an AI assistant (MCP)",
     "",

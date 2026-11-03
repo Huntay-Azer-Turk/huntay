@@ -5,6 +5,7 @@ import { CtaBlock } from "@/components/services/cta-block";
 import { ServiceCard } from "@/components/services/service-card";
 import { ServiceIcon } from "@/components/services/service-icon";
 import { caseStudies } from "@/data/caseStudies";
+import { assessments } from "@/data/assessments";
 import { primaryServices } from "@/data/catalog";
 import { getService, processSteps, services } from "@/data/services";
 import { Link } from "@/i18n/navigation";
@@ -71,6 +72,8 @@ export default async function ServiceDetailPage({ params }: Props) {
   const others = primaryServices.filter((item) => item.slug !== service.slug);
   const parent = service.role === "deep-dive" && service.parent ? getService(service.parent) : undefined;
   const packageById = new Map(allPackages.map((pkg) => [pkg.id, pkg]));
+  const assessment = assessments.find((item) => item.serviceSlug === (parent?.slug ?? service.slug));
+  const ta = await getTranslations({ locale, namespace: "Assessment" });
   const title = `${(service.metaTitle ?? service.title)[locale]} | ${t("titleSuffix")}`;
 
   return (
@@ -138,6 +141,13 @@ export default async function ServiceDetailPage({ params }: Props) {
               {ts("packages")}
             </Link>
           </div>
+          {assessment ? (
+            <p className="mt-6 text-sm">
+              <Link href={`/assessment/${assessment.slug}`} className="font-medium text-accent hover:underline">
+                {ta("serviceCta")} →
+              </Link>
+            </p>
+          ) : null}
         </div>
       </section>
 
