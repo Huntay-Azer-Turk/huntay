@@ -1,10 +1,19 @@
 import type { FeaturedItem } from "./types";
 
 /**
- * Medium yazıları — doğrudan kanonik Medium URL’leri (lnkd.in kısa linkleri yerine):
+ * Yazılar (LinkedIn ve Medium) — en yenisi en üstte. Medium yazıları — doğrudan kanonik Medium URL’leri (lnkd.in kısa linkleri yerine):
  * link değeri yazının kendisine gider ve AI tarayıcıları yönlendirme takip etmek zorunda kalmaz.
  */
 export const featured: FeaturedItem[] = [
+  {
+    id: "sme-cybersecurity",
+    title: {
+      en: "The Cybersecurity Crisis in SMEs: The National Economy's Soft Underbelly in the Age of AI (in Turkish)",
+      tr: "KOBİ'lerde Siber Güvenlik Krizi: Yapay Zeka Çağında Ulusal Ekonominin Yumuşak Karnı",
+    },
+    href: "https://www.linkedin.com/pulse/kobilerde-siber-g%C3%BCvenlik-krizi-yapay-zeka-%C3%A7a%C4%9F%C4%B1nda-ulusal-azert%C3%BCrk-9rlcf/",
+    source: "LinkedIn",
+  },
   {
     id: "agi",
     title: {
