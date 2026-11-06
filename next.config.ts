@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 import { retiredServiceSlugs } from "./data/catalog";
+import { siteConfig } from "./lib/site";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
@@ -23,6 +24,13 @@ const nextConfig: NextConfig = {
       ...serviceRedirects,
       // CV kaldırıldı (Kasım 2026): eski PDF linki ana sayfaya gider.
       { source: "/cv/cv.pdf", destination: "/", permanent: true },
+      // Kartvizit karekodu ve imza için kısa link (Kasım 2026). Geçici (307) yönlendirme:
+      // hedef ileride değişirse (başka sayfa, /book) karekodu yeniden basmak gerekmez.
+      ...["/chatgpt", "/tr/chatgpt", "/en/chatgpt"].map((source) => ({
+        source,
+        destination: siteConfig.chatgptAppUrl,
+        permanent: false,
+      })),
     ];
   },
 };
