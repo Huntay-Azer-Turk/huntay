@@ -973,10 +973,10 @@ export const engagementModels: StepItem[] = [
   },
   {
     id: "workshop-audit",
-    title: { en: "Opportunity scan or design package", tr: "Fırsat taraması ya da tasarım paketi" },
+    title: { en: "AI opportunity scan", tr: "Yapay zekâ fırsat taraması" },
     body: {
-      en: "For the help desk, a fixed-price AI opportunity scan; for other units, a design package priced by scope. You get a written report, pilot scope and success criteria.",
-      tr: "Help desk için sabit fiyatlı yapay zekâ fırsat taraması; diğer birimler için kapsama göre fiyatlanan tasarım paketi. Yazılı rapor, pilot kapsamı ve başarı ölçütleri alırsınız.",
+      en: "A fixed-price scan for the technical service and help desk. You get a written report, pilot scope and success criteria. Other units are scoped and priced together in the intro call.",
+      tr: "Teknik servis ve help desk için sabit fiyatlı tarama. Yazılı rapor, pilot kapsamı ve başarı ölçütleri alırsınız. Diğer birimlerin kapsamı ve fiyatı ön görüşmede birlikte belirlenir.",
     },
   },
   {
@@ -1075,8 +1075,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Projeler nasıl fiyatlandırılıyor?",
     },
     answer: {
-      en: "The opportunity scan and the help desk pilot have fixed prices; design packages for other units show a starting price, and the exact price comes in a written proposal once the scope is clear. Production rollouts are quoted after the pilot or design. You always get a written proposal before any work starts.",
-      tr: "Fırsat taraması ve help desk pilotu sabit fiyatlıdır; diğer birimlerin tasarım paketlerinde başlangıç fiyatı yazar, kesin fiyat kapsam netleşince yazılı teklifle verilir. Canlı kurulum pilot ya da tasarımdan sonra fiyatlanır. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
+      en: "The technical service and help desk path is listed on the packages page: the opportunity scan and the pilot have fixed prices, the production rollout a starting price. Other units have no off-the-shelf package; their scope and price are set in the intro call and given in a written proposal. You always get a written proposal before any work starts.",
+      tr: "Teknik servis ve help desk yolu paketler sayfasında yazar: fırsat taraması ve pilot sabit fiyatlı, canlı kurulum başlangıç fiyatlıdır. Diğer birimlerin hazır paketi yoktur; kapsamı ve fiyatı ön görüşmede belirlenir, yazılı teklifle verilir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
     },
   },
 ];

@@ -19,20 +19,12 @@ type Props = { params: Promise<{ locale: string }> };
 
 /**
  * Vitrin (11 Kasım 2026, odak tamamen yapay zekâ dönüşümü): öne çıkan teklif teknik servis ve help desk asistanı —
- * fırsat taraması → pilot → canlı kurulum. Altında diğer birimlerin tasarım paketleri (arka planda). Bulut, güvenlik
- * ve CTO paketleri D1'de pasif; "rest" grubu yalnız yeni eklenen aktif bir paket olursa görünür.
+ * fırsat taraması → pilot → canlı kurulum. Aynı gün (Huntay: "paketlerde sadece teknik servis kalsın"): diğer birimlerin
+ * tasarım paketleri D1'de pasif; sayfada yalnız kısa bir not ve hizmetler sayfasındaki birimlere bağlantı var. Bulut,
+ * güvenlik ve CTO paketleri de pasif; "rest" grubu yalnız yeni eklenen aktif bir paket olursa görünür.
  * Paket kimliği D1'de yoksa veya paket pasifse grubundan düşer, sayfa yine çalışır.
  */
 const SHOWCASE_IDS = ["ai-opportunity-scan", "ai-agent-pilot", "ai-production-rollout"] as const;
-const EXPANSION_IDS = [
-  "ai-quality-control",
-  "ai-production-efficiency",
-  "ai-sales-assistant",
-  "ai-marketing-assistant",
-  "ai-market-research",
-  "ai-procurement",
-  "ai-security-assistant",
-] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -55,8 +47,7 @@ export default async function PackagesPage({ params }: Props) {
   const packages = await getPackages(locale);
   const byId = new Map(packages.map((pkg) => [pkg.id, pkg]));
   const showcase = SHOWCASE_IDS.map((id) => byId.get(id)).filter((pkg): pkg is PackageView => Boolean(pkg));
-  const expansion = EXPANSION_IDS.map((id) => byId.get(id)).filter((pkg): pkg is PackageView => Boolean(pkg));
-  const shown = new Set<string>([...showcase, ...expansion].map((pkg) => pkg.id));
+  const shown = new Set<string>(showcase.map((pkg) => pkg.id));
   const rest = packages.filter((pkg) => !shown.has(pkg.id));
 
   const renderCard = (pkg: PackageView, inShowcase: boolean) => {
@@ -172,15 +163,13 @@ export default async function PackagesPage({ params }: Props) {
                 </div>
               ) : null}
 
-              {expansion.length ? (
-                <div className="mt-16">
-                  <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t("expansionTitle")}</h2>
-                  <p className="mt-2 text-muted-foreground">{t("expansionSubtitle")}</p>
-                  <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {expansion.map((pkg) => renderCard(pkg, false))}
-                  </ul>
-                </div>
-              ) : null}
+              <div className="mt-12 rounded-2xl border border-border p-6">
+                <h2 className="font-semibold text-foreground">{t("expansionTitle")}</h2>
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">{t("expansionSubtitle")}</p>
+                <Link href="/services#units" className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
+                  {t("expansionLink")}
+                </Link>
+              </div>
 
               {rest.length ? (
                 <div className="mt-16">

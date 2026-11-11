@@ -48,8 +48,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi hizmetleri sunuyor?",
     },
     answer: {
-      en: "AI transformation for manufacturers and distributors. It starts with a technical service and help desk assistant that answers dealers', technicians' and users' questions from your own manuals (opportunity scan, then a 3-week pilot, then a production rollout). Further units each have their own design package: quality control automation, production efficiency and maintenance, sales, marketing, market research, procurement and security team assistants.",
-      tr: "Üretici ve distribütörler için yapay zekâ dönüşümü. Başlangıç, bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan teknik servis ve help desk asistanıdır (fırsat taraması, 3 haftalık pilot, canlı kurulum). Diğer birimlerin her birinin kendi tasarım paketi vardır: kalite kontrol otomasyonu, üretim verimliliği ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekibi asistanları.",
+      en: "AI transformation for manufacturers and distributors. It starts with a technical service and help desk assistant that answers dealers', technicians' and users' questions from your own manuals (opportunity scan, then a 3-week pilot, then a production rollout). Once the help desk delivers, the same approach extends to quality control automation, production efficiency and maintenance, sales, marketing, market research, procurement and security team assistants; their scope and price are set together in the intro call.",
+      tr: "Üretici ve distribütörler için yapay zekâ dönüşümü. Başlangıç, bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan teknik servis ve help desk asistanıdır (fırsat taraması, 3 haftalık pilot, canlı kurulum). Help desk'te sonuç alındıktan sonra aynı yöntem kalite kontrol otomasyonu, üretim verimliliği ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekibi asistanlarına taşınır; bunların kapsamı ve fiyatı ön görüşmede birlikte belirlenir.",
     },
   },
   {
@@ -59,8 +59,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk ile çalışma nasıl başlıyor?",
     },
     answer: {
-      en: "With a 30-minute assessment call. If there is a fit, the usual path is a fixed-price AI opportunity scan (5 business days), then a technical service and help desk assistant pilot live on one channel in 3 weeks, and a production rollout once it works. Prices are listed on the packages page; the scan and design packages come with a refund guarantee.",
-      tr: "30 dakikalık bir ön değerlendirme görüşmesiyle. Uygunsa olağan yol sabit fiyatlı yapay zekâ fırsat taraması (5 iş günü), ardından 3 haftada tek kanalda canlıya alınan teknik servis ve help desk asistanı pilotu ve işe yarayınca canlı kurulumdur. Fiyatlar paketler sayfasında yazar; tarama ve tasarım paketlerinde ücret iadesi garantisi vardır.",
+      en: "With a 30-minute assessment call. If there is a fit, the usual path is a fixed-price AI opportunity scan (5 business days), then a technical service and help desk assistant pilot live on one channel in 3 weeks, and a production rollout once it works. Prices are listed on the packages page; the scan comes with a refund guarantee.",
+      tr: "30 dakikalık bir ön değerlendirme görüşmesiyle. Uygunsa olağan yol sabit fiyatlı yapay zekâ fırsat taraması (5 iş günü), ardından 3 haftada tek kanalda canlıya alınan teknik servis ve help desk asistanı pilotu ve işe yarayınca canlı kurulumdur. Fiyatlar paketler sayfasında yazar; taramada ücret iadesi garantisi vardır.",
     },
   },
   {

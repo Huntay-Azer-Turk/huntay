@@ -19,8 +19,8 @@ import { getLocale, getTranslations } from "next-intl/server";
 /**
  * Ana sayfa "Nasıl çalışıyoruz" bölümü (11 Kasım 2026): üreticilerde yapay zekâ dönüşümü teknik servis ve help desk
  * asistanıyla başlar. Sıra: müşterinin derdi → üç adım (tarama, help desk pilotu, canlı kurulum) → diğer birimler
- * (data/ai-units.ts, her biri kendi tasarım paketine) → kanıt.
- * Adımlar ve birimler paketler sayfasındaki paket kimliklerine bağlanır (#id); paket D1'de pasifse bağlantı sayfanın başına düşer.
+ * (data/ai-units.ts; hazır paketleri yok, hizmetler sayfasındaki birimler bölümüne bağlanır) → kanıt.
+ * Adımlar paketler sayfasındaki paket kimliklerine bağlanır (#id); paket D1'de pasifse bağlantı sayfanın başına düşer.
  */
 const STEPS = [
   { key: "step1", packageId: "ai-opportunity-scan" },
@@ -89,7 +89,7 @@ export async function AiPath() {
             return (
               <li key={unit.id}>
                 <Link
-                  href={`/packages#${unit.packageId}`}
+                  href="/services#units"
                   className="group flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent"
                 >
                   <Icon className="h-4 w-4 shrink-0 text-accent" aria-hidden />

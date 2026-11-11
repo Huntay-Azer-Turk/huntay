@@ -106,7 +106,7 @@
     "aiDocs": "Setup guide, tools and example prompts",
     "loading": "Loading calendar…",
     "openInChatgpt": "Open in ChatGPT",
-    "packageNotePrefix": "Package",
+    "packageNotePrefix": "Interested in",
     "selectedPackage": "Selected package",
     "capacity": "Because I do every engagement myself, I take on at most 2 new reviews a month and only 1 implementation or Fractional CTO engagement at a time."
   },
@@ -154,8 +154,8 @@
     "leadStep2": "Pilot: on one channel with your own manuals, live in 3 weeks; we measure the share of questions answered automatically and resolution time.",
     "leadStep3": "Production rollout: connected to your dealer portal, WhatsApp, email and service system, with team training and support.",
     "unitsTitle": "Other units",
-    "unitsSubtitle": "Each unit starts with a design package; the price is set in a written proposal based on scope.",
-    "unitPackage": "Design package & price",
+    "unitsSubtitle": "Once the help desk delivers, we take the same approach to other units. These are not off-the-shelf packages: we set the scope and price together in the intro call, based on your needs.",
+    "unitBook": "Let's discuss it in a call",
     "aiDetails": "More about AI transformation"
   },
   "ServicesSection": {
@@ -263,7 +263,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Packages & Pricing | Huntay AzerTürk",
-    "metaDescription": "AI packages for manufacturers: opportunity scan, technical service & help desk assistant pilot and production rollout; design packages for quality control, production & maintenance, sales, marketing, market research, procurement and security.",
+    "metaDescription": "Technical service & help desk assistant packages for manufacturers: AI opportunity scan, 3-week pilot and production rollout. Prices and scope.",
     "eyebrow": "Packages & pricing",
     "title": "Clear scope, clear price",
     "intro": "Start with a fixed-scope review; once it's clear what needs doing and in what order, we implement it together.",
@@ -285,12 +285,13 @@
     "moreTitle": "Infrastructure, security and ongoing advisory",
     "moreSubtitle": "Reviews that strengthen the foundation of the transformation, and longer engagements.",
     "guaranteeTitle": "Diagnosis guarantee",
-    "guaranteeText": "For the opportunity scan and design packages: if we can't deliver at least 5 actionable, prioritized findings specific to you, we refund the full fee. If we continue together, the fee is credited toward the next step as noted on each package.",
+    "guaranteeText": "For the opportunity scan: if we can't deliver at least 5 actionable, prioritized findings specific to you, we refund the full fee. If we continue together, the fee is credited toward the next step as noted on each package.",
     "noteCapacity": "Capacity: because I work on every engagement personally, I take at most 2 new scans or designs a month and only 1 pilot or rollout at a time.",
     "pillar_ai-opportunity-scan": "Step 1",
     "pillar_ai-production-rollout": "Step 3",
-    "expansionTitle": "Other units: design packages",
-    "expansionSubtitle": "Design packages that take the same approach to other teams once the help desk delivers. Prices are starting prices; the exact price comes in a written proposal once the scope is clear. If you move to a pilot, the design fee is deducted."
+    "expansionTitle": "Other units",
+    "expansionSubtitle": "There are no off-the-shelf packages for quality control, production & maintenance, sales, marketing, market research, procurement or the security team. Once the help desk delivers, we set the scope and price together in the intro call.",
+    "expansionLink": "See the units"
   },
   "Assessment": {
     "free": "Free",

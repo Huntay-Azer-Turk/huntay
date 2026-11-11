@@ -100,6 +100,7 @@ type Seed = Omit<PackageRow, "updated_at">;
  * dönüşümü — her birim (teknik servis, kalite, üretim, satış, pazarlama, pazar araştırması, satın alma, güvenlik)
  * tasarım paketiyle; öne çıkan teklif teknik servis / help desk asistanı (tarama → pilot → canlı kurulum).
  * Birim tasarım paketleri 'başlangıç fiyatı' (Huntay: sabit etiket fiyat 'yumurta satar gibi'); kesin fiyat kapsama göre.
+ * Aynı gün: paketlerde yalnız teknik servis yolu kalır (Huntay); birim tasarım paketleri pasif, kapsam ve fiyat ön görüşmede.
  * Fiyatlar piyasa araştırmasıyla (yurt dışı: hazırlık denetimi $3.5–8.5K, destek asistanı PoC €6–15K) birime göre
  * farklı ve küsuratlı; bulut, güvenlik ve CTO paketleri pasif (silinmedi). Canlıdaki D1 bu listeden değil /admin'den güncellenir.
  */
@@ -188,7 +189,7 @@ const SEED: Seed[] = [
     perk_en: "Written proposal after a scoping call.",
   },
   {
-    id: "ai-market-research", service_slug: "ai-agents", sort: 65, active: 1, featured: 0,
+    id: "ai-market-research", service_slug: "ai-agents", sort: 65, active: 0, featured: 0,
     name_tr: "Pazar Araştırması Asistanı — Tasarım", name_en: "Market Research Assistant — Design",
     summary_tr: "Rakipleri, fiyatları, ihaleleri ve sektör haberlerini düzenli tarayıp yönetime kısa ve kaynaklı özetler sunan yapay zekâ asistanının tasarımı.",
     summary_en: "Design of an AI assistant that regularly scans competitors, prices, tenders and industry news and gives management short, sourced summaries.",
@@ -200,7 +201,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-procurement", service_slug: "ai-agents", sort: 66, active: 1, featured: 0,
+    id: "ai-procurement", service_slug: "ai-agents", sort: 66, active: 0, featured: 0,
     name_tr: "Satın Alma ve Tedarik Asistanı — Tasarım", name_en: "Procurement & Supply Assistant — Design",
     summary_tr: "Tedarikçi tekliflerini karşılaştıran, sipariş ve teslim tarihlerini takip eden, stok ve sipariş önerileri sunan yapay zekâ asistanının tasarımı.",
     summary_en: "Design of an AI assistant that compares supplier quotes, tracks orders and delivery dates, and suggests stock and purchase orders.",
@@ -212,7 +213,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-production-efficiency", service_slug: "ai-agents", sort: 62, active: 1, featured: 0,
+    id: "ai-production-efficiency", service_slug: "ai-agents", sort: 62, active: 0, featured: 0,
     name_tr: "Üretim Verimliliği ve Bakım — Tasarım", name_en: "Production Efficiency & Maintenance — Design",
     summary_tr: "Duruş, fire, bakım ve vardiya verilerinizden kayıpların nereden geldiğini bulan; arıza öngörüsü ve bakım planlaması için yapay zekâ çözümünün tasarımı.",
     summary_en: "Design of an AI solution that finds where losses come from in your downtime, scrap, maintenance and shift data, and supports failure prediction and maintenance planning.",
@@ -224,7 +225,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-quality-control", service_slug: "ai-agents", sort: 61, active: 1, featured: 0,
+    id: "ai-quality-control", service_slug: "ai-agents", sort: 61, active: 0, featured: 0,
     name_tr: "Kalite Kontrol Otomasyonu ve Verimlilik — Tasarım", name_en: "Quality Control Automation & Efficiency — Design",
     summary_tr: "Görüntü, ölçüm ve şikâyet verilerinizle hatayı daha erken yakalayan, kontrol süresini kısaltan ve fireyi azaltan yapay zekâ otomasyonunun fizibilitesi ve tasarımı.",
     summary_en: "Feasibility and design of AI automation that catches defects earlier from your image, measurement and complaint data, shortens inspection time and reduces scrap.",
@@ -236,7 +237,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-sales-assistant", service_slug: "ai-agents", sort: 63, active: 1, featured: 0,
+    id: "ai-sales-assistant", service_slug: "ai-agents", sort: 63, active: 0, featured: 0,
     name_tr: "Satış Asistanı — Tasarım", name_en: "Sales Assistant — Design",
     summary_tr: "Web, WhatsApp ve e-postadan gelen talepleri karşılayan, fiyat ve stok sorularını yanıtlayan, teklif ve takibi hızlandırıp satış ekibinize hazır müşteri aktaran yapay zekâ asistanının tasarımı.",
     summary_en: "Design of an AI assistant that handles inquiries from web, WhatsApp and email, answers price and stock questions, speeds up quotes and follow-up, and hands ready buyers to your sales team.",
@@ -248,7 +249,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-marketing-assistant", service_slug: "ai-agents", sort: 64, active: 1, featured: 0,
+    id: "ai-marketing-assistant", service_slug: "ai-agents", sort: 64, active: 0, featured: 0,
     name_tr: "Pazarlama Asistanı — Tasarım", name_en: "Marketing Assistant — Design",
     summary_tr: "İçerik, katalog, kampanya ve müşteri takibini hızlandıran, markanızın diliyle çalışan yapay zekâ asistanının tasarımı.",
     summary_en: "Design of an AI assistant that speeds up content, catalogs, campaigns and customer follow-up in your brand's voice.",
@@ -260,7 +261,7 @@ const SEED: Seed[] = [
     perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
-    id: "ai-security-assistant", service_slug: "ai-agents", sort: 67, active: 1, featured: 0,
+    id: "ai-security-assistant", service_slug: "ai-agents", sort: 67, active: 0, featured: 0,
     name_tr: "Güvenlik Ekibi Yardımcı Asistanı — Tasarım", name_en: "Security Team Copilot — Design",
     summary_tr: "Alarm ve kayıtları önceliklendiren, güvenlik politikası ve KVKK sorularını yanıtlayan, küçük BT ekiplerinin yükünü alan asistanın tasarımı.",
     summary_en: "Design of an assistant that triages alerts and logs and answers security policy and GDPR/KVKK questions, taking load off small IT teams.",

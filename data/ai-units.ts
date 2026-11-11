@@ -4,7 +4,8 @@ import type { Localized, ServiceOffering } from "./types";
  * Yapay zekâ dönüşümünün birimleri (11 Kasım 2026, Huntay: "odak tamamen AI transformation; her birim ayrı paket").
  * Tek kaynak: hizmetler sayfası, ai-agents hizmet sayfası (offerings) ve ana sayfadaki "Sonraki adımlar" buradan okur.
  * İlk birim (teknik servis ve help desk) öne çıkan tekliftir: fırsat taraması → pilot (ai-agent-pilot) → canlı kurulum.
- * Diğer birimler arka planda: her birinin kendi fiyatlı tasarım paketi var; pilot ve kurulum tasarımdan sonra tekliflenir.
+ * Diğer birimler arka planda: hazır paket ve fiyat yok (Huntay, 11 Kasım: "paketlerde sadece teknik servis kalsın");
+ * help desk'te sonuç alındıktan sonra kapsam ve fiyat ön görüşmede belirlenir. packageId yalnız öne çıkan birimde.
  */
 export const LEAD_UNIT_ID = "support-helpdesk";
 export type AiUnitIcon =
@@ -19,7 +20,7 @@ export type AiUnitIcon =
 
 export type AiUnit = {
   id: string;
-  packageId: string;
+  packageId?: string;
   icon: AiUnitIcon;
   title: Localized;
   body: Localized;
@@ -38,7 +39,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "quality",
-    packageId: "ai-quality-control",
     icon: "scan",
     title: { en: "Quality control automation & efficiency", tr: "Kalite kontrol otomasyonu ve verimlilik" },
     body: {
@@ -48,7 +48,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "production",
-    packageId: "ai-production-efficiency",
     icon: "factory",
     title: { en: "Production efficiency & maintenance", tr: "Üretim verimliliği ve bakım" },
     body: {
@@ -58,7 +57,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "sales",
-    packageId: "ai-sales-assistant",
     icon: "cart",
     title: { en: "Sales assistant", tr: "Satış asistanı" },
     body: {
@@ -68,7 +66,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "marketing",
-    packageId: "ai-marketing-assistant",
     icon: "megaphone",
     title: { en: "Marketing assistant", tr: "Pazarlama asistanı" },
     body: {
@@ -78,7 +75,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "market-research",
-    packageId: "ai-market-research",
     icon: "radar",
     title: { en: "Market research assistant", tr: "Pazar araştırması asistanı" },
     body: {
@@ -88,7 +84,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "procurement",
-    packageId: "ai-procurement",
     icon: "truck",
     title: { en: "Procurement & supply assistant", tr: "Satın alma ve tedarik asistanı" },
     body: {
@@ -98,7 +93,6 @@ export const aiUnits: AiUnit[] = [
   },
   {
     id: "security",
-    packageId: "ai-security-assistant",
     icon: "shield",
     title: { en: "Security team assistant", tr: "Güvenlik ekibi asistanı" },
     body: {
@@ -114,6 +108,6 @@ export function aiUnitOfferings(): ServiceOffering[] {
     id: `ai-${unit.id}`,
     title: unit.title,
     body: unit.body,
-    packageId: unit.packageId,
+    ...(unit.packageId ? { packageId: unit.packageId } : {}),
   }));
 }

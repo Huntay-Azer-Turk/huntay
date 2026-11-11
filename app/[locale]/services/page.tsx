@@ -73,7 +73,8 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       {/* 11 Kasım 2026: yalnız yapay zekâ dönüşümü. Öne çıkan teklif teknik servis ve help desk asistanı; diğer
-          birimler altta, her biri kendi tasarım paketine bağlı. Bulut/güvenlik/CTO sayfaları gizli (data/catalog.ts). */}
+          birimler altta: hazır paket ve fiyat yok, kapsam ön görüşmede (randevu notuna birim adı yazılır).
+          Bulut/güvenlik/CTO sayfaları gizli (data/catalog.ts). */}
       <section className={sectionClass}>
         <div className={containerClass}>
           <p className="font-mono text-xs uppercase tracking-widest text-accent">{t("leadEyebrow")}</p>
@@ -89,7 +90,7 @@ export default async function ServicesPage({ params }: Props) {
                   <CalendarClock className="h-4 w-4" aria-hidden />
                   {ts("book")}
                 </Link>
-                <Link href={`/packages#${leadUnit.packageId}`} className={buttonSecondary}>
+                <Link href="/packages" className={buttonSecondary}>
                   {t("leadPackages")}
                 </Link>
               </div>
@@ -104,7 +105,7 @@ export default async function ServicesPage({ params }: Props) {
             </ol>
           </div>
 
-          <h2 className={`mt-16 ${h2Class}`}>{t("unitsTitle")}</h2>
+          <h2 id="units" className={`mt-16 scroll-mt-24 ${h2Class}`}>{t("unitsTitle")}</h2>
           <p className="mt-2 max-w-3xl text-muted-foreground">{t("unitsSubtitle")}</p>
           <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {otherUnits.map((unit) => (
@@ -112,10 +113,10 @@ export default async function ServicesPage({ params }: Props) {
                 <h3 className="font-semibold text-foreground">{unit.title[locale]}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{unit.body[locale]}</p>
                 <Link
-                  href={`/packages#${unit.packageId}`}
+                  href={{ pathname: "/book", query: { package: unit.title[locale] } }}
                   className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
                 >
-                  {t("unitPackage")}
+                  {t("unitBook")}
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Link>
               </li>

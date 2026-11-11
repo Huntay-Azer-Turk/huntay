@@ -47,7 +47,7 @@ export function GET() {
           }): ${item.tagline.en}`,
       ),
     "",
-    `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (AI opportunity scan, technical service & help desk assistant pilot and production rollout, and a design package for each further unit: quality control, production & maintenance, sales, marketing, market research, procurement, security team)`,
+    `- [Packages & pricing](${localeUrl("en", "/packages")}): the technical service & help desk assistant path with prices (AI opportunity scan, 3-week pilot, production rollout); other units (quality control, production & maintenance, sales, marketing, market research, procurement, security team) are scoped and priced in the intro call`,
     "",
     "## Free self-assessments (3 minutes, no sign-up)",
     "",

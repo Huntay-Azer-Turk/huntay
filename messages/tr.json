@@ -106,7 +106,7 @@
     "aiDocs": "Kurulum rehberi, araçlar ve örnek komutlar",
     "loading": "Takvim yükleniyor…",
     "openInChatgpt": "ChatGPT'de aç",
-    "packageNotePrefix": "Paket",
+    "packageNotePrefix": "İlgilenilen konu",
     "selectedPackage": "Seçilen paket",
     "capacity": "Her işte bizzat çalıştığım için ayda en fazla 2 yeni inceleme ve aynı anda yalnızca 1 uygulama ya da Fractional CTO işbirliği kabul ediyorum."
   },
@@ -154,8 +154,8 @@
     "leadStep2": "Pilot: kendi kılavuzlarınızla tek kanalda, 3 haftada canlıda; otomatik yanıtlanan soru oranı ve çözüm süresi ölçülür.",
     "leadStep3": "Canlı kurulum: bayi portalı, WhatsApp, e-posta ve servis sisteminize bağlı; ekip eğitimi ve destekle.",
     "unitsTitle": "Diğer birimler",
-    "unitsSubtitle": "Her birim bir tasarım paketiyle başlar; fiyat kapsama göre yazılı teklifle netleşir.",
-    "unitPackage": "Tasarım paketi ve fiyatı",
+    "unitsSubtitle": "Help desk'te sonuç aldıktan sonra aynı yöntemi diğer birimlere taşıyoruz. Bunlar hazır paket değil: kapsamı ve fiyatı ön görüşmede ihtiyacınıza göre birlikte belirliyoruz.",
+    "unitBook": "Görüşmede konuşalım",
     "aiDetails": "Yapay zekâ dönüşümü hakkında ayrıntılar"
   },
   "ServicesSection": {
@@ -263,7 +263,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Paketler ve Fiyatlar | Huntay AzerTürk",
-    "metaDescription": "Üreticiler için yapay zekâ paketleri: fırsat taraması, teknik servis ve help desk asistanı pilotu ve canlı kurulum; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik için tasarım paketleri.",
+    "metaDescription": "Üreticiler için teknik servis ve help desk asistanı paketleri: yapay zekâ fırsat taraması, 3 haftalık pilot ve canlı kurulum. Fiyatlar ve kapsam.",
     "eyebrow": "Paketler ve fiyatlar",
     "title": "Net kapsam, net fiyat",
     "intro": "Sabit kapsamlı bir incelemeyle başlayın; neyin, hangi sırayla yapılması gerektiği netleşince birlikte uygulayalım.",
@@ -285,12 +285,13 @@
     "moreTitle": "Altyapı, güvenlik ve sürekli danışmanlık",
     "moreSubtitle": "Dönüşümün temelini sağlamlaştıran incelemeler ve uzun soluklu işbirlikleri.",
     "guaranteeTitle": "Teşhis garantisi",
-    "guaranteeText": "Fırsat taraması ve tasarım paketlerinde size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsak ücretin tamamını iade ederiz. Birlikte devam edersek, paket notunda yazdığı gibi bu ücreti sonraki işten düşeriz.",
+    "guaranteeText": "Fırsat taramasında size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsak ücretin tamamını iade ederiz. Birlikte devam edersek, paket notunda yazdığı gibi bu ücreti sonraki işten düşeriz.",
     "noteCapacity": "Kapasite: Her işte bizzat çalıştığım için ayda en fazla 2 yeni tarama ya da tasarım ve aynı anda yalnızca 1 pilot veya canlı kurulum kabul ediyorum.",
     "pillar_ai-opportunity-scan": "1. adım",
     "pillar_ai-production-rollout": "3. adım",
-    "expansionTitle": "Diğer birimler: tasarım paketleri",
-    "expansionSubtitle": "Help desk'te sonuç aldıktan sonra aynı yöntemi diğer birimlere taşıyan tasarım paketleri. Fiyatlar başlangıç fiyatıdır; kesin fiyat ön görüşmede kapsam netleşince yazılı teklifle verilir. Pilota geçerseniz tasarım ücreti düşülür."
+    "expansionTitle": "Diğer birimler",
+    "expansionSubtitle": "Kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekibi için hazır paket yok. Help desk'te sonuç aldıktan sonra kapsamı ve fiyatı ön görüşmede birlikte belirleriz.",
+    "expansionLink": "Birimlere göz atın"
   },
   "Assessment": {
     "free": "Ücretsiz",
