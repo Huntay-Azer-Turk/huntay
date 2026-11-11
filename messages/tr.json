@@ -154,7 +154,7 @@
     "leadStep2": "Pilot: kendi kılavuzlarınızla tek kanalda, 3 haftada canlıda; otomatik yanıtlanan soru oranı ve çözüm süresi ölçülür.",
     "leadStep3": "Canlı kurulum: bayi portalı, WhatsApp, e-posta ve servis sisteminize bağlı; ekip eğitimi ve destekle.",
     "unitsTitle": "Diğer birimler",
-    "unitsSubtitle": "Her birim sabit fiyatlı bir tasarım paketiyle başlar; pilot ve canlı kurulum tasarımdan sonra yazılı teklifle.",
+    "unitsSubtitle": "Her birim bir tasarım paketiyle başlar; fiyat kapsama göre yazılı teklifle netleşir.",
     "unitPackage": "Tasarım paketi ve fiyatı",
     "aiDetails": "Yapay zekâ dönüşümü hakkında ayrıntılar"
   },
@@ -290,7 +290,7 @@
     "pillar_ai-opportunity-scan": "1. adım",
     "pillar_ai-production-rollout": "3. adım",
     "expansionTitle": "Diğer birimler: tasarım paketleri",
-    "expansionSubtitle": "Help desk'te sonuç aldıktan sonra aynı yöntemi diğer birimlere taşıyan sabit fiyatlı tasarım paketleri. Pilot ve canlı kurulum tasarımdan sonra yazılı teklifle; pilota geçerseniz tasarım ücreti düşülür."
+    "expansionSubtitle": "Help desk'te sonuç aldıktan sonra aynı yöntemi diğer birimlere taşıyan tasarım paketleri. Fiyatlar başlangıç fiyatıdır; kesin fiyat ön görüşmede kapsam netleşince yazılı teklifle verilir. Pilota geçerseniz tasarım ücreti düşülür."
   },
   "Assessment": {
     "free": "Ücretsiz",

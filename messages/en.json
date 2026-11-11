@@ -154,7 +154,7 @@
     "leadStep2": "Pilot: on one channel with your own manuals, live in 3 weeks; we measure the share of questions answered automatically and resolution time.",
     "leadStep3": "Production rollout: connected to your dealer portal, WhatsApp, email and service system, with team training and support.",
     "unitsTitle": "Other units",
-    "unitsSubtitle": "Each unit starts with a fixed-price design package; pilot and rollout are quoted in writing after the design.",
+    "unitsSubtitle": "Each unit starts with a design package; the price is set in a written proposal based on scope.",
     "unitPackage": "Design package & price",
     "aiDetails": "More about AI transformation"
   },
@@ -290,7 +290,7 @@
     "pillar_ai-opportunity-scan": "Step 1",
     "pillar_ai-production-rollout": "Step 3",
     "expansionTitle": "Other units: design packages",
-    "expansionSubtitle": "Fixed-price design packages that take the same approach to other teams once the help desk delivers. Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted."
+    "expansionSubtitle": "Design packages that take the same approach to other teams once the help desk delivers. Prices are starting prices; the exact price comes in a written proposal once the scope is clear. If you move to a pilot, the design fee is deducted."
   },
   "Assessment": {
     "free": "Free",

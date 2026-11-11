@@ -1080,8 +1080,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Projeler nasıl fiyatlandırılıyor?",
     },
     answer: {
-      en: "Scans, design packages and the help desk pilot have fixed prices listed on the packages page; production rollouts are quoted in writing after the pilot or design. You always get a written proposal before any work starts.",
-      tr: "Tarama, tasarım paketleri ve help desk pilotu paketler sayfasında yazan sabit fiyatlarla; canlı kurulum pilot ya da tasarımdan sonra yazılı teklifle fiyatlanır. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
+      en: "The opportunity scan and the help desk pilot have fixed prices; design packages for other units show a starting price, and the exact price comes in a written proposal once the scope is clear. Production rollouts are quoted after the pilot or design. You always get a written proposal before any work starts.",
+      tr: "Fırsat taraması ve help desk pilotu sabit fiyatlıdır; diğer birimlerin tasarım paketlerinde başlangıç fiyatı yazar, kesin fiyat kapsam netleşince yazılı teklifle verilir. Canlı kurulum pilot ya da tasarımdan sonra fiyatlanır. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
     },
   },
 ];

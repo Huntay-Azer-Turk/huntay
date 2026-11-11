@@ -99,6 +99,7 @@ type Seed = Omit<PackageRow, "updated_at">;
  * (₺250.000'den başlayan) ve genişleme tasarım paketleri (₺47.500) eklendi. Aynı gün akşam: odak tamamen yapay zekâ
  * dönüşümü — her birim (teknik servis, kalite, üretim, satış, pazarlama, pazar araştırması, satın alma, güvenlik)
  * tasarım paketiyle; öne çıkan teklif teknik servis / help desk asistanı (tarama → pilot → canlı kurulum).
+ * Birim tasarım paketleri 'başlangıç fiyatı' (Huntay: sabit etiket fiyat 'yumurta satar gibi'); kesin fiyat kapsama göre.
  * Fiyatlar piyasa araştırmasıyla (yurt dışı: hazırlık denetimi $3.5–8.5K, destek asistanı PoC €6–15K) birime göre
  * farklı ve küsuratlı; bulut, güvenlik ve CTO paketleri pasif (silinmedi). Canlıdaki D1 bu listeden değil /admin'den güncellenir.
  */
@@ -194,9 +195,9 @@ const SEED: Seed[] = [
     includes_tr: "Takip edilecek rakip, ürün, ihale ve kaynak listesinin çıkarılması\nFiyat, ürün ve haber taraması için veri kaynakları planı\nHaftalık özet ve uyarı akışı (e-posta, Teams, WhatsApp)\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "List of competitors, products, tenders and sources to track\nData source plan for price, product and news scanning\nWeekly summary and alert flow (email, Teams, WhatsApp)\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 36400, price_usd: 1490, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 36400, price_usd: 1490, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-procurement", service_slug: "ai-agents", sort: 66, active: 1, featured: 0,
@@ -206,9 +207,9 @@ const SEED: Seed[] = [
     includes_tr: "Satın alma süreci, tedarikçi ve teklif akışının incelemesi\nERP stok, sipariş ve tedarikçi verisi bağlantı planı\nTeklif karşılaştırma, gecikme uyarısı ve sipariş önerisi senaryoları\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Review of your purchasing process, suppliers and quote flow\nConnection plan for ERP stock, order and supplier data\nQuote comparison, delay alert and purchase suggestion scenarios\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 48600, price_usd: 1980, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 48600, price_usd: 1980, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-production-efficiency", service_slug: "ai-agents", sort: 62, active: 1, featured: 0,
@@ -218,9 +219,9 @@ const SEED: Seed[] = [
     includes_tr: "Üretim, bakım ve kalite verilerinin incelemesi (MES/ERP, Excel, makine kayıtları)\nDuruş, fire ve darboğaz analizi\nBakım kayıtlarından arıza öngörüsü fizibilitesi\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Review of production, maintenance and quality data (MES/ERP, Excel, machine logs)\nDowntime, scrap and bottleneck analysis\nFeasibility of failure prediction from maintenance records\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 52400, price_usd: 2150, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 52400, price_usd: 2150, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-quality-control", service_slug: "ai-agents", sort: 61, active: 1, featured: 0,
@@ -230,9 +231,9 @@ const SEED: Seed[] = [
     includes_tr: "Kalite süreçleri, hata kayıtları ve müşteri şikâyetlerinin incelemesi\nVeri hazırlığı: kamera, etiketleme ve veri ihtiyacı\nGörüntü işleme ya da kural tabanlı çözüm önerisi\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Review of quality processes, defect records and customer complaints\nData readiness: cameras, labeling and data needs\nComputer vision or rule-based solution proposal\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 57900, price_usd: 2350, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 57900, price_usd: 2350, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-sales-assistant", service_slug: "ai-agents", sort: 63, active: 1, featured: 0,
@@ -242,9 +243,9 @@ const SEED: Seed[] = [
     includes_tr: "Satış süreci ve sık sorulan teklif/sipariş sorularının analizi\nÜrün kataloğu, fiyat listesi ve CRM bağlantı planı\nTalep nitelendirme ve satışa devir akışı\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Analysis of your sales process and common quote/order questions\nConnection plan for product catalog, price list and CRM\nLead qualification and sales handover flow\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 44900, price_usd: 1850, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 44900, price_usd: 1850, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-marketing-assistant", service_slug: "ai-agents", sort: 64, active: 1, featured: 0,
@@ -254,9 +255,9 @@ const SEED: Seed[] = [
     includes_tr: "Pazarlama kanalları ve içerik üretim sürecinin incelemesi\nMarka dili ve ürün bilgisinden içerik ve katalog üretim akışı\nKampanya ve müşteri takibi (CRM, e-posta) otomasyon planı\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Review of your marketing channels and content process\nContent and catalog flow built from your brand voice and product data\nAutomation plan for campaigns and customer follow-up (CRM, email)\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 38750, price_usd: 1590, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 38750, price_usd: 1590, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "ai-security-assistant", service_slug: "ai-agents", sort: 67, active: 1, featured: 0,
@@ -266,9 +267,9 @@ const SEED: Seed[] = [
     includes_tr: "Mevcut güvenlik araçları, alarm ve kayıt akışının incelemesi\nAlarm önceliklendirme ve özetleme senaryoları\nPolitika, KVKK ve prosedür soruları için bilgi tabanı\nPilot kapsamı, tahmini maliyet ve başarı ölçütleri\n1 saatlik sonuç sunumu",
     includes_en: "Review of your security tools, alerts and log flow\nAlert triage and summarization scenarios\nKnowledge base for policy, GDPR/KVKK and procedure questions\nPilot scope, estimated cost and success criteria\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
-    price_try: 46250, price_usd: 1890, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Pilot ve canlı kurulum fiyatı tasarımdan sonra yazılı teklifle netleşir; pilota geçerseniz tasarım ücreti pilottan düşülür.",
-    perk_en: "Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted from it.",
+    price_try: 46250, price_usd: 1890, price_from: 1, unit_tr: "", unit_en: "",
+    perk_tr: "Kesin fiyat, ön görüşmede kapsam netleşince yazılı teklifle verilir; pilot ve kurulum da tasarımdan sonra tekliflenir. Pilota geçerseniz tasarım ücreti pilottan düşülür.",
+    perk_en: "The exact price is set in a written proposal once the scope is clear; pilot and rollout are quoted after the design. If you move to a pilot, the design fee is deducted from it.",
   },
   {
     id: "fractional-cto-monthly", service_slug: "fractional-cto", sort: 60, active: 0, featured: 0,
