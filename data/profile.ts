@@ -37,9 +37,10 @@ export const aboutDiscipline: Localized = {
   tr: "CrossFit ve boks antrenmanlarımdaki disiplini doğrudan yazdığım koda da yansıtıyorum. Yüksek performans; odaklanma, tutarlılık ve sağlam bir temel gerektirir—ister spor salonunda ister sistem mimarisinde.",
 };
 
+/** 11 Kasım 2026: startup danışmanlığı yerine üreticilere yönelik çalışma biçimi (konumlandırma: üreticiler için yapay zekâ). */
 export const strategicPartner: Localized = {
-  en: "For years I have advised startups and backed them technically. If you're a founder or executive, you should be focusing on your business, not worrying about technical bottlenecks. I step in to clear the fog, map out a solid technical strategy, and make sure your product scales smoothly.",
-  tr: "Yıllardır startup'lara danışmanlık yapıyor ve teknik olarak destek veriyorum. Bir kurucu veya yönetici olarak teknik pürüzlerle değil, işinizi büyütmekle ilgilenmelisiniz. Ben tam bu noktada devreye girip teknik belirsizlikleri ortadan kaldırıyor, net bir yol haritası çiziyor ve ürününüzün sorunsuz ölçeklenmesini sağlıyorum.",
+  en: "As an executive, you should be focusing on your business, not on technology. I first find the repetitive questions and bottlenecks that eat your central teams' time, measure where AI will actually help, and then build it without replacing your ERP or service software. I run the work myself from start to finish.",
+  tr: "Bir yönetici olarak teknolojiyle değil işinizle ilgilenmelisiniz. Ben önce merkez ekiplerinizin vaktini alan tekrarlı soruları ve darboğazı bulur, yapay zekânın nerede gerçekten işe yarayacağını ölçer, sonra ERP ve servis yazılımlarınızı değiştirmeden kurarım. İşi baştan sona bizzat yürütürüm.",
 };
 
 /** CV — Writing & Research */

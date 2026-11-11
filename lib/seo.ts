@@ -295,8 +295,8 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       image: absoluteUrl(profileImagePath),
       description:
         locale === "tr"
-          ? "Teknik servis ve help desk asistanıyla başlayan yapay zekâ dönüşümü; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları. Sabit fiyatlı tarama, pilot ve kurulum."
-          : "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research and procurement assistants. Fixed-price scan, pilot and rollout.",
+          ? "Teknik servis ve help desk asistanıyla başlayan yapay zekâ dönüşümü; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları. Sabit fiyatlı tarama ve pilotla başlar."
+          : "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research and procurement assistants. Starts with a fixed-price scan and pilot.",
       founder: { "@id": personId },
       address: {
         "@type": "PostalAddress",

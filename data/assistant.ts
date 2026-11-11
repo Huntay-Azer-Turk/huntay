@@ -71,18 +71,19 @@ export const assistantTools: AssistantTool[] = [
   },
 ];
 
+/** 11 Kasım 2026: örnekler yapay zekâ dönüşümüne göre (MVP ve bulut maliyeti örnekleri gizli hizmetlere gidiyordu). */
 export const examplePrompts: Localized[] = [
   {
     en: "Book a 30-minute intro call with Huntay AzerTürk next Tuesday afternoon.",
     tr: "Huntay AzerTürk ile gelecek salı öğleden sonra 30 dakikalık bir tanışma görüşmesi ayarla.",
   },
   {
-    en: "Which of Huntay AzerTürk's services fits a startup that needs an MVP in three months?",
-    tr: "Üç ayda MVP çıkarması gereken bir startup için Huntay AzerTürk'ün hangi hizmeti uygun?",
+    en: "Our dealers keep calling the head office with the same fault questions. Which of Huntay AzerTürk's services fits?",
+    tr: "Bayilerimiz aynı arıza sorularıyla sürekli merkezi arıyor. Huntay AzerTürk'ün hangi hizmeti uygun?",
   },
   {
-    en: "Show Huntay AzerTürk's case studies about reducing cloud costs.",
-    tr: "Huntay AzerTürk'ün bulut maliyetini düşürmeyle ilgili vaka çalışmalarını göster.",
+    en: "Show Huntay AzerTürk's case studies about AI support assistants.",
+    tr: "Huntay AzerTürk'ün yapay zekâ destek asistanlarıyla ilgili vaka çalışmalarını göster.",
   },
   {
     en: "What does Huntay AzerTürk's AI agents service include, and how is pricing handled?",

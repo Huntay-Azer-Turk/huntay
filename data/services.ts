@@ -958,7 +958,10 @@ export function getService(slug: string): ServiceItem | undefined {
   return services.find((service) => service.slug === slug);
 }
 
-/** Birlikte çalışma modelleri — /services sayfası */
+/**
+ * Birlikte çalışma modelleri — /services Markdown sürümü (AI asistanları okur).
+ * 11 Kasım 2026: yalnız yapay zekâ dönüşümü; bulut, güvenlik ve fractional CTO gizli hizmetler (data/catalog.ts).
+ */
 export const engagementModels: StepItem[] = [
   {
     id: "intro-call",
@@ -970,26 +973,18 @@ export const engagementModels: StepItem[] = [
   },
   {
     id: "workshop-audit",
-    title: { en: "Fixed-scope review", tr: "Sabit kapsamlı inceleme" },
+    title: { en: "Opportunity scan or design package", tr: "Fırsat taraması ya da tasarım paketi" },
     body: {
-      en: "Fixed-price deep dives: AI opportunity scan, security scan, architecture and cloud cost review, or a technical check-up. You get a written report and a prioritized roadmap.",
-      tr: "Sabit fiyatlı derinlemesine çalışmalar: yapay zeka fırsat taraması, güvenlik taraması, mimari ve bulut maliyet incelemesi veya teknik check-up. Yazılı bir rapor ve önceliklendirilmiş bir yol haritası alırsınız.",
+      en: "For the help desk, a fixed-price AI opportunity scan; for other units, a design package priced by scope. You get a written report, pilot scope and success criteria.",
+      tr: "Help desk için sabit fiyatlı yapay zekâ fırsat taraması; diğer birimler için kapsama göre fiyatlanan tasarım paketi. Yazılı rapor, pilot kapsamı ve başarı ölçütleri alırsınız.",
     },
   },
   {
     id: "project-delivery",
-    title: { en: "Implementation", tr: "Uygulama" },
+    title: { en: "Pilot and production rollout", tr: "Pilot ve canlı kurulum" },
     body: {
-      en: "Building what the review prioritized: AI agents and automation, cloud and IoT platforms, modernization or security fixes—together with your team or as a complete package.",
-      tr: "İncelemenin önceliklendirdiği işin hayata geçirilmesi: yapay zeka ajanları ve otomasyon, bulut ve IoT platformları, modernizasyon veya güvenlik düzeltmeleri; ekibinizle birlikte ya da anahtar teslim.",
-    },
-  },
-  {
-    id: "fractional-advisory",
-    title: { en: "Fractional CTO & advisory", tr: "Fractional CTO ve danışmanlık" },
-    body: {
-      en: "Ongoing, part-time technical leadership: strategy, architecture, hiring and team coaching.",
-      tr: "Sürekli, yarı zamanlı teknik liderlik: strateji, mimari, işe alım ve ekip koçluğu.",
+      en: "First a pilot on one channel, then a production rollout once the results are measured: with your own manuals, without replacing your ERP or service software, together with your team or as a complete package.",
+      tr: "Önce tek kanalda pilot, sonuç ölçülünce canlı kurulum: kendi kılavuzlarınızla, ERP ve servis yazılımınızı değiştirmeden; ekibinizle birlikte ya da anahtar teslim.",
     },
   },
 ];

@@ -44,7 +44,7 @@
     "aiTitle": "Uygulamalı yapay zeka — kanıtlanmış sonuçlar",
     "researchTitle": "Yazı ve araştırma",
     "disciplineTitle": "Bir sistem olarak disiplin",
-    "partnerTitle": "Stratejik ortaklık"
+    "partnerTitle": "Nasıl çalışırım"
   },
   "Metrics": {
     "title": "Rakamlarla kanıt",
@@ -130,7 +130,7 @@
     "other": "Diğer alanlar",
     "offerings": "Bu alanda neler yapıyorum",
     "offeringsModel": "Neler yapıyorum",
-    "offeringPackage": "Sabit fiyatlı paket",
+    "offeringPackage": "Paket ve fiyat",
     "offeringMore": "Ayrıntılı sayfa",
     "partOf": "Bu konu {name} alanının parçasıdır."
   },

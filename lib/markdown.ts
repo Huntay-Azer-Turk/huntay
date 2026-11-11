@@ -14,14 +14,12 @@ import { termsSections, termsUpdatedAt } from "@/data/terms";
 import type { LegalSection } from "@/data/types";
 import {
   aboutAiProject,
-  aboutResearch,
-  aboutSecurity,
   heroLead,
   philosophy,
   strategicPartner,
 } from "@/data/profile";
-import { deepDivesOf, primaryServices, resolveService } from "@/data/catalog";
-import { engagementModels, processSteps, services, servicesFaq } from "@/data/services";
+import { deepDivesOf, primaryServices, resolveService, visibleServices } from "@/data/catalog";
+import { engagementModels, processSteps, servicesFaq } from "@/data/services";
 import type { FaqItem } from "@/data/types";
 import { serviceText, type Lang } from "@/lib/content";
 import { mcpEndpoint } from "@/lib/mcp/meta";
@@ -142,13 +140,9 @@ export function homeMarkdown(lang: Lang): string {
     "",
     philosophy[lang],
     "",
-    strategicPartner[lang],
-    "",
     aboutAiProject[lang],
     "",
-    aboutSecurity[lang],
-    "",
-    aboutResearch[lang],
+    strategicPartner[lang],
     "",
     `## ${h.services}`,
     "",
@@ -346,7 +340,8 @@ export function llmsFullText(): string {
   const parts = [
     homeMarkdown("en"),
     servicesMarkdown("en"),
-    ...services.map((service) => serviceMarkdown(service.slug, "en") ?? ""),
+    // 11 Kasım 2026: gizli hizmetler (bulut, güvenlik, CTO…) llms-full.txt'e girmez; sayfaları noindex.
+    ...visibleServices.map((service) => serviceMarkdown(service.slug, "en") ?? ""),
     bookMarkdown("en"),
     assistantMarkdown("en"),
     `Turkish versions of every page: ${localeUrl("tr")}`,

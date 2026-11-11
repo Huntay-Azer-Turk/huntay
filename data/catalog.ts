@@ -85,7 +85,7 @@ export const primaryServices: ServiceItem[] = [...pillars, ...engagementModelSer
 
 /** Bir alanın derinlemesine alt sayfaları */
 export function deepDivesOf(slug: string): ServiceItem[] {
-  return services.filter((service) => service.role === "deep-dive" && service.parent === slug);
+  return visibleServices.filter((service) => service.role === "deep-dive" && service.parent === slug);
 }
 
 /* ------------------------------------------------------------------ */
