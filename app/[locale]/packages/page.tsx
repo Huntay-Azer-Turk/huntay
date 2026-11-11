@@ -18,12 +18,18 @@ import { connection } from "next/server";
 type Props = { params: Promise<{ locale: string }> };
 
 /**
- * Vitrin: üç uzmanlık alanının giriş paketleri (güvenlik, bulut/IoT, yapay zeka), bu sırayla.
- * Check-up vitrinin altında kısa bir şerit olarak gösterilir; diğer paketler "devamı" bölümündedir.
- * Paket kimliği D1'de değişirse veya paket pasifse vitrinden düşer, sayfa yine çalışır.
+ * Vitrin (11 Kasım 2026, KOBİ'ler için yapay zekâ odağı): dönüşümün üç adımı — fırsat taraması, müşteri hizmetleri
+ * asistanı pilotu, anahtar teslim canlı kurulum. Altında diğer birimlere genişleme paketleri, en altta altyapı,
+ * güvenlik ve sürekli danışmanlık. Paket kimliği D1'de yoksa veya paket pasifse grubundan düşer, sayfa yine çalışır.
  */
-const SHOWCASE_IDS = ["security-quick-scan", "architecture-cloud-review", "ai-opportunity-scan"] as const;
-const CHECKUP_ID = "technical-checkup";
+const SHOWCASE_IDS = ["ai-opportunity-scan", "ai-agent-pilot", "ai-production-rollout"] as const;
+const EXPANSION_IDS = [
+  "ai-production-efficiency",
+  "ai-quality-control",
+  "ai-sales-assistant",
+  "ai-marketing-assistant",
+  "ai-security-assistant",
+] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -46,8 +52,8 @@ export default async function PackagesPage({ params }: Props) {
   const packages = await getPackages(locale);
   const byId = new Map(packages.map((pkg) => [pkg.id, pkg]));
   const showcase = SHOWCASE_IDS.map((id) => byId.get(id)).filter((pkg): pkg is PackageView => Boolean(pkg));
-  const checkup = byId.get(CHECKUP_ID);
-  const shown = new Set<string>(showcase.map((pkg) => pkg.id));
+  const expansion = EXPANSION_IDS.map((id) => byId.get(id)).filter((pkg): pkg is PackageView => Boolean(pkg));
+  const shown = new Set<string>([...showcase, ...expansion].map((pkg) => pkg.id));
   const rest = packages.filter((pkg) => !shown.has(pkg.id));
 
   const renderCard = (pkg: PackageView, inShowcase: boolean) => {
@@ -163,19 +169,14 @@ export default async function PackagesPage({ params }: Props) {
                 </div>
               ) : null}
 
-              {checkup ? (
-                <p className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-2xl border border-border bg-card px-5 py-4 text-sm text-foreground">
-                  <span>
-                    {t("checkupBanner", {
-                      name: checkup.name,
-                      duration: checkup.duration,
-                      price: formatPrice(checkup, locale),
-                    })}
-                  </span>
-                  <a href={`#${checkup.id}`} className="font-medium text-accent hover:underline">
-                    {t("checkupCta")}
-                  </a>
-                </p>
+              {expansion.length ? (
+                <div className="mt-16">
+                  <h2 className="text-2xl font-semibold tracking-tight text-foreground">{t("expansionTitle")}</h2>
+                  <p className="mt-2 text-muted-foreground">{t("expansionSubtitle")}</p>
+                  <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {expansion.map((pkg) => renderCard(pkg, false))}
+                  </ul>
+                </div>
               ) : null}
 
               {rest.length ? (

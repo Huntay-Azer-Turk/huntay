@@ -27,14 +27,14 @@ export const ogKeys = ["home", "services", "book", ...services.map((s) => `servi
 
 const home = {
   en: {
-    subtitle: "Fractional CTO · Software Architect",
-    tagline: "AI · Cloud/IoT · Cybersecurity · Istanbul",
-    chips: ["13+ years", "10,000+ IoT devices", "Up to 75% cloud savings"],
+    subtitle: "AI & Productivity Consultant for SMEs",
+    tagline: "Start with customer service · then production, quality, sales · Istanbul",
+    chips: ["13+ years", "~80% faster support resolution (one project)", "Up to 75% cloud savings"],
   },
   tr: {
-    subtitle: "Fractional CTO · Yazılım Mimarı",
-    tagline: "Yapay Zeka · Bulut/IoT · Siber Güvenlik · İstanbul",
-    chips: ["13+ yıl", "10.000+ IoT cihazı", "%75'e varan bulut tasarrufu"],
+    subtitle: "KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanı",
+    tagline: "Müşteri hizmetlerinden başla · sonra üretim, kalite, satış · İstanbul",
+    chips: ["13+ yıl", "Destek çözümünde ~%80 hız (bir projede)", "%75'e varan bulut tasarrufu"],
   },
 } as const;
 
@@ -66,7 +66,7 @@ export function ogCardFor(key: string, lang: OgLang): OgCard {
       kicker: tr ? "HUNTAYAZERTURK.COM · HİZMETLER" : "HUNTAYAZERTURK.COM · SERVICES",
       title: service ? (service.metaTitle ?? service.title)[lang] : siteConfig.name,
       subtitle: "Huntay AzerTürk",
-      tagline: tr ? "Fractional CTO · Yazılım Mimarı" : "Fractional CTO · Software Architect",
+      tagline: tr ? "KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanı" : "AI & Productivity Consultant for SMEs",
       chips: [bookChip],
     };
   }

@@ -5,8 +5,8 @@ import type { Localized } from "./types";
  * İlk cümle ismi içerir: arama motorları ve AI asistanları genelde ilk cümleyi "kim" cevabı olarak alıntılar.
  */
 export const heroLead: Localized = {
-  en: "I'm Huntay AzerTürk, an Istanbul-based software architect with over 13 years of experience. I built an IoT platform that runs 10,000+ devices, cut one company's cloud costs by roughly 75% and used AI to make support ticket resolution about 80% faster. I work on every engagement myself: first we pin down the problem and what it costs you, then I solve it together with your team so the fix lasts.",
-  tr: "Ben Huntay AzerTürk; İstanbul merkezli, 13 yılı aşkın deneyime sahip bir yazılım mimarıyım. 10.000+ cihazı çalıştıran bir IoT platformu kurdum, bir şirketin bulut maliyetini yaklaşık %75 düşürdüm ve yapay zekayla destek taleplerinin çözüm süresini yaklaşık %80 kısalttım. Her işte bizzat çalışıyorum: önce sorunu ve size maliyetini netleştiriyoruz, sonra ekibinizle birlikte kalıcı olarak çözüyorum.",
+  en: "Every engagement is led by me, Huntay AzerTürk: an Istanbul-based software architect with over 13 years of experience. In one project, AI cut support ticket resolution time by about 80%; in another, cloud costs dropped by roughly 75%; and I built an IoT platform that runs 10,000+ devices. First we pin down where AI pays off and what it costs you not to act, then we deliver it together with your team.",
+  tr: "Her işi bizzat ben yürütüyorum: Huntay AzerTürk; İstanbul merkezli, 13 yılı aşkın deneyime sahip yazılım mimarı. Bir projede yapay zekâyla destek taleplerinin çözüm süresi yaklaşık %80 kısaldı, bir başkasında bulut maliyeti yaklaşık %75 düştü; 10.000+ cihazı çalıştıran bir IoT platformu kurdum. Önce yapay zekânın nerede getiri sağlayacağını ve beklemenin size maliyetini netleştiriyoruz, sonra ekibinizle birlikte hayata geçiriyoruz.",
 };
 
 export const philosophy: Localized = {

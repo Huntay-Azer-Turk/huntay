@@ -1,4 +1,5 @@
 import { About } from "@/components/sections/about";
+import { AiPath } from "@/components/sections/ai-path";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ContactFooter } from "@/components/sections/contact-footer";
 import { Faq } from "@/components/sections/faq";
@@ -28,10 +29,12 @@ export default async function HomePage({ params }: Props) {
         })}
       />
       <Hero />
-      <About />
-      <ServicesSection />
+      {/* 11 Kasım 2026: KOBİ'ler için yapay zekâ odağı — önce yol ve kanıt, sonra hizmet alanları; kişisel bölümler aşağıda. */}
+      <AiPath />
       <Metrics />
+      <ServicesSection />
       <CaseStudies />
+      <About />
       <TechStack />
       <Timeline />
       <Featured />

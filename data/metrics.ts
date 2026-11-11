@@ -31,11 +31,12 @@ export const metrics: MetricItem[] = [
   },
   {
     id: "ai",
-    value: 100,
+    value: 80,
+    prefix: "~",
     suffix: "%",
     label: {
-      en: "Autonomous AI support ecosystems delivered",
-      tr: "Otonom yapay zeka destek ekosistemleri",
+      en: "Faster support ticket resolution with AI (one project)",
+      tr: "Yapay zekâyla daha hızlı destek talebi çözümü (bir projede)",
     },
   },
 ];

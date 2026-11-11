@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Fractional CTO · Yapay Zeka, Bulut/IoT ve Siber Güvenlik",
-    "description": "İstanbul merkezli yazılım mimarı ve fractional CTO Huntay AzerTürk: yapay zeka ajanları ve otomasyon, bulut/IoT ve mimari, siber güvenlik. 13+ yıllık deneyim."
+    "title": "Huntay AzerTürk — KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanlığı",
+    "description": "KOBİ'lerde yapay zekâ dönüşümüne müşteri hizmetlerinden başlıyoruz: destek ve servis taleplerini hızlandırıyor, sonra üretim, kalite, satış ve pazarlamaya taşıyoruz. Verim artar, maliyet düşer, kalite yükselir."
   },
   "Nav": {
     "about": "Hakkında",
@@ -21,14 +21,14 @@
     "packages": "Paketler"
   },
   "Hero": {
-    "eyebrow": "Fractional CTO · Yazılım Mimarı · İstanbul",
-    "role": "Yapay Zeka, Bulut/IoT ve Siber Güvenlik Danışmanı",
-    "valueProp": "Şirketinizin büyümesini teknik riske takılmadan sürdürmesine yardımcı oluyorum: işe yarayan yapay zeka, ölçeklenen ve maliyeti kontrol altında sistemler, saldırganlardan önce kapatılan açıklar.",
-    "ctaBook": "Görüşme planla",
-    "ctaServices": "Hizmetler",
+    "eyebrow": "KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanlığı · İstanbul",
+    "role": "KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanı",
+    "valueProp": "Yapay zekâya nereden başlayacağını bilemeyen KOBİ'lerde işe müşteri hizmetlerinden başlıyoruz: önce destek ve servis taleplerini yapay zekâyla hızlandırıyor, sonra aynı yöntemi üretim, kalite, satış ve pazarlamaya taşıyoruz. Verim artar, maliyet düşer, kalite yükselir.",
+    "ctaBook": "Ön değerlendirme görüşmesi planla",
     "ctaPackages": "Paketler ve fiyatlar",
     "linkChatgpt": "ChatGPT'de aç",
-    "linkClaude": "Claude ve diğer asistanlar"
+    "linkClaude": "Claude ve diğer asistanlar",
+    "ctaAssessment": "Ücretsiz yapay zekâ olgunluk testi"
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",
@@ -149,8 +149,8 @@
     "deepDivesTitle": "Derinlemesine"
   },
   "ServicesSection": {
-    "title": "Hizmetler",
-    "subtitle": "Üç uzmanlık alanı, tek bir sorumlu kişi. Genellikle sabit kapsamlı bir incelemeyle başlar, öncelikler netleşince birlikte uygularız.",
+    "title": "Hizmet alanları",
+    "subtitle": "Odağımız KOBİ'lerde yapay zekâ dönüşümü. Altyapı ve güvenlik bu dönüşümün parçası: bulut/IoT mimarisi ve siber güvenlik işlerini de aynı sorumlulukla yapıyoruz.",
     "details": "Detaylar",
     "viewAll": "Tüm alanlar ve hizmetler",
     "book": "Görüşme planla",
@@ -252,7 +252,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Paketler ve Fiyatlar | Huntay AzerTürk",
-    "metaDescription": "Net kapsamlı, sabit fiyatlı paketler: teknik check-up, güvenlik taraması ve sızma testi, mimari ve bulut maliyet incelemesi, yapay zeka ajanı pilotu, fractional CTO ve MVP.",
+    "metaDescription": "KOBİ'ler için yapay zekâ ve verimlilik paketleri: fırsat taraması, müşteri hizmetleri asistanı pilotu, anahtar teslim kurulum; üretim, kalite, satış, pazarlama ve güvenlik asistanları; bulut ve güvenlik incelemeleri.",
     "eyebrow": "Paketler ve fiyatlar",
     "title": "Net kapsam, net fiyat",
     "intro": "Sabit kapsamlı bir incelemeyle başlayın; neyin, hangi sırayla yapılması gerektiği netleşince birlikte uygulayalım.",
@@ -266,19 +266,20 @@
     "serviceTitle": "Bu hizmetin paketleri",
     "serviceSubtitle": "Net kapsam ve fiyatla hemen başlayın.",
     "allPackages": "Tüm paketler",
-    "showcaseTitle": "Nereden başlamalı?",
-    "showcaseSubtitle": "Üç uzmanlık alanım için birer giriş paketi: net kapsam, sabit fiyat, kısa sürede somut sonuç.",
+    "showcaseTitle": "Yapay zekâ dönüşümü üç adımda",
+    "showcaseSubtitle": "Fırsat taramasıyla başlayın, müşteri hizmetleri asistanını 3 haftada canlıda görün, işe yarayınca anahtar teslim kuruluma geçin.",
     "pillar_security-quick-scan": "Güvenlik",
     "pillar_architecture-cloud-review": "Bulut ve IoT",
-    "pillar_ai-agent-pilot": "Yapay zeka ajanları",
-    "checkupBanner": "Önce kısa bir ön kontrol mü istiyorsunuz? {name}: {duration}, {price}.",
-    "checkupCta": "Detayları gör",
-    "moreTitle": "Derin inceleme, uygulama ve sürekli danışmanlık",
-    "moreSubtitle": "Genelde bir incelemenin ardından gelen işler.",
+    "pillar_ai-agent-pilot": "2. adım",
+    "moreTitle": "Altyapı, güvenlik ve sürekli danışmanlık",
+    "moreSubtitle": "Dönüşümün temelini sağlamlaştıran incelemeler ve uzun soluklu işbirlikleri.",
     "guaranteeTitle": "Teşhis garantisi",
-    "guaranteeText": "Teknik Check-up, Güvenlik Hızlı Tarama, Mimari ve Bulut Maliyet İncelemesi ve Yapay Zeka Fırsat Taraması paketlerinde size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsam ücretin tamamını iade ederim. Birlikte devam edersek, paket notunda yazdığı gibi inceleme ücretini sonraki işten düşerim.",
+    "guaranteeText": "Fırsat taraması, tasarım ve inceleme paketlerinde (Yapay Zekâ Fırsat Taraması, genişleme tasarım paketleri, Teknik Check-up, Güvenlik Hızlı Tarama, Mimari ve Bulut Maliyet İncelemesi) size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsak ücretin tamamını iade ederiz. Birlikte devam edersek, paket notunda yazdığı gibi bu ücreti sonraki işten düşeriz.",
     "noteCapacity": "Kapasite: Her işte bizzat çalıştığım için ayda en fazla 2 yeni inceleme ve aynı anda yalnızca 1 uygulama ya da Fractional CTO işbirliği kabul ediyorum.",
-    "pillar_ai-opportunity-scan": "Yapay zeka"
+    "pillar_ai-opportunity-scan": "1. adım",
+    "pillar_ai-production-rollout": "3. adım",
+    "expansionTitle": "Genişleme: diğer birimler",
+    "expansionSubtitle": "Müşteri hizmetlerinde sonuç alındıktan sonra aynı yöntemi üretim, kalite, satış, pazarlama ve güvenliğe taşıyan tasarım paketleri. Pilota geçerseniz tasarım ücreti pilottan düşülür."
   },
   "Assessment": {
     "free": "Ücretsiz",
@@ -314,5 +315,31 @@
     "disclaimer": "Bu test hızlı bir ön değerlendirmedir; denetim, sertifika veya hukuki görüş değildir. Sorular şu çerçevelerden esinlenerek özgün olarak hazırlanmıştır: {frameworks}. Eşikler gerçek cevaplarla zamanla güncellenir.",
     "serviceCta": "Ücretsiz test: 3 dakikada seviyenizi görün",
     "sectionLink": "Ücretsiz olgunluk testleri (3 dk)"
+  },
+  "AiPath": {
+    "eyebrow": "Nasıl çalışıyoruz",
+    "title": "Yapay zekâ dönüşümü müşteri hizmetlerinden başlar",
+    "subtitle": "Sonucu en hızlı görülen ve verisi zaten elinizde olan yer burası. Orada kazandığımız güvenle diğer birimlere geçiyoruz.",
+    "painTitle": "Tanıdık geliyor mu?",
+    "pain1": "Bayileriniz ve müşterileriniz aynı arıza ve kullanım sorularını sorup mühendislerinizi telefonda mı tutuyor?",
+    "pain2": "Kılavuzlar, teknik bültenler ve fiyat listeleri klasörlerde mi kayboluyor; doğru cevabı yalnızca birkaç kişi mi biliyor?",
+    "pain3": "Teklif ve sipariş soruları satış ekibinizi mi yoruyor; bantta duruş ve firenin nereden geldiğini kimse net bilemiyor mu?",
+    "stepsTitle": "Üç adımda",
+    "step1Title": "1. Keşif ve fırsat taraması",
+    "step1Text": "Kısa bir ön değerlendirme görüşmesi, ardından 5 iş gününde getirisi en yüksek süreçleri sıralayan rapor.",
+    "step2Title": "2. Müşteri hizmetleri asistanı pilotu",
+    "step2Text": "Kendi kılavuzlarınızla destek ve servis sorularını yanıtlayan asistan; mevcut yazılımınız değişmeden, 3 haftada canlıda.",
+    "step3Title": "3. Canlı kurulum ve genişleme",
+    "step3Text": "Pilot işe yarayınca anahtar teslim kurulum; sonra aynı yöntem üretim, kalite, satış ve pazarlamaya.",
+    "areasTitle": "Sonraki adımlar",
+    "areaProduction": "Üretimde verimlilik ve maliyet",
+    "areaQuality": "Kalite kontrol",
+    "areaSales": "Satış destek asistanı",
+    "areaMarketing": "Pazarlama asistanı",
+    "areaSecurity": "Güvenlik ekibi asistanı",
+    "areaTraining": "Çalışanlar için yapay zekâ eğitimi",
+    "proof": "Bir projede yapay zekâ destekli sistemle destek taleplerinin çözüm süresi yaklaşık %80 kısaldı.",
+    "book": "Ön değerlendirme görüşmesi planla",
+    "packages": "Paketler ve fiyatlar"
   }
 }

@@ -1,7 +1,7 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, Bot, CalendarClock, MessageCircle, Tag } from "lucide-react";
+import { Bot, CalendarClock, ClipboardCheck, MessageCircle, Tag } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
@@ -58,18 +58,18 @@ export async function Hero() {
             {t("ctaBook")}
           </Link>
           <Link
+            href="/assessment"
+            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+          >
+            <ClipboardCheck className="h-4 w-4" aria-hidden />
+            {t("ctaAssessment")}
+          </Link>
+          <Link
             href="/packages"
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
           >
             <Tag className="h-4 w-4" aria-hidden />
             {t("ctaPackages")}
-          </Link>
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
-          >
-            {t("ctaServices")}
-            <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
         {/* Hızlı bağlantılar: yapay zeka asistanları ve iletişim (kartvizitteki karekodlarla aynı hedefler). */}

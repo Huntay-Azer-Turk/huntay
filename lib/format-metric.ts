@@ -7,5 +7,9 @@ export function formatMetricDisplay(m: MetricItem, locale: "en" | "tr"): string 
   if (m.id === "devices") {
     return `${value.toLocaleString(numLocale)}${suffix}`;
   }
+  // Türkçede yüzde işareti sayının önüne gelir (%80); İngilizcede sonuna (80%).
+  if (locale === "tr" && suffix === "%") {
+    return `${prefix}%${value}`;
+  }
   return `${prefix}${value}${suffix}`;
 }

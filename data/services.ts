@@ -49,22 +49,49 @@ export const services: ServiceItem[] = [
         packageId: "ai-opportunity-scan",
       },
       {
+        id: "ai-support",
+        title: { en: "Customer service & technical support assistant (where we start)", tr: "Müşteri hizmetleri ve teknik servis asistanı (başlangıç noktamız)" },
+        body: {
+          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In a previous project this approach made ticket resolution about 80% faster.",
+          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
+        },
+        packageId: "ai-agent-pilot",
+      },
+      {
         id: "ai-sales",
         title: { en: "Sales assistant", tr: "Satış asistanı" },
         body: {
           en: "Answers inquiries from your website, WhatsApp and Instagram, qualifies leads, moves them to a quote or a meeting and records them in your CRM.",
           tr: "Web sitenizden, WhatsApp'tan ve Instagram'dan gelen talepleri karşılar, nitelendirir, teklife veya randevuya taşır ve CRM'inize işler.",
         },
-        packageId: "ai-agent-pilot",
+        packageId: "ai-sales-assistant",
       },
       {
-        id: "ai-support",
-        title: { en: "Customer support & technical service assistant", tr: "Müşteri destek ve teknik servis asistanı" },
+        id: "ai-production",
+        title: { en: "Production efficiency & cost", tr: "Üretimde verimlilik ve maliyet" },
         body: {
-          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In a previous project this approach made ticket resolution about 80% faster.",
-          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
+          en: "Downtime, scrap, maintenance and shift data analysed to find where losses come from, with prioritized AI and automation steps.",
+          tr: "Duruş, fire, bakım ve vardiya verileri incelenerek kayıpların nereden geldiği bulunur; yapay zekâ ve otomasyon adımları önceliklendirilir.",
         },
-        packageId: "ai-agent-pilot",
+        packageId: "ai-production-efficiency",
+      },
+      {
+        id: "ai-quality",
+        title: { en: "Quality control assistant", tr: "Kalite kontrol asistanı" },
+        body: {
+          en: "Catching defects earlier from image, measurement and complaint data; we first check that the data and cameras make it feasible.",
+          tr: "Görüntü, ölçüm ve şikâyet verisinden hatayı daha erken yakalama; önce veri ve kameraların bunu mümkün kılıp kılmadığına bakılır.",
+        },
+        packageId: "ai-quality-control",
+      },
+      {
+        id: "ai-marketing",
+        title: { en: "Marketing assistant", tr: "Pazarlama asistanı" },
+        body: {
+          en: "Content, catalogs, campaigns and customer follow-up in your brand's voice, connected to your CRM and email.",
+          tr: "Markanızın diliyle içerik, katalog, kampanya ve müşteri takibi; CRM ve e-postanıza bağlı.",
+        },
+        packageId: "ai-marketing-assistant",
       },
       {
         id: "ai-knowledge",

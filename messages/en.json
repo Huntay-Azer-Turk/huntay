@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Fractional CTO · AI, Cloud/IoT & Cybersecurity",
-    "description": "Huntay AzerTürk, Istanbul-based software architect and fractional CTO: AI agents and automation, cloud/IoT and architecture, cybersecurity. 13+ years of experience."
+    "title": "Huntay AzerTürk — AI & Productivity Consulting for SMEs",
+    "description": "We start SME AI transformation in customer service: we speed up support and service requests with AI, then take the same approach to production, quality, sales and marketing. Higher productivity, lower costs, better quality."
   },
   "Nav": {
     "about": "About",
@@ -21,14 +21,14 @@
     "packages": "Packages"
   },
   "Hero": {
-    "eyebrow": "Fractional CTO · Software Architect · Istanbul",
-    "role": "AI, Cloud/IoT & Cybersecurity Consultant",
-    "valueProp": "I help your company keep growing without getting stuck on technical risk: AI that pays off, systems that scale at a controlled cost, and security gaps closed before attackers find them.",
-    "ctaBook": "Book a call",
-    "ctaServices": "Services",
+    "eyebrow": "AI & Productivity Consulting for SMEs · Istanbul",
+    "role": "AI & Productivity Consultant for SMEs",
+    "valueProp": "For SMEs that don't know where to start with AI, we start in customer service: first we speed up support and service requests with AI, then we take the same approach to production, quality, sales and marketing. Productivity goes up, costs go down, quality improves.",
+    "ctaBook": "Book an assessment call",
     "ctaPackages": "Packages & pricing",
     "linkChatgpt": "Open in ChatGPT",
-    "linkClaude": "Claude & other assistants"
+    "linkClaude": "Claude & other assistants",
+    "ctaAssessment": "Free AI maturity test"
   },
   "NotFound": {
     "title": "Page not found",
@@ -149,8 +149,8 @@
     "deepDivesTitle": "Deep dives"
   },
   "ServicesSection": {
-    "title": "Services",
-    "subtitle": "Three areas of expertise, one accountable person. We usually start with a fixed-scope review and build together once the priorities are clear.",
+    "title": "Service areas",
+    "subtitle": "Our focus is AI transformation for SMEs. Infrastructure and security are part of that transformation, so we also take on cloud/IoT architecture and cybersecurity work with the same ownership.",
     "details": "Details",
     "viewAll": "All areas and services",
     "book": "Book a call",
@@ -252,7 +252,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Packages & Pricing | Huntay AzerTürk",
-    "metaDescription": "Fixed-scope, fixed-price packages: technical check-up, security scan and penetration test, architecture and cloud cost review, AI agent pilot, fractional CTO and MVP.",
+    "metaDescription": "AI & productivity packages for SMEs: opportunity scan, customer service assistant pilot, turnkey rollout; production, quality, sales, marketing and security assistants; cloud and security reviews.",
     "eyebrow": "Packages & pricing",
     "title": "Clear scope, clear price",
     "intro": "Start with a fixed-scope review; once it's clear what needs doing and in what order, we implement it together.",
@@ -266,19 +266,20 @@
     "serviceTitle": "Packages for this service",
     "serviceSubtitle": "Start right away with a clear scope and price.",
     "allPackages": "All packages",
-    "showcaseTitle": "Where to start",
-    "showcaseSubtitle": "One entry package for each of my three areas: clear scope, fixed price, concrete results fast.",
+    "showcaseTitle": "AI transformation in three steps",
+    "showcaseSubtitle": "Start with an opportunity scan, see a customer service assistant live in 3 weeks, and move to a turnkey rollout once it works.",
     "pillar_security-quick-scan": "Security",
     "pillar_architecture-cloud-review": "Cloud & IoT",
-    "pillar_ai-agent-pilot": "AI agents",
-    "checkupBanner": "Want a quick first check? {name}: {duration}, {price}.",
-    "checkupCta": "See details",
-    "moreTitle": "Deeper reviews, implementation and ongoing advice",
-    "moreSubtitle": "Work that usually follows a review.",
+    "pillar_ai-agent-pilot": "Step 2",
+    "moreTitle": "Infrastructure, security and ongoing advisory",
+    "moreSubtitle": "Reviews that strengthen the foundation of the transformation, and longer engagements.",
     "guaranteeTitle": "Diagnosis guarantee",
-    "guaranteeText": "For the Technical Check-up, Security Quick Scan, Architecture & Cloud Cost Review and AI Opportunity Scan: if I can't give you at least 5 actionable, prioritized findings specific to your system, I refund the full fee. If we continue together, the review fee is credited toward the next engagement, as noted on each package.",
+    "guaranteeText": "For scan, design and review packages (AI Opportunity Scan, the expansion design packages, Technical Check-up, Security Quick Scan, Architecture & Cloud Cost Review): if we can't deliver at least 5 actionable, prioritized findings specific to you, you get a full refund. If we continue together, the fee is deducted from the next engagement as stated in the package note.",
     "noteCapacity": "Capacity: because I do every engagement myself, I take on at most 2 new reviews a month and only 1 implementation or Fractional CTO engagement at a time.",
-    "pillar_ai-opportunity-scan": "AI"
+    "pillar_ai-opportunity-scan": "Step 1",
+    "pillar_ai-production-rollout": "Step 3",
+    "expansionTitle": "Expansion: other departments",
+    "expansionSubtitle": "Design packages that take the approach from customer service to production, quality, sales, marketing and security. If you move to a pilot, the design fee is deducted from it."
   },
   "Assessment": {
     "free": "Free",
@@ -314,5 +315,31 @@
     "disclaimer": "This is a quick self-assessment, not an audit, certification or legal opinion. The questions are original and inspired by: {frameworks}. Thresholds are refined over time with real answers.",
     "serviceCta": "Free assessment: see your level in 3 minutes",
     "sectionLink": "Free maturity assessments (3 min)"
+  },
+  "AiPath": {
+    "eyebrow": "How we work",
+    "title": "AI transformation starts in customer service",
+    "subtitle": "It's where results show fastest and the data is already in your hands. With the trust we earn there, we move on to other departments.",
+    "painTitle": "Sound familiar?",
+    "pain1": "Do your dealers and customers keep asking the same fault and how-to questions, tying your engineers up on the phone?",
+    "pain2": "Are manuals, service bulletins and price lists lost in folders, with only a few people knowing the right answer?",
+    "pain3": "Are quote and order questions wearing out your sales team, and nobody can say exactly where line stops and scrap come from?",
+    "stepsTitle": "In three steps",
+    "step1Title": "1. Discovery & opportunity scan",
+    "step1Text": "A short assessment call, then a report in 5 business days ranking the processes with the highest return.",
+    "step2Title": "2. Customer service assistant pilot",
+    "step2Text": "An assistant that answers support and service questions from your own manuals; live in 3 weeks without changing your existing software.",
+    "step3Title": "3. Production rollout & expansion",
+    "step3Text": "Once the pilot works, a turnkey rollout; then the same approach in production, quality, sales and marketing.",
+    "areasTitle": "Next steps",
+    "areaProduction": "Production efficiency & cost",
+    "areaQuality": "Quality control",
+    "areaSales": "Sales support assistant",
+    "areaMarketing": "Marketing assistant",
+    "areaSecurity": "Security team assistant",
+    "areaTraining": "AI training for staff",
+    "proof": "In one project, an AI-assisted system cut support ticket resolution time by about 80%.",
+    "book": "Book an assessment call",
+    "packages": "Packages & pricing"
   }
 }
