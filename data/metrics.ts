@@ -31,12 +31,12 @@ export const metrics: MetricItem[] = [
   },
   {
     id: "ai",
-    value: 80,
-    prefix: "~",
+    value: 70,
+    rangeFrom: 40,
     suffix: "%",
     label: {
-      en: "Faster support ticket resolution with AI (one project)",
-      tr: "Yapay zekâyla daha hızlı destek talebi çözümü (bir projede)",
+      en: "Faster support ticket resolution with AI (across projects)",
+      tr: "Yapay zekâyla daha hızlı destek talebi çözümü (projelere göre)",
     },
   },
 ];

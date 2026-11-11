@@ -5,8 +5,8 @@ import type { Localized } from "./types";
  * İlk cümle ismi içerir: arama motorları ve AI asistanları genelde ilk cümleyi "kim" cevabı olarak alıntılar.
  */
 export const heroLead: Localized = {
-  en: "Every engagement is led by me, Huntay AzerTürk: an Istanbul-based software architect with over 13 years of experience. In one project, AI cut support ticket resolution time by about 80%; in another, cloud costs dropped by roughly 75%; and I built an IoT platform that runs 10,000+ devices. First we pin down where AI pays off and what it costs you not to act, then we deliver it together with your team.",
-  tr: "Her işi bizzat ben yürütüyorum: Huntay AzerTürk; İstanbul merkezli, 13 yılı aşkın deneyime sahip yazılım mimarı. Bir projede yapay zekâyla destek taleplerinin çözüm süresi yaklaşık %80 kısaldı, bir başkasında bulut maliyeti yaklaşık %75 düştü; 10.000+ cihazı çalıştıran bir IoT platformu kurdum. Önce yapay zekânın nerede getiri sağlayacağını ve beklemenin size maliyetini netleştiriyoruz, sonra ekibinizle birlikte hayata geçiriyoruz.",
+  en: "Every engagement is led by me, Huntay AzerTürk: an Istanbul-based software architect with over 13 years of experience. Across different projects, AI cut support ticket resolution time by 40–70%; in another project, cloud costs dropped by roughly 75%; and I built an IoT platform that runs 10,000+ devices. First we pin down where AI pays off and what it costs you not to act, then we deliver it together with your team.",
+  tr: "Her işi bizzat ben yürütüyorum: Huntay AzerTürk; İstanbul merkezli, 13 yılı aşkın deneyime sahip yazılım mimarı. Farklı projelerde yapay zekâyla destek taleplerinin çözüm süresi %40–70 arasında kısaldı, bir başka projede bulut maliyeti yaklaşık %75 düştü; 10.000+ cihazı çalıştıran bir IoT platformu kurdum. Önce yapay zekânın nerede getiri sağlayacağını ve beklemenin size maliyetini netleştiriyoruz, sonra ekibinizle birlikte hayata geçiriyoruz.",
 };
 
 export const philosophy: Localized = {
@@ -27,8 +27,8 @@ export const aboutSecurity: Localized = {
 
 /** CV — RAG, Dialogflow CX, Meta WhatsApp; LinkedIn özetinde Chatwoot */
 export const aboutAiProject: Localized = {
-  en: "I've built autonomous support systems using Meta WhatsApp, Chatwoot, and Dialogflow CX. By integrating RAG architectures, we managed to cut resolution times by 80% for complex technical requests.",
-  tr: "Meta WhatsApp, Chatwoot ve Dialogflow CX kullanarak otonom destek sistemleri geliştirdim. RAG mimarilerini entegre ederek, karmaşık teknik sorunların çözüm süresini %80 oranında kısalttık.",
+  en: "I've built autonomous support systems using Meta WhatsApp, Chatwoot, and Dialogflow CX. By integrating RAG architectures, we cut resolution times for complex technical requests by 40–70% across different projects.",
+  tr: "Meta WhatsApp, Chatwoot ve Dialogflow CX kullanarak otonom destek sistemleri geliştirdim. RAG mimarilerini entegre ederek, karmaşık teknik sorunların çözüm süresini farklı projelerde %40–70 arasında kısalttık.",
 };
 
 export const aboutDiscipline: Localized = {

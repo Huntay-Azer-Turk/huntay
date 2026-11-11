@@ -8,7 +8,7 @@ import type { FaqItem, ServiceItem, StepItem } from "./types";
  * derinlemesine alt sayfaları (deep-dive). Kaldırılan eski hizmet adresleri ve MCP'nin donmuş slug listesi
  * data/catalog.ts'deki uyumluluk katmanında yeni sayfalara eşlenir — bir hizmeti silerken oraya da bakın.
  *
- * Sayılar (75%, 80%, 10.000+ ...) yalnızca sitede zaten yer alan vaka çalışmalarından alınmıştır.
+ * Sayılar (75%, 40–70%, 10.000+ ...) yalnızca sitede zaten yer alan vaka çalışmalarından alınmıştır.
  */
 export const services: ServiceItem[] = [
   /* ------------------------------------------------------------------ */
@@ -52,8 +52,8 @@ export const services: ServiceItem[] = [
         id: "ai-support",
         title: { en: "Customer service & technical support assistant (where we start)", tr: "Müşteri hizmetleri ve teknik servis asistanı (başlangıç noktamız)" },
         body: {
-          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In a previous project this approach made ticket resolution about 80% faster.",
-          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
+          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In different projects this approach cut ticket resolution time by 40–70%.",
+          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Farklı projelerde bu yaklaşım talep çözüm süresini %40–70 arasında kısalttı.",
         },
         packageId: "ai-agent-pilot",
       },
@@ -231,8 +231,8 @@ export const services: ServiceItem[] = [
           tr: "Yapay zeka ajanı destek ekibimin yerini mi alır?",
         },
         answer: {
-          en: "No. It handles repetitive questions and routes complex or sensitive cases to people with full context. In a previous project, this approach made ticket resolution about 80% faster.",
-          tr: "Hayır. Tekrarlayan soruları üstlenir, karmaşık veya hassas durumları tüm bağlamıyla insanlara aktarır. Daha önceki bir projede bu yaklaşım talep çözüm süresini yaklaşık %80 kısalttı.",
+          en: "No. It handles repetitive questions and routes complex or sensitive cases to people with full context. In different projects, this approach cut ticket resolution time by 40–70%.",
+          tr: "Hayır. Tekrarlayan soruları üstlenir, karmaşık veya hassas durumları tüm bağlamıyla insanlara aktarır. Farklı projelerde bu yaklaşım talep çözüm süresini %40–70 arasında kısalttı.",
         },
       },
       {

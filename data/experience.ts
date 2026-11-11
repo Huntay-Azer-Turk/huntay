@@ -27,8 +27,8 @@ export const experience: TimelineEntry[] = [
         tr: "Karmaşık karar verme süreçleri (chain of thought, looping, branching) için LangChain ve LangGraph kullanarak 'Agentic' bir destek sistemi tasarladım; Python tabanlı vektör veritabanlarıyla (RAG) güçlendirdim."
       },
       {
-        en: "Later integrated this autonomous architecture into GCP with Dialogflow CX, Chatwoot, and Meta WhatsApp, achieving roughly 80% faster ticket resolution.",
-        tr: "Bu otonom mimariyi daha sonra GCP üzerinde Dialogflow CX, Chatwoot ve Meta WhatsApp ile entegre ederek talep çözüm sürelerinde yaklaşık %80 iyileşme sağladım."
+        en: "Later integrated this autonomous architecture into GCP with Dialogflow CX, Chatwoot, and Meta WhatsApp, cutting ticket resolution time by 40–70% across different projects.",
+        tr: "Bu otonom mimariyi daha sonra GCP üzerinde Dialogflow CX, Chatwoot ve Meta WhatsApp ile entegre ederek talep çözüm sürelerini farklı projelerde %40–70 arasında kısalttım."
       },
       {
         en: "Future projection: migrating ERP data to BigQuery for AI agent swarms.",

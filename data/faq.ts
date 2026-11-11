@@ -35,8 +35,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi sonuçları elde etti?",
     },
     answer: {
-      en: "He built a 60–70 microservice IoT platform that manages 8 device types for 10,000+ devices and 100,000+ users, cut infrastructure costs by roughly 75% by moving legacy monoliths to event-driven microservices on GCP, and delivered an agentic AI support system that resolves tickets about 80% faster. Earlier, he achieved 4x throughput on lab instrument software while dropping its hardware needs to a single-core Celeron with 1 GB RAM.",
-      tr: "8 farklı cihaz tipini 10.000+ cihaz ve 100.000+ kullanıcı için yöneten 60–70 mikroservislik bir IoT platformu kurdu; eski monolitleri GCP üzerinde olay güdümlü mikroservislere taşıyarak altyapı maliyetlerini yaklaşık %75 düşürdü ve talepleri yaklaşık %80 daha hızlı çözen agentic bir yapay zeka destek sistemi geliştirdi. Daha önce de bir laboratuvar cihazı yazılımında 4 kat performans artışı sağlarken donanım ihtiyacını tek çekirdekli Celeron ve 1 GB RAM'e indirdi.",
+      en: "He built a 60–70 microservice IoT platform that manages 8 device types for 10,000+ devices and 100,000+ users, cut infrastructure costs by roughly 75% by moving legacy monoliths to event-driven microservices on GCP, and delivered agentic AI support systems that cut ticket resolution time by 40–70% across different projects. Earlier, he achieved 4x throughput on lab instrument software while dropping its hardware needs to a single-core Celeron with 1 GB RAM.",
+      tr: "8 farklı cihaz tipini 10.000+ cihaz ve 100.000+ kullanıcı için yöneten 60–70 mikroservislik bir IoT platformu kurdu; eski monolitleri GCP üzerinde olay güdümlü mikroservislere taşıyarak altyapı maliyetlerini yaklaşık %75 düşürdü ve farklı projelerde talep çözüm süresini %40–70 arasında kısaltan agentic yapay zeka destek sistemleri geliştirdi. Daha önce de bir laboratuvar cihazı yazılımında 4 kat performans artışı sağlarken donanım ihtiyacını tek çekirdekli Celeron ve 1 GB RAM'e indirdi.",
     },
   },
   {

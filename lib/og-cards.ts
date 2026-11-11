@@ -29,12 +29,12 @@ const home = {
   en: {
     subtitle: "AI & Productivity Consultant for SMEs",
     tagline: "Start with customer service · then production, quality, sales · Istanbul",
-    chips: ["13+ years", "~80% faster support resolution (one project)", "Up to 75% cloud savings"],
+    chips: ["13+ years", "40–70% faster support resolution", "Up to 75% cloud savings"],
   },
   tr: {
     subtitle: "KOBİ'ler için Yapay Zekâ ve Verimlilik Danışmanı",
     tagline: "Müşteri hizmetlerinden başla · sonra üretim, kalite, satış · İstanbul",
-    chips: ["13+ yıl", "Destek çözümünde ~%80 hız (bir projede)", "%75'e varan bulut tasarrufu"],
+    chips: ["13+ yıl", "Destek çözümünde %40–70 hız", "%75'e varan bulut tasarrufu"],
   },
 } as const;
 

@@ -61,14 +61,14 @@ const highlights: Record<Lang, string[]> = {
     "13+ years in software architecture",
     "IoT platform for 10,000+ devices",
     "Cloud costs cut by up to 75%",
-    "AI support agents: ~80% faster resolution",
+    "AI support agents: 40–70% faster resolution across projects",
     "English & Turkish",
   ],
   tr: [
     "13+ yıl yazılım mimarisi",
     "10.000+ cihazlık IoT platformu",
     "Bulut maliyetinde %75'e varan düşüş",
-    "Yapay zeka destek ajanları: ~%80 daha hızlı çözüm",
+    "Yapay zeka destek ajanları: projelere göre %40–70 daha hızlı çözüm",
     "Türkçe ve İngilizce",
   ],
 };

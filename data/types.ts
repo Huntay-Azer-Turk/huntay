@@ -3,6 +3,8 @@ export type Localized = { en: string; tr: string };
 export type MetricItem = {
   id: string;
   value: number;
+  /** Aralık gösterimi için alt değer (ör. 40 → "40–70%"). */
+  rangeFrom?: number;
   suffix?: string;
   prefix?: string;
   label: Localized;
