@@ -1,7 +1,7 @@
 {
   "Metadata": {
     "title": "Huntay AzerTürk — Üreticiler için Yapay Zekâ Danışmanı",
-    "description": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz. Farklı projelerde talep çözüm süresi %40–70 kısaldı."
+    "description": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz. Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70 iyileşti."
   },
   "Nav": {
     "about": "Hakkında",
@@ -332,7 +332,7 @@
     "step2Text": "Bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan asistan; mevcut yazılımınız değişmeden, 3 haftada tek kanalda canlıda.",
     "step3Title": "3. Canlı kurulum",
     "step3Text": "Pilot işe yarayınca bayi portalı, WhatsApp, e-posta ve servis sisteminize bağlı canlı kurulum; ekip eğitimi ve destekle.",
-    "proof": "Farklı projelerde yapay zekâ destekli sistemlerle destek taleplerinin çözüm süresi %40–70 arasında kısaldı.",
+    "proof": "Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70, müşteri memnuniyeti %15–40 iyileşti; maliyet ve satışlarda %10–30 iyileşme sağlandı.",
     "book": "Ön değerlendirme görüşmesi planla",
     "packages": "Paketler ve fiyatlar"
   },

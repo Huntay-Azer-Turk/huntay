@@ -33,8 +33,8 @@ export const aiUnits: AiUnit[] = [
     icon: "headset",
     title: { en: "Technical service & help desk assistant", tr: "Teknik servis ve help desk asistanı" },
     body: {
-      en: "Answers fault, installation and usage questions from dealers, technicians and users from your own manuals, and opens a ticket and hands over to your team when needed. Our starting point: across different projects, resolution time dropped by 40–70%.",
-      tr: "Bayilerin, teknisyenlerin ve kullanıcıların arıza, kurulum ve kullanım sorularını kendi kılavuzlarınızla otomatik yanıtlar; gerekince arıza kaydı açıp ekibinize devreder. Başlangıç noktamız: farklı projelerde talep çözüm süresi %40–70 kısaldı.",
+      en: "Answers fault, installation and usage questions from dealers, technicians and users from your own manuals, and opens a ticket and hands over to your team when needed. Across different projects, help desk workload and response times improved by 30–70%.",
+      tr: "Bayilerin, teknisyenlerin ve kullanıcıların arıza, kurulum ve kullanım sorularını kendi kılavuzlarınızla otomatik yanıtlar; gerekince arıza kaydı açıp ekibinize devreder. Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70 iyileşti.",
     },
   },
   {

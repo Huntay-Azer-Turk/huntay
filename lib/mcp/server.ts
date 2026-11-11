@@ -59,16 +59,16 @@ const headline: Record<Lang, string> = {
 const highlights: Record<Lang, string[]> = {
   // 11 Kasım 2026: yalnız içerik değişti (araç adları, açıklamaları ve şemalar donuk — dizin incelemeleri sürüyor).
   en: [
-    "AI support agents: 40–70% faster resolution across projects",
+    "Help desk workload and response times improved by 30–70% across projects",
     "Technical service and help desk assistants for manufacturers with dealer and service networks",
-    "AI support system handling a 100,000-user load with 3 engineers",
+    "Customer satisfaction up 15–40%; costs and sales improved by 10–30%",
     "13+ years in software architecture",
     "English & Turkish",
   ],
   tr: [
-    "Yapay zekâ destek asistanları: projelere göre %40–70 daha hızlı çözüm",
+    "Help desk iş yükü ve yanıt sürelerinde projelere göre %30–70 iyileşme",
     "Bayi ve servis ağı olan üreticiler için teknik servis ve help desk asistanları",
-    "3 mühendisle 100.000 kullanıcılı yükü taşıyan yapay zekâ destek sistemi",
+    "Müşteri memnuniyetinde %15–40, maliyet ve satışta %10–30 iyileşme",
     "13+ yıl yazılım mimarisi",
     "Türkçe ve İngilizce",
   ],

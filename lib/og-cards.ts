@@ -29,12 +29,12 @@ const home = {
   en: {
     subtitle: "AI Consultant for Manufacturers",
     tagline: "Starts with the technical service & help desk assistant · Istanbul",
-    chips: ["13+ years", "40–70% faster support resolution", "100,000 users, 3 engineers"],
+    chips: ["30–70% help desk workload & response", "15–40% customer satisfaction", "10–30% costs & sales"],
   },
   tr: {
     subtitle: "Üreticiler için Yapay Zekâ Danışmanı",
     tagline: "Teknik servis ve help desk asistanıyla başlar · İstanbul",
-    chips: ["13+ yıl", "Destek çözümünde %40–70 hız", "3 mühendisle 100.000 kullanıcı"],
+    chips: ["Help desk iş yükü ve yanıtta %30–70", "Memnuniyette %15–40", "Maliyet ve satışta %10–30"],
   },
 } as const;
 
@@ -44,9 +44,9 @@ export function ogCardFor(key: string, lang: OgLang): OgCard {
   if (key === "services") {
     return {
       kicker: tr ? "HUNTAYAZERTURK.COM · HİZMETLER" : "HUNTAYAZERTURK.COM · SERVICES",
-      title: tr ? "Üreticiler için yapay zekâ dönüşümü" : "AI transformation for manufacturers",
+      title: tr ? "Teknik servis ve help desk asistanı" : "Technical service & help desk assistant",
       subtitle: "Huntay AzerTürk",
-      tagline: tr ? "Help desk · Kalite · Üretim · Satış · Satın alma" : "Help desk · Quality · Production · Sales · Procurement",
+      tagline: tr ? "Bayi ve servis ağı olan üreticiler için" : "For manufacturers with dealer and service networks",
       chips: [bookChip],
     };
   }

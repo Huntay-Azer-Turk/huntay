@@ -6,8 +6,8 @@ import type { Localized } from "./types";
  */
 export const heroLead: Localized = {
   // 11 Kasım 2026: LinkedIn "Hakkında" ile aynı yapı — kanıt ayrı cümle, sonra uzmanlık; bulut/IoT rakamları buradan çıktı (odak dağılmasın).
-  en: "Across different projects, support resolution time dropped by 40–70%. Every engagement is led by me personally: with 13+ years in systems architecture, I turn manufacturers' scattered documentation and service knowledge into stable AI systems, without replacing your ERP or service software.",
-  tr: "Farklı projelerde talep çözüm süresi %40–70 kısaldı. İşi bizzat ben yürütüyorum: 13 yılı aşkın sistem mimarisi deneyimiyle, üreticilerin dağınık doküman ve servis bilgisini ERP ve servis yazılımlarınızı değiştirmeden kararlı yapay zekâ sistemlerine dönüştürüyorum.",
+  en: "Across different projects, help desk workload and response times improved by 30–70%. Every engagement is led by me personally: with 13+ years in systems architecture, I turn manufacturers' scattered documentation and service knowledge into stable AI systems, without replacing your ERP or service software.",
+  tr: "Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70 iyileşti. İşi bizzat ben yürütüyorum: 13 yılı aşkın sistem mimarisi deneyimiyle, üreticilerin dağınık doküman ve servis bilgisini ERP ve servis yazılımlarınızı değiştirmeden kararlı yapay zekâ sistemlerine dönüştürüyorum.",
 };
 
 export const philosophy: Localized = {
@@ -28,8 +28,8 @@ export const aboutSecurity: Localized = {
 
 /** CV — RAG, Dialogflow CX, Meta WhatsApp; LinkedIn özetinde Chatwoot */
 export const aboutAiProject: Localized = {
-  en: "I've built autonomous support systems using Meta WhatsApp, Chatwoot, and Dialogflow CX. By integrating RAG architectures, we cut resolution times for complex technical requests by 40–70% across different projects.",
-  tr: "Meta WhatsApp, Chatwoot ve Dialogflow CX kullanarak otonom destek sistemleri geliştirdim. RAG mimarilerini entegre ederek, karmaşık teknik sorunların çözüm süresini farklı projelerde %40–70 arasında kısalttık.",
+  en: "I've built autonomous support systems using Meta WhatsApp, Chatwoot, and Dialogflow CX. By integrating RAG architectures, we improved help desk workload and response times by 30–70% and customer satisfaction by 15–40% across different projects.",
+  tr: "Meta WhatsApp, Chatwoot ve Dialogflow CX kullanarak otonom destek sistemleri geliştirdim. RAG mimarilerini entegre ederek farklı projelerde help desk iş yükünü ve yanıt sürelerini %30–70, müşteri memnuniyetini %15–40 iyileştirdik.",
 };
 
 export const aboutDiscipline: Localized = {

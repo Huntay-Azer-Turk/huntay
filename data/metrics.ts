@@ -6,13 +6,14 @@ import type { MetricItem } from "./types";
  */
 export const metrics: MetricItem[] = [
   {
+    // 11 Kasım 2026, Huntay: oranlar her yerde aynı set — iş yükü/yanıt süreleri %30–70, memnuniyet %15–40, maliyet/satış %10–30.
     id: "ai",
     value: 70,
-    rangeFrom: 40,
+    rangeFrom: 30,
     suffix: "%",
     label: {
-      en: "Faster support ticket resolution with AI (across projects)",
-      tr: "Yapay zekâyla daha hızlı destek talebi çözümü (projelere göre)",
+      en: "Improvement in help desk workload and response times (across projects)",
+      tr: "Help desk iş yükünde ve yanıt sürelerinde iyileşme (projelere göre)",
     },
   },
   {
@@ -24,6 +25,16 @@ export const metrics: MetricItem[] = [
     label: {
       en: "Increase in customer satisfaction (across projects)",
       tr: "Müşteri memnuniyetinde artış (projelere göre)",
+    },
+  },
+  {
+    id: "costs-sales",
+    value: 30,
+    rangeFrom: 10,
+    suffix: "%",
+    label: {
+      en: "Improvement in costs and sales (across projects)",
+      tr: "Maliyet ve satışlarda iyileşme (projelere göre)",
     },
   },
   {
