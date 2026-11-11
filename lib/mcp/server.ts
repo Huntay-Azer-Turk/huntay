@@ -567,7 +567,7 @@ export function createMcpServer(): McpServer {
       const text =
         lang === "tr"
           ? [
-              `${siteConfig.name} — İstanbul merkezli yazılım mimarı ve mühendislik lideri; uzaktan, Türkçe veya İngilizce çalışır.`,
+              `${siteConfig.name} — bayi ve servis ağı olan üreticiler için İstanbul merkezli yapay zekâ danışmanı; uzaktan, Türkçe veya İngilizce çalışır.`,
               heroLead.tr,
               sentence(`Güncel rol: ${role.role.tr}, ${role.org.tr}`),
               `Öne çıkanlar: ${highlights.tr.join(" · ")}.`,
@@ -576,7 +576,7 @@ export function createMcpServer(): McpServer {
               scheduleHint.tr,
             ].join("\n")
           : [
-              `${siteConfig.name} — software architect and engineering leader based in Istanbul, Turkey; works remotely, in English or Turkish.`,
+              `${siteConfig.name} — Istanbul-based AI consultant for manufacturers with dealer and service networks; works remotely, in English or Turkish.`,
               heroLead.en,
               sentence(`Current role: ${role.role.en}, ${role.org.en}`),
               `Highlights: ${highlights.en.join(" · ")}.`,

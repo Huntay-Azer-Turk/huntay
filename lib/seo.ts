@@ -289,14 +289,14 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       "@id": businessId,
       name:
         locale === "tr"
-          ? `${siteConfig.name} — Yazılım ve Yapay Zeka Danışmanlığı`
-          : `${siteConfig.name} — Software & AI Consulting`,
+          ? `${siteConfig.name} — Üreticiler için Yapay Zekâ Danışmanlığı`
+          : `${siteConfig.name} — AI Consulting for Manufacturers`,
       url: localeUrl(locale, "/services"),
       image: absoluteUrl(profileImagePath),
       description:
         locale === "tr"
-          ? "Yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Sabit fiyatlı incelemeler, uygulama ve fractional CTO."
-          : "AI agents and automation; cloud, IoT and architecture; cybersecurity. Fixed-price reviews, implementation and fractional CTO.",
+          ? "Teknik servis ve help desk asistanıyla başlayan yapay zekâ dönüşümü; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları. Sabit fiyatlı tarama, pilot ve kurulum."
+          : "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research and procurement assistants. Fixed-price scan, pilot and rollout.",
       founder: { "@id": personId },
       address: {
         "@type": "PostalAddress",

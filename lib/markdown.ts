@@ -35,7 +35,7 @@ import { siteConfig } from "@/lib/site";
 
 const H = {
   en: {
-    headline: "Software architect & engineering leader — cloud, AI and IoT (Istanbul, Turkey)",
+    headline: "AI Consultant for Manufacturers — technical service & help desk first (Istanbul, Turkey)",
     about: "About",
     services: "Services",
     caseStudies: "Case studies",
@@ -72,7 +72,7 @@ const H = {
     write: "write",
   },
   tr: {
-    headline: "Yazılım mimarı ve mühendislik lideri — bulut, yapay zeka ve IoT (İstanbul)",
+    headline: "Üreticiler için Yapay Zekâ Danışmanı — önce teknik servis ve help desk (İstanbul)",
     about: "Hakkında",
     services: "Hizmetler",
     caseStudies: "Vaka çalışmaları",
