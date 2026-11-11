@@ -16,11 +16,14 @@ export const metrics: MetricItem[] = [
     },
   },
   {
-    id: "support-users",
-    value: 100000,
+    // 11 Kasım 2026, Huntay: "3 mühendisle 100.000 kullanıcı" yanlıştı; yerine müşteri memnuniyeti artışı (Huntay'ın aralığı).
+    id: "satisfaction",
+    value: 40,
+    rangeFrom: 15,
+    suffix: "%",
     label: {
-      en: "Users supported by an AI support system run by 3 engineers",
-      tr: "Kullanıcılı destek yükünü 3 mühendisle taşıyan yapay zekâ destek sistemi",
+      en: "Increase in customer satisfaction (across projects)",
+      tr: "Müşteri memnuniyetinde artış (projelere göre)",
     },
   },
   {
