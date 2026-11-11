@@ -306,16 +306,19 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      <section className="py-16 sm:py-24">
-        <div className={containerClass}>
-          <h2 className={h2Class}>{t("other")}</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {others.map((item) => (
-              <ServiceCard key={item.slug} service={item} locale={locale} detailsLabel={ts("details")} />
-            ))}
+      {/* 11 Kasım 2026: görünen tek hizmet ai-agents; liste boşsa başlık da çizilmez. */}
+      {others.length ? (
+        <section className="py-16 sm:py-24">
+          <div className={containerClass}>
+            <h2 className={h2Class}>{t("other")}</h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {others.map((item) => (
+                <ServiceCard key={item.slug} service={item} locale={locale} detailsLabel={ts("details")} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </>
   );
 }
