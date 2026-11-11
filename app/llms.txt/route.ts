@@ -35,15 +35,11 @@ export function GET() {
     ...primaryServices.map(
       (item) =>
         `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}${
-          item.offerings?.length
-            ? ` Includes: ${item.offerings.map((o) => o.title.en).join("; ")}.`
-            : ""
+          item.offerings?.length ? ` Includes: ${item.offerings.map((o) => o.title.en).join("; ")}.` : ""
         }`,
     ),
     ...services
-      .filter(
-        (item) => item.role === "deep-dive" && !isHiddenService(item.slug),
-      )
+      .filter((item) => item.role === "deep-dive" && !isHiddenService(item.slug))
       .map(
         (item) =>
           `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}) (in depth, part of ${
@@ -58,8 +54,7 @@ export function GET() {
     ...assessments
       .filter((item) => !isHiddenService(item.serviceSlug))
       .map(
-        (item) =>
-          `- [${item.title.en}](${localeUrl("en", `/assessment/${item.slug}`)}): ${item.metaDescription.en}`,
+        (item) => `- [${item.title.en}](${localeUrl("en", `/assessment/${item.slug}`)}): ${item.metaDescription.en}`,
       ),
     "",
     "## Book from an AI assistant (MCP)",
@@ -69,32 +64,23 @@ export function GET() {
     `- Documentation, setup and example prompts: ${localeUrl("en", "/assistant")}`,
     "- Tools: get_availability (live open times), book_intro_call (30-minute Google Meet call), list_services (optionally ranked by need), get_service, get_profile, search, fetch",
     `- Server card: ${siteConfig.baseUrl}/.well-known/mcp/server-card.json`,
-    ...(isCalConfigured()
-      ? [`- Booking calendar: ${calBookingPageUrl()}`]
-      : []),
+    ...(isCalConfigured() ? [`- Booking calendar: ${calBookingPageUrl()}`] : []),
     "",
     "## Experience",
     "",
     ...siteExperience.map(
-      (item) =>
-        `- ${item.period.en}: ${item.role.en}, ${item.org.en}${item.location ? ` (${item.location.en})` : ""}`,
+      (item) => `- ${item.period.en}: ${item.role.en}, ${item.org.en}${item.location ? ` (${item.location.en})` : ""}`,
     ),
     "",
     "## Case studies",
     "",
     ...siteCaseStudies.map(
-      (item) =>
-        `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
+      (item) => `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
     ),
     "",
     "## FAQ",
     "",
-    ...faq.flatMap((item) => [
-      `### ${item.question.en}`,
-      "",
-      item.answer.en,
-      "",
-    ]),
+    ...faq.flatMap((item) => [`### ${item.question.en}`, "", item.answer.en, ""]),
     "## Writing",
     "",
     ...siteFeatured.map((item) => `- [${item.title.en}](${item.href})`),
@@ -111,9 +97,7 @@ export function GET() {
     `- [Medium](${siteConfig.medium})`,
     `- [GitHub](${siteConfig.github})`,
     `- [Instagram](${siteConfig.instagram})`,
-    ...(siteConfig.whatsappUrl
-      ? [`- [WhatsApp](${siteConfig.whatsappUrl})`]
-      : []),
+    ...(siteConfig.whatsappUrl ? [`- [WhatsApp](${siteConfig.whatsappUrl})`] : []),
     "",
   ];
 
