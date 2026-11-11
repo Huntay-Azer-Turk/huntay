@@ -46,3 +46,13 @@ npm run build
 # Start production server
 npm start
 ```
+
+## After the Claude and ChatGPT directory approvals (MCP update, pending)
+
+The MCP tool names, descriptions and input schemas are frozen while the directory reviews run (`MCP_FROZEN_SERVICE_SLUGS` in `data/catalog.ts`). On 11 Nov 2026 the site became AI-transformation only, so once both approvals arrive:
+
+1. `get_service` enum: drop the hidden slugs (`cloud-devops`, `cybersecurity`, `fractional-cto`, `iot-platforms`, `microservices-modernization` and their retired aliases) and keep `ai-agents`.
+2. `list_services`: list only visible services (`visibleServices`), and expose the AI units (`data/ai-units.ts`) with their packages.
+3. Tool descriptions (`get_profile` "software architect…", `list_services`, `/assistant` page copy): use "AI Consultant for Manufacturers".
+4. Add `retiredServiceSlugs` redirects for the hidden pages to `/services/ai-agents`, then delete those services, their assessments (`security-maturity`, `cloud-health`) and the inactive packages.
+5. Re-submit or notify both directories if they require it for a schema change; re-test with the MCP inspector before release.
