@@ -52,8 +52,8 @@ export const caseStudies: CaseStudy[] = [
       tr: "Farklı üretici firmalarda, bayilerden, teknisyenlerden ve kullanıcılardan gelen tekrarlı arıza ve doküman sorularını firmanın kendi kılavuzları ve geçmiş talepleriyle yanıtlayan yapay zekâ destekli help desk sistemleri kurduk.",
     },
     result: {
-      en: "Help desk workload, response times and customer satisfaction improved by 30–70% depending on the company, and we achieved a 10–30% improvement in the companies' costs and sales.",
-      tr: "Help desk iş yükü, yanıt süreleri ve müşteri memnuniyeti firmaya göre %30–70 oranında iyileşti; firmaların maliyet ve satışlarında da %10–30 iyileşme sağladık.",
+      en: "Help desk workload and response times improved by 30–70% and customer satisfaction by 15–40% depending on the company; we also achieved a 10–30% improvement in the companies' costs and sales.",
+      tr: "Help desk iş yükü ve yanıt süreleri firmaya göre %30–70, müşteri memnuniyeti %15–40 iyileşti; firmaların maliyet ve satışlarında da %10–30 iyileşme sağladık.",
     },
     tags: {
       en: "Help desk · Technical service · Dealer support · RAG",

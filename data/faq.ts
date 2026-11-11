@@ -37,8 +37,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi sonuçları elde etti?",
     },
     answer: {
-      en: "At different manufacturers, the help desk systems he set up improved help desk workload, response times and customer satisfaction by 30–70%, and the companies' costs and sales by 10–30%.",
-      tr: "Farklı üretici firmalarda kurduğu help desk sistemleriyle iş yükü, yanıt süreleri ve müşteri memnuniyeti %30–70; firmaların maliyet ve satışları %10–30 iyileşti.",
+      en: "At different manufacturers, the help desk systems he set up improved help desk workload and response times by 30–70%, customer satisfaction by 15–40%, and the companies' costs and sales by 10–30%.",
+      tr: "Farklı üretici firmalarda kurduğu help desk sistemleriyle iş yükü ve yanıt süreleri %30–70, müşteri memnuniyeti %15–40, firmaların maliyet ve satışları %10–30 iyileşti.",
     },
   },
   {
