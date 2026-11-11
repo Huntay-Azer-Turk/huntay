@@ -237,8 +237,13 @@ function reserveAction(locale: AppLocale) {
  */
 export function buildSiteGraph(locale: AppLocale, personDescription: string) {
   const currentRole = experience[0];
+  // 11 Kasım 2026 (tek odak): yalnız yapay zekâ grubu; bulut, güvenlik ve mimari başlıkları "her şeyi yapan" izlenimi veriyordu.
   const knowsAbout = Array.from(
-    new Set(techStack.flatMap((group) => group.items.map((item) => cleanSkill(item.en)))),
+    new Set(
+      techStack
+        .filter((group) => group.id === "ai")
+        .flatMap((group) => group.items.map((item) => cleanSkill(item.en))),
+    ),
   );
 
   return graph([
@@ -295,8 +300,8 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       image: absoluteUrl(profileImagePath),
       description:
         locale === "tr"
-          ? "Teknik servis ve help desk asistanıyla başlayan yapay zekâ dönüşümü; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları. Sabit fiyatlı tarama ve pilotla başlar."
-          : "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research and procurement assistants. Starts with a fixed-price scan and pilot.",
+          ? "Bayi ve servis ağı olan üreticiler için yapay zekâ teknik servis ve help desk asistanı: tekrarlı arıza ve doküman sorularını kendi kılavuzlarınızla, yazılımınızı değiştirmeden yanıtlar. Sabit fiyatlı tarama ve pilotla başlar."
+          : "AI technical service and help desk assistant for manufacturers with dealer and service networks: answers repetitive fault and documentation questions from your own manuals, without replacing your software. Starts with a fixed-price scan and pilot.",
       founder: { "@id": personId },
       address: {
         "@type": "PostalAddress",

@@ -20,8 +20,8 @@ type Props = { params: Promise<{ locale: string }> };
 /**
  * Vitrin (11 Kasım 2026, odak tamamen yapay zekâ dönüşümü): öne çıkan teklif teknik servis ve help desk asistanı —
  * fırsat taraması → pilot → canlı kurulum. Aynı gün (Huntay: "paketlerde sadece teknik servis kalsın"): diğer birimlerin
- * tasarım paketleri D1'de pasif; sayfada yalnız kısa bir not ve hizmetler sayfasındaki birimlere bağlantı var. Bulut,
- * güvenlik ve CTO paketleri de pasif; "rest" grubu yalnız yeni eklenen aktif bir paket olursa görünür.
+ * tasarım paketleri D1'de pasif ve sitede anılmıyor (tek odak). Bulut, güvenlik ve CTO paketleri de pasif; "rest" grubu
+ * yalnız yeni eklenen aktif bir paket olursa görünür.
  * Paket kimliği D1'de yoksa veya paket pasifse grubundan düşer, sayfa yine çalışır.
  */
 const SHOWCASE_IDS = ["ai-opportunity-scan", "ai-agent-pilot", "ai-production-rollout"] as const;
@@ -163,13 +163,6 @@ export default async function PackagesPage({ params }: Props) {
                 </div>
               ) : null}
 
-              <div className="mt-12 rounded-2xl border border-border p-6">
-                <h2 className="font-semibold text-foreground">{t("expansionTitle")}</h2>
-                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">{t("expansionSubtitle")}</p>
-                <Link href="/services#units" className="mt-4 inline-flex text-sm font-medium text-accent hover:underline">
-                  {t("expansionLink")}
-                </Link>
-              </div>
 
               {rest.length ? (
                 <div className="mt-16">

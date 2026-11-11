@@ -102,9 +102,12 @@ export const aiUnits: AiUnit[] = [
   },
 ];
 
-/** ai-agents hizmet sayfasının "Bu alanda neler yapıyoruz" listesi için. */
+/**
+ * ai-agents hizmet sayfasının "Bu alanda neler yapıyoruz" listesi için. 11 Kasım 2026 akşamı (tek odak): yalnız öne
+ * çıkan birim; diğer birimler sitede anılmıyor ama veri olarak duruyor (ileride açılabilir).
+ */
 export function aiUnitOfferings(): ServiceOffering[] {
-  return aiUnits.map((unit) => ({
+  return aiUnits.filter((unit) => unit.id === LEAD_UNIT_ID).map((unit) => ({
     id: `ai-${unit.id}`,
     title: unit.title,
     body: unit.body,

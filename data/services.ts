@@ -19,38 +19,39 @@ export const services: ServiceItem[] = [
     slug: "ai-agents",
     role: "pillar",
     icon: "bot",
-    // 11 Kasım 2026: tek görünen hizmet — üreticiler için yapay zekâ dönüşümü (slug MCP için aynı kaldı).
+    // 11 Kasım 2026: tek görünen hizmet (slug MCP için aynı kaldı). Akşam (Huntay: "sitenin odak noktası tek bir şey"):
+    // yalnız teknik servis ve help desk asistanı; diğer birimler anılmıyor.
     title: {
-      en: "AI Transformation for Manufacturers",
-      tr: "Üreticiler için Yapay Zekâ Dönüşümü",
+      en: "Technical Service & Help Desk AI Assistant for Manufacturers",
+      tr: "Üreticiler için Teknik Servis ve Help Desk Asistanı",
     },
     metaTitle: {
-      en: "AI for Manufacturers: Help Desk, Quality, Production and Sales Assistants",
-      tr: "Üreticiler ve KOBİ'ler için Yapay Zeka: Help Desk, Kalite, Üretim ve Satış Asistanları",
+      en: "AI Technical Service & Help Desk Assistant for Manufacturers",
+      tr: "Üreticiler için Yapay Zekâ Teknik Servis ve Help Desk Asistanı",
     },
     tagline: {
-      en: "It starts with a technical service and help desk assistant, then moves to quality control, production, sales and procurement.",
-      tr: "Teknik servis ve help desk asistanıyla başlar; sonra kalite kontrol, üretim, satış ve satın almaya geçer.",
+      en: "Answers your dealers', technicians' and users' repetitive fault and documentation questions from your own manuals, without replacing your software.",
+      tr: "Bayilerinizin, teknisyenlerinizin ve kullanıcılarınızın tekrarlı arıza ve doküman sorularını, yazılımınızı değiştirmeden kendi kılavuzlarınızla yanıtlar.",
     },
     summary: {
-      en: "We put AI to work where it pays off first: the repetitive fault and documentation questions from dealers, technicians and users, answered from your own manuals without replacing your software. Once that works, the same approach moves to quality control, production and maintenance, sales, marketing, market research, procurement and security teams. Every engagement starts with a fixed-scope scan or design, and every assistant is connected to your own data, measured and handed over to your team.",
-      tr: "Yapay zekâyı önce getirisinin en hızlı görüldüğü yerde kullanıyoruz: bayilerden, teknisyenlerden ve kullanıcılardan gelen tekrarlı arıza ve doküman soruları, yazılımınız değişmeden kendi kılavuzlarınızla yanıtlanır. Bu işe yarayınca aynı yöntem kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekiplerine taşınır. Her iş sabit kapsamlı bir tarama ya da tasarımla başlar; her asistan kendi verinize bağlanır, ölçülür ve ekibinize devredilir.",
+      en: "Your central team's time goes to the same fault, installation and usage questions from dealers, technicians and users. The assistant answers them from your own manuals, service bulletins and past tickets, opens a ticket and hands over to your team when needed, and works alongside your ERP and service software instead of replacing them. It starts with a fixed-price opportunity scan, goes live on one channel in a 3-week pilot, and moves to a production rollout once the results are measured.",
+      tr: "Merkez ekibinizin vakti bayilerden, teknisyenlerden ve kullanıcılardan gelen aynı arıza, kurulum ve kullanım sorularına gidiyor. Asistan bunları kendi kılavuzlarınız, teknik bültenleriniz ve geçmiş taleplerinizle yanıtlar; gerekince arıza kaydı açıp ekibinize devreder; ERP ve servis yazılımlarınızın yerine geçmez, yanında çalışır. Sabit fiyatlı bir fırsat taramasıyla başlar, 3 haftalık pilotla tek kanalda canlıya alınır, sonuç ölçülünce canlı kuruluma geçilir.",
     },
     metaDescription: {
-      en: "AI for manufacturers: technical service and help desk assistant, quality control automation, production and maintenance, sales, marketing, market research and procurement assistants.",
-      tr: "Üreticiler için yapay zekâ: teknik servis ve help desk asistanı, kalite kontrol otomasyonu, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları.",
+      en: "AI technical service and help desk assistant for manufacturers with dealer and service networks: answers repetitive fault and documentation questions from your own manuals. Scan, 3-week pilot, production rollout.",
+      tr: "Bayi ve servis ağı olan üreticiler için yapay zekâ teknik servis ve help desk asistanı: tekrarlı arıza ve doküman sorularını kendi kılavuzlarınızla yanıtlar. Tarama, 3 haftalık pilot, canlı kurulum.",
     },
     offerings: [
       {
         id: "ai-scan",
-        title: { en: "AI maturity & opportunity scan", tr: "Yapay zeka olgunluk ve fırsat taraması" },
+        title: { en: "AI opportunity scan", tr: "Yapay zekâ fırsat taraması" },
         body: {
-          en: "Which processes would gain most from AI, how ready your data and team are, and a prioritized roadmap with expected impact.",
-          tr: "Hangi süreçlerin yapay zekadan en çok kazanacağı, verinizin ve ekibinizin ne kadar hazır olduğu ve beklenen etkiyle önceliklendirilmiş bir yol haritası.",
+          en: "Which questions reach your central team most often, how ready your manuals and ticket data are, and the expected impact of the assistant.",
+          tr: "Merkez ekibinize en sık hangi soruların geldiği, kılavuz ve talep verinizin ne kadar hazır olduğu ve asistanın beklenen etkisi.",
         },
         packageId: "ai-opportunity-scan",
       },
-      // 11 Kasım 2026: birimler tek kaynaktan (data/ai-units.ts); her biri ayrı paket.
+      // 11 Kasım 2026: birim tek kaynaktan (data/ai-units.ts); akşamdan beri yalnız teknik servis ve help desk.
       ...aiUnitOfferings(),
       {
         id: "ai-measure",
@@ -63,28 +64,20 @@ export const services: ServiceItem[] = [
     ],
     forWhom: [
       {
-        en: "Teams answering the same customer questions every day",
-        tr: "Her gün aynı müşteri sorularını cevaplayan ekipler",
-      },
-      {
         en: "Manufacturers and distributors whose dealers and service points keep asking headquarters the same questions",
         tr: "Bayileri ve servis noktaları merkeze sürekli aynı soruları soran üretici ve distribütörler",
       },
       {
-        en: "Sales teams losing leads because follow-up is slow",
-        tr: "Takip yavaş kaldığı için potansiyel müşteri kaybeden satış ekipleri",
+        en: "Technical service and support teams answering the same fault and usage questions every day",
+        tr: "Her gün aynı arıza ve kullanım sorularını yanıtlayan teknik servis ve destek ekipleri",
       },
       {
-        en: "SMEs running on spreadsheets, email and manual data entry",
-        tr: "Excel, e-posta ve elle veri girişiyle yürüyen KOBİ'ler",
+        en: "Companies whose manuals, service bulletins and past tickets are scattered and known by only a few people",
+        tr: "Kılavuzları, teknik bültenleri ve geçmiş talepleri dağınık olan, doğru cevabı yalnız birkaç kişinin bildiği şirketler",
       },
       {
-        en: "Companies whose knowledge is scattered across documents, emails and ERP",
-        tr: "Bilgisi dokümanlara, e-postalara ve ERP'ye dağılmış şirketler",
-      },
-      {
-        en: "SMEs that want AI results without hiring an AI team",
-        tr: "Yapay zeka ekibi kurmadan sonuç almak isteyen KOBİ'ler",
+        en: "Manufacturers that want results without hiring an AI team or replacing their software",
+        tr: "Yapay zekâ ekibi kurmadan ve yazılımını değiştirmeden sonuç almak isteyen üreticiler",
       },
     ],
     deliverables: [
@@ -97,8 +90,8 @@ export const services: ServiceItem[] = [
         tr: "Verilerinize (RAG) ve araçlarınıza bağlı, çalışan bir yapay zeka ajanı",
       },
       {
-        en: "Channels: WhatsApp, website chat, Instagram, Chatwoot or your CRM",
-        tr: "Kanallar: WhatsApp, web sitesi sohbeti, Instagram, Chatwoot veya CRM'iniz",
+        en: "Channels: dealer portal, WhatsApp, website chat, email or your service system",
+        tr: "Kanallar: bayi portalı, WhatsApp, web sitesi sohbeti, e-posta veya servis sisteminiz",
       },
       {
         en: "Human handover, guardrails and conversation analytics",
@@ -111,20 +104,20 @@ export const services: ServiceItem[] = [
     ],
     useCases: [
       {
-        en: "WhatsApp customer support agent that resolves common requests and hands complex ones to your team",
-        tr: "Sık gelen talepleri çözen, karmaşık olanları ekibinize aktaran WhatsApp müşteri destek ajanı",
+        en: "A dealer asks what a fault code means; the assistant answers from the manual and service bulletin, with the page reference",
+        tr: "Bayi bir arıza kodunun ne anlama geldiğini sorar; asistan kılavuz ve teknik bültenden, sayfa kaynağıyla yanıtlar",
       },
       {
-        en: "Sales agent that answers product questions, qualifies leads and books meetings",
-        tr: "Ürün sorularını cevaplayan, potansiyel müşterileri değerlendiren ve toplantı ayarlayan satış ajanı",
+        en: "A field technician asks for installation or replacement steps for a specific model",
+        tr: "Sahadaki teknisyen belirli bir modelin kurulum ya da parça değişim adımlarını sorar",
       },
       {
-        en: "Syncing orders and stock between your online store, marketplaces and your ERP",
-        tr: "Online mağazanız, pazaryerleri ve ERP'niz arasında sipariş ve stok senkronizasyonu",
+        en: "When the answer isn't in the documents, the assistant opens a ticket and hands it to your team with the full context",
+        tr: "Cevap dokümanlarda yoksa asistan arıza kaydı açar ve tüm bağlamıyla ekibinize devreder",
       },
       {
-        en: "Operations agent that reads ERP data, prepares reports and flags anomalies",
-        tr: "ERP verilerini okuyup rapor hazırlayan ve anormallikleri işaretleyen operasyon ajanı",
+        en: "Repeated questions show which manuals are missing or unclear, so your team can fix them",
+        tr: "Tekrarlanan sorular hangi kılavuzun eksik ya da anlaşılmaz olduğunu gösterir; ekibiniz düzeltebilir",
       },
     ],
     tech: [
@@ -139,17 +132,17 @@ export const services: ServiceItem[] = [
       "Python",
       "GCP",
     ],
-    relatedCases: ["ai-ops", "enmos-meta"],
+    relatedCases: ["ai-ops"],
     faq: [
       {
         id: "sme-start",
         question: {
-          en: "Where should an SME start with AI?",
-          tr: "KOBİ'ler yapay zekaya nereden başlamalı?",
+          en: "Why start with technical service and the help desk?",
+          tr: "Neden teknik servis ve help desk'ten başlıyorsunuz?",
         },
         answer: {
-          en: "With the process that costs the most time or money today—often customer messages, order handling or reporting. A short scan identifies quick wins first, so early results build momentum for the next steps.",
-          tr: "Bugün en çok zaman veya para kaybettiren süreçten; çoğu zaman müşteri mesajları, sipariş yönetimi veya raporlama. Kısa bir tarama önce hızlı kazanımları belirler; böylece ilk sonuçlar sonraki adımlar için ivme sağlar.",
+          en: "Because the result is visible fastest there and the data is already in your hands: manuals, service bulletins and past tickets. The assistant takes the repetitive questions off your central team within weeks, and the effect can be measured in resolution time.",
+          tr: "Çünkü sonuç en hızlı orada görülür ve veri zaten elinizdedir: kılavuzlar, teknik bültenler ve geçmiş talepler. Asistan birkaç hafta içinde tekrarlı soruları merkez ekibinizin üzerinden alır; etkisi çözüm süresiyle ölçülebilir.",
         },
       },
       {
@@ -181,8 +174,8 @@ export const services: ServiceItem[] = [
           tr: "Mevcut yazılımlarımızı değiştirmemiz gerekir mi?",
         },
         answer: {
-          en: "Rarely. Most of the value comes from connecting the tools you already use—ERP, accounting, e-commerce, CRM—and automating the work between them.",
-          tr: "Nadiren. Değerin çoğu zaten kullandığınız araçları (ERP, muhasebe, e-ticaret, CRM) birbirine bağlamaktan ve aralarındaki işi otomatikleştirmekten gelir.",
+          en: "No. The assistant works alongside your ERP, service software and dealer portal and reads from them; your team keeps using the tools it knows.",
+          tr: "Hayır. Asistan ERP'nizin, servis yazılımınızın ve bayi portalınızın yanında çalışır ve onlardan okur; ekibiniz bildiği araçları kullanmaya devam eder.",
         },
       },
     ],
@@ -975,8 +968,8 @@ export const engagementModels: StepItem[] = [
     id: "workshop-audit",
     title: { en: "AI opportunity scan", tr: "Yapay zekâ fırsat taraması" },
     body: {
-      en: "A fixed-price scan for the technical service and help desk. You get a written report, pilot scope and success criteria. Other units are scoped and priced together in the intro call.",
-      tr: "Teknik servis ve help desk için sabit fiyatlı tarama. Yazılı rapor, pilot kapsamı ve başarı ölçütleri alırsınız. Diğer birimlerin kapsamı ve fiyatı ön görüşmede birlikte belirlenir.",
+      en: "A fixed-price scan for the technical service and help desk. You get a written report, pilot scope and success criteria.",
+      tr: "Teknik servis ve help desk için sabit fiyatlı tarama. Yazılı rapor, pilot kapsamı ve başarı ölçütleri alırsınız.",
     },
   },
   {
@@ -1053,8 +1046,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Küçük ve orta ölçekli işletmelerle (KOBİ) çalışıyor musunuz?",
     },
     answer: {
-      en: "Yes. Our packages are built for manufacturers and distributors with 10–500 employees that want results without building a large in-house AI team: it starts with a technical service and help desk assistant and grows unit by unit.",
-      tr: "Evet. Paketlerimiz, büyük bir yapay zekâ ekibi kurmadan sonuç almak isteyen 10–500 çalışanlı üretici ve distribütörler için tasarlandı: teknik servis ve help desk asistanıyla başlar, birim birim büyür.",
+      en: "Yes. Our packages are built for manufacturers and distributors with 10–500 employees and a dealer or service network that want results without building a large in-house AI team.",
+      tr: "Evet. Paketlerimiz, büyük bir yapay zekâ ekibi kurmadan sonuç almak isteyen, bayi ve servis ağı olan 10–500 çalışanlı üretici ve distribütörler için tasarlandı.",
     },
   },
   {
@@ -1075,8 +1068,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Projeler nasıl fiyatlandırılıyor?",
     },
     answer: {
-      en: "The technical service and help desk path is listed on the packages page: the opportunity scan and the pilot have fixed prices, the production rollout a starting price. Other units have no off-the-shelf package; their scope and price are set in the intro call and given in a written proposal. You always get a written proposal before any work starts.",
-      tr: "Teknik servis ve help desk yolu paketler sayfasında yazar: fırsat taraması ve pilot sabit fiyatlı, canlı kurulum başlangıç fiyatlıdır. Diğer birimlerin hazır paketi yoktur; kapsamı ve fiyatı ön görüşmede belirlenir, yazılı teklifle verilir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
+      en: "Prices are listed on the packages page: the opportunity scan and the pilot have fixed prices, the production rollout a starting price that is finalized in a written proposal after the pilot. You always get a written proposal before any work starts.",
+      tr: "Fiyatlar paketler sayfasında yazar: fırsat taraması ve pilot sabit fiyatlı, canlı kurulum başlangıç fiyatlıdır ve pilottan sonra yazılı teklifle netleşir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
     },
   },
 ];

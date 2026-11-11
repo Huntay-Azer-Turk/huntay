@@ -42,3 +42,6 @@ export const metrics: MetricItem[] = [
     },
   },
 ];
+
+/** Sitede gösterilen rakamlar (11 Kasım 2026, tek odak): saha cihazı sayısı (IoT) çıktı. */
+export const siteMetrics: MetricItem[] = metrics.filter((item) => item.id !== "devices");

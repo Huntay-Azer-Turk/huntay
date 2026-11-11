@@ -7,7 +7,7 @@ import { processSteps, servicesFaq } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, buildServicesHubGraph, type AppLocale } from "@/lib/seo";
 import { buttonPrimary, buttonSecondary, containerClass, h2Class, sectionClass } from "@/lib/ui";
-import { ArrowRight, CalendarClock, Headset } from "lucide-react";
+import { CalendarClock, Headset } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -32,7 +32,6 @@ export default async function ServicesPage({ params }: Props) {
   const tb = await getTranslations({ locale, namespace: "Breadcrumbs" });
   const ts = await getTranslations({ locale, namespace: "ServicesSection" });
   const leadUnit = aiUnits.find((unit) => unit.id === LEAD_UNIT_ID)!;
-  const otherUnits = aiUnits.filter((unit) => unit.id !== LEAD_UNIT_ID);
 
   return (
     <>
@@ -73,7 +72,7 @@ export default async function ServicesPage({ params }: Props) {
       </section>
 
       {/* 11 Kasım 2026: yalnız yapay zekâ dönüşümü. Öne çıkan teklif teknik servis ve help desk asistanı; diğer
-          birimler altta: hazır paket ve fiyat yok, kapsam ön görüşmede (randevu notuna birim adı yazılır).
+          birimler bölümü aynı gün kalktı (Huntay: "sitenin odak noktası tek bir şey"; data/ai-units.ts'de duruyor).
           Bulut/güvenlik/CTO sayfaları gizli (data/catalog.ts). */}
       <section className={sectionClass}>
         <div className={containerClass}>
@@ -105,23 +104,6 @@ export default async function ServicesPage({ params }: Props) {
             </ol>
           </div>
 
-          <h2 id="units" className={`mt-16 scroll-mt-24 ${h2Class}`}>{t("unitsTitle")}</h2>
-          <p className="mt-2 max-w-3xl text-muted-foreground">{t("unitsSubtitle")}</p>
-          <ul className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {otherUnits.map((unit) => (
-              <li key={unit.id} className="flex flex-col rounded-2xl border border-border bg-card p-6">
-                <h3 className="font-semibold text-foreground">{unit.title[locale]}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{unit.body[locale]}</p>
-                <Link
-                  href={{ pathname: "/book", query: { package: unit.title[locale] } }}
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline"
-                >
-                  {t("unitBook")}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
-                </Link>
-              </li>
-            ))}
-          </ul>
           <p className="mt-8 text-sm text-muted-foreground">
             <Link href="/services/ai-agents" className="text-accent hover:underline">
               {t("aiDetails")}

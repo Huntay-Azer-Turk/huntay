@@ -116,3 +116,13 @@ export const caseStudies: CaseStudy[] = [
     },
   },
 ];
+
+/**
+ * Sitede gösterilen vakalar (11 Kasım 2026, Huntay: "sitenin odak noktası tek bir şey; her şey yapan izleniminden
+ * çıkıyoruz"). Yalnız teknik servis ve help desk asistanını kanıtlayan vaka. Diğerleri silinmedi: MCP search/fetch
+ * (lib/content.ts) dizin onayına kadar aynı kalır.
+ */
+export const SITE_CASE_IDS = ["ai-ops"] as const;
+export const siteCaseStudies: CaseStudy[] = caseStudies.filter((item) =>
+  (SITE_CASE_IDS as readonly string[]).includes(item.id),
+);

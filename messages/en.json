@@ -38,7 +38,7 @@
   "About": {
     "title": "About",
     "subtitle": "Depth beyond the résumé",
-    "philosophyTitle": "Bare Metal philosophy",
+    "philosophyTitle": "Simple and cost-effective",
     "academicTitle": "Academic lens",
     "securityTitle": "Security-first architecture",
     "aiTitle": "Applied AI — proven delivery",
@@ -55,7 +55,7 @@
     "subtitle": "Results from the field: the problem, what we did and what changed.",
     "action": "Action",
     "result": "Outcome",
-    "allProjects": "All projects and experience"
+    "allProjects": "About and experience"
   },
   "Stack": {
     "title": "Technical stack",
@@ -76,7 +76,7 @@
   },
   "BookPage": {
     "metaTitle": "Book a Call | Huntay AzerTürk",
-    "metaDescription": "Book a 30-minute intro call with Huntay AzerTürk about AI and automation, cloud/IoT and architecture, or cybersecurity.",
+    "metaDescription": "Book a 30-minute assessment call with Huntay AzerTürk about an AI technical service and help desk assistant that answers your dealer and service questions.",
     "eyebrow": "Intro call · 30 min",
     "title": "Book a call",
     "intro": "Pick a time that works for you. In 30 minutes we'll pin down your current bottleneck, what it costs your company in time and money, and your goals.",
@@ -108,7 +108,7 @@
     "openInChatgpt": "Open in ChatGPT",
     "packageNotePrefix": "Interested in",
     "selectedPackage": "Selected package",
-    "capacity": "Because I do every engagement myself, I take on at most 2 new reviews a month and only 1 implementation or Fractional CTO engagement at a time."
+    "capacity": "Because I do every engagement myself, I take on at most 2 new scans a month and only 1 pilot or production rollout at a time."
   },
   "Cta": {
     "title": "Let's talk about your project",
@@ -135,32 +135,24 @@
     "partOf": "This topic is part of {name}."
   },
   "ServicesPage": {
-    "metaTitle": "AI Services for Manufacturers | Huntay AzerTürk",
-    "metaDescription": "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research, procurement and security assistants.",
-    "eyebrow": "AI transformation",
-    "title": "AI transformation for manufacturers",
-    "intro": "We start where results show fastest and the data is already in your hands: technical service and help desk. With the trust we earn there, we take the same approach to quality, production, sales, marketing, market research, procurement and security teams.",
-    "waysTitle": "How we start",
-    "waysSubtitle": "Start small with a fixed scope, grow what works.",
+    "metaTitle": "Technical Service & Help Desk Assistant | Huntay AzerTürk",
+    "metaDescription": "AI technical service and help desk assistant for manufacturers with dealer and service networks: answers repetitive fault and documentation questions from your own manuals. Scan, 3-week pilot, production rollout.",
+    "eyebrow": "What we do",
+    "title": "Technical service & help desk assistant for manufacturers",
+    "intro": "We use AI to answer the repetitive fault and documentation questions from your dealers, technicians and users from your own manuals, without replacing your existing software. That is all we do.",
     "processTitle": "How we work",
     "processSubtitle": "A simple, transparent process from first call to production.",
     "faqTitle": "Questions about working together",
-    "pillarsTitle": "Areas of expertise",
-    "modelTitle": "Across all three: fractional CTO",
-    "deepDivesTitle": "Deep dives",
-    "leadEyebrow": "Where we start",
+    "leadEyebrow": "Our single focus",
     "leadPackages": "Packages & pricing",
     "leadStep1": "Opportunity scan: in 5 business days, the most frequent questions, data readiness and expected return.",
     "leadStep2": "Pilot: on one channel with your own manuals, live in 3 weeks; we measure the share of questions answered automatically and resolution time.",
     "leadStep3": "Production rollout: connected to your dealer portal, WhatsApp, email and service system, with team training and support.",
-    "unitsTitle": "Other units",
-    "unitsSubtitle": "Once the help desk delivers, we take the same approach to other units. These are not off-the-shelf packages: we set the scope and price together in the intro call, based on your needs.",
-    "unitBook": "Let's discuss it in a call",
-    "aiDetails": "More about AI transformation"
+    "aiDetails": "Scope, deliverables and FAQ"
   },
   "ServicesSection": {
     "title": "Service areas",
-    "subtitle": "Our focus is AI for manufacturers. Infrastructure and security are part of that transformation, so we also take on cloud/IoT architecture and cybersecurity work with the same ownership.",
+    "subtitle": "Our single focus: a technical service and help desk assistant for manufacturers with dealer and service networks.",
     "details": "Details",
     "viewAll": "All areas and services",
     "book": "Book a call",
@@ -179,7 +171,7 @@
   },
   "Contact": {
     "title": "Contact",
-    "subtitle": "Reach out directly about a technical service and help desk assistant, or AI for your other teams.",
+    "subtitle": "Reach out directly about a technical service and help desk assistant.",
     "book": "Book a call",
     "linkedin": "LinkedIn",
     "medium": "Medium",
@@ -277,7 +269,7 @@
     "serviceTitle": "Packages for this service",
     "serviceSubtitle": "Start right away with a clear scope and price.",
     "allPackages": "All packages",
-    "showcaseTitle": "Featured: technical service & help desk assistant",
+    "showcaseTitle": "Technical service & help desk assistant",
     "showcaseSubtitle": "Start with an opportunity scan, see the assistant live on one channel in 3 weeks, then move to a production rollout once it works.",
     "pillar_security-quick-scan": "Security",
     "pillar_architecture-cloud-review": "Cloud & IoT",
@@ -286,12 +278,9 @@
     "moreSubtitle": "Reviews that strengthen the foundation of the transformation, and longer engagements.",
     "guaranteeTitle": "Diagnosis guarantee",
     "guaranteeText": "For the opportunity scan: if we can't deliver at least 5 actionable, prioritized findings specific to you, we refund the full fee. If we continue together, the fee is credited toward the next step as noted on each package.",
-    "noteCapacity": "Capacity: because I work on every engagement personally, I take at most 2 new scans or designs a month and only 1 pilot or rollout at a time.",
+    "noteCapacity": "Capacity: because I work on every engagement personally, I take at most 2 new scans a month and only 1 pilot or rollout at a time.",
     "pillar_ai-opportunity-scan": "Step 1",
-    "pillar_ai-production-rollout": "Step 3",
-    "expansionTitle": "Other units",
-    "expansionSubtitle": "There are no off-the-shelf packages for quality control, production & maintenance, sales, marketing, market research, procurement or the security team. Once the help desk delivers, we set the scope and price together in the intro call.",
-    "expansionLink": "See the units"
+    "pillar_ai-production-rollout": "Step 3"
   },
   "Assessment": {
     "free": "Free",
@@ -330,8 +319,8 @@
   },
   "AiPath": {
     "eyebrow": "How we work",
-    "title": "AI transformation starts with service and dealer support",
-    "subtitle": "It's where results show fastest and the data (manuals, service bulletins, past tickets) is already in your hands. With the trust we earn there, we move on to production, quality and sales.",
+    "title": "Let AI answer your dealer and service questions",
+    "subtitle": "The data is already in your hands: manuals, service bulletins and past tickets. The assistant works with them, and your software stays as it is.",
     "painTitle": "Sound familiar?",
     "pain1": "Do your dealers and customers keep asking the same fault and how-to questions, tying your engineers up on the phone?",
     "pain2": "Are manuals, service bulletins and price lists lost in folders, with only a few people knowing the right answer?",
@@ -341,15 +330,8 @@
     "step1Text": "A short assessment call, then a report in 5 business days ranking the processes with the highest return.",
     "step2Title": "2. Technical service & help desk assistant pilot",
     "step2Text": "An assistant that answers questions from dealers, technicians and users from your own manuals; live on one channel in 3 weeks without changing your existing software.",
-    "step3Title": "3. Production rollout & expansion",
-    "step3Text": "Once the pilot works, a production rollout; then the same approach in quality, production, sales and procurement.",
-    "areasTitle": "Next units",
-    "areaProduction": "Production efficiency & cost",
-    "areaQuality": "Quality control",
-    "areaSales": "Sales support assistant",
-    "areaMarketing": "Marketing assistant",
-    "areaSecurity": "Security team assistant",
-    "areaTraining": "AI training for staff",
+    "step3Title": "3. Production rollout",
+    "step3Text": "Once the pilot works, a production rollout connected to your dealer portal, WhatsApp, email and service system, with team training and support.",
     "proof": "In different projects, AI-assisted systems cut support ticket resolution time by 40–70%.",
     "book": "Book an assessment call",
     "packages": "Packages & pricing"
@@ -357,17 +339,17 @@
   "Expertise": {
     "eyebrow": "Expertise and approach",
     "title": "Systems that work in the field, not theory",
-    "body": "With 13+ years in systems architecture, backend platforms, IoT and cloud infrastructure, I turn manufacturers' scattered documentation and service knowledge into stable AI systems. Instead of theoretical advice, I build end-to-end solutions that speed up technical requests from the field, without replacing your ERP or service software.",
+    "body": "With 13+ years in systems architecture, I turn manufacturers' scattered documentation and service knowledge into a stable technical service and help desk assistant. Instead of theoretical advice, I build an end-to-end solution that speeds up technical requests from the field, without replacing your ERP or service software.",
     "focusTitle": "Focus areas",
     "focus1": "Technical support assistant for dealers and authorised service partners",
     "focus2": "Knowledge base built from manuals, service bulletins and fault records",
-    "focus3": "Connecting ERP, IoT and service data to that assistant",
+    "focus3": "Connecting the assistant to your ERP and service software without replacing them",
     "book": "Book a 30-minute assessment call"
   },
   "AboutPage": {
     "title": "About",
-    "intro": "Huntay AzerTürk is an AI consultant for manufacturers with dealer and service networks. This page covers my approach, all projects, the technologies I use, my experience and my writing.",
+    "intro": "Huntay AzerTürk is an AI consultant for manufacturers with dealer and service networks. This page covers how I work, the key project, my experience and my writing.",
     "metaTitle": "About — Huntay AzerTürk, AI Consultant for Manufacturers",
-    "metaDescription": "Huntay AzerTürk: 13+ years in systems architecture, projects, tech stack, experience and articles. AI consultant for manufacturers with dealer and service networks."
+    "metaDescription": "Huntay AzerTürk: 13+ years in systems architecture, an AI support assistant project and experience. AI consultant for manufacturers with dealer and service networks."
   }
 }

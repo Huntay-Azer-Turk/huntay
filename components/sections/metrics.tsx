@@ -1,4 +1,4 @@
-import { metrics } from "@/data/metrics";
+import { siteMetrics } from "@/data/metrics";
 import { formatMetricDisplay } from "@/lib/format-metric";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -13,8 +13,8 @@ export async function Metrics() {
           {t("title")}
         </h2>
         <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((m) => (
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {siteMetrics.map((m) => (
             <div
               key={m.id}
               className="glow-ring rounded-2xl border border-border bg-card p-6"

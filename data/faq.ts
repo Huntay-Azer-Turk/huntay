@@ -26,8 +26,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi alanlarda uzman?",
     },
     answer: {
-      en: "AI transformation for manufacturers, starting with technical service and help desk assistants that answer from a company's own manuals, service bulletins and past tickets (RAG, LangChain and LangGraph). He connects these assistants to ERP, IoT and service data, drawing on his background in IoT platforms and software architecture, then extends the same approach to quality control, production, sales and procurement.",
-      tr: "Üreticilerde yapay zekâ dönüşümü; başlangıç noktası şirketin kendi kılavuzları, teknik bültenleri ve geçmiş talepleriyle cevap veren teknik servis ve help desk asistanlarıdır (RAG, LangChain ve LangGraph). IoT platformları ve yazılım mimarisindeki geçmişiyle bu asistanları ERP, IoT ve servis verisine bağlar; ardından aynı yöntemi kalite kontrol, üretim, satış ve satın almaya taşır.",
+      en: "Technical service and help desk AI assistants for manufacturers that answer from a company's own manuals, service bulletins and past tickets (RAG, LangChain and LangGraph). He connects these assistants to ERP and service software without replacing them, drawing on 13+ years in software architecture.",
+      tr: "Üreticiler için, şirketin kendi kılavuzları, teknik bültenleri ve geçmiş talepleriyle cevap veren teknik servis ve help desk yapay zekâ asistanları (RAG, LangChain ve LangGraph). 13 yılı aşkın yazılım mimarisi deneyimiyle bu asistanları ERP ve servis yazılımlarını değiştirmeden onlara bağlar.",
     },
   },
   {
@@ -37,8 +37,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi sonuçları elde etti?",
     },
     answer: {
-      en: "Across different projects, his AI support systems cut ticket resolution time by 40–70%; one of them lets 3 engineers carry a 100,000-user support load. He also built a platform that manages 10,000+ field devices of 8 types for 100,000+ users.",
-      tr: "Farklı projelerde kurduğu yapay zekâ destek sistemleri talep çözüm süresini %40–70 kısalttı; bunlardan biri 3 mühendisin 100.000 kullanıcılı destek yükünü taşımasını sağlıyor. Ayrıca 8 farklı tipte 10.000+ saha cihazını 100.000+ kullanıcı için yöneten bir platform kurdu.",
+      en: "Across different projects, his AI support systems cut ticket resolution time by 40–70%; one of them lets 3 engineers carry a 100,000-user support load.",
+      tr: "Farklı projelerde kurduğu yapay zekâ destek sistemleri talep çözüm süresini %40–70 kısalttı; bunlardan biri 3 mühendisin 100.000 kullanıcılı destek yükünü taşımasını sağlıyor.",
     },
   },
   {
@@ -48,8 +48,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi hizmetleri sunuyor?",
     },
     answer: {
-      en: "AI transformation for manufacturers and distributors. It starts with a technical service and help desk assistant that answers dealers', technicians' and users' questions from your own manuals (opportunity scan, then a 3-week pilot, then a production rollout). Once the help desk delivers, the same approach extends to quality control automation, production efficiency and maintenance, sales, marketing, market research, procurement and security team assistants; their scope and price are set together in the intro call.",
-      tr: "Üretici ve distribütörler için yapay zekâ dönüşümü. Başlangıç, bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan teknik servis ve help desk asistanıdır (fırsat taraması, 3 haftalık pilot, canlı kurulum). Help desk'te sonuç alındıktan sonra aynı yöntem kalite kontrol otomasyonu, üretim verimliliği ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekibi asistanlarına taşınır; bunların kapsamı ve fiyatı ön görüşmede birlikte belirlenir.",
+      en: "A technical service and help desk AI assistant for manufacturers and distributors with dealer and service networks. It answers dealers', technicians' and users' repetitive fault and documentation questions from your own manuals, without replacing your software. The path: a fixed-price opportunity scan, a 3-week pilot live on one channel, then a production rollout.",
+      tr: "Bayi ve servis ağı olan üretici ve distribütörler için yapay zekâ teknik servis ve help desk asistanı. Bayilerin, teknisyenlerin ve kullanıcıların tekrarlı arıza ve doküman sorularını, yazılımınızı değiştirmeden kendi kılavuzlarınızla yanıtlar. Yol: sabit fiyatlı fırsat taraması, tek kanalda 3 haftalık pilot, ardından canlı kurulum.",
     },
   },
   {

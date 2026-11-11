@@ -257,3 +257,10 @@ export const experience: TimelineEntry[] = [
     ],
   },
 ];
+
+/**
+ * Sitede gösterilmeyen girişler (11 Kasım 2026, tek odak): yan projeler, startup danışmanlığı ve 2009–2013 erken işler.
+ * Profesyonel iş geçmişi kalır. Veriler silinmedi; MCP get_profile ve search dizin onayına kadar aynı.
+ */
+const SITE_HIDDEN_EXPERIENCE_IDS = new Set(["independent-bci", "startup-advisory", "early-clinical", "early-cyber", "early-ai"]);
+export const siteExperience: TimelineEntry[] = experience.filter((item) => !SITE_HIDDEN_EXPERIENCE_IDS.has(item.id));

@@ -51,3 +51,7 @@ export const featured: FeaturedItem[] = [
     source: "Medium",
   },
 ];
+
+/** Sitede gösterilen yazılar (11 Kasım 2026, tek odak): yalnız doküman tabanlı asistanla ilgili yazı. */
+const SITE_ARTICLE_IDS = new Set(["rag-chunking"]);
+export const siteFeatured: FeaturedItem[] = featured.filter((item) => SITE_ARTICLE_IDS.has(item.id));

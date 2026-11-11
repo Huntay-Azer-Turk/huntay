@@ -1,5 +1,5 @@
-import { credentials, education } from "@/data/education";
-import { experience } from "@/data/experience";
+import { education } from "@/data/education";
+import { siteExperience } from "@/data/experience";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export async function Timeline() {
@@ -13,7 +13,7 @@ export async function Timeline() {
           {t("experienceTitle")}
         </h2>
         <ol className="relative mt-12 space-y-10 border-l border-border pl-6 sm:pl-8">
-          {experience.map((item) => (
+          {siteExperience.map((item) => (
             <li key={item.id} className="relative">
               {/* Düğüm çizgi üzerinde; metin pl ile düğümden ayrılır (tarih çakışması önlenir) */}
               <span
@@ -61,19 +61,7 @@ export async function Timeline() {
             </li>
           ))}
         </ol>
-
-        <h2 className="mt-16 text-2xl font-semibold tracking-tight text-foreground">
-          {t("credentialsTitle")}
-        </h2>
-        <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-          {credentials.certs.map((c) => (
-            <li key={c.en} className="flex gap-2">
-              <span className="text-accent">—</span>
-              {c[locale]}
-            </li>
-          ))}
-        </ul>
-        <p className="mt-4 text-sm text-muted-foreground">{credentials.interests[locale]}</p>
+        {/* 11 Kasım 2026 (tek odak): sertifikalar ve ilgi alanları sitede gösterilmiyor (data/education.ts → credentials). */}
       </div>
     </section>
   );

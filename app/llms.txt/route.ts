@@ -1,7 +1,7 @@
-import { caseStudies } from "@/data/caseStudies";
-import { experience } from "@/data/experience";
+import { siteCaseStudies } from "@/data/caseStudies";
+import { siteExperience } from "@/data/experience";
 import { faq } from "@/data/faq";
-import { featured } from "@/data/featured";
+import { siteFeatured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
 import { assessments } from "@/data/assessments";
 import { isHiddenService, primaryServices } from "@/data/catalog";
@@ -30,16 +30,20 @@ export function GET() {
     "",
     `Overview: ${localeUrl("en", "/services")} · Book a 30-minute intro call: ${localeUrl("en", "/book")}`,
     "",
-    "AI transformation for manufacturers. It starts with a technical service and help desk assistant, then extends to quality control, production and maintenance, sales, marketing, market research, procurement and security teams:",
+    "A technical service and help desk AI assistant for manufacturers with dealer and service networks:",
     "",
     ...primaryServices.map(
       (item) =>
         `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}): ${item.tagline.en}${
-          item.offerings?.length ? ` Includes: ${item.offerings.map((o) => o.title.en).join("; ")}.` : ""
+          item.offerings?.length
+            ? ` Includes: ${item.offerings.map((o) => o.title.en).join("; ")}.`
+            : ""
         }`,
     ),
     ...services
-      .filter((item) => item.role === "deep-dive" && !isHiddenService(item.slug))
+      .filter(
+        (item) => item.role === "deep-dive" && !isHiddenService(item.slug),
+      )
       .map(
         (item) =>
           `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}) (in depth, part of ${
@@ -47,13 +51,16 @@ export function GET() {
           }): ${item.tagline.en}`,
       ),
     "",
-    `- [Packages & pricing](${localeUrl("en", "/packages")}): the technical service & help desk assistant path with prices (AI opportunity scan, 3-week pilot, production rollout); other units (quality control, production & maintenance, sales, marketing, market research, procurement, security team) are scoped and priced in the intro call`,
+    `- [Packages & pricing](${localeUrl("en", "/packages")}): AI opportunity scan, 3-week pilot and production rollout, with prices`,
     "",
     "## Free self-assessments (3 minutes, no sign-up)",
     "",
-    ...assessments.map(
-      (item) => `- [${item.title.en}](${localeUrl("en", `/assessment/${item.slug}`)}): ${item.metaDescription.en}`,
-    ),
+    ...assessments
+      .filter((item) => !isHiddenService(item.serviceSlug))
+      .map(
+        (item) =>
+          `- [${item.title.en}](${localeUrl("en", `/assessment/${item.slug}`)}): ${item.metaDescription.en}`,
+      ),
     "",
     "## Book from an AI assistant (MCP)",
     "",
@@ -62,27 +69,35 @@ export function GET() {
     `- Documentation, setup and example prompts: ${localeUrl("en", "/assistant")}`,
     "- Tools: get_availability (live open times), book_intro_call (30-minute Google Meet call), list_services (optionally ranked by need), get_service, get_profile, search, fetch",
     `- Server card: ${siteConfig.baseUrl}/.well-known/mcp/server-card.json`,
-    ...(isCalConfigured() ? [`- Booking calendar: ${calBookingPageUrl()}`] : []),
+    ...(isCalConfigured()
+      ? [`- Booking calendar: ${calBookingPageUrl()}`]
+      : []),
     "",
     "## Experience",
     "",
-    ...experience.map(
+    ...siteExperience.map(
       (item) =>
         `- ${item.period.en}: ${item.role.en}, ${item.org.en}${item.location ? ` (${item.location.en})` : ""}`,
     ),
     "",
     "## Case studies",
     "",
-    ...caseStudies.map(
-      (item) => `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
+    ...siteCaseStudies.map(
+      (item) =>
+        `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
     ),
     "",
     "## FAQ",
     "",
-    ...faq.flatMap((item) => [`### ${item.question.en}`, "", item.answer.en, ""]),
+    ...faq.flatMap((item) => [
+      `### ${item.question.en}`,
+      "",
+      item.answer.en,
+      "",
+    ]),
     "## Writing",
     "",
-    ...featured.map((item) => `- [${item.title.en}](${item.href})`),
+    ...siteFeatured.map((item) => `- [${item.title.en}](${item.href})`),
     "",
     "## Links",
     "",
@@ -96,7 +111,9 @@ export function GET() {
     `- [Medium](${siteConfig.medium})`,
     `- [GitHub](${siteConfig.github})`,
     `- [Instagram](${siteConfig.instagram})`,
-    ...(siteConfig.whatsappUrl ? [`- [WhatsApp](${siteConfig.whatsappUrl})`] : []),
+    ...(siteConfig.whatsappUrl
+      ? [`- [WhatsApp](${siteConfig.whatsappUrl})`]
+      : []),
     "",
   ];
 

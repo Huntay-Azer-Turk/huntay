@@ -5,10 +5,10 @@ import {
   setupSteps,
   troubleshooting,
 } from "@/data/assistant";
-import { caseStudies } from "@/data/caseStudies";
-import { experience } from "@/data/experience";
+import { caseStudies, siteCaseStudies } from "@/data/caseStudies";
+import { siteExperience } from "@/data/experience";
 import { faq } from "@/data/faq";
-import { featured } from "@/data/featured";
+import { siteFeatured } from "@/data/featured";
 import { privacySections, privacyUpdatedAt } from "@/data/privacy";
 import { termsSections, termsUpdatedAt } from "@/data/terms";
 import type { LegalSection } from "@/data/types";
@@ -153,7 +153,7 @@ export function homeMarkdown(lang: Lang): string {
     "",
     `## ${h.caseStudies}`,
     "",
-    ...caseStudies.flatMap((item) => [
+    ...siteCaseStudies.flatMap((item) => [
       `### ${item.title[lang]}`,
       "",
       `${h.approach}: ${item.action[lang]}`,
@@ -163,7 +163,7 @@ export function homeMarkdown(lang: Lang): string {
     ]),
     `## ${h.experience}`,
     "",
-    ...experience.map(
+    ...siteExperience.map(
       (item) =>
         `- ${item.period[lang]}: ${item.role[lang]}, ${item.org[lang]}${item.location ? ` (${item.location[lang]})` : ""}`,
     ),
@@ -173,7 +173,7 @@ export function homeMarkdown(lang: Lang): string {
     ...faqBlock(faq, lang),
     `## ${h.writing}`,
     "",
-    ...featured.map((item) => `- [${item.title[lang]}](${item.href})`),
+    ...siteFeatured.map((item) => `- [${item.title[lang]}](${item.href})`),
     "",
     ...contactBlock(lang),
   ].join("\n");

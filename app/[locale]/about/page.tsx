@@ -2,7 +2,6 @@ import { About } from "@/components/sections/about";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ContactFooter } from "@/components/sections/contact-footer";
 import { Featured } from "@/components/sections/featured";
-import { TechStack } from "@/components/sections/tech-stack";
 import { Timeline } from "@/components/sections/timeline";
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
@@ -14,6 +13,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
  * Hakkımda (11 Kasım 2026). LinkedIn'de "Hakkında" müşteriye konuşur, deneyim ayrı bölümdedir; sitede de ana sayfa
  * müşterinin hikâyesini anlatır, kişisel bölümler (yaklaşım, tüm projeler, teknoloji yığını, deneyim, yazılar) burada.
  * Bölüm kimlikleri (#about, #cases, #case-<id>, #timeline, #featured) MCP, /llms.txt ve menü bağlantılarında kullanılıyor.
+ * Aynı gün (tek odak): teknoloji yığını bölümü kalktı; vakalar, deneyim ve yazılar yalnız odakla ilgili olanlar.
  */
 type Props = { params: Promise<{ locale: string }> };
 
@@ -46,7 +46,6 @@ export default async function AboutPage({ params }: Props) {
       </section>
       <About />
       <CaseStudies />
-      <TechStack />
       <Timeline />
       <Featured />
       <ContactFooter />

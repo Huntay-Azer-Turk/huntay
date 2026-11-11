@@ -1,4 +1,4 @@
-import { featured } from "@/data/featured";
+import { siteFeatured } from "@/data/featured";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ExternalLink } from "lucide-react";
 
@@ -14,7 +14,7 @@ export async function Featured() {
         </h2>
         <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
         <ul className="mt-12 space-y-4">
-          {featured.map((item) => (
+          {siteFeatured.map((item) => (
             <li key={item.id}>
               <a
                 href={item.href}
