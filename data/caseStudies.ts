@@ -40,22 +40,24 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
+    // 11 Kasım 2026, Huntay: tek projenin "3 mühendisle 100.000 kullanıcı" anlatımı absürt duruyordu; farklı üretici
+    // firmalardaki sonuçların özeti olarak yeniden yazıldı (oranlar Huntay'ın verdiği aralıklar). Kimlik aynı (#case-ai-ops).
     id: "ai-ops",
     title: {
-      en: "AI support assistant: a 100,000-user load with 3 engineers",
-      tr: "Yapay zekâ destek asistanı: 3 mühendisle 100.000 kullanıcı",
+      en: "Help desk assistants at manufacturers",
+      tr: "Üretici firmalarda help desk asistanı",
     },
     action: {
-      en: "Support questions were piling up on a small engineering team. We built an assistant that reads the technical documentation and resolves user issues step by step, and connected it to WhatsApp and the support desk.",
-      tr: "Destek soruları küçük bir mühendis ekibinin üzerine yığılıyordu. Teknik dokümanları okuyup kullanıcı sorunlarını adım adım çözen bir asistan kurduk; WhatsApp'a ve destek paneline bağladık.",
+      en: "At different manufacturers, we set up AI-supported help desks that answer the repetitive fault and documentation questions from dealers, technicians and users from the company's own manuals and past tickets.",
+      tr: "Farklı üretici firmalarda, bayilerden, teknisyenlerden ve kullanıcılardan gelen tekrarlı arıza ve doküman sorularını firmanın kendi kılavuzları ve geçmiş talepleriyle yanıtlayan yapay zekâ destekli help desk sistemleri kurduk.",
     },
     result: {
-      en: "3 engineers now carry a 100,000-user support load; across different projects, resolution time dropped by 40–70%.",
-      tr: "3 mühendis artık 100.000 kullanıcılı destek yükünü taşıyor; farklı projelerde talep çözüm süresi %40–70 kısaldı.",
+      en: "Help desk workload, response times and customer satisfaction improved by 30–70% depending on the company, and we achieved a 10–30% improvement in the companies' costs and sales.",
+      tr: "Help desk iş yükü, yanıt süreleri ve müşteri memnuniyeti firmaya göre %30–70 oranında iyileşti; firmaların maliyet ve satışlarında da %10–30 iyileşme sağladık.",
     },
     tags: {
-      en: "Help desk · Technical documentation · WhatsApp · RAG",
-      tr: "Help desk · Teknik doküman · WhatsApp · RAG",
+      en: "Help desk · Technical service · Dealer support · RAG",
+      tr: "Help desk · Teknik servis · Bayi desteği · RAG",
     },
   },
   {

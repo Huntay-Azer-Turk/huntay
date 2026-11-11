@@ -37,8 +37,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi sonuçları elde etti?",
     },
     answer: {
-      en: "Across different projects, his AI support systems cut ticket resolution time by 40–70%; one of them lets 3 engineers carry a 100,000-user support load.",
-      tr: "Farklı projelerde kurduğu yapay zekâ destek sistemleri talep çözüm süresini %40–70 kısalttı; bunlardan biri 3 mühendisin 100.000 kullanıcılı destek yükünü taşımasını sağlıyor.",
+      en: "At different manufacturers, the help desk systems he set up improved help desk workload, response times and customer satisfaction by 30–70%, and the companies' costs and sales by 10–30%.",
+      tr: "Farklı üretici firmalarda kurduğu help desk sistemleriyle iş yükü, yanıt süreleri ve müşteri memnuniyeti %30–70; firmaların maliyet ve satışları %10–30 iyileşti.",
     },
   },
   {
