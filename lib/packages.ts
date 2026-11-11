@@ -161,8 +161,8 @@ const SEED: Seed[] = [
     includes_en: "Interviews with management and 2–3 team members\nProcess, data and tool review (ERP, CRM, e-commerce, messaging channels)\n3–5 use cases ranked by return\nImplementation roadmap with estimated time and cost\n1-hour results walkthrough",
     duration_tr: "5 iş günü", duration_en: "5 business days",
     price_try: 34750, price_usd: 1450, price_from: 0, unit_tr: "", unit_en: "",
-    perk_tr: "Ücret, devamında alınacak Teknik Servis ve Help Desk Asistanı pilotundan ya da bir tasarım paketinden düşülür.",
-    perk_en: "The fee is credited toward the Technical Service & Help Desk Assistant pilot or a design package.",
+    perk_tr: "Ücret, devamında alınacak Teknik Servis ve Help Desk Asistanı pilotundan düşülür.",
+    perk_en: "The fee is credited toward the Technical Service & Help Desk Assistant pilot.",
   },
   {
     id: "ai-agent-pilot", service_slug: "ai-agents", sort: 50, active: 1, featured: 1,

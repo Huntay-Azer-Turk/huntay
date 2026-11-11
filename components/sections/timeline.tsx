@@ -31,11 +31,8 @@ export async function Timeline() {
                     {item.location[locale]}
                   </p>
                 ) : null}
-                {item.highlights?.map((h, i) => (
-                  <p key={i} className="mt-2 text-sm text-muted-foreground">
-                    {h[locale]}
-                  </p>
-                ))}
+                {/* 11 Kasım 2026 (tek odak): görev ayrıntıları (IoT, bulut, mimari) sitede gösterilmiyor; yalnız unvan,
+                    kurum ve dönem. Ayrıntılar data/experience.ts'de ve LinkedIn'de duruyor. */}
               </div>
             </li>
           ))}
