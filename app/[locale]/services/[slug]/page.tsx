@@ -6,7 +6,7 @@ import { ServiceCard } from "@/components/services/service-card";
 import { ServiceIcon } from "@/components/services/service-icon";
 import { caseStudies } from "@/data/caseStudies";
 import { assessments } from "@/data/assessments";
-import { primaryServices } from "@/data/catalog";
+import { isHiddenService, primaryServices } from "@/data/catalog";
 import { getService, processSteps, services } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, buildServiceGraph, type AppLocale } from "@/lib/seo";
@@ -37,12 +37,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!service) return {};
   const lang = locale as AppLocale;
   const t = await getTranslations({ locale, namespace: "ServicePage" });
-  return buildMetadata({
+  const metadata = buildMetadata({
     locale,
     title: `${(service.metaTitle ?? service.title)[lang]} | ${t("titleSuffix")}`,
     description: service.metaDescription[lang],
     path: `/services/${service.slug}`,
   });
+  // 11 Kasım 2026: gizli hizmetler (bulut, güvenlik, CTO…) açılır ama Google'a kapalı; MCP için silinmedi.
+  return isHiddenService(service.slug) ? { ...metadata, robots: { index: false, follow: true } } : metadata;
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
@@ -250,7 +252,7 @@ export default async function ServiceDetailPage({ params }: Props) {
               {related.map((item) => (
                 <Link
                   key={item.id}
-                  href={`/#case-${item.id}`}
+                  href={`/about#case-${item.id}`}
                   className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition hover:border-accent"
                 >
                   <h3 className="font-semibold text-foreground group-hover:text-accent">

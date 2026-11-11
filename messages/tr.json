@@ -52,9 +52,10 @@
   },
   "Cases": {
     "title": "Vaka çalışmaları",
-    "subtitle": "13 yıllık sahanın mimari kazanımları — bare-metal, hexagonal ve AI odaklı.",
+    "subtitle": "Sahadan sonuçlar: sorun, yaptığımız iş ve değişen şey.",
     "action": "Yapılan",
-    "result": "Sonuç"
+    "result": "Sonuç",
+    "allProjects": "Tüm projeler ve deneyim"
   },
   "Stack": {
     "title": "Teknoloji yığını",
@@ -134,11 +135,11 @@
     "partOf": "Bu konu {name} alanının parçasıdır."
   },
   "ServicesPage": {
-    "metaTitle": "Yapay Zeka, Bulut/IoT ve Siber Güvenlik Hizmetleri | Huntay AzerTürk",
-    "metaDescription": "Üç uzmanlık alanı: yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Sabit fiyatlı incelemeler, uygulama ve fractional CTO.",
-    "eyebrow": "Danışmanlık ve geliştirme",
-    "title": "Hizmetler",
-    "intro": "Üç alanda danışmanlık ve uygulama: yapay zeka ajanları ve otomasyon; bulut, IoT ve mimari; siber güvenlik. Genellikle sabit kapsamlı bir incelemeyle başlarız; neyin, hangi sırayla yapılacağı netleşince birlikte uygularız.",
+    "metaTitle": "Üreticiler için Yapay Zekâ Hizmetleri | Huntay AzerTürk",
+    "metaDescription": "Teknik servis ve help desk asistanıyla başlayan yapay zekâ dönüşümü; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik asistanları.",
+    "eyebrow": "Yapay zekâ dönüşümü",
+    "title": "Üreticiler için yapay zekâ dönüşümü",
+    "intro": "Sonucu en hızlı görülen ve verisi elinizde olan yerden başlıyoruz: teknik servis ve help desk. Orada kazandığımız güvenle aynı yöntemi kalite, üretim, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekiplerine taşıyoruz.",
     "waysTitle": "Nasıl başlarız",
     "waysSubtitle": "Küçük ve sabit kapsamlı başlayın, işe yaradıkça büyütün.",
     "processTitle": "Nasıl çalışıyoruz",
@@ -146,7 +147,16 @@
     "faqTitle": "Birlikte çalışma hakkında sorular",
     "pillarsTitle": "Uzmanlık alanları",
     "modelTitle": "Üç alanda da: Fractional CTO",
-    "deepDivesTitle": "Derinlemesine"
+    "deepDivesTitle": "Derinlemesine",
+    "leadEyebrow": "Başlangıç noktamız",
+    "leadPackages": "Paketler ve fiyatlar",
+    "leadStep1": "Fırsat taraması: 5 iş gününde en sık gelen sorular, veri durumu ve getiri raporu.",
+    "leadStep2": "Pilot: kendi kılavuzlarınızla tek kanalda, 3 haftada canlıda; otomatik yanıtlanan soru oranı ve çözüm süresi ölçülür.",
+    "leadStep3": "Canlı kurulum: bayi portalı, WhatsApp, e-posta ve servis sisteminize bağlı; ekip eğitimi ve destekle.",
+    "unitsTitle": "Diğer birimler",
+    "unitsSubtitle": "Her birim sabit fiyatlı bir tasarım paketiyle başlar; pilot ve canlı kurulum tasarımdan sonra yazılı teklifle.",
+    "unitPackage": "Tasarım paketi ve fiyatı",
+    "aiDetails": "Yapay zekâ dönüşümü hakkında ayrıntılar"
   },
   "ServicesSection": {
     "title": "Hizmet alanları",
@@ -169,7 +179,7 @@
   },
   "Contact": {
     "title": "İletişim",
-    "subtitle": "Mimari, yapay zeka dönüşümü veya fractional CTO iş birlikleri için doğrudan bana ulaşın.",
+    "subtitle": "Teknik servis ve help desk asistanı ya da diğer birimlerde yapay zekâ için doğrudan bana ulaşın.",
     "book": "Görüşme planla",
     "linkedin": "LinkedIn",
     "medium": "Medium",
@@ -188,7 +198,8 @@
     "book": "Görüşme planla",
     "navLabel": "Alt menü",
     "cookies": "Çerez ayarları",
-    "packages": "Paketler ve fiyatlar"
+    "packages": "Paketler ve fiyatlar",
+    "about": "Hakkımda"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -252,7 +263,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Paketler ve Fiyatlar | Huntay AzerTürk",
-    "metaDescription": "Üreticiler için yapay zekâ paketleri: fırsat taraması, müşteri hizmetleri ve teknik servis asistanı pilotu, anahtar teslim kurulum; üretim, kalite, satış, pazarlama ve güvenlik asistanları; bulut ve güvenlik incelemeleri.",
+    "metaDescription": "Üreticiler için yapay zekâ paketleri: fırsat taraması, teknik servis ve help desk asistanı pilotu ve canlı kurulum; kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik için tasarım paketleri.",
     "eyebrow": "Paketler ve fiyatlar",
     "title": "Net kapsam, net fiyat",
     "intro": "Sabit kapsamlı bir incelemeyle başlayın; neyin, hangi sırayla yapılması gerektiği netleşince birlikte uygulayalım.",
@@ -266,28 +277,28 @@
     "serviceTitle": "Bu hizmetin paketleri",
     "serviceSubtitle": "Net kapsam ve fiyatla hemen başlayın.",
     "allPackages": "Tüm paketler",
-    "showcaseTitle": "Yapay zekâ dönüşümü üç adımda",
-    "showcaseSubtitle": "Fırsat taramasıyla başlayın, müşteri hizmetleri asistanını 3 haftada canlıda görün, işe yarayınca anahtar teslim kuruluma geçin.",
+    "showcaseTitle": "Öne çıkan: teknik servis ve help desk asistanı",
+    "showcaseSubtitle": "Fırsat taramasıyla başlayın, asistanı 3 haftada tek kanalda canlıda görün, işe yarayınca canlı kuruluma geçin.",
     "pillar_security-quick-scan": "Güvenlik",
     "pillar_architecture-cloud-review": "Bulut ve IoT",
     "pillar_ai-agent-pilot": "2. adım",
     "moreTitle": "Altyapı, güvenlik ve sürekli danışmanlık",
     "moreSubtitle": "Dönüşümün temelini sağlamlaştıran incelemeler ve uzun soluklu işbirlikleri.",
     "guaranteeTitle": "Teşhis garantisi",
-    "guaranteeText": "Fırsat taraması, tasarım ve inceleme paketlerinde (Yapay Zekâ Fırsat Taraması, genişleme tasarım paketleri, Teknik Check-up, Güvenlik Hızlı Tarama, Mimari ve Bulut Maliyet İncelemesi) size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsak ücretin tamamını iade ederiz. Birlikte devam edersek, paket notunda yazdığı gibi bu ücreti sonraki işten düşeriz.",
-    "noteCapacity": "Kapasite: Her işte bizzat çalıştığım için ayda en fazla 2 yeni inceleme ve aynı anda yalnızca 1 uygulama ya da Fractional CTO işbirliği kabul ediyorum.",
+    "guaranteeText": "Fırsat taraması ve tasarım paketlerinde size özel en az 5 uygulanabilir, önceliklendirilmiş bulgu sunamazsak ücretin tamamını iade ederiz. Birlikte devam edersek, paket notunda yazdığı gibi bu ücreti sonraki işten düşeriz.",
+    "noteCapacity": "Kapasite: Her işte bizzat çalıştığım için ayda en fazla 2 yeni tarama ya da tasarım ve aynı anda yalnızca 1 pilot veya canlı kurulum kabul ediyorum.",
     "pillar_ai-opportunity-scan": "1. adım",
     "pillar_ai-production-rollout": "3. adım",
-    "expansionTitle": "Genişleme: diğer birimler",
-    "expansionSubtitle": "Müşteri hizmetlerinde sonuç alındıktan sonra aynı yöntemi üretim, kalite, satış, pazarlama ve güvenliğe taşıyan tasarım paketleri. Pilota geçerseniz tasarım ücreti pilottan düşülür."
+    "expansionTitle": "Diğer birimler: tasarım paketleri",
+    "expansionSubtitle": "Help desk'te sonuç aldıktan sonra aynı yöntemi diğer birimlere taşıyan sabit fiyatlı tasarım paketleri. Pilot ve canlı kurulum tasarımdan sonra yazılı teklifle; pilota geçerseniz tasarım ücreti düşülür."
   },
   "Assessment": {
     "free": "Ücretsiz",
     "eyebrow": "Ücretsiz · 3 dakika · Kayıt yok",
-    "hubTitle": "Olgunluk testleri",
-    "hubMetaTitle": "Ücretsiz Yapay Zeka, Siber Güvenlik ve Bulut Olgunluk Testleri | Huntay AzerTürk",
-    "hubMetaDescription": "Şirketiniz yapay zekaya, siber saldırılara ve büyümeye ne kadar hazır? 3 dakikalık ücretsiz testlerle puanınızı ve ilk 3 adımı hemen görün. Kayıt yok.",
-    "hubIntro": "Şirketiniz yapay zekaya, siber saldırılara ve büyümeye ne kadar hazır? Her test yaklaşık 3 dakika sürer; sonunda 0–100 arası bir puan, alanlara göre dağılım ve önce yapmanız gereken 3 adımı görürsünüz.",
+    "hubTitle": "Yapay zekâ olgunluk testi",
+    "hubMetaTitle": "Ücretsiz Yapay Zekâ Olgunluk Testi | Huntay AzerTürk",
+    "hubMetaDescription": "Şirketiniz yapay zekâya ne kadar hazır? 3 dakikalık ücretsiz testle puanınızı ve önce yapmanız gereken 3 adımı hemen görün. Kayıt yok.",
+    "hubIntro": "Şirketiniz yapay zekâya ne kadar hazır? Test yaklaşık 3 dakika sürer; sonunda 0–100 arası bir puan, alanlara göre dağılım ve önce yapmanız gereken 3 adımı görürsünüz.",
     "start": "Teste başla",
     "privacy": "Ad, e-posta veya telefon istemiyoruz. Cevaplarınız yalnızca tarayıcınızda hesaplanır, sunucuda saklanmaz.",
     "relatedService": "Bu alandaki hizmetler:",
@@ -327,11 +338,11 @@
     "stepsTitle": "Üç adımda",
     "step1Title": "1. Keşif ve fırsat taraması",
     "step1Text": "Kısa bir ön değerlendirme görüşmesi, ardından 5 iş gününde getirisi en yüksek süreçleri sıralayan rapor.",
-    "step2Title": "2. Müşteri hizmetleri asistanı pilotu",
-    "step2Text": "Kendi kılavuzlarınızla destek ve servis sorularını yanıtlayan asistan; mevcut yazılımınız değişmeden, 3 haftada canlıda.",
+    "step2Title": "2. Teknik servis ve help desk asistanı pilotu",
+    "step2Text": "Bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan asistan; mevcut yazılımınız değişmeden, 3 haftada tek kanalda canlıda.",
     "step3Title": "3. Canlı kurulum ve genişleme",
-    "step3Text": "Pilot işe yarayınca anahtar teslim kurulum; sonra aynı yöntem üretim, kalite, satış ve pazarlamaya.",
-    "areasTitle": "Sonraki adımlar",
+    "step3Text": "Pilot işe yarayınca canlı kurulum; sonra aynı yöntem kalite, üretim, satış ve satın almaya.",
+    "areasTitle": "Sonraki birimler",
     "areaProduction": "Üretimde verimlilik ve maliyet",
     "areaQuality": "Kalite kontrol",
     "areaSales": "Satış destek asistanı",
@@ -341,5 +352,21 @@
     "proof": "Farklı projelerde yapay zekâ destekli sistemlerle destek taleplerinin çözüm süresi %40–70 arasında kısaldı.",
     "book": "Ön değerlendirme görüşmesi planla",
     "packages": "Paketler ve fiyatlar"
+  },
+  "Expertise": {
+    "eyebrow": "Uzmanlık ve yaklaşım",
+    "title": "Teorik tavsiye değil, sahada çalışan sistemler",
+    "body": "13 yılı aşkın sistem mimarisi, backend, IoT ve bulut altyapısı deneyimiyle, üreticilerin dağınık doküman ve servis bilgisini kararlı yapay zekâ sistemlerine dönüştürüyorum. Teorik tavsiye yerine; ERP ve servis yazılımlarınızı değiştirmeden, sahadan gelen teknik talepleri hızlandıran uçtan uca çözümler kuruyorum.",
+    "focusTitle": "Odak alanları",
+    "focus1": "Bayi ve yetkili servisler için teknik destek asistanı",
+    "focus2": "Kılavuz, teknik bülten ve arıza kayıtlarından bilgi tabanı",
+    "focus3": "ERP, IoT ve servis verisinin bu asistana bağlanması",
+    "book": "30 dakikalık ön değerlendirme görüşmesi planla"
+  },
+  "AboutPage": {
+    "title": "Hakkımda",
+    "intro": "Huntay AzerTürk, bayi ve servis ağı olan üreticiler için yapay zekâ danışmanı. Bu sayfada yaklaşımım, tüm projeler, kullandığım teknolojiler, deneyimim ve yazılarım var.",
+    "metaTitle": "Hakkımda — Huntay AzerTürk, Üreticiler için Yapay Zekâ Danışmanı",
+    "metaDescription": "Huntay AzerTürk: 13 yılı aşkın sistem mimarisi deneyimi, projeler, teknoloji yığını, deneyim ve yazılar. Bayi ve servis ağı olan üreticiler için yapay zekâ danışmanı."
   }
 }

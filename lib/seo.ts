@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { credentials, education } from "@/data/education";
 import { experience } from "@/data/experience";
 import { faq } from "@/data/faq";
-import { services, servicesFaq } from "@/data/services";
+import { visibleServices } from "@/data/catalog";
+import { servicesFaq } from "@/data/services";
 import { techStack } from "@/data/techStack";
 import type { FaqItem, ServiceItem } from "@/data/types";
 import { ogImagePath } from "./og-cards";
@@ -201,7 +202,7 @@ function offerCatalog(locale: AppLocale) {
     "@type": "OfferCatalog",
     name: locale === "tr" ? "Hizmetler" : "Services",
     url: localeUrl(locale, "/services"),
-    itemListElement: services.map((service) => ({
+    itemListElement: visibleServices.map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
@@ -368,7 +369,7 @@ export function buildServicesHubGraph(locale: AppLocale, page: PageInfo, labels:
       dateModified: siteConfig.contentUpdatedAt,
       mainEntity: {
         "@type": "ItemList",
-        itemListElement: services.map((service, index) => ({
+        itemListElement: visibleServices.map((service, index) => ({
           "@type": "ListItem",
           position: index + 1,
           url: localeUrl(locale, `/services/${service.slug}`),

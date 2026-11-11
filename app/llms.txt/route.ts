@@ -4,7 +4,7 @@ import { faq } from "@/data/faq";
 import { featured } from "@/data/featured";
 import { heroLead } from "@/data/profile";
 import { assessments } from "@/data/assessments";
-import { primaryServices } from "@/data/catalog";
+import { isHiddenService, primaryServices } from "@/data/catalog";
 import { services } from "@/data/services";
 import { calBookingPageUrl, isCalConfigured } from "@/lib/cal";
 import { localeUrl } from "@/lib/seo";
@@ -30,7 +30,7 @@ export function GET() {
     "",
     `Overview: ${localeUrl("en", "/services")} · Book a 30-minute intro call: ${localeUrl("en", "/book")}`,
     "",
-    "Three areas of expertise, plus fractional CTO as the engagement model across all three:",
+    "AI transformation for manufacturers. It starts with a technical service and help desk assistant, then extends to quality control, production and maintenance, sales, marketing, market research, procurement and security teams:",
     "",
     ...primaryServices.map(
       (item) =>
@@ -39,7 +39,7 @@ export function GET() {
         }`,
     ),
     ...services
-      .filter((item) => item.role === "deep-dive")
+      .filter((item) => item.role === "deep-dive" && !isHiddenService(item.slug))
       .map(
         (item) =>
           `- [${item.title.en}](${localeUrl("en", `/services/${item.slug}`)}) (in depth, part of ${
@@ -47,7 +47,7 @@ export function GET() {
           }): ${item.tagline.en}`,
       ),
     "",
-    `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (technical check-up, security scan, penetration test, architecture & cloud cost review, AI agent pilot, fractional CTO, MVP)`,
+    `- [Packages & pricing](${localeUrl("en", "/packages")}): fixed-scope packages with prices (AI opportunity scan, technical service & help desk assistant pilot and production rollout, and a design package for each further unit: quality control, production & maintenance, sales, marketing, market research, procurement, security team)`,
     "",
     "## Free self-assessments (3 minutes, no sign-up)",
     "",
@@ -74,7 +74,7 @@ export function GET() {
     "## Case studies",
     "",
     ...caseStudies.map(
-      (item) => `- [${item.title.en}](${home}#case-${item.id}): ${item.result.en}`,
+      (item) => `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
     ),
     "",
     "## FAQ",

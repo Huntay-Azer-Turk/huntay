@@ -1,10 +1,9 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
 import { getLocale, getTranslations } from "next-intl/server";
-import { Bot, CalendarClock, ClipboardCheck, MessageCircle, Tag } from "lucide-react";
+import { CalendarClock, Tag } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
-import { InstagramIcon, LinkedinIcon, MediumIcon } from "@/components/icons";
 
 export async function Hero() {
   const locale = (await getLocale()) as "en" | "tr";
@@ -49,6 +48,7 @@ export async function Hero() {
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
           {heroLead[locale]}
         </p>
+        {/* 11 Kasım 2026: tek ana eylem (görüşme) + paketler; sosyal ve asistan bağlantıları İletişim bölümünde ve alt bilgide. */}
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
           <Link
             href="/book"
@@ -58,74 +58,12 @@ export async function Hero() {
             {t("ctaBook")}
           </Link>
           <Link
-            href="/assessment"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
-          >
-            <ClipboardCheck className="h-4 w-4" aria-hidden />
-            {t("ctaAssessment")}
-          </Link>
-          <Link
             href="/packages"
             className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
           >
             <Tag className="h-4 w-4" aria-hidden />
             {t("ctaPackages")}
           </Link>
-        </div>
-        {/* Hızlı bağlantılar: yapay zeka asistanları ve iletişim (kartvizitteki karekodlarla aynı hedefler). */}
-        <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
-          <a
-            href={siteConfig.chatgptAppUrl}
-            className="group flex items-center gap-2 hover:text-accent"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Bot className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-            {t("linkChatgpt")}
-          </a>
-          <Link href="/assistant" className="group flex items-center gap-2 hover:text-accent">
-            <Bot className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-            {t("linkClaude")}
-          </Link>
-          {siteConfig.whatsappUrl ? (
-            <a
-              href={siteConfig.whatsappUrl}
-              className="group flex items-center gap-2 hover:text-accent"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <MessageCircle className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-              WhatsApp
-            </a>
-          ) : null}
-
-          <a
-            href={siteConfig.linkedin}
-            className="group flex items-center gap-2 hover:text-accent"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <LinkedinIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-            LinkedIn
-          </a>
-          <a
-            href={siteConfig.medium}
-            className="group flex items-center gap-2 hover:text-accent"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <MediumIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-            Medium
-          </a>
-          <a
-            href={siteConfig.instagram}
-            className="group flex items-center gap-2 hover:text-accent"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <InstagramIcon className="h-4 w-4 text-muted-foreground group-hover:text-accent" aria-hidden />
-            Instagram
-          </a>
         </div>
       </div>
     </section>

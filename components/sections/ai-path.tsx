@@ -1,21 +1,25 @@
 import { Link } from "@/i18n/navigation";
 import { buttonPrimary, buttonSecondary } from "@/lib/ui";
+import { LEAD_UNIT_ID, aiUnits, type AiUnitIcon } from "@/data/ai-units";
 import {
   ArrowRight,
   CalendarClock,
   Factory,
-  GraduationCap,
   Headset,
   Megaphone,
+  Radar,
   ScanSearch,
   ShieldCheck,
   ShoppingCart,
+  Truck,
+  type LucideIcon,
 } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 /**
- * Ana sayfa "Nasıl çalışıyoruz" bölümü (11 Kasım 2026): KOBİ'lerde yapay zekâ dönüşümü müşteri hizmetlerinden başlar.
- * Sıra: müşterinin derdi → üç adım (tarama, müşteri hizmetleri pilotu, canlı kurulum) → sonraki birimler → kanıt.
+ * Ana sayfa "Nasıl çalışıyoruz" bölümü (11 Kasım 2026): üreticilerde yapay zekâ dönüşümü teknik servis ve help desk
+ * asistanıyla başlar. Sıra: müşterinin derdi → üç adım (tarama, help desk pilotu, canlı kurulum) → diğer birimler
+ * (data/ai-units.ts, her biri kendi tasarım paketine) → kanıt.
  * Adımlar ve birimler paketler sayfasındaki paket kimliklerine bağlanır (#id); paket D1'de pasifse bağlantı sayfanın başına düşer.
  */
 const STEPS = [
@@ -24,17 +28,22 @@ const STEPS = [
   { key: "step3", packageId: "ai-production-rollout" },
 ] as const;
 
-const AREAS = [
-  { key: "areaProduction", packageId: "ai-production-efficiency", Icon: Factory },
-  { key: "areaQuality", packageId: "ai-quality-control", Icon: ScanSearch },
-  { key: "areaSales", packageId: "ai-sales-assistant", Icon: ShoppingCart },
-  { key: "areaMarketing", packageId: "ai-marketing-assistant", Icon: Megaphone },
-  { key: "areaSecurity", packageId: "ai-security-assistant", Icon: ShieldCheck },
-  { key: "areaTraining", href: "/services/ai-agents", Icon: GraduationCap },
-] as const;
+const UNIT_ICONS: Record<AiUnitIcon, LucideIcon> = {
+  headset: Headset,
+  scan: ScanSearch,
+  factory: Factory,
+  cart: ShoppingCart,
+  megaphone: Megaphone,
+  radar: Radar,
+  truck: Truck,
+  shield: ShieldCheck,
+};
+
+const OTHER_UNITS = aiUnits.filter((unit) => unit.id !== LEAD_UNIT_ID);
 
 export async function AiPath() {
   const t = await getTranslations("AiPath");
+  const locale = (await getLocale()) as "en" | "tr";
 
   return (
     <section id="how" className="scroll-mt-16 border-b border-border py-20 sm:py-28">
@@ -75,18 +84,21 @@ export async function AiPath() {
 
         <h3 className="mt-12 text-xl font-semibold text-foreground">{t("areasTitle")}</h3>
         <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {AREAS.map(({ key, Icon, ...target }) => (
-            <li key={key}>
-              <Link
-                href={"href" in target ? target.href : `/packages#${target.packageId}`}
-                className="group flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent"
-              >
-                <Icon className="h-4 w-4 shrink-0 text-accent" aria-hidden />
-                <span className="flex-1">{t(key)}</span>
-                <ArrowRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden />
-              </Link>
-            </li>
-          ))}
+          {OTHER_UNITS.map((unit) => {
+            const Icon = UNIT_ICONS[unit.icon];
+            return (
+              <li key={unit.id}>
+                <Link
+                  href={`/packages#${unit.packageId}`}
+                  className="group flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+                >
+                  <Icon className="h-4 w-4 shrink-0 text-accent" aria-hidden />
+                  <span className="flex-1">{unit.title[locale]}</span>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground transition group-hover:translate-x-0.5 group-hover:text-accent" aria-hidden />
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <p className="mt-10 max-w-3xl border-l-2 border-accent pl-4 text-sm text-muted-foreground">{t("proof")}</p>

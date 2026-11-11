@@ -1,3 +1,4 @@
+import { aiUnitOfferings } from "./ai-units";
 import type { FaqItem, ServiceItem, StepItem } from "./types";
 
 /**
@@ -18,25 +19,26 @@ export const services: ServiceItem[] = [
     slug: "ai-agents",
     role: "pillar",
     icon: "bot",
+    // 11 Kasım 2026: tek görünen hizmet — üreticiler için yapay zekâ dönüşümü (slug MCP için aynı kaldı).
     title: {
-      en: "AI Agents & Automation",
-      tr: "Yapay Zeka Ajanları ve Otomasyon",
+      en: "AI Transformation for Manufacturers",
+      tr: "Üreticiler için Yapay Zekâ Dönüşümü",
     },
     metaTitle: {
-      en: "AI for Manufacturers & SMEs: Agents, Automation and AI Transformation",
-      tr: "Üreticiler ve KOBİ'ler için Yapay Zeka: Ajanlar, Otomasyon ve Dönüşüm",
+      en: "AI for Manufacturers: Help Desk, Quality, Production and Sales Assistants",
+      tr: "Üreticiler ve KOBİ'ler için Yapay Zeka: Help Desk, Kalite, Üretim ve Satış Asistanları",
     },
     tagline: {
-      en: "AI transformation for manufacturers and growing companies: it starts with service and dealer support, then moves to production, quality and sales.",
-      tr: "Üreticiler ve büyüyen şirketler için yapay zekâ dönüşümü: servis ve bayi desteğinden başlar, sonra üretim, kalite ve satışa geçer.",
+      en: "It starts with a technical service and help desk assistant, then moves to quality control, production, sales and procurement.",
+      tr: "Teknik servis ve help desk asistanıyla başlar; sonra kalite kontrol, üretim, satış ve satın almaya geçer.",
     },
     summary: {
-      en: "I help companies put AI to work where it pays off: first finding the processes with the highest return, then building production-grade agents and automation connected to your own data and tools—assistants that answer customers on WhatsApp and your website, qualify leads, search your documents and ERP data, and take repetitive back-office work off your team. Your staff also learn to use AI tools safely and within KVKK/GDPR rules.",
-      tr: "Şirketlerin yapay zekayı gerçekten getiri sağladığı yerde kullanmasına yardımcı oluyorum: önce getirisi en yüksek süreçleri buluyor, ardından kendi verilerinize ve araçlarınıza bağlı, canlı ortama hazır ajanlar ve otomasyonlar kuruyorum. WhatsApp'ta ve web sitenizde müşterilere cevap veren, talepleri nitelendiren, dokümanlarınızda ve ERP verilerinizde arama yapan, tekrarlayan ofis işlerini ekibinizin üzerinden alan asistanlar. Çalışanlarınız da yapay zeka araçlarını güvenli ve KVKK'ya uygun kullanmayı öğrenir.",
+      en: "We put AI to work where it pays off first: the repetitive fault and documentation questions from dealers, technicians and users, answered from your own manuals without replacing your software. Once that works, the same approach moves to quality control, production and maintenance, sales, marketing, market research, procurement and security teams. Every engagement starts with a fixed-scope scan or design, and every assistant is connected to your own data, measured and handed over to your team.",
+      tr: "Yapay zekâyı önce getirisinin en hızlı görüldüğü yerde kullanıyoruz: bayilerden, teknisyenlerden ve kullanıcılardan gelen tekrarlı arıza ve doküman soruları, yazılımınız değişmeden kendi kılavuzlarınızla yanıtlanır. Bu işe yarayınca aynı yöntem kalite kontrol, üretim ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekiplerine taşınır. Her iş sabit kapsamlı bir tarama ya da tasarımla başlar; her asistan kendi verinize bağlanır, ölçülür ve ekibinize devredilir.",
     },
     metaDescription: {
-      en: "AI for SMEs: opportunity scan, sales and support agents for WhatsApp and web, internal knowledge assistants, workflow automation and staff AI training.",
-      tr: "KOBİ'ler için yapay zeka: fırsat taraması, WhatsApp ve web satış/destek asistanları, şirket içi bilgi asistanı, iş akışı otomasyonu ve çalışan eğitimi.",
+      en: "AI for manufacturers: technical service and help desk assistant, quality control automation, production and maintenance, sales, marketing, market research and procurement assistants.",
+      tr: "Üreticiler için yapay zekâ: teknik servis ve help desk asistanı, kalite kontrol otomasyonu, üretim ve bakım, satış, pazarlama, pazar araştırması ve satın alma asistanları.",
     },
     offerings: [
       {
@@ -48,75 +50,8 @@ export const services: ServiceItem[] = [
         },
         packageId: "ai-opportunity-scan",
       },
-      {
-        id: "ai-support",
-        title: { en: "Customer service & technical support assistant (where we start)", tr: "Müşteri hizmetleri ve teknik servis asistanı (başlangıç noktamız)" },
-        body: {
-          en: "Answers from your manuals and FAQs, opens service tickets and hands complex cases to your team with full context. In different projects this approach cut ticket resolution time by 40–70%.",
-          tr: "Kılavuzlarınızdan ve SSS'lerinizden cevap verir, arıza kaydı açar, karmaşık durumları tüm bağlamıyla ekibinize devreder. Farklı projelerde bu yaklaşım talep çözüm süresini %40–70 arasında kısalttı.",
-        },
-        packageId: "ai-agent-pilot",
-      },
-      {
-        id: "ai-sales",
-        title: { en: "Sales assistant", tr: "Satış asistanı" },
-        body: {
-          en: "Answers inquiries from your website, WhatsApp and Instagram, qualifies leads, moves them to a quote or a meeting and records them in your CRM.",
-          tr: "Web sitenizden, WhatsApp'tan ve Instagram'dan gelen talepleri karşılar, nitelendirir, teklife veya randevuya taşır ve CRM'inize işler.",
-        },
-        packageId: "ai-sales-assistant",
-      },
-      {
-        id: "ai-production",
-        title: { en: "Production efficiency & cost", tr: "Üretimde verimlilik ve maliyet" },
-        body: {
-          en: "Downtime, scrap, maintenance and shift data analysed to find where losses come from, with prioritized AI and automation steps.",
-          tr: "Duruş, fire, bakım ve vardiya verileri incelenerek kayıpların nereden geldiği bulunur; yapay zekâ ve otomasyon adımları önceliklendirilir.",
-        },
-        packageId: "ai-production-efficiency",
-      },
-      {
-        id: "ai-quality",
-        title: { en: "Quality control assistant", tr: "Kalite kontrol asistanı" },
-        body: {
-          en: "Catching defects earlier from image, measurement and complaint data; we first check that the data and cameras make it feasible.",
-          tr: "Görüntü, ölçüm ve şikâyet verisinden hatayı daha erken yakalama; önce veri ve kameraların bunu mümkün kılıp kılmadığına bakılır.",
-        },
-        packageId: "ai-quality-control",
-      },
-      {
-        id: "ai-marketing",
-        title: { en: "Marketing assistant", tr: "Pazarlama asistanı" },
-        body: {
-          en: "Content, catalogs, campaigns and customer follow-up in your brand's voice, connected to your CRM and email.",
-          tr: "Markanızın diliyle içerik, katalog, kampanya ve müşteri takibi; CRM ve e-postanıza bağlı.",
-        },
-        packageId: "ai-marketing-assistant",
-      },
-      {
-        id: "ai-knowledge",
-        title: { en: "Internal knowledge assistant", tr: "Şirket içi bilgi asistanı" },
-        body: {
-          en: "Staff ask in plain language and get answers from procedures, documents, price lists and ERP data—with the source shown.",
-          tr: "Çalışanlar günlük dille sorar; prosedürlerden, dokümanlardan, fiyat listelerinden ve ERP verilerinden kaynağı gösterilerek cevap alır.",
-        },
-      },
-      {
-        id: "ai-automation",
-        title: { en: "Workflow automation", tr: "İş akışı otomasyonu" },
-        body: {
-          en: "Quotes, orders, stock, invoices and reports without retyping: ERP, CRM, e-commerce and marketplace (e.g. Trendyol, Hepsiburada) integrations plus AI steps where they help.",
-          tr: "Teklif, sipariş, stok, fatura ve raporlar elle yeniden yazılmadan: ERP, CRM, e-ticaret ve pazaryeri (ör. Trendyol, Hepsiburada) entegrasyonları ve gerektiği yerde yapay zeka adımları.",
-        },
-      },
-      {
-        id: "ai-training",
-        title: { en: "AI training for office teams", tr: "Beyaz yaka çalışanlar için yapay zeka eğitimi" },
-        body: {
-          en: "Hands-on training on tools such as ChatGPT and Claude for real daily tasks, how to check their output, and clear rules on which data may go into them (KVKK/GDPR).",
-          tr: "ChatGPT ve Claude gibi araçlarla gerçek günlük işler üzerinde uygulamalı eğitim, çıktılarını kontrol etme ve hangi verinin bu araçlara girebileceğine dair net kurallar (KVKK).",
-        },
-      },
+      // 11 Kasım 2026: birimler tek kaynaktan (data/ai-units.ts); her biri ayrı paket.
+      ...aiUnitOfferings(),
       {
         id: "ai-measure",
         title: { en: "Measurement & improvement", tr: "Ölçüm ve iyileştirme" },
@@ -1123,8 +1058,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Küçük ve orta ölçekli işletmelerle (KOBİ) çalışıyor musunuz?",
     },
     answer: {
-      en: "Yes. AI assistants and automation, security assessments and cloud cost reviews are designed for SMEs that need results without building a large in-house team.",
-      tr: "Evet. Yapay zeka asistanları ve otomasyon, güvenlik değerlendirmeleri ve bulut maliyet incelemeleri, büyük bir ekip kurmadan sonuç almak isteyen KOBİ'ler için tasarlandı.",
+      en: "Yes. Our packages are built for manufacturers and distributors with 10–500 employees that want results without building a large in-house AI team: it starts with a technical service and help desk assistant and grows unit by unit.",
+      tr: "Evet. Paketlerimiz, büyük bir yapay zekâ ekibi kurmadan sonuç almak isteyen 10–500 çalışanlı üretici ve distribütörler için tasarlandı: teknik servis ve help desk asistanıyla başlar, birim birim büyür.",
     },
   },
   {
@@ -1145,8 +1080,8 @@ export const servicesFaq: FaqItem[] = [
       tr: "Projeler nasıl fiyatlandırılıyor?",
     },
     answer: {
-      en: "It depends on the scope: reviews and scans have a fixed price, implementation is quoted after a review, and fractional CTO work is a monthly arrangement. You always get a written proposal before any work starts.",
-      tr: "Kapsama göre değişir: inceleme ve taramalar sabit fiyatlıdır, uygulama bir incelemeden sonra fiyatlandırılır, fractional CTO çalışması aylık bir düzenlemedir. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
+      en: "Scans, design packages and the help desk pilot have fixed prices listed on the packages page; production rollouts are quoted in writing after the pilot or design. You always get a written proposal before any work starts.",
+      tr: "Tarama, tasarım paketleri ve help desk pilotu paketler sayfasında yazan sabit fiyatlarla; canlı kurulum pilot ya da tasarımdan sonra yazılı teklifle fiyatlanır. Herhangi bir iş başlamadan önce her zaman yazılı bir teklif alırsınız.",
     },
   },
 ];

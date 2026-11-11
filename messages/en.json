@@ -52,9 +52,10 @@
   },
   "Cases": {
     "title": "Case studies",
-    "subtitle": "Architectural wins from 13 years in the field — bare-metal, hexagonal, and AI-driven.",
+    "subtitle": "Results from the field: the problem, what we did and what changed.",
     "action": "Action",
-    "result": "Outcome"
+    "result": "Outcome",
+    "allProjects": "All projects and experience"
   },
   "Stack": {
     "title": "Technical stack",
@@ -134,11 +135,11 @@
     "partOf": "This topic is part of {name}."
   },
   "ServicesPage": {
-    "metaTitle": "AI, Cloud/IoT & Cybersecurity Services | Huntay AzerTürk",
-    "metaDescription": "Three areas of expertise: AI agents and automation; cloud, IoT and architecture; cybersecurity. Fixed-price reviews, implementation and fractional CTO.",
-    "eyebrow": "Consulting & development",
-    "title": "Services",
-    "intro": "Consulting and implementation in three areas: AI agents and automation; cloud, IoT and architecture; cybersecurity. We usually start with a fixed-scope review, then build together once it is clear what to do and in which order.",
+    "metaTitle": "AI Services for Manufacturers | Huntay AzerTürk",
+    "metaDescription": "AI transformation that starts with a technical service and help desk assistant; quality control, production and maintenance, sales, marketing, market research, procurement and security assistants.",
+    "eyebrow": "AI transformation",
+    "title": "AI transformation for manufacturers",
+    "intro": "We start where results show fastest and the data is already in your hands: technical service and help desk. With the trust we earn there, we take the same approach to quality, production, sales, marketing, market research, procurement and security teams.",
     "waysTitle": "How we start",
     "waysSubtitle": "Start small with a fixed scope, grow what works.",
     "processTitle": "How we work",
@@ -146,7 +147,16 @@
     "faqTitle": "Questions about working together",
     "pillarsTitle": "Areas of expertise",
     "modelTitle": "Across all three: fractional CTO",
-    "deepDivesTitle": "Deep dives"
+    "deepDivesTitle": "Deep dives",
+    "leadEyebrow": "Where we start",
+    "leadPackages": "Packages & pricing",
+    "leadStep1": "Opportunity scan: in 5 business days, the most frequent questions, data readiness and expected return.",
+    "leadStep2": "Pilot: on one channel with your own manuals, live in 3 weeks; we measure the share of questions answered automatically and resolution time.",
+    "leadStep3": "Production rollout: connected to your dealer portal, WhatsApp, email and service system, with team training and support.",
+    "unitsTitle": "Other units",
+    "unitsSubtitle": "Each unit starts with a fixed-price design package; pilot and rollout are quoted in writing after the design.",
+    "unitPackage": "Design package & price",
+    "aiDetails": "More about AI transformation"
   },
   "ServicesSection": {
     "title": "Service areas",
@@ -169,7 +179,7 @@
   },
   "Contact": {
     "title": "Contact",
-    "subtitle": "Let's talk about architecture, AI adoption, or fractional CTO engagements. Reach out directly.",
+    "subtitle": "Reach out directly about a technical service and help desk assistant, or AI for your other teams.",
     "book": "Book a call",
     "linkedin": "LinkedIn",
     "medium": "Medium",
@@ -188,7 +198,8 @@
     "book": "Book a call",
     "navLabel": "Footer",
     "cookies": "Cookie settings",
-    "packages": "Packages & pricing"
+    "packages": "Packages & pricing",
+    "about": "About"
   },
   "Theme": {
     "bareMetal": "Bare Metal",
@@ -252,7 +263,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Packages & Pricing | Huntay AzerTürk",
-    "metaDescription": "AI packages for manufacturers: opportunity scan, customer service & technical support assistant pilot, turnkey rollout; production, quality, sales, marketing and security assistants; cloud and security reviews.",
+    "metaDescription": "AI packages for manufacturers: opportunity scan, technical service & help desk assistant pilot and production rollout; design packages for quality control, production & maintenance, sales, marketing, market research, procurement and security.",
     "eyebrow": "Packages & pricing",
     "title": "Clear scope, clear price",
     "intro": "Start with a fixed-scope review; once it's clear what needs doing and in what order, we implement it together.",
@@ -266,28 +277,28 @@
     "serviceTitle": "Packages for this service",
     "serviceSubtitle": "Start right away with a clear scope and price.",
     "allPackages": "All packages",
-    "showcaseTitle": "AI transformation in three steps",
-    "showcaseSubtitle": "Start with an opportunity scan, see a customer service assistant live in 3 weeks, and move to a turnkey rollout once it works.",
+    "showcaseTitle": "Featured: technical service & help desk assistant",
+    "showcaseSubtitle": "Start with an opportunity scan, see the assistant live on one channel in 3 weeks, then move to a production rollout once it works.",
     "pillar_security-quick-scan": "Security",
     "pillar_architecture-cloud-review": "Cloud & IoT",
     "pillar_ai-agent-pilot": "Step 2",
     "moreTitle": "Infrastructure, security and ongoing advisory",
     "moreSubtitle": "Reviews that strengthen the foundation of the transformation, and longer engagements.",
     "guaranteeTitle": "Diagnosis guarantee",
-    "guaranteeText": "For scan, design and review packages (AI Opportunity Scan, the expansion design packages, Technical Check-up, Security Quick Scan, Architecture & Cloud Cost Review): if we can't deliver at least 5 actionable, prioritized findings specific to you, you get a full refund. If we continue together, the fee is deducted from the next engagement as stated in the package note.",
-    "noteCapacity": "Capacity: because I do every engagement myself, I take on at most 2 new reviews a month and only 1 implementation or Fractional CTO engagement at a time.",
+    "guaranteeText": "For the opportunity scan and design packages: if we can't deliver at least 5 actionable, prioritized findings specific to you, we refund the full fee. If we continue together, the fee is credited toward the next step as noted on each package.",
+    "noteCapacity": "Capacity: because I work on every engagement personally, I take at most 2 new scans or designs a month and only 1 pilot or rollout at a time.",
     "pillar_ai-opportunity-scan": "Step 1",
     "pillar_ai-production-rollout": "Step 3",
-    "expansionTitle": "Expansion: other departments",
-    "expansionSubtitle": "Design packages that take the approach from customer service to production, quality, sales, marketing and security. If you move to a pilot, the design fee is deducted from it."
+    "expansionTitle": "Other units: design packages",
+    "expansionSubtitle": "Fixed-price design packages that take the same approach to other teams once the help desk delivers. Pilot and rollout are quoted in writing after the design; if you move to a pilot, the design fee is deducted."
   },
   "Assessment": {
     "free": "Free",
     "eyebrow": "Free · 3 minutes · No sign-up",
-    "hubTitle": "Maturity assessments",
-    "hubMetaTitle": "Free AI, Cybersecurity & Cloud Maturity Assessments | Huntay AzerTürk",
-    "hubMetaDescription": "How ready is your company for AI, cyberattacks and growth? Free 3-minute assessments show your score and first 3 steps instantly. No sign-up.",
-    "hubIntro": "How ready is your company for AI, cyberattacks and growth? Each assessment takes about 3 minutes and ends with a 0–100 score, a breakdown by area and the 3 steps to take first.",
+    "hubTitle": "AI readiness test",
+    "hubMetaTitle": "Free AI Readiness Test | Huntay AzerTürk",
+    "hubMetaDescription": "How ready is your company for AI? Take the free 3-minute test to see your score and the first 3 steps to take. No sign-up.",
+    "hubIntro": "How ready is your company for AI? The test takes about 3 minutes; at the end you get a 0–100 score, a breakdown by area and the 3 steps to take first.",
     "start": "Start the assessment",
     "privacy": "No name, email or phone needed. Your answers are scored in your browser and not stored on any server.",
     "relatedService": "Services in this area:",
@@ -327,11 +338,11 @@
     "stepsTitle": "In three steps",
     "step1Title": "1. Discovery & opportunity scan",
     "step1Text": "A short assessment call, then a report in 5 business days ranking the processes with the highest return.",
-    "step2Title": "2. Customer service assistant pilot",
-    "step2Text": "An assistant that answers support and service questions from your own manuals; live in 3 weeks without changing your existing software.",
+    "step2Title": "2. Technical service & help desk assistant pilot",
+    "step2Text": "An assistant that answers questions from dealers, technicians and users from your own manuals; live on one channel in 3 weeks without changing your existing software.",
     "step3Title": "3. Production rollout & expansion",
-    "step3Text": "Once the pilot works, a turnkey rollout; then the same approach in production, quality, sales and marketing.",
-    "areasTitle": "Next steps",
+    "step3Text": "Once the pilot works, a production rollout; then the same approach in quality, production, sales and procurement.",
+    "areasTitle": "Next units",
     "areaProduction": "Production efficiency & cost",
     "areaQuality": "Quality control",
     "areaSales": "Sales support assistant",
@@ -341,5 +352,21 @@
     "proof": "In different projects, AI-assisted systems cut support ticket resolution time by 40–70%.",
     "book": "Book an assessment call",
     "packages": "Packages & pricing"
+  },
+  "Expertise": {
+    "eyebrow": "Expertise and approach",
+    "title": "Systems that work in the field, not theory",
+    "body": "With 13+ years in systems architecture, backend platforms, IoT and cloud infrastructure, I turn manufacturers' scattered documentation and service knowledge into stable AI systems. Instead of theoretical advice, I build end-to-end solutions that speed up technical requests from the field, without replacing your ERP or service software.",
+    "focusTitle": "Focus areas",
+    "focus1": "Technical support assistant for dealers and authorised service partners",
+    "focus2": "Knowledge base built from manuals, service bulletins and fault records",
+    "focus3": "Connecting ERP, IoT and service data to that assistant",
+    "book": "Book a 30-minute assessment call"
+  },
+  "AboutPage": {
+    "title": "About",
+    "intro": "Huntay AzerTürk is an AI consultant for manufacturers with dealer and service networks. This page covers my approach, all projects, the technologies I use, my experience and my writing.",
+    "metaTitle": "About — Huntay AzerTürk, AI Consultant for Manufacturers",
+    "metaDescription": "Huntay AzerTürk: 13+ years in systems architecture, projects, tech stack, experience and articles. AI consultant for manufacturers with dealer and service networks."
   }
 }

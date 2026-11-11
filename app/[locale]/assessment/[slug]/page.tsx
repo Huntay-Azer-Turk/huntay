@@ -1,6 +1,7 @@
 import { AssessmentRunner, type PackageInfo } from "@/components/assessment/assessment-runner";
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { assessments, getAssessment, type AssessmentSlug } from "@/data/assessments";
+import { isHiddenService } from "@/data/catalog";
 import { getService } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { formatPrice, getPackages } from "@/lib/packages";
@@ -24,12 +25,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!assessment) return {};
   const lang = locale as AppLocale;
   const t = await getTranslations({ locale, namespace: "Assessment" });
-  return buildMetadata({
+  const metadata = buildMetadata({
     locale,
     title: `${assessment.title[lang]} (${t("free")}) | Huntay AzerTürk`,
     description: assessment.metaDescription[lang],
     path: `/assessment/${assessment.slug}`,
   });
+  // 11 Kasım 2026: gizli hizmetlerin testleri (güvenlik, bulut) açılır ama Google'a kapalı.
+  return isHiddenService(assessment.serviceSlug) ? { ...metadata, robots: { index: false, follow: true } } : metadata;
 }
 
 export default async function AssessmentPage({ params }: Props) {

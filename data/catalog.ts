@@ -13,8 +13,29 @@ import type { ServiceItem } from "./types";
  * Aşağıdaki doğrulama modül yüklenirken çalışır; boşta kalan bir eşleme varsa derleme hata verir.
  */
 
-/** Üç ana uzmanlık alanı — gösterim sırası */
-export const pillarSlugs = ["ai-agents", "cloud-devops", "cybersecurity"] as const;
+/**
+ * Gizli hizmetler (11 Kasım 2026, Huntay: "odak tamamen AI transformation"). Menüde, ana sayfada, hizmetler ve
+ * paketler sayfasında, sitemap'te, yapılandırılmış veride ve /llms.txt'te görünmez; sayfaları açılır ama noindex.
+ * Silinmedi: MCP `get_service` bu slug'ları kullanıyor (dizin incelemeleri bitene kadar şema donuk). İncelemeler
+ * bitince `retiredServiceSlugs` ile ai-agents'a yönlendirilip silinebilir.
+ */
+export const hiddenServiceSlugs: ReadonlySet<string> = new Set([
+  "cloud-devops",
+  "cybersecurity",
+  "fractional-cto",
+  "iot-platforms",
+  "microservices-modernization",
+]);
+
+export function isHiddenService(slug: string): boolean {
+  return hiddenServiceSlugs.has(slug);
+}
+
+/** Sitede gösterilen hizmetler (gizliler hariç), kaynak sırasıyla. */
+export const visibleServices: ServiceItem[] = services.filter((service) => !isHiddenService(service.slug));
+
+/** Ana uzmanlık alanı — gösterim sırası (bulut ve güvenlik 11 Kasım 2026'da gizlendi) */
+export const pillarSlugs = ["ai-agents"] as const;
 
 /** Kaldırılan hizmetler → yerini alan hizmet. Google'a göre adresler en az 1 yıl yönlenmeli (Kasım 2026'da eklendi). */
 export const retiredServiceSlugs: Record<string, string> = {
@@ -57,8 +78,10 @@ export const pillars: ServiceItem[] = pillarSlugs.map((slug) => getService(slug)
 /** Çalışma modeli (Fractional CTO) */
 export const engagementModelServices: ServiceItem[] = services.filter((service) => service.role === "model");
 
-/** Ana listelerde görünen hizmetler: 3 alan + çalışma modeli */
-export const primaryServices: ServiceItem[] = [...pillars, ...engagementModelServices];
+/** Ana listelerde görünen hizmetler (gizliler hariç) */
+export const primaryServices: ServiceItem[] = [...pillars, ...engagementModelServices].filter(
+  (service) => !isHiddenService(service.slug),
+);
 
 /** Bir alanın derinlemesine alt sayfaları */
 export function deepDivesOf(slug: string): ServiceItem[] {
@@ -90,6 +113,9 @@ function validateCatalog() {
   for (const [old, target] of Object.entries(retiredServiceSlugs)) {
     if (getService(old)) errors.push(`retired slug "${old}" still exists as a service`);
     if (!getService(target)) errors.push(`retired slug "${old}" points to unknown service "${target}"`);
+  }
+  for (const slug of hiddenServiceSlugs) {
+    if (!getService(slug)) errors.push(`hidden slug "${slug}" is not a service`);
   }
   for (const slug of MCP_FROZEN_SERVICE_SLUGS) {
     if (!resolveService(slug)) errors.push(`MCP slug "${slug}" does not resolve to a service`);

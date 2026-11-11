@@ -28,13 +28,13 @@ export const ogKeys = ["home", "services", "book", ...services.map((s) => `servi
 const home = {
   en: {
     subtitle: "AI Consultant for Manufacturers",
-    tagline: "Starts with service and dealer support · Istanbul",
-    chips: ["13+ years", "40–70% faster support resolution", "Up to 75% cloud savings"],
+    tagline: "Starts with the technical service & help desk assistant · Istanbul",
+    chips: ["13+ years", "40–70% faster support resolution", "100,000 users, 3 engineers"],
   },
   tr: {
     subtitle: "Üreticiler için Yapay Zekâ Danışmanı",
-    tagline: "Servis ve bayi desteğinden başlar · İstanbul",
-    chips: ["13+ yıl", "Destek çözümünde %40–70 hız", "%75'e varan bulut tasarrufu"],
+    tagline: "Teknik servis ve help desk asistanıyla başlar · İstanbul",
+    chips: ["13+ yıl", "Destek çözümünde %40–70 hız", "3 mühendisle 100.000 kullanıcı"],
   },
 } as const;
 
@@ -44,9 +44,9 @@ export function ogCardFor(key: string, lang: OgLang): OgCard {
   if (key === "services") {
     return {
       kicker: tr ? "HUNTAYAZERTURK.COM · HİZMETLER" : "HUNTAYAZERTURK.COM · SERVICES",
-      title: tr ? "Üç uzmanlık alanı" : "Three areas of expertise",
+      title: tr ? "Üreticiler için yapay zekâ dönüşümü" : "AI transformation for manufacturers",
       subtitle: "Huntay AzerTürk",
-      tagline: tr ? "Yapay zeka ve otomasyon · Bulut, IoT ve mimari · Siber güvenlik" : "AI & automation · Cloud, IoT & architecture · Cybersecurity",
+      tagline: tr ? "Help desk · Kalite · Üretim · Satış · Satın alma" : "Help desk · Quality · Production · Sales · Procurement",
       chips: [bookChip],
     };
   }
@@ -55,9 +55,7 @@ export function ogCardFor(key: string, lang: OgLang): OgCard {
       kicker: tr ? "HUNTAYAZERTURK.COM · GÖRÜŞME" : "HUNTAYAZERTURK.COM · BOOK A CALL",
       title: tr ? "30 dakikalık tanışma görüşmesi" : "30-minute intro call",
       subtitle: "Huntay AzerTürk",
-      tagline: tr
-        ? "Yapay zeka · Bulut/IoT ve mimari · Siber güvenlik"
-        : "AI · Cloud/IoT & architecture · Cybersecurity",
+      tagline: tr ? "Üreticiler için Yapay Zekâ Danışmanı" : "AI Consultant for Manufacturers",
     };
   }
   if (key.startsWith("service-")) {

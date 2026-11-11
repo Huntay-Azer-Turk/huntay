@@ -51,24 +51,25 @@ const serviceSlugs = MCP_FROZEN_SERVICE_SLUGS;
 const mcpServices = services.filter((service) => serviceSlugs.includes(service.slug));
 
 const headline: Record<Lang, string> = {
-  en: "Software architect · AI, cloud & IoT · Istanbul",
-  tr: "Yazılım mimarı · Yapay zeka, bulut ve IoT · İstanbul",
+  en: "AI Consultant for Manufacturers · Istanbul",
+  tr: "Üreticiler için Yapay Zekâ Danışmanı · İstanbul",
 };
 
 /** Sitedeki vaka çalışmaları ve rakamlarla birebir (data/metrics.ts, data/caseStudies.ts). */
 const highlights: Record<Lang, string[]> = {
+  // 11 Kasım 2026: yalnız içerik değişti (araç adları, açıklamaları ve şemalar donuk — dizin incelemeleri sürüyor).
   en: [
-    "13+ years in software architecture",
-    "IoT platform for 10,000+ devices",
-    "Cloud costs cut by up to 75%",
     "AI support agents: 40–70% faster resolution across projects",
+    "Starts with technical service and help desk, then quality, production, sales and procurement",
+    "AI support system handling a 100,000-user load with 3 engineers",
+    "13+ years in software architecture",
     "English & Turkish",
   ],
   tr: [
+    "Yapay zekâ destek asistanları: projelere göre %40–70 daha hızlı çözüm",
+    "Teknik servis ve help desk ile başlar; sonra kalite, üretim, satış ve satın alma",
+    "3 mühendisle 100.000 kullanıcılı yükü taşıyan yapay zekâ destek sistemi",
     "13+ yıl yazılım mimarisi",
-    "10.000+ cihazlık IoT platformu",
-    "Bulut maliyetinde %75'e varan düşüş",
-    "Yapay zeka destek ajanları: projelere göre %40–70 daha hızlı çözüm",
     "Türkçe ve İngilizce",
   ],
 };

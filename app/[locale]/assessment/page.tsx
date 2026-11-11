@@ -1,6 +1,7 @@
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { ServiceIcon } from "@/components/services/service-icon";
 import { assessments } from "@/data/assessments";
+import { isHiddenService } from "@/data/catalog";
 import { getService } from "@/data/services";
 import { Link } from "@/i18n/navigation";
 import { buildMetadata, type AppLocale } from "@/lib/seo";
@@ -35,7 +36,7 @@ export default async function AssessmentHubPage({ params }: Props) {
         <h1 className="mt-3 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">{t("hubTitle")}</h1>
         <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{t("hubIntro")}</p>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {assessments.map((item) => {
+          {assessments.filter((item) => !isHiddenService(item.serviceSlug)).map((item) => {
             const service = getService(item.serviceSlug);
             return (
               <Link

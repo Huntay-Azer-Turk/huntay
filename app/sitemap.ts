@@ -1,5 +1,5 @@
 import { assessments } from "@/data/assessments";
-import { services } from "@/data/services";
+import { isHiddenService, visibleServices } from "@/data/catalog";
 import { hreflangAlternates, localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import type { MetadataRoute } from "next";
@@ -9,13 +9,14 @@ const pages: { path: string; priority: number; changeFrequency: "monthly" | "yea
   { path: "", priority: 1, changeFrequency: "monthly" },
   { path: "/services", priority: 0.9, changeFrequency: "monthly" },
   { path: "/packages", priority: 0.9, changeFrequency: "monthly" },
-  ...services.map((service) => ({
+  ...visibleServices.map((service) => ({
     path: `/services/${service.slug}`,
     priority: 0.8,
     changeFrequency: "monthly" as const,
   })),
+  { path: "/about", priority: 0.6, changeFrequency: "monthly" },
   { path: "/assessment", priority: 0.8, changeFrequency: "monthly" },
-  ...assessments.map((item) => ({
+  ...assessments.filter((item) => !isHiddenService(item.serviceSlug)).map((item) => ({
     path: `/assessment/${item.slug}`,
     priority: 0.8,
     changeFrequency: "monthly" as const,

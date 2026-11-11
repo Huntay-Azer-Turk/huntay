@@ -1,9 +1,20 @@
 import { caseStudies } from "@/data/caseStudies";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 
-export async function CaseStudies() {
+/**
+ * Vaka çalışmaları. 11 Kasım 2026: ana sayfada yalnız üreticiye dönük üç vaka (yapay zekâ destek sistemi başta),
+ * tamamı /about sayfasında. Kimlikler (#case-<id>) MCP ve /llms.txt bağlantılarında kullanılıyor; değiştirme.
+ */
+export const HOME_CASE_IDS = ["ai-ops", "iot-cloud", "enmos-meta"] as const;
+
+type Props = { ids?: readonly string[]; showAllLink?: boolean };
+
+export async function CaseStudies({ ids, showAllLink = false }: Props = {}) {
   const locale = (await getLocale()) as "en" | "tr";
   const t = await getTranslations("Cases");
+  const items = ids ? ids.map((id) => caseStudies.find((c) => c.id === id)).filter((c) => c !== undefined) : caseStudies;
 
   return (
     <section id="cases" className="border-b border-border py-20 sm:py-28">
@@ -13,7 +24,7 @@ export async function CaseStudies() {
         </h2>
         <p className="mt-2 text-muted-foreground">{t("subtitle")}</p>
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          {caseStudies.map((c) => (
+          {items.map((c) => (
             <article
               key={c.id}
               id={`case-${c.id}`}
@@ -36,6 +47,12 @@ export async function CaseStudies() {
             </article>
           ))}
         </div>
+        {showAllLink ? (
+          <Link href="/about#cases" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
+            {t("allProjects")}
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </Link>
+        ) : null}
       </div>
     </section>
   );

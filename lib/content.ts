@@ -132,7 +132,7 @@ export function buildDocs(lang: Lang): ContentDoc[] {
         `${l.result}: ${item.result[lang]}`,
         item.tags[lang],
       ].join("\n"),
-      url: `${home}#case-${item.id}`,
+      url: `${localeUrl(lang, "/about")}#case-${item.id}`,
     })),
     ...[...faq, ...servicesFaq].map((item) => ({
       id: `faq:${item.id}`,
@@ -149,7 +149,7 @@ export function buildDocs(lang: Lang): ContentDoc[] {
         ...(item.location ? [item.location[lang]] : []),
         ...(item.highlights ?? []).map((highlight) => `- ${highlight[lang]}`),
       ].join("\n"),
-      url: `${home}#timeline`,
+      url: `${localeUrl(lang, "/about")}#timeline`,
     })),
     ...featured.map((item) => ({
       id: `article:${item.id}`,

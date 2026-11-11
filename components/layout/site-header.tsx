@@ -11,13 +11,10 @@ import { LocaleSwitcher } from "@/components/interactive/locale-switcher";
 import { ThemeToggle } from "@/components/interactive/theme-toggle";
 
 /**
- * Ana sayfa bölümleri (#about …). Hizmetler ayrı bir sayfa: /services.
- * "Rakamlar" (#metrics) ve "Teknolojiler" (#stack) menüde yer almıyor — bölümler sayfada duruyor;
- * Hizmetler ve "Görüşme planla" eklenince menü tek satıra sığsın diye.
+ * Ana sayfa bölümleri (#cases …). Hizmetler (/services), Paketler (/packages) ve Hakkında (/about) ayrı sayfalar.
+ * 11 Kasım 2026: deneyim, yazılar ve teknoloji yığını /about sayfasına taşındı; menüde yalnız ana sayfa bölümleri kaldı.
  */
-const sectionKeys = ["about", "cases", "timeline", "featured", "faq", "contact"] as const;
-/** Masaüstü menüde yer kalsın diye (Paketler eklendi) "Deneyim" ve "Yazılar" yalnızca mobil menüde. */
-const desktopSectionKeys = ["cases", "faq", "contact"] as const;
+const sectionKeys = ["cases", "faq", "contact"] as const;
 
 const linkClass =
   "whitespace-nowrap rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-card hover:text-foreground";
@@ -33,6 +30,7 @@ export function SiteHeader() {
   const sectionHref = (key: string) => (home ? `${home}#${key}` : `/#${key}`);
   const onServices = pathname.startsWith("/services");
   const onPackages = pathname.startsWith("/packages");
+  const onAbout = pathname.startsWith("/about");
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-background/80 backdrop-blur-md">
@@ -48,9 +46,13 @@ export function SiteHeader() {
 
         {/* lg altı: bağlantılar + dil seçici + tema + "Görüşme planla" tek satıra sığmıyor; hamburger menü. */}
         <nav className="hidden items-center lg:flex" aria-label={t("ariaMain")}>
-          <NextLink href={sectionHref("about")} className={linkClass}>
+          <Link
+            href="/about"
+            className={`${linkClass} ${onAbout ? "text-foreground" : ""}`}
+            aria-current={onAbout ? "page" : undefined}
+          >
             {t("about")}
-          </NextLink>
+          </Link>
           <Link
             href="/services"
             className={`${linkClass} ${onServices ? "text-foreground" : ""}`}
@@ -65,7 +67,7 @@ export function SiteHeader() {
           >
             {t("packages")}
           </Link>
-          {desktopSectionKeys.map((key) => (
+          {sectionKeys.map((key) => (
             <NextLink key={key} href={sectionHref(key)} className={linkClass}>
               {t(key)}
             </NextLink>
@@ -99,13 +101,13 @@ export function SiteHeader() {
       {open ? (
         <div className="border-t border-border bg-background px-4 py-4 lg:hidden">
           <nav className="flex flex-col gap-1" aria-label={t("ariaMobile")}>
-            <NextLink
-              href={sectionHref("about")}
+            <Link
+              href="/about"
               className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
               onClick={() => setOpen(false)}
             >
               {t("about")}
-            </NextLink>
+            </Link>
             <Link
               href="/services"
               className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
@@ -120,7 +122,7 @@ export function SiteHeader() {
             >
               {t("packages")}
             </Link>
-            {sectionKeys.slice(1).map((key) => (
+            {sectionKeys.map((key) => (
               <NextLink
                 key={key}
                 href={sectionHref(key)}

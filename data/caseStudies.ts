@@ -42,35 +42,35 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "ai-ops",
     title: {
-      en: "Agentic AI: LangChain & LangGraph Orchestration",
-      tr: "Agentic AI: LangChain & LangGraph Orchestration",
+      en: "AI support assistant: a 100,000-user load with 3 engineers",
+      tr: "Yapay zekâ destek asistanı: 3 mühendisle 100.000 kullanıcı",
     },
     action: {
-      en: "Built a true 'Agentic' architecture using LangChain and LangGraph for chain-of-thought reasoning, looping, and branching, backed by Python vector DBs. Later deployed to GCP with Dialogflow CX and Chatwoot.",
-      tr: "Python vektör veritabanlarıyla desteklenen; chain-of-thought, looping ve branching yeteneklerine sahip LangChain ve LangGraph tabanlı gerçek bir 'Agentic' mimari kurdum. Ardından GCP, Dialogflow CX ve Chatwoot ile canlıya aldım.",
+      en: "Support questions were piling up on a small engineering team. We built an assistant that reads the technical documentation and resolves user issues step by step, and connected it to WhatsApp and the support desk.",
+      tr: "Destek soruları küçük bir mühendis ekibinin üzerine yığılıyordu. Teknik dokümanları okuyup kullanıcı sorunlarını adım adım çözen bir asistan kurduk; WhatsApp'a ve destek paneline bağladık.",
     },
     result: {
-      en: "An autonomous network that reads technical docs and resolves user issues step-by-step like an expert—handling a 100,000-user load with just 3 engineers.",
-      tr: "Teknik dokümanları okuyup kullanıcı sorunlarını bir uzman gibi adım adım çözen otonom bir ağ—3 mühendisle 100.000 kullanıcılı yükü kaldırıyor.",
+      en: "3 engineers now carry a 100,000-user support load; across different projects, resolution time dropped by 40–70%.",
+      tr: "3 mühendis artık 100.000 kullanıcılı destek yükünü taşıyor; farklı projelerde talep çözüm süresi %40–70 kısaldı.",
     },
     tags: {
-      en: "LangChain · LangGraph · RAG · Dialogflow CX",
-      tr: "LangChain · LangGraph · RAG · Dialogflow CX",
+      en: "Help desk · Technical documentation · WhatsApp · RAG",
+      tr: "Help desk · Teknik doküman · WhatsApp · RAG",
     },
   },
   {
     id: "enmos-meta",
     title: {
-      en: "Meta-programming: Autonomous Dynamic Reporting",
-      tr: "Meta-programming: Otonom Dinamik Raporlama",
+      en: "Reports without waiting for a developer",
+      tr: "Yazılımcı beklemeden rapor",
     },
     action: {
-      en: "Enterprise reporting required constant developer intervention. I built a runtime SQL generation engine using .NET, Blazor, React, DevExpress, and NoSQL.",
-      tr: "Kurumsal raporlama sürekli yazılımcı müdahalesi gerektiriyordu. .NET, Blazor, React, DevExpress ve NoSQL kullanarak çalışma zamanında (runtime) SQL üreten bir motor geliştirdim.",
+      en: "Every new report needed a developer. We built an engine that lets users create, filter and schedule complex reports themselves.",
+      tr: "Her yeni rapor bir yazılımcı gerektiriyordu. Kullanıcıların karmaşık raporları kendilerinin oluşturup filtreleyebildiği ve zamanlayabildiği bir motor kurduk.",
     },
     result: {
-      en: "Users can now dynamically filter and schedule complex reports autonomously. Eliminated developer bottleneck entirely.",
-      tr: "Kullanıcılar artık karmaşık raporları otonom olarak dinamik filtreleyebiliyor ve zamanlayabiliyor. Yazılımcı darboğazı tamamen ortadan kalktı.",
+      en: "Teams create and schedule their own reports; the developer bottleneck for reporting is gone.",
+      tr: "Ekipler raporlarını kendileri hazırlayıp zamanlıyor; raporlamadaki yazılımcı darboğazı ortadan kalktı.",
     },
     tags: {
       en: ".NET · Blazor · React · DevExpress · NoSQL",
@@ -80,20 +80,20 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "iot-cloud",
     title: {
-      en: "Multi-platform IoT cloud (10,000+ devices, 100,000+ users)",
-      tr: "Çok platformlu IoT bulutu (10.000+ cihaz, 100.000+ kullanıcı)",
+      en: "10,000+ field devices on one platform",
+      tr: "10.000+ saha cihazı tek platformda",
     },
     action: {
-      en: "Killed the dependency on an unreliable outsourced infrastructure and built a 60-70 microservice ecosystem from scratch—Docker, Kubernetes, RabbitMQ, MQTT, .NET backend, React micro-frontends, Flutter mobile.",
-      tr: "Sürekli kopan dış kaynaklı altyapıya olan bağımlılığı kestim ve sıfırdan 60-70 mikroservislik bir ekosistem inşa ettim—Docker, Kubernetes, RabbitMQ, MQTT, .NET backend, React micro-frontends, Flutter mobil.",
+      en: "Field devices of 8 types (fire panels, intruder alarms, cameras, suppression systems) were managed through an unreliable outsourced system. We replaced it with a single platform of our own, with web and mobile apps.",
+      tr: "8 farklı tipte saha cihazı (yangın panelleri, hırsız alarmları, kameralar, söndürme sistemleri) sürekli kopan dış kaynaklı bir sistemle yönetiliyordu. Yerine web ve mobil uygulamalarıyla tek bir kendi platformumuzu kurduk.",
     },
     result: {
-      en: "One platform now manages 8 different device types (fire panels, intruder alarms, cameras, suppression) at full scale.",
-      tr: "Tek bir platform; yangın panelleri, hırsız alarmları, kameralar ve söndürme sistemleri dahil 8 farklı cihaz tipini eş zamanlı olarak yönetiyor.",
+      en: "One platform now serves 10,000+ devices and 100,000+ users, and engineers can debug a single faulty device without disrupting the rest.",
+      tr: "Tek platform artık 10.000+ cihaza ve 100.000+ kullanıcıya hizmet veriyor; mühendisler arızalı tek bir cihazı diğerlerini kesintiye uğratmadan inceleyebiliyor.",
     },
     tags: {
-      en: "Kubernetes · GCP · MQTT · React · Flutter",
-      tr: "Kubernetes · GCP · MQTT · React · Flutter",
+      en: "Field devices · IoT · Mobile · Service data",
+      tr: "Saha cihazları · IoT · Mobil · Servis verisi",
     },
   },
   {

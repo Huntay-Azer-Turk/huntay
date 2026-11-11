@@ -18,16 +18,19 @@ import { connection } from "next/server";
 type Props = { params: Promise<{ locale: string }> };
 
 /**
- * Vitrin (11 Kasım 2026, KOBİ'ler için yapay zekâ odağı): dönüşümün üç adımı — fırsat taraması, müşteri hizmetleri
- * asistanı pilotu, anahtar teslim canlı kurulum. Altında diğer birimlere genişleme paketleri, en altta altyapı,
- * güvenlik ve sürekli danışmanlık. Paket kimliği D1'de yoksa veya paket pasifse grubundan düşer, sayfa yine çalışır.
+ * Vitrin (11 Kasım 2026, odak tamamen yapay zekâ dönüşümü): öne çıkan teklif teknik servis ve help desk asistanı —
+ * fırsat taraması → pilot → canlı kurulum. Altında diğer birimlerin tasarım paketleri (arka planda). Bulut, güvenlik
+ * ve CTO paketleri D1'de pasif; "rest" grubu yalnız yeni eklenen aktif bir paket olursa görünür.
+ * Paket kimliği D1'de yoksa veya paket pasifse grubundan düşer, sayfa yine çalışır.
  */
 const SHOWCASE_IDS = ["ai-opportunity-scan", "ai-agent-pilot", "ai-production-rollout"] as const;
 const EXPANSION_IDS = [
-  "ai-production-efficiency",
   "ai-quality-control",
+  "ai-production-efficiency",
   "ai-sales-assistant",
   "ai-marketing-assistant",
+  "ai-market-research",
+  "ai-procurement",
   "ai-security-assistant",
 ] as const;
 

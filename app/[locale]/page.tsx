@@ -1,14 +1,10 @@
-import { About } from "@/components/sections/about";
 import { AiPath } from "@/components/sections/ai-path";
-import { CaseStudies } from "@/components/sections/case-studies";
+import { CaseStudies, HOME_CASE_IDS } from "@/components/sections/case-studies";
 import { ContactFooter } from "@/components/sections/contact-footer";
+import { Expertise } from "@/components/sections/expertise";
 import { Faq } from "@/components/sections/faq";
-import { Featured } from "@/components/sections/featured";
 import { Hero } from "@/components/sections/hero";
 import { Metrics } from "@/components/sections/metrics";
-import { ServicesSection } from "@/components/sections/services";
-import { TechStack } from "@/components/sections/tech-stack";
-import { Timeline } from "@/components/sections/timeline";
 import { JsonLd } from "@/components/seo/json-ld";
 import { buildHomeGraph, type AppLocale } from "@/lib/seo";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -28,16 +24,13 @@ export default async function HomePage({ params }: Props) {
           description: t("description"),
         })}
       />
+      {/* 11 Kasım 2026: LinkedIn "Hakkında" ile aynı akış ve StoryBrand sırası — müşterinin derdi ve yol, kanıt,
+          uzmanlık ve odak alanları, üç vaka, sorular, tek eylem. Kişisel bölümler /about sayfasında. */}
       <Hero />
-      {/* 11 Kasım 2026: KOBİ'ler için yapay zekâ odağı — önce yol ve kanıt, sonra hizmet alanları; kişisel bölümler aşağıda. */}
       <AiPath />
       <Metrics />
-      <ServicesSection />
-      <CaseStudies />
-      <About />
-      <TechStack />
-      <Timeline />
-      <Featured />
+      <Expertise />
+      <CaseStudies ids={HOME_CASE_IDS} showAllLink />
       <Faq />
       <ContactFooter />
     </>
