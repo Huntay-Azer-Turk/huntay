@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — AI-Driven Productivity Consultant for SMEs",
-    "description": "We start SME AI transformation in customer service: we speed up support and service requests with AI, then take the same approach to production, quality, sales and marketing. Higher productivity, lower costs, better quality."
+    "title": "Huntay AzerTürk — AI Consultant for Manufacturers",
+    "description": "For manufacturers and distributors with dealer and service networks, we answer the repetitive fault and documentation questions that tie up your central teams, with AI and without replacing your existing software. Across projects, ticket resolution time dropped by 40–70%."
   },
   "Nav": {
     "about": "About",
@@ -22,8 +22,8 @@
   },
   "Hero": {
     "eyebrow": "Istanbul · Remote and on-site",
-    "role": "AI-Driven Productivity Consultant for SMEs",
-    "valueProp": "For SMEs that don't know where to start with AI, we start in customer service: first we speed up support and service requests with AI, then we take the same approach to production, quality, sales and marketing. Productivity goes up, costs go down, quality improves.",
+    "role": "AI Consultant for Manufacturers",
+    "valueProp": "For manufacturers and distributors with dealer and service networks, we answer the repetitive fault and documentation questions that tie up your central teams, with AI and without replacing your existing software.",
     "ctaBook": "Book an assessment call",
     "ctaPackages": "Packages & pricing",
     "linkChatgpt": "Open in ChatGPT",
@@ -150,7 +150,7 @@
   },
   "ServicesSection": {
     "title": "Service areas",
-    "subtitle": "Our focus is AI transformation for SMEs. Infrastructure and security are part of that transformation, so we also take on cloud/IoT architecture and cybersecurity work with the same ownership.",
+    "subtitle": "Our focus is AI for manufacturers. Infrastructure and security are part of that transformation, so we also take on cloud/IoT architecture and cybersecurity work with the same ownership.",
     "details": "Details",
     "viewAll": "All areas and services",
     "book": "Book a call",
@@ -252,7 +252,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Packages & Pricing | Huntay AzerTürk",
-    "metaDescription": "AI & productivity packages for SMEs: opportunity scan, customer service assistant pilot, turnkey rollout; production, quality, sales, marketing and security assistants; cloud and security reviews.",
+    "metaDescription": "AI packages for manufacturers: opportunity scan, customer service & technical support assistant pilot, turnkey rollout; production, quality, sales, marketing and security assistants; cloud and security reviews.",
     "eyebrow": "Packages & pricing",
     "title": "Clear scope, clear price",
     "intro": "Start with a fixed-scope review; once it's clear what needs doing and in what order, we implement it together.",
@@ -318,12 +318,12 @@
   },
   "AiPath": {
     "eyebrow": "How we work",
-    "title": "AI transformation starts in customer service",
-    "subtitle": "It's where results show fastest and the data is already in your hands. With the trust we earn there, we move on to other departments.",
+    "title": "AI transformation starts with service and dealer support",
+    "subtitle": "It's where results show fastest and the data (manuals, service bulletins, past tickets) is already in your hands. With the trust we earn there, we move on to production, quality and sales.",
     "painTitle": "Sound familiar?",
     "pain1": "Do your dealers and customers keep asking the same fault and how-to questions, tying your engineers up on the phone?",
     "pain2": "Are manuals, service bulletins and price lists lost in folders, with only a few people knowing the right answer?",
-    "pain3": "Are quote and order questions wearing out your sales team, and nobody can say exactly where line stops and scrap come from?",
+    "pain3": "Do new dealers and technicians ask headquarters about everything, with someone writing the same answer from scratch each time?",
     "stepsTitle": "In three steps",
     "step1Title": "1. Discovery & opportunity scan",
     "step1Text": "A short assessment call, then a report in 5 business days ranking the processes with the highest return.",

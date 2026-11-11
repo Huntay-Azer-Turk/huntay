@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — KOBİ'ler için Yapay Zekâ ile Verimlilik Danışmanı",
-    "description": "KOBİ'lerde yapay zekâ dönüşümüne müşteri hizmetlerinden başlıyoruz: destek ve servis taleplerini hızlandırıyor, sonra üretim, kalite, satış ve pazarlamaya taşıyoruz. Verim artar, maliyet düşer, kalite yükselir."
+    "title": "Huntay AzerTürk — Üreticiler için Yapay Zekâ Danışmanı",
+    "description": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz. Farklı projelerde talep çözüm süresi %40–70 kısaldı."
   },
   "Nav": {
     "about": "Hakkında",
@@ -22,8 +22,8 @@
   },
   "Hero": {
     "eyebrow": "İstanbul · Uzaktan ve yüz yüze",
-    "role": "KOBİ'ler için Yapay Zekâ ile Verimlilik Danışmanı",
-    "valueProp": "Yapay zekâya nereden başlayacağını bilemeyen KOBİ'lerde işe müşteri hizmetlerinden başlıyoruz: önce destek ve servis taleplerini yapay zekâyla hızlandırıyor, sonra aynı yöntemi üretim, kalite, satış ve pazarlamaya taşıyoruz. Verim artar, maliyet düşer, kalite yükselir.",
+    "role": "Üreticiler için Yapay Zekâ Danışmanı",
+    "valueProp": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz.",
     "ctaBook": "Ön değerlendirme görüşmesi planla",
     "ctaPackages": "Paketler ve fiyatlar",
     "linkChatgpt": "ChatGPT'de aç",
@@ -150,7 +150,7 @@
   },
   "ServicesSection": {
     "title": "Hizmet alanları",
-    "subtitle": "Odağımız KOBİ'lerde yapay zekâ dönüşümü. Altyapı ve güvenlik bu dönüşümün parçası: bulut/IoT mimarisi ve siber güvenlik işlerini de aynı sorumlulukla yapıyoruz.",
+    "subtitle": "Odağımız üreticilerde yapay zekâ. Altyapı ve güvenlik bu dönüşümün parçası: bulut/IoT mimarisi ve siber güvenlik işlerini de aynı sorumlulukla yapıyoruz.",
     "details": "Detaylar",
     "viewAll": "Tüm alanlar ve hizmetler",
     "book": "Görüşme planla",
@@ -252,7 +252,7 @@
   },
   "PackagesPage": {
     "metaTitle": "Paketler ve Fiyatlar | Huntay AzerTürk",
-    "metaDescription": "KOBİ'ler için yapay zekâ ve verimlilik paketleri: fırsat taraması, müşteri hizmetleri asistanı pilotu, anahtar teslim kurulum; üretim, kalite, satış, pazarlama ve güvenlik asistanları; bulut ve güvenlik incelemeleri.",
+    "metaDescription": "Üreticiler için yapay zekâ paketleri: fırsat taraması, müşteri hizmetleri ve teknik servis asistanı pilotu, anahtar teslim kurulum; üretim, kalite, satış, pazarlama ve güvenlik asistanları; bulut ve güvenlik incelemeleri.",
     "eyebrow": "Paketler ve fiyatlar",
     "title": "Net kapsam, net fiyat",
     "intro": "Sabit kapsamlı bir incelemeyle başlayın; neyin, hangi sırayla yapılması gerektiği netleşince birlikte uygulayalım.",
@@ -318,12 +318,12 @@
   },
   "AiPath": {
     "eyebrow": "Nasıl çalışıyoruz",
-    "title": "Yapay zekâ dönüşümü müşteri hizmetlerinden başlar",
-    "subtitle": "Sonucu en hızlı görülen ve verisi zaten elinizde olan yer burası. Orada kazandığımız güvenle diğer birimlere geçiyoruz.",
+    "title": "Yapay zekâ dönüşümü servis ve bayi desteğinden başlar",
+    "subtitle": "Sonucu en hızlı görülen ve verisi (kılavuzlar, teknik bültenler, geçmiş talepler) zaten elinizde olan yer burası. Orada kazandığımız güvenle üretim, kalite ve satışa geçiyoruz.",
     "painTitle": "Tanıdık geliyor mu?",
     "pain1": "Bayileriniz ve müşterileriniz aynı arıza ve kullanım sorularını sorup mühendislerinizi telefonda mı tutuyor?",
     "pain2": "Kılavuzlar, teknik bültenler ve fiyat listeleri klasörlerde mi kayboluyor; doğru cevabı yalnızca birkaç kişi mi biliyor?",
-    "pain3": "Teklif ve sipariş soruları satış ekibinizi mi yoruyor; bantta duruş ve firenin nereden geldiğini kimse net bilemiyor mu?",
+    "pain3": "Yeni bayiler ve teknisyenler her şeyi merkezden mi soruyor; aynı cevabı her seferinde birileri baştan mı yazıyor?",
     "stepsTitle": "Üç adımda",
     "step1Title": "1. Keşif ve fırsat taraması",
     "step1Text": "Kısa bir ön değerlendirme görüşmesi, ardından 5 iş gününde getirisi en yüksek süreçleri sıralayan rapor.",

@@ -23,12 +23,12 @@ export const services: ServiceItem[] = [
       tr: "Yapay Zeka Ajanları ve Otomasyon",
     },
     metaTitle: {
-      en: "AI Agents, Automation & AI Transformation for SMEs",
-      tr: "Yapay Zeka Ajanları, Otomasyon ve KOBİ'ler için Yapay Zeka Dönüşümü",
+      en: "AI for Manufacturers & SMEs: Agents, Automation and AI Transformation",
+      tr: "Üreticiler ve KOBİ'ler için Yapay Zeka: Ajanlar, Otomasyon ve Dönüşüm",
     },
     tagline: {
-      en: "AI transformation for SMEs and growing companies: from an opportunity scan to working agents and automation.",
-      tr: "KOBİ'ler ve büyüyen şirketler için yapay zeka dönüşümü: fırsat taramasından çalışan ajanlara ve otomasyona.",
+      en: "AI transformation for manufacturers and growing companies: it starts with service and dealer support, then moves to production, quality and sales.",
+      tr: "Üreticiler ve büyüyen şirketler için yapay zekâ dönüşümü: servis ve bayi desteğinden başlar, sonra üretim, kalite ve satışa geçer.",
     },
     summary: {
       en: "I help companies put AI to work where it pays off: first finding the processes with the highest return, then building production-grade agents and automation connected to your own data and tools—assistants that answer customers on WhatsApp and your website, qualify leads, search your documents and ERP data, and take repetitive back-office work off your team. Your staff also learn to use AI tools safely and within KVKK/GDPR rules.",
@@ -130,6 +130,10 @@ export const services: ServiceItem[] = [
       {
         en: "Teams answering the same customer questions every day",
         tr: "Her gün aynı müşteri sorularını cevaplayan ekipler",
+      },
+      {
+        en: "Manufacturers and distributors whose dealers and service points keep asking headquarters the same questions",
+        tr: "Bayileri ve servis noktaları merkeze sürekli aynı soruları soran üretici ve distribütörler",
       },
       {
         en: "Sales teams losing leads because follow-up is slow",
