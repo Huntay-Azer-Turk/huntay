@@ -4,6 +4,8 @@ import type { FaqItem } from "./types";
  * SSS — hem sayfada görünür bölüm (components/sections/faq.tsx) hem de FAQPage JSON-LD
  * ve /llms.txt bu tek kaynaktan beslenir. Cevaplar yalnızca sitede zaten yer alan bilgilere dayanır.
  * AEO: ilk cümle soruyu doğrudan cevaplar ve ismi içerir; AI asistanları bu blokları alıntılar.
+ * 11 Kasım 2026: cevaplar "Üreticiler için Yapay Zekâ Danışmanı" konumuna göre yeniden yazıldı; fractional CTO sorusu
+ * "nasıl başlıyor" oldu, araştırma sorusu /about sayfasındaki "Yazı ve araştırma" bloğunda kaldı.
  */
 export const faq: FaqItem[] = [
   {
@@ -13,8 +15,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk kimdir?",
     },
     answer: {
-      en: "Huntay AzerTürk is a software architect and engineering leader based in Istanbul, Turkey, with over 13 years of experience in cloud, AI and IoT systems. He is currently Software & Digital Solutions Manager at Teknim Elektronik, where he leads the IoT and backend infrastructure for fire safety operations.",
-      tr: "Huntay AzerTürk, bulut, yapay zeka ve IoT sistemlerinde 13 yılı aşkın deneyime sahip, İstanbul merkezli bir yazılım mimarı ve mühendislik lideridir. Şu anda Teknim Elektronik'te Yazılım ve Dijital Çözümler Müdürü olarak yangın güvenliği operasyonlarının IoT ve backend altyapısını yönetiyor.",
+      en: "Huntay AzerTürk is an Istanbul-based AI consultant for manufacturers and distributors with dealer and service networks. With over 13 years in systems architecture, he uses AI to answer the repetitive fault and documentation questions that take up headquarters teams' time, without replacing the company's existing software.",
+      tr: "Huntay AzerTürk, bayi ve servis ağı olan üretici ve distribütörler için İstanbul merkezli bir yapay zekâ danışmanıdır. 13 yılı aşkın sistem mimarisi deneyimiyle, merkez ekiplerin vaktini alan tekrarlı arıza ve doküman sorularını şirketin mevcut yazılımını değiştirmeden yapay zekâyla yanıtlar.",
     },
   },
   {
@@ -24,8 +26,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi alanlarda uzman?",
     },
     answer: {
-      en: "He turns fragile, complex systems into stable, scalable products. His focus areas are Hexagonal and event-driven microservice architectures, cloud cost optimization on GCP and Kubernetes, IoT platforms built on MQTT and RabbitMQ, and applied AI with RAG, LangChain and LangGraph—always with a security-first approach (CEH certified).",
-      tr: "Kırılgan ve karmaşık sistemleri stabil, ölçeklenebilir ürünlere dönüştürür. Odak alanları Hexagonal ve olay güdümlü mikroservis mimarileri, GCP ve Kubernetes üzerinde bulut maliyet optimizasyonu, MQTT ve RabbitMQ tabanlı IoT platformları ile RAG, LangChain ve LangGraph kullanan uygulamalı yapay zekadır; tüm bunlara güvenlik öncelikli bir yaklaşımla (CEH sertifikalı) bakar.",
+      en: "AI transformation for manufacturers, starting with technical service and help desk assistants that answer from a company's own manuals, service bulletins and past tickets (RAG, LangChain and LangGraph). He connects these assistants to ERP, IoT and service data, drawing on his background in IoT platforms and software architecture, then extends the same approach to quality control, production, sales and procurement.",
+      tr: "Üreticilerde yapay zekâ dönüşümü; başlangıç noktası şirketin kendi kılavuzları, teknik bültenleri ve geçmiş talepleriyle cevap veren teknik servis ve help desk asistanlarıdır (RAG, LangChain ve LangGraph). IoT platformları ve yazılım mimarisindeki geçmişiyle bu asistanları ERP, IoT ve servis verisine bağlar; ardından aynı yöntemi kalite kontrol, üretim, satış ve satın almaya taşır.",
     },
   },
   {
@@ -35,8 +37,8 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi sonuçları elde etti?",
     },
     answer: {
-      en: "He built a 60–70 microservice IoT platform that manages 8 device types for 10,000+ devices and 100,000+ users, cut infrastructure costs by roughly 75% by moving legacy monoliths to event-driven microservices on GCP, and delivered agentic AI support systems that cut ticket resolution time by 40–70% across different projects. Earlier, he achieved 4x throughput on lab instrument software while dropping its hardware needs to a single-core Celeron with 1 GB RAM.",
-      tr: "8 farklı cihaz tipini 10.000+ cihaz ve 100.000+ kullanıcı için yöneten 60–70 mikroservislik bir IoT platformu kurdu; eski monolitleri GCP üzerinde olay güdümlü mikroservislere taşıyarak altyapı maliyetlerini yaklaşık %75 düşürdü ve farklı projelerde talep çözüm süresini %40–70 arasında kısaltan agentic yapay zeka destek sistemleri geliştirdi. Daha önce de bir laboratuvar cihazı yazılımında 4 kat performans artışı sağlarken donanım ihtiyacını tek çekirdekli Celeron ve 1 GB RAM'e indirdi.",
+      en: "Across different projects, his AI support systems cut ticket resolution time by 40–70%; one of them lets 3 engineers carry a 100,000-user support load. He also built a platform that manages 10,000+ field devices of 8 types for 100,000+ users.",
+      tr: "Farklı projelerde kurduğu yapay zekâ destek sistemleri talep çözüm süresini %40–70 kısalttı; bunlardan biri 3 mühendisin 100.000 kullanıcılı destek yükünü taşımasını sağlıyor. Ayrıca 8 farklı tipte 10.000+ saha cihazını 100.000+ kullanıcı için yöneten bir platform kurdu.",
     },
   },
   {
@@ -46,19 +48,19 @@ export const faq: FaqItem[] = [
       tr: "Huntay AzerTürk hangi hizmetleri sunuyor?",
     },
     answer: {
-      en: "The focus is AI for manufacturers and distributors with dealer and service networks: AI transformation starts in customer service (a support and technical service assistant built on your own manuals) and then moves to production, quality, sales and marketing. Alongside that he works in three areas: AI agents and automation (opportunity scans, sales and support assistants, workflow automation and staff training); cloud, IoT and architecture (cost reviews, modernization, DevOps, IoT platforms and performance); and cybersecurity (security assessments, web/API scans, penetration tests, secure code and ransomware readiness). Across all three he also works as a fractional CTO.",
-      tr: "Odak, bayi ve servis ağı olan üretici ve distribütörlerde yapay zekâ: yapay zekâ dönüşümü müşteri hizmetlerinden başlar (kendi kılavuzlarınızla çalışan destek ve teknik servis asistanı), ardından üretim, kalite, satış ve pazarlamaya geçer. Bunun yanında üç alanda çalışıyor: yapay zeka ajanları ve otomasyon (fırsat taraması, satış ve destek asistanları, iş akışı otomasyonu ve çalışan eğitimi); bulut, IoT ve mimari (maliyet incelemesi, modernizasyon, DevOps, IoT platformları ve performans); siber güvenlik (güvenlik değerlendirmesi, web/API taraması, sızma testi, güvenli kod ve fidye yazılımına hazırlık). Bu üç alanda fractional CTO olarak da çalışıyor.",
+      en: "AI transformation for manufacturers and distributors. It starts with a technical service and help desk assistant that answers dealers', technicians' and users' questions from your own manuals (opportunity scan, then a 3-week pilot, then a production rollout). Further units each have their own design package: quality control automation, production efficiency and maintenance, sales, marketing, market research, procurement and security team assistants.",
+      tr: "Üretici ve distribütörler için yapay zekâ dönüşümü. Başlangıç, bayilerin, teknisyenlerin ve kullanıcıların sorularını kendi kılavuzlarınızla yanıtlayan teknik servis ve help desk asistanıdır (fırsat taraması, 3 haftalık pilot, canlı kurulum). Diğer birimlerin her birinin kendi tasarım paketi vardır: kalite kontrol otomasyonu, üretim verimliliği ve bakım, satış, pazarlama, pazar araştırması, satın alma ve güvenlik ekibi asistanları.",
     },
   },
   {
-    id: "consulting",
+    id: "start",
     question: {
-      en: "Is Huntay AzerTürk available for consulting or fractional CTO work?",
-      tr: "Huntay AzerTürk danışmanlık veya fractional CTO olarak çalışıyor mu?",
+      en: "How does working with Huntay AzerTürk start?",
+      tr: "Huntay AzerTürk ile çalışma nasıl başlıyor?",
     },
     answer: {
-      en: "Yes. He has advised and technically supported startups for years and is open to conversations about architecture, AI adoption and fractional CTO engagements. The fastest way to start is to book a 30-minute intro call on this site; LinkedIn, WhatsApp and email are listed in the contact section.",
-      tr: "Evet. Yıllardır startup'lara danışmanlık ve teknik destek veriyor; mimari, yapay zeka dönüşümü ve fractional CTO iş birlikleri için görüşmelere açık. Başlamanın en hızlı yolu bu siteden 30 dakikalık bir tanışma görüşmesi planlamak; LinkedIn, WhatsApp ve e-posta iletişim bölümünde yer alıyor.",
+      en: "With a 30-minute assessment call. If there is a fit, the usual path is a fixed-price AI opportunity scan (5 business days), then a technical service and help desk assistant pilot live on one channel in 3 weeks, and a production rollout once it works. Prices are listed on the packages page; the scan and design packages come with a refund guarantee.",
+      tr: "30 dakikalık bir ön değerlendirme görüşmesiyle. Uygunsa olağan yol sabit fiyatlı yapay zekâ fırsat taraması (5 iş günü), ardından 3 haftada tek kanalda canlıya alınan teknik servis ve help desk asistanı pilotu ve işe yarayınca canlı kurulumdur. Fiyatlar paketler sayfasında yazar; tarama ve tasarım paketlerinde ücret iadesi garantisi vardır.",
     },
   },
   {
@@ -70,17 +72,6 @@ export const faq: FaqItem[] = [
     answer: {
       en: "Yes. In ChatGPT, add the Huntay AzerTürk app from the app directory: https://chatgpt.com/plugins/plugin_asdk_app_6ae1c947a1d88191a9da39819af029d1. His assistant is also available as an MCP server at https://huntayazerturk.com/mcp; add this address as a custom connector or app in ChatGPT, Claude, Gemini or any MCP-compatible assistant and ask it to book an intro call: it shows his free times in the chat and books the 30-minute Google Meet call for you. You can also book directly on the Book a call page.",
       tr: "Evet. ChatGPT'de uygulama dizininden Huntay AzerTürk uygulamasını eklemeniz yeterli: https://chatgpt.com/plugins/plugin_asdk_app_6ae1c947a1d88191a9da39819af029d1. Asistan ayrıca https://huntayazerturk.com/mcp adresinde bir MCP sunucusu olarak çalışıyor; bu adresi ChatGPT, Claude, Gemini veya MCP uyumlu herhangi bir asistana özel bağlayıcı (connector) ya da uygulama olarak ekleyip tanışma görüşmesi istemeniz yeterli: boş saatlerini sohbetin içinde gösterir ve 30 dakikalık Google Meet görüşmesini sizin için oluşturur. Dilerseniz doğrudan Görüşme planla sayfasından da randevu alabilirsiniz.",
-    },
-  },
-  {
-    id: "research",
-    question: {
-      en: "What are Huntay AzerTürk's research interests?",
-      tr: "Huntay AzerTürk'ün araştırma alanları nelerdir?",
-    },
-    answer: {
-      en: "His research focus is cognitive science, which shapes how he designs AI systems around the way people actually think and work. In his spare time he works independently on brain-computer interfaces (BCI) that combine EEG signals and LLMs for neurodivergent individuals, and he writes on Medium about RAG, AGI and nature-inspired neural networks.",
-      tr: "Araştırma odağı bilişsel bilimlerdir; bu, yapay zeka sistemlerini insanların gerçekte nasıl düşünüp çalıştığına göre tasarlamasını şekillendirir. Boş zamanlarında bağımsız olarak, nöroçeşitli bireyler için EEG sinyallerini ve LLM'leri birleştiren beyin-bilgisayar arayüzleri (BCI) üzerinde çalışıyor; Medium'da RAG, AGI ve doğadan ilhamlı sinir ağları üzerine yazıyor.",
     },
   },
 ];

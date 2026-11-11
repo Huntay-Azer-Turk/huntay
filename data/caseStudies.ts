@@ -73,8 +73,8 @@ export const caseStudies: CaseStudy[] = [
       tr: "Ekipler raporlarını kendileri hazırlayıp zamanlıyor; raporlamadaki yazılımcı darboğazı ortadan kalktı.",
     },
     tags: {
-      en: ".NET · Blazor · React · DevExpress · NoSQL",
-      tr: ".NET · Blazor · React · DevExpress · NoSQL",
+      en: "Reporting · ERP data · Self-service",
+      tr: "Raporlama · ERP verisi · Self-servis",
     },
   },
   {
