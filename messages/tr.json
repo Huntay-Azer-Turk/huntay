@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — Üreticiler için Yapay Zekâ Danışmanı",
-    "description": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz. Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70 iyileşti."
+    "title": "Huntay AzerTürk — Yazılım Mimarı",
+    "description": "Huntay AzerTürk: backend platformları, dağıtık sistemler ve uygulamalı yapay zekâ üzerine 13 yılı aşkın deneyime sahip yazılım mimarı. Mikroservisler, bulut ve IoT platformları, RAG ve ajan tabanlı sistemler."
   },
   "Nav": {
     "about": "Hakkında",
@@ -21,14 +21,16 @@
     "packages": "Paketler"
   },
   "Hero": {
-    "eyebrow": "İstanbul · Uzaktan ve yüz yüze",
-    "role": "Üreticiler için Yapay Zekâ Danışmanı",
-    "valueProp": "Bayi ve servis ağı olan üretici ve distribütörlerde, merkez ekiplerinizin vaktini alan tekrarlı arıza ve doküman sorularını, mevcut yazılımınızı değiştirmeden yapay zekâyla yanıtlıyoruz.",
+    "eyebrow": "İstanbul, Türkiye",
+    "role": "Yazılım Mimarı",
+    "valueProp": "Backend platformları, dağıtık sistemler ve uygulamalı yapay zekâ üzerine 13 yılı aşkın deneyim.",
     "ctaBook": "Ön değerlendirme görüşmesi planla",
     "ctaPackages": "Paketler ve fiyatlar",
     "linkChatgpt": "ChatGPT'de aç",
     "linkClaude": "Claude ve diğer asistanlar",
-    "ctaAssessment": "Ücretsiz yapay zekâ olgunluk testi"
+    "ctaAssessment": "Ücretsiz yapay zekâ olgunluk testi",
+    "ctaLinkedin": "LinkedIn profilim",
+    "ctaContact": "İletişim"
   },
   "NotFound": {
     "title": "Sayfa bulunamadı",
@@ -51,8 +53,8 @@
     "subtitle": "Üretilen sonuçlar, boş sloganlar değil."
   },
   "Cases": {
-    "title": "Vaka çalışmaları",
-    "subtitle": "Sahadan sonuçlar: sorun, yaptığımız iş ve değişen şey.",
+    "title": "Projeler",
+    "subtitle": "Öne çıkan işler: sorun, yapılan iş ve sonuç.",
     "action": "Yapılan",
     "result": "Sonuç",
     "allProjects": "Hakkımda ve deneyim"
@@ -171,7 +173,7 @@
   },
   "Contact": {
     "title": "İletişim",
-    "subtitle": "Teknik servis ve help desk asistanı için doğrudan bana ulaşın.",
+    "subtitle": "LinkedIn, e-posta ya da telefonla ulaşabilirsiniz.",
     "book": "Görüşme planla",
     "linkedin": "LinkedIn",
     "medium": "Medium",
@@ -337,19 +339,19 @@
     "packages": "Paketler ve fiyatlar"
   },
   "Expertise": {
-    "eyebrow": "Uzmanlık ve yaklaşım",
-    "title": "Teorik tavsiye değil, sahada çalışan sistemler",
-    "body": "13 yılı aşkın sistem mimarisi deneyimiyle, üreticilerin dağınık doküman ve servis bilgisini kararlı bir teknik servis ve help desk asistanına dönüştürüyorum. Teorik tavsiye yerine; ERP ve servis yazılımlarınızı değiştirmeden, sahadan gelen teknik talepleri hızlandıran uçtan uca bir çözüm kuruyorum.",
-    "focusTitle": "Odak alanları",
-    "focus1": "Bayi ve yetkili servisler için teknik destek asistanı",
-    "focus2": "Kılavuz, teknik bülten ve arıza kayıtlarından bilgi tabanı",
-    "focus3": "Asistanın ERP ve servis yazılımınıza, onları değiştirmeden bağlanması",
+    "eyebrow": "Uzmanlık",
+    "title": "Sade, kararlı ve ölçeklenen sistemler",
+    "body": "Sistem mimarisi, mikroservisler, bulut ve IoT platformları üzerine çalışıyorum; yapay zekâyı gerçek ürünlere taşıyorum: RAG tabanlı asistanlardan ajan tabanlı iş akışlarına. Gereksiz karmaşadan uzak, ekiplerin rahatça geliştirebileceği mimariler kurmayı önemsiyorum.",
+    "focusTitle": "Uzmanlık alanları",
+    "focus1": "Yazılım mimarisi ve mikroservisler (.NET, Python)",
+    "focus2": "Bulut, IoT ve olay güdümlü platformlar",
+    "focus3": "Uygulamalı yapay zekâ: RAG, LangChain ve LangGraph; teknik liderlik ve mentorluk",
     "book": "30 dakikalık ön değerlendirme görüşmesi planla"
   },
   "AboutPage": {
     "title": "Hakkımda",
-    "intro": "Huntay AzerTürk, bayi ve servis ağı olan üreticiler için yapay zekâ danışmanı. Bu sayfada nasıl çalıştığım, öne çıkan proje, deneyimim ve yazım var.",
-    "metaTitle": "Hakkımda — Huntay AzerTürk, Üreticiler için Yapay Zekâ Danışmanı",
-    "metaDescription": "Huntay AzerTürk: 13 yılı aşkın sistem mimarisi deneyimi, yapay zekâ destek asistanı projesi ve deneyim. Bayi ve servis ağı olan üreticiler için yapay zekâ danışmanı."
+    "intro": "Huntay AzerTürk, 13 yılı aşkın deneyime sahip bir yazılım mimarı. Bu sayfada yaklaşımım, öne çıkan projeler, teknolojiler, deneyimim ve yazılarım var.",
+    "metaTitle": "Hakkımda — Huntay AzerTürk, Yazılım Mimarı",
+    "metaDescription": "Huntay AzerTürk: backend platformları, dağıtık sistemler ve uygulamalı yapay zekâ üzerine 13 yılı aşkın deneyime sahip yazılım mimarı. Projeler, deneyim, eğitim ve yazılar."
   }
 }

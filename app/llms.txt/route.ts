@@ -2,13 +2,14 @@ import { siteCaseStudies } from "@/data/caseStudies";
 import { siteExperience } from "@/data/experience";
 import { faq } from "@/data/faq";
 import { siteFeatured } from "@/data/featured";
-import { heroLead } from "@/data/profile";
 import { assessments } from "@/data/assessments";
 import { isHiddenService, primaryServices } from "@/data/catalog";
 import { services } from "@/data/services";
 import { calBookingPageUrl, isCalConfigured } from "@/lib/cal";
 import { localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
+import { aboutAiProject, heroLead, philosophy } from "@/data/profile";
 
 /**
  * /llms.txt (https://llmstxt.org) — AI asistanları için sitenin düz metin özeti.
@@ -17,9 +18,62 @@ import { siteConfig } from "@/lib/site";
 export const dynamic = "force-static";
 
 export function GET() {
-  const home = localeUrl("en");
+  const lines = SELLING_ENABLED ? salesLines() : cvLines();
+  return new Response(lines.join("\n"), {
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
+}
 
-  const lines = [
+/** 12 Kasım 2026: öz geçmiş kipi (lib/site-mode.ts) — hizmet, paket, görüşme ve SSS yok. */
+function cvLines(): string[] {
+  const home = localeUrl("en");
+  return [
+    `# ${siteConfig.name}`,
+    "",
+    "> Software Architect (Istanbul, Turkey)",
+    "",
+    heroLead.en,
+    "",
+    "## About",
+    "",
+    philosophy.en,
+    "",
+    aboutAiProject.en,
+    "",
+    "## Experience",
+    "",
+    ...siteExperience.map(
+      (item) => `- ${item.period.en}: ${item.role.en}, ${item.org.en}${item.location ? ` (${item.location.en})` : ""}`,
+    ),
+    "",
+    "## Projects",
+    "",
+    ...siteCaseStudies.map(
+      (item) => `- [${item.title.en}](${localeUrl("en", "/about")}#case-${item.id}): ${item.result.en}`,
+    ),
+    "",
+    "## Writing",
+    "",
+    ...siteFeatured.map((item) => `- [${item.title.en}](${item.href})`),
+    "",
+    "## Links",
+    "",
+    `- [Website (English)](${home})`,
+    `- [Website (Türkçe)](${localeUrl("tr")})`,
+    `- [About](${localeUrl("en", "/about")})`,
+    `- [Privacy policy](${localeUrl("en", "/privacy")})`,
+    `- [Full content for LLMs](${siteConfig.baseUrl}/llms-full.txt)`,
+    `- [LinkedIn](${siteConfig.linkedin})`,
+    `- [Medium](${siteConfig.medium})`,
+    `- [GitHub](${siteConfig.github})`,
+    `- Email: ${siteConfig.contactEmail}`,
+    "",
+  ];
+}
+
+function salesLines(): string[] {
+  const home = localeUrl("en");
+  return [
     `# ${siteConfig.name}`,
     "",
     `> ${faq[0].answer.en}`,
@@ -100,8 +154,4 @@ export function GET() {
     ...(siteConfig.whatsappUrl ? [`- [WhatsApp](${siteConfig.whatsappUrl})`] : []),
     "",
   ];
-
-  return new Response(lines.join("\n"), {
-    headers: { "Content-Type": "text/plain; charset=utf-8" },
-  });
 }

@@ -103,6 +103,7 @@ type Seed = Omit<PackageRow, "updated_at">;
  * Aynı gün: paketlerde yalnız teknik servis yolu kalır (Huntay); birim tasarım paketleri pasif, kapsam ve fiyat ön görüşmede.
  * Fiyatlar piyasa araştırmasıyla (yurt dışı: hazırlık denetimi $3.5–8.5K, destek asistanı PoC €6–15K) birime göre
  * farklı ve küsuratlı; bulut, güvenlik ve CTO paketleri pasif (silinmedi). Canlıdaki D1 bu listeden değil /admin'den güncellenir.
+ * 12 Kasım 2026 (Huntay: "şimdilik boş paket olsun, bir şey satmıyoruz"): bütün paketler pasif (lib/site-mode.ts).
  */
 const SEED: Seed[] = [
   {
@@ -153,7 +154,7 @@ const SEED: Seed[] = [
     perk_en: "The fee is credited if we implement the recommendations together.",
   },
   {
-    id: "ai-opportunity-scan", service_slug: "ai-agents", sort: 45, active: 1, featured: 0,
+    id: "ai-opportunity-scan", service_slug: "ai-agents", sort: 45, active: 0, featured: 0,
     name_tr: "Yapay Zeka Fırsat Taraması", name_en: "AI Opportunity Scan",
     summary_tr: "Şirketinizde yapay zekanın en çok getiri sağlayacağı süreçleri bulan; verinizin, araçlarınızın ve ekibinizin ne kadar hazır olduğunu ölçen sabit kapsamlı inceleme ve yol haritası.",
     summary_en: "A fixed-scope review that finds where AI pays off most in your company and measures how ready your data, tools and team are, with a roadmap.",
@@ -165,7 +166,7 @@ const SEED: Seed[] = [
     perk_en: "The fee is credited toward the Technical Service & Help Desk Assistant pilot.",
   },
   {
-    id: "ai-agent-pilot", service_slug: "ai-agents", sort: 50, active: 1, featured: 1,
+    id: "ai-agent-pilot", service_slug: "ai-agents", sort: 50, active: 0, featured: 1,
     name_tr: "Teknik Servis ve Help Desk Asistanı — Pilot", name_en: "Technical Service & Help Desk Assistant — Pilot",
     summary_tr: "Bayilerinizden, teknisyenlerden ve kullanıcılardan gelen arıza, kurulum ve kullanım sorularını kendi kılavuzlarınızla otomatik yanıtlayan, gerekince arıza kaydı açıp ekibinize devreden asistan; tek kanalda canlıda, mevcut yazılımınız değişmez.",
     summary_en: "An assistant that automatically answers fault, installation and usage questions from your dealers, technicians and users using your own manuals, and opens a ticket and hands over to your team when needed; live on one channel, your existing software stays as it is.",
@@ -177,7 +178,7 @@ const SEED: Seed[] = [
     perk_en: "",
   },
   {
-    id: "ai-production-rollout", service_slug: "ai-agents", sort: 55, active: 1, featured: 0,
+    id: "ai-production-rollout", service_slug: "ai-agents", sort: 55, active: 0, featured: 0,
     name_tr: "Teknik Servis ve Help Desk Asistanı — Canlı Kurulum", name_en: "Technical Service & Help Desk Assistant — Production Rollout",
     summary_tr: "Pilotta işe yarayan asistanı birden fazla kanala, ekiplerinize ve mevcut sistemlerinize bağlı; ölçülen ve sürdürülen bir ürüne dönüştürüyoruz.",
     summary_en: "We turn the assistant that worked in the pilot into a measured, maintained product connected to more channels, your teams and your existing systems.",

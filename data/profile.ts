@@ -5,9 +5,10 @@ import type { Localized } from "./types";
  * İlk cümle ismi içerir: arama motorları ve AI asistanları genelde ilk cümleyi "kim" cevabı olarak alıntılar.
  */
 export const heroLead: Localized = {
-  // 11 Kasım 2026: LinkedIn "Hakkında" ile aynı yapı — kanıt ayrı cümle, sonra uzmanlık; bulut/IoT rakamları buradan çıktı (odak dağılmasın).
-  en: "Across different projects, help desk workload and response times improved by 30–70%. Every engagement is led by me personally: with 13+ years in systems architecture, I turn manufacturers' scattered documentation and service knowledge into stable AI systems, without replacing your ERP or service software.",
-  tr: "Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70 iyileşti. İşi bizzat ben yürütüyorum: 13 yılı aşkın sistem mimarisi deneyimiyle, üreticilerin dağınık doküman ve servis bilgisini ERP ve servis yazılımlarınızı değiştirmeden kararlı yapay zekâ sistemlerine dönüştürüyorum.",
+  // 11 Kasım 2026: LinkedIn "Hakkında" ile aynı yapı. 12 Kasım 2026 (öz geçmiş kipi): LinkedIn'deki yeni "Hakkında"nın
+  // ilk iki paragrafıyla aynı; danışmanlık ve satış dili yok.
+  en: "Huntay AzerTürk is a software architect with 13+ years of experience designing and building backend platforms, distributed systems and applied AI. His work focuses on system architecture, microservices, cloud and IoT platforms, and bringing AI into real products, from retrieval-augmented assistants to agent-based workflows.",
+  tr: "Huntay AzerTürk, backend platformları, dağıtık sistemler ve uygulamalı yapay zekâ üzerine 13 yılı aşkın deneyime sahip bir yazılım mimarı. Sistem mimarisi, mikroservisler, bulut ve IoT platformları üzerine çalışıyor; yapay zekâyı RAG tabanlı asistanlardan ajan tabanlı iş akışlarına kadar gerçek ürünlere taşıyor.",
 };
 
 export const philosophy: Localized = {

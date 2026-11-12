@@ -1,4 +1,13 @@
-import { aboutAiProject, philosophy, strategicPartner } from "@/data/profile";
+import {
+  aboutAcademic,
+  aboutAiProject,
+  aboutDiscipline,
+  aboutResearch,
+  aboutSecurity,
+  philosophy,
+  strategicPartner,
+} from "@/data/profile";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export async function About() {
@@ -6,11 +15,21 @@ export async function About() {
   const t = await getTranslations("About");
 
   // 11 Kasım 2026 (tek odak): bilişsel bilimler, güvenlik, araştırma ve spor blokları sitede yok (data/profile.ts'de duruyor).
-  const blocks = [
-    { title: t("partnerTitle"), body: strategicPartner[locale] },
-    { title: t("aiTitle"), body: aboutAiProject[locale] },
-    { title: t("philosophyTitle"), body: philosophy[locale] },
-  ];
+  // 12 Kasım 2026 (öz geçmiş kipi, lib/site-mode.ts): "nasıl çalışırım" (müşteriye konuşan) yok; kişisel bloklar geri.
+  const blocks = SELLING_ENABLED
+    ? [
+        { title: t("partnerTitle"), body: strategicPartner[locale] },
+        { title: t("aiTitle"), body: aboutAiProject[locale] },
+        { title: t("philosophyTitle"), body: philosophy[locale] },
+      ]
+    : [
+        { title: t("philosophyTitle"), body: philosophy[locale] },
+        { title: t("aiTitle"), body: aboutAiProject[locale] },
+        { title: t("securityTitle"), body: aboutSecurity[locale] },
+        { title: t("academicTitle"), body: aboutAcademic[locale] },
+        { title: t("researchTitle"), body: aboutResearch[locale] },
+        { title: t("disciplineTitle"), body: aboutDiscipline[locale] },
+      ];
 
   return (
     <section id="about" className="border-b border-border py-20 sm:py-28">

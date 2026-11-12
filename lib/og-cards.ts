@@ -1,6 +1,7 @@
 import { getService, services } from "@/data/services";
 import type { OgCard } from "@/lib/og";
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 
 /**
  * Paylaşım görsellerinin içerikleri. Görseller statik PNG olarak public/og/<dil>/<anahtar>.png
@@ -25,7 +26,21 @@ export function ogImagePath(lang: OgLang, path: string): string {
 
 export const ogKeys = ["home", "services", "book", ...services.map((s) => `service-${s.slug}`)];
 
-const home = {
+/** 12 Kasım 2026: öz geçmiş kipi (lib/site-mode.ts) — unvan, uzmanlık alanları; satış ve oran yok. */
+const cvHome = {
+  en: {
+    subtitle: "Software Architect",
+    tagline: "13+ years · Backend platforms, distributed systems & applied AI · Istanbul",
+    chips: ["Architecture & microservices", "Cloud & IoT platforms", "RAG & agent-based AI"],
+  },
+  tr: {
+    subtitle: "Yazılım Mimarı",
+    tagline: "13+ yıl · Backend platformları, dağıtık sistemler ve uygulamalı yapay zekâ · İstanbul",
+    chips: ["Mimari ve mikroservisler", "Bulut ve IoT platformları", "RAG ve ajan tabanlı yapay zekâ"],
+  },
+} as const;
+
+const salesHome = {
   en: {
     subtitle: "AI Consultant for Manufacturers",
     tagline: "Starts with the technical service & help desk assistant · Istanbul",
@@ -68,6 +83,6 @@ export function ogCardFor(key: string, lang: OgLang): OgCard {
       chips: [bookChip],
     };
   }
-  const text = home[lang];
+  const text = (SELLING_ENABLED ? salesHome : cvHome)[lang];
   return { kicker: "HUNTAYAZERTURK.COM", title: siteConfig.name, ...text };
 }

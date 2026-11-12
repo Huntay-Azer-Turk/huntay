@@ -1,4 +1,5 @@
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { getTranslations } from "next-intl/server";
 import { CalendarClock, Mail, Phone, MessageCircle } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -17,13 +18,16 @@ export async function ContactFooter() {
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground">{t("subtitle")}</p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/book"
-              className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
-            >
-              <CalendarClock className="h-4 w-4" aria-hidden />
-              {t("book")}
-            </Link>
+            {/* 12 Kasım 2026: öz geçmiş kipinde görüşme planlama yok (lib/site-mode.ts). */}
+            {SELLING_ENABLED ? (
+              <Link
+                href="/book"
+                className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
+              >
+                <CalendarClock className="h-4 w-4" aria-hidden />
+                {t("book")}
+              </Link>
+            ) : null}
             <a
               href={siteConfig.linkedin}
               target="_blank"

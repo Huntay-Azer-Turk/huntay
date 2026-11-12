@@ -1,7 +1,9 @@
 import { heroLead } from "@/data/profile";
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { getLocale, getTranslations } from "next-intl/server";
-import { CalendarClock, Tag } from "lucide-react";
+import { CalendarClock, Mail, Tag } from "lucide-react";
+import { LinkedinIcon } from "@/components/icons";
 import { Link } from "@/i18n/navigation";
 import Image from "next/image";
 
@@ -48,24 +50,60 @@ export async function Hero() {
         <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg md:text-xl">
           {heroLead[locale]}
         </p>
-        {/* 11 Kasım 2026: tek ana eylem (görüşme) + paketler; sosyal ve asistan bağlantıları İletişim bölümünde ve alt bilgide. */}
+        {/* 11 Kasım 2026: tek ana eylem (görüşme) + paketler; sosyal ve asistan bağlantıları İletişim bölümünde ve alt bilgide.
+            12 Kasım 2026: öz geçmiş kipinde (lib/site-mode.ts) LinkedIn ve iletişim. */}
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
-          >
-            <CalendarClock className="h-4 w-4" aria-hidden />
-            {t("ctaBook")}
-          </Link>
-          <Link
-            href="/packages"
-            className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
-          >
-            <Tag className="h-4 w-4" aria-hidden />
-            {t("ctaPackages")}
-          </Link>
+          {SELLING_ENABLED ? (
+            <SalesActions ctaBook={t("ctaBook")} ctaPackages={t("ctaPackages")} />
+          ) : (
+            <CvActions linkedin={t("ctaLinkedin")} contact={t("ctaContact")} />
+          )}
         </div>
       </div>
     </section>
+  );
+}
+
+function CvActions({ linkedin, contact }: { linkedin: string; contact: string }) {
+  return (
+    <>
+      <a
+        href={siteConfig.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
+      >
+        <LinkedinIcon className="h-4 w-4" aria-hidden />
+        {linkedin}
+      </a>
+      <a
+        href="#contact"
+        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+      >
+        <Mail className="h-4 w-4" aria-hidden />
+        {contact}
+      </a>
+    </>
+  );
+}
+
+function SalesActions({ ctaBook, ctaPackages }: { ctaBook: string; ctaPackages: string }) {
+  return (
+    <>
+      <Link
+        href="/book"
+        className="inline-flex items-center gap-2 rounded-xl bg-accent px-5 py-3 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90"
+      >
+        <CalendarClock className="h-4 w-4" aria-hidden />
+        {ctaBook}
+      </Link>
+      <Link
+        href="/packages"
+        className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-foreground transition hover:border-accent"
+      >
+        <Tag className="h-4 w-4" aria-hidden />
+        {ctaPackages}
+      </Link>
+    </>
   );
 }

@@ -9,6 +9,7 @@ import { techStack } from "@/data/techStack";
 import type { FaqItem, ServiceItem } from "@/data/types";
 import { ogImagePath } from "./og-cards";
 import { siteConfig } from "./site";
+import { SELLING_ENABLED, isHiddenSalesPath } from "./site-mode";
 
 export type AppLocale = "en" | "tr";
 
@@ -119,11 +120,12 @@ export function buildMetadata({
       description,
       images: images.map((image) => image.url),
     },
+    // 12 Kasım 2026: öz geçmiş kipinde satış sayfaları (hizmet, paket, görüşme, değerlendirme, asistan) dizine girmez.
     robots: {
-      index: true,
+      index: !isHiddenSalesPath(path),
       follow: true,
       googleBot: {
-        index: true,
+        index: !isHiddenSalesPath(path),
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -238,10 +240,11 @@ function reserveAction(locale: AppLocale) {
 export function buildSiteGraph(locale: AppLocale, personDescription: string) {
   const currentRole = experience[0];
   // 11 Kasım 2026 (tek odak): yalnız yapay zekâ grubu; bulut, güvenlik ve mimari başlıkları "her şeyi yapan" izlenimi veriyordu.
+  // 12 Kasım 2026 (öz geçmiş kipi): bir yazılım mimarının bütün yığını.
   const knowsAbout = Array.from(
     new Set(
       techStack
-        .filter((group) => group.id === "ai")
+        .filter((group) => !SELLING_ENABLED || group.id === "ai")
         .flatMap((group) => group.items.map((item) => cleanSkill(item.en))),
     ),
   );
@@ -257,7 +260,7 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       url: localeUrl("en"),
       image: absoluteUrl(profileImagePath),
       description: personDescription,
-      jobTitle: currentRole.role[locale],
+      jobTitle: SELLING_ENABLED ? currentRole.role[locale] : locale === "tr" ? "Yazılım Mimarı" : "Software Architect",
       worksFor: { "@type": "Organization", name: currentRole.org[locale] },
       address: {
         "@type": "PostalAddress",
@@ -285,42 +288,10 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
         siteConfig.youtube,
         siteConfig.github,
       ],
-      hasOfferCatalog: offerCatalog(locale),
-      potentialAction: reserveAction(locale),
+      ...(SELLING_ENABLED ? { hasOfferCatalog: offerCatalog(locale), potentialAction: reserveAction(locale) } : {}),
     },
-    {
-      // Danışmanlık işi: yerel ve "İstanbul'da yazılım/yapay zeka danışmanı" aramaları için iş varlığı.
-      "@type": "ProfessionalService",
-      "@id": businessId,
-      name:
-        locale === "tr"
-          ? `${siteConfig.name} — Üreticiler için Yapay Zekâ Danışmanlığı`
-          : `${siteConfig.name} — AI Consulting for Manufacturers`,
-      url: localeUrl(locale, "/services"),
-      image: absoluteUrl(profileImagePath),
-      description:
-        locale === "tr"
-          ? "Bayi ve servis ağı olan üreticiler için yapay zekâ teknik servis ve help desk asistanı: tekrarlı arıza ve doküman sorularını kendi kılavuzlarınızla, yazılımınızı değiştirmeden yanıtlar. Sabit fiyatlı tarama ve pilotla başlar."
-          : "AI technical service and help desk assistant for manufacturers with dealer and service networks: answers repetitive fault and documentation questions from your own manuals, without replacing your software. Starts with a fixed-price scan and pilot.",
-      founder: { "@id": personId },
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: siteConfig.locality,
-        addressCountry: siteConfig.countryCode,
-      },
-      areaServed: "Worldwide",
-      availableLanguage: ["en", "tr"],
-      email: siteConfig.contactEmail,
-      ...(siteConfig.phoneDisplay && siteConfig.phoneTel ? { telephone: siteConfig.phoneTel } : {}),
-      openingHoursSpecification: {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "10:00",
-        closes: "18:00",
-      },
-      hasOfferCatalog: offerCatalog(locale),
-      potentialAction: reserveAction(locale),
-    },
+    // 12 Kasım 2026: öz geçmiş kipinde iş varlığı (danışmanlık) yok; yalnız kişi ve site.
+    ...(SELLING_ENABLED ? [professionalService(locale)] : []),
     {
       "@type": "WebSite",
       "@id": websiteId,
@@ -330,6 +301,43 @@ export function buildSiteGraph(locale: AppLocale, personDescription: string) {
       publisher: { "@id": personId },
     },
   ]);
+}
+
+/** Danışmanlık iş varlığı; yalnız satış kipinde (lib/site-mode.ts). */
+function professionalService(locale: AppLocale) {
+  return {
+    // Danışmanlık işi: yerel ve "İstanbul'da yazılım/yapay zeka danışmanı" aramaları için iş varlığı.
+    "@type": "ProfessionalService",
+    "@id": businessId,
+    name:
+      locale === "tr"
+        ? `${siteConfig.name} — Üreticiler için Yapay Zekâ Danışmanlığı`
+        : `${siteConfig.name} — AI Consulting for Manufacturers`,
+    url: localeUrl(locale, "/services"),
+    image: absoluteUrl(profileImagePath),
+    description:
+      locale === "tr"
+        ? "Bayi ve servis ağı olan üreticiler için yapay zekâ teknik servis ve help desk asistanı: tekrarlı arıza ve doküman sorularını kendi kılavuzlarınızla, yazılımınızı değiştirmeden yanıtlar. Sabit fiyatlı tarama ve pilotla başlar."
+        : "AI technical service and help desk assistant for manufacturers with dealer and service networks: answers repetitive fault and documentation questions from your own manuals, without replacing your software. Starts with a fixed-price scan and pilot.",
+    founder: { "@id": personId },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: siteConfig.locality,
+      addressCountry: siteConfig.countryCode,
+    },
+    areaServed: "Worldwide",
+    availableLanguage: ["en", "tr"],
+    email: siteConfig.contactEmail,
+    ...(siteConfig.phoneDisplay && siteConfig.phoneTel ? { telephone: siteConfig.phoneTel } : {}),
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "10:00",
+      closes: "18:00",
+    },
+    hasOfferCatalog: offerCatalog(locale),
+    potentialAction: reserveAction(locale),
+  };
 }
 
 type PageInfo = { title: string; description: string };

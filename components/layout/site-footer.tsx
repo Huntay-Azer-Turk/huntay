@@ -1,6 +1,7 @@
 import { ConsentSettingsButton } from "@/components/analytics/consent-manager";
 import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
+import { isHiddenSalesPath } from "@/lib/site-mode";
 import { getTranslations } from "next-intl/server";
 
 /** Tüm sayfalarda görünen alt bilgi: önemli sayfalara iç linkler, gizlilik/kullanım koşulları ve telif. */
@@ -15,7 +16,7 @@ export async function SiteFooter() {
     { href: "/assistant", label: t("assistant") },
     { href: "/privacy", label: t("privacy") },
     { href: "/terms", label: t("terms") },
-  ];
+  ].filter((link) => !isHiddenSalesPath(link.href)); // 12 Kasım 2026: öz geçmiş kipi (lib/site-mode.ts)
 
   return (
     <footer className="border-t border-border py-10 text-sm text-muted-foreground">

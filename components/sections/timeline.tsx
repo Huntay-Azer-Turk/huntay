@@ -1,5 +1,6 @@
-import { education } from "@/data/education";
+import { credentials, education } from "@/data/education";
 import { siteExperience } from "@/data/experience";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export async function Timeline() {
@@ -31,8 +32,15 @@ export async function Timeline() {
                     {item.location[locale]}
                   </p>
                 ) : null}
-                {/* 11 Kasım 2026 (tek odak): görev ayrıntıları (IoT, bulut, mimari) sitede gösterilmiyor; yalnız unvan,
-                    kurum ve dönem. Ayrıntılar data/experience.ts'de ve LinkedIn'de duruyor. */}
+                {/* 11 Kasım 2026 (tek odak): görev ayrıntıları satış kipinde gösterilmiyor; yalnız unvan, kurum ve dönem.
+                    12 Kasım 2026: öz geçmiş kipinde (lib/site-mode.ts) ayrıntılar yine görünür. */}
+                {SELLING_ENABLED
+                  ? null
+                  : item.highlights?.map((highlight, index) => (
+                      <p key={index} className="mt-2 text-sm text-muted-foreground">
+                        {highlight[locale]}
+                      </p>
+                    ))}
               </div>
             </li>
           ))}
@@ -58,7 +66,23 @@ export async function Timeline() {
             </li>
           ))}
         </ol>
-        {/* 11 Kasım 2026 (tek odak): sertifikalar ve ilgi alanları sitede gösterilmiyor (data/education.ts → credentials). */}
+        {/* 11 Kasım 2026 (tek odak): sertifikalar ve ilgi alanları satış kipinde gösterilmiyor; öz geçmiş kipinde görünür. */}
+        {SELLING_ENABLED ? null : (
+          <>
+            <h2 className="mt-16 text-2xl font-semibold tracking-tight text-foreground">
+              {t("credentialsTitle")}
+            </h2>
+            <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+              {credentials.certs.map((cert) => (
+                <li key={cert.en} className="flex gap-2">
+                  <span className="text-accent">—</span>
+                  {cert[locale]}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">{credentials.interests[locale]}</p>
+          </>
+        )}
       </div>
     </section>
   );

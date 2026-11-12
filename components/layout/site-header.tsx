@@ -3,6 +3,7 @@
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { useLocale, useTranslations } from "next-intl";
 import { CalendarClock, Menu, X } from "lucide-react";
 import NextLink from "next/link";
@@ -14,7 +15,10 @@ import { ThemeToggle } from "@/components/interactive/theme-toggle";
  * Ana sayfa bölümleri (#cases …). Hizmetler (/services), Paketler (/packages) ve Hakkında (/about) ayrı sayfalar.
  * 11 Kasım 2026: deneyim, yazılar ve teknoloji yığını /about sayfasına taşındı; menüde yalnız ana sayfa bölümleri kaldı.
  */
-const sectionKeys = ["cases", "faq", "contact"] as const;
+// 12 Kasım 2026: öz geçmiş kipinde (lib/site-mode.ts) menü projeler, deneyim, yazılar ve iletişim; satış sayfaları yok.
+const sectionKeys = SELLING_ENABLED
+  ? (["cases", "faq", "contact"] as const)
+  : (["cases", "timeline", "featured", "contact"] as const);
 
 const linkClass =
   "whitespace-nowrap rounded-lg px-3 py-2 text-sm text-muted-foreground transition hover:bg-card hover:text-foreground";
@@ -53,20 +57,24 @@ export function SiteHeader() {
           >
             {t("about")}
           </Link>
-          <Link
-            href="/services"
-            className={`${linkClass} ${onServices ? "text-foreground" : ""}`}
-            aria-current={onServices ? "page" : undefined}
-          >
-            {t("services")}
-          </Link>
-          <Link
-            href="/packages"
-            className={`${linkClass} ${onPackages ? "text-foreground" : ""}`}
-            aria-current={onPackages ? "page" : undefined}
-          >
-            {t("packages")}
-          </Link>
+          {SELLING_ENABLED ? (
+            <>
+              <Link
+                href="/services"
+                className={`${linkClass} ${onServices ? "text-foreground" : ""}`}
+                aria-current={onServices ? "page" : undefined}
+              >
+                {t("services")}
+              </Link>
+              <Link
+                href="/packages"
+                className={`${linkClass} ${onPackages ? "text-foreground" : ""}`}
+                aria-current={onPackages ? "page" : undefined}
+              >
+                {t("packages")}
+              </Link>
+            </>
+          ) : null}
           {sectionKeys.map((key) => (
             <NextLink key={key} href={sectionHref(key)} className={linkClass}>
               {t(key)}
@@ -79,13 +87,15 @@ export function SiteHeader() {
           <div className="shrink-0">
             <ThemeToggle />
           </div>
-          <Link
-            href="/book"
-            className="hidden items-center gap-1.5 rounded-lg bg-accent px-3 py-2 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90 md:inline-flex"
-          >
-            <CalendarClock className="h-4 w-4" aria-hidden />
-            {t("book")}
-          </Link>
+          {SELLING_ENABLED ? (
+            <Link
+              href="/book"
+              className="hidden items-center gap-1.5 rounded-lg bg-accent px-3 py-2 text-sm font-medium text-[var(--color-on-accent)] transition hover:opacity-90 md:inline-flex"
+            >
+              <CalendarClock className="h-4 w-4" aria-hidden />
+              {t("book")}
+            </Link>
+          ) : null}
           <button
             type="button"
             className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-border bg-card lg:hidden sm:h-9 sm:w-9 sm:min-h-0 sm:min-w-0"
@@ -108,20 +118,24 @@ export function SiteHeader() {
             >
               {t("about")}
             </Link>
-            <Link
-              href="/services"
-              className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
-              onClick={() => setOpen(false)}
-            >
-              {t("services")}
-            </Link>
-            <Link
-              href="/packages"
-              className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
-              onClick={() => setOpen(false)}
-            >
-              {t("packages")}
-            </Link>
+            {SELLING_ENABLED ? (
+              <>
+                <Link
+                  href="/services"
+                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
+                  onClick={() => setOpen(false)}
+                >
+                  {t("services")}
+                </Link>
+                <Link
+                  href="/packages"
+                  className="rounded-lg px-3 py-2 text-sm text-muted-foreground"
+                  onClick={() => setOpen(false)}
+                >
+                  {t("packages")}
+                </Link>
+              </>
+            ) : null}
             {sectionKeys.map((key) => (
               <NextLink
                 key={key}
@@ -132,14 +146,16 @@ export function SiteHeader() {
                 {t(key)}
               </NextLink>
             ))}
-            <Link
-              href="/book"
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-medium text-[var(--color-on-accent)]"
-              onClick={() => setOpen(false)}
-            >
-              <CalendarClock className="h-4 w-4" aria-hidden />
-              {t("book")}
-            </Link>
+            {SELLING_ENABLED ? (
+              <Link
+                href="/book"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-4 py-3 text-sm font-medium text-[var(--color-on-accent)]"
+                onClick={() => setOpen(false)}
+              >
+                <CalendarClock className="h-4 w-4" aria-hidden />
+                {t("book")}
+              </Link>
+            ) : null}
           </nav>
         </div>
       ) : null}

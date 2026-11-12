@@ -1,3 +1,4 @@
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import type { FeaturedItem } from "./types";
 
 /**
@@ -54,4 +55,7 @@ export const featured: FeaturedItem[] = [
 
 /** Sitede gösterilen yazılar (11 Kasım 2026, tek odak): yalnız doküman tabanlı asistanla ilgili yazı. */
 const SITE_ARTICLE_IDS = new Set(["rag-chunking"]);
-export const siteFeatured: FeaturedItem[] = featured.filter((item) => SITE_ARTICLE_IDS.has(item.id));
+/** 12 Kasım 2026: öz geçmiş kipinde bütün yazılar. */
+export const siteFeatured: FeaturedItem[] = SELLING_ENABLED
+  ? featured.filter((item) => SITE_ARTICLE_IDS.has(item.id))
+  : featured;

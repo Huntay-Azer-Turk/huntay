@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { buttonPrimary } from "@/lib/ui";
 import { CalendarClock, Check } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -20,10 +21,12 @@ export async function Expertise() {
           <p className="font-mono text-xs uppercase tracking-widest text-accent">{t("eyebrow")}</p>
           <h2 className="mt-2 text-3xl font-semibold tracking-tight text-foreground">{t("title")}</h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">{t("body")}</p>
-          <Link href="/book" className={`${buttonPrimary} mt-8`}>
-            <CalendarClock className="h-4 w-4" aria-hidden />
-            {t("book")}
-          </Link>
+          {SELLING_ENABLED ? (
+            <Link href="/book" className={`${buttonPrimary} mt-8`}>
+              <CalendarClock className="h-4 w-4" aria-hidden />
+              {t("book")}
+            </Link>
+          ) : null}
         </div>
         <div className="rounded-2xl border border-border bg-card p-6 sm:p-8">
           <h3 className="text-lg font-semibold text-foreground">{t("focusTitle")}</h3>

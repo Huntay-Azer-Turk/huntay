@@ -2,6 +2,7 @@ import { assessments } from "@/data/assessments";
 import { isHiddenService, visibleServices } from "@/data/catalog";
 import { hreflangAlternates, localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { isHiddenSalesPath } from "@/lib/site-mode";
 import type { MetadataRoute } from "next";
 
 /** Her sayfa iki dilde; hreflang alternatifleri sitemap’te de bildirilir. */
@@ -31,7 +32,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Sabit tarih: her build’de değişen `lastmod`, arama motorlarının bu sinyali yok saymasına yol açar.
   const lastModified = new Date(siteConfig.contentUpdatedAt);
 
-  return pages.flatMap(({ path, priority, changeFrequency }) =>
+  // 12 Kasım 2026: öz geçmiş kipinde satış sayfaları haritada yok (noindex; adresleri MCP için çalışır).
+  return pages.filter(({ path }) => !isHiddenSalesPath(path)).flatMap(({ path, priority, changeFrequency }) =>
     (["en", "tr"] as const).map((locale) => ({
       url: localeUrl(locale, path),
       lastModified,

@@ -25,6 +25,7 @@ import { serviceText, type Lang } from "@/lib/content";
 import { mcpEndpoint } from "@/lib/mcp/meta";
 import { localeUrl } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 
 /**
  * Sayfaların Markdown sürümleri — AI ajanları `Accept: text/markdown` ile istediğinde (middleware)
@@ -34,6 +35,8 @@ import { siteConfig } from "@/lib/site";
 const H = {
   en: {
     headline: "AI Consultant for Manufacturers — technical service & help desk first (Istanbul, Turkey)",
+    cvHeadline: "Software Architect (Istanbul, Turkey)",
+    projects: "Projects",
     about: "About",
     services: "Services",
     caseStudies: "Case studies",
@@ -71,6 +74,8 @@ const H = {
   },
   tr: {
     headline: "Üreticiler için Yapay Zekâ Danışmanı — önce teknik servis ve help desk (İstanbul)",
+    cvHeadline: "Yazılım Mimarı (İstanbul)",
+    projects: "Projeler",
     about: "Hakkında",
     services: "Hizmetler",
     caseStudies: "Vaka çalışmaları",
@@ -116,8 +121,10 @@ function contactBlock(lang: Lang): string[] {
   return [
     `## ${h.contact}`,
     "",
-    `- ${h.book}: ${localeUrl(lang, "/book")}`,
-    `- MCP: ${mcpEndpoint} (${localeUrl(lang, "/assistant")})`,
+    // 12 Kasım 2026: öz geçmiş kipinde (lib/site-mode.ts) görüşme ve MCP bağlantısı yok.
+    ...(SELLING_ENABLED
+      ? [`- ${h.book}: ${localeUrl(lang, "/book")}`, `- MCP: ${mcpEndpoint} (${localeUrl(lang, "/assistant")})`]
+      : []),
     `- LinkedIn: ${siteConfig.linkedin}`,
     `- Medium: ${siteConfig.medium}`,
     `- GitHub: ${siteConfig.github}`,
@@ -128,6 +135,51 @@ function contactBlock(lang: Lang): string[] {
 }
 
 export function homeMarkdown(lang: Lang): string {
+  return SELLING_ENABLED ? salesHomeMarkdown(lang) : cvHomeMarkdown(lang);
+}
+
+/** 12 Kasım 2026: öz geçmiş kipi (lib/site-mode.ts) — hizmet, SSS ve satış dili yok. */
+function cvHomeMarkdown(lang: Lang): string {
+  const h = H[lang];
+  return [
+    `# ${siteConfig.name}`,
+    "",
+    `> ${h.cvHeadline}`,
+    "",
+    heroLead[lang],
+    "",
+    `## ${h.about}`,
+    "",
+    philosophy[lang],
+    "",
+    aboutAiProject[lang],
+    "",
+    `## ${h.projects}`,
+    "",
+    ...siteCaseStudies.flatMap((item) => [
+      `### ${item.title[lang]}`,
+      "",
+      `${h.approach}: ${item.action[lang]}`,
+      "",
+      `${h.result}: ${item.result[lang]}`,
+      "",
+    ]),
+    `## ${h.experience}`,
+    "",
+    ...siteExperience.map(
+      (item) =>
+        `- ${item.period[lang]}: ${item.role[lang]}, ${item.org[lang]}${item.location ? ` (${item.location[lang]})` : ""}`,
+    ),
+    "",
+    `## ${h.writing}`,
+    "",
+    ...siteFeatured.map((item) => `- [${item.title[lang]}](${item.href})`),
+    "",
+    ...contactBlock(lang),
+  ].join("\n");
+}
+
+function salesHomeMarkdown(lang: Lang): string {
   const h = H[lang];
   return [
     `# ${siteConfig.name}`,
@@ -337,6 +389,8 @@ export function markdownForPath(pathname: string): string | null {
 
 /** /llms-full.txt: tüm sayfaların İngilizce Markdown içeriği tek dosyada. */
 export function llmsFullText(): string {
+  // 12 Kasım 2026: öz geçmiş kipinde yalnız ana sayfa (öz geçmiş); satış sayfaları noindex.
+  if (!SELLING_ENABLED) return [homeMarkdown("en"), `Turkish version: ${localeUrl("tr")}`].join("\n\n---\n\n");
   const parts = [
     homeMarkdown("en"),
     servicesMarkdown("en"),

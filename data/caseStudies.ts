@@ -1,3 +1,4 @@
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import type { CaseStudy } from "./types";
 
 export const caseStudies: CaseStudy[] = [
@@ -40,24 +41,25 @@ export const caseStudies: CaseStudy[] = [
     },
   },
   {
-    // 11 Kasım 2026, Huntay: tek projenin "3 mühendisle 100.000 kullanıcı" anlatımı absürt duruyordu; farklı üretici
-    // firmalardaki sonuçların özeti olarak yeniden yazıldı (oranlar Huntay'ın verdiği aralıklar). Kimlik aynı (#case-ai-ops).
+    // 11 Kasım 2026, Huntay: tek projenin "3 mühendisle 100.000 kullanıcı" anlatımı absürt duruyordu; sonuçlar Huntay'ın
+    // verdiği aralıklarla yazıldı. 12 Kasım 2026: öz geçmiş kipi — danışmanlık dili ("firmalarda kurduk") yerine proje
+    // anlatımı; oranlar aynı set. Kimlik aynı (#case-ai-ops).
     id: "ai-ops",
     title: {
-      en: "Help desk assistants at manufacturers",
-      tr: "Üretici firmalarda help desk asistanı",
+      en: "AI-supported help desk system",
+      tr: "Yapay zekâ destekli help desk sistemi",
     },
     action: {
-      en: "At different manufacturers, we set up AI-supported help desks that answer the repetitive fault and documentation questions from dealers, technicians and users from the company's own manuals and past tickets.",
-      tr: "Farklı üretici firmalarda, bayilerden, teknisyenlerden ve kullanıcılardan gelen tekrarlı arıza ve doküman sorularını firmanın kendi kılavuzları ve geçmiş talepleriyle yanıtlayan yapay zekâ destekli help desk sistemleri kurduk.",
+      en: "Designed a support system based on LangChain, LangGraph and RAG that answers repetitive fault and documentation questions from dealers, technicians and users using manuals and past tickets; integrated it on GCP with Dialogflow CX, Chatwoot and WhatsApp.",
+      tr: "Bayi, teknisyen ve kullanıcılardan gelen tekrarlı arıza ve doküman sorularını kılavuzlar ve geçmiş taleplerle yanıtlayan, LangChain, LangGraph ve RAG tabanlı bir destek sistemi tasarladım; GCP üzerinde Dialogflow CX, Chatwoot ve WhatsApp ile entegre ettim.",
     },
     result: {
-      en: "Help desk workload and response times improved by 30–70% and customer satisfaction by 15–40% depending on the company; we also achieved a 10–30% improvement in the companies' costs and sales.",
-      tr: "Help desk iş yükü ve yanıt süreleri firmaya göre %30–70, müşteri memnuniyeti %15–40 iyileşti; firmaların maliyet ve satışlarında da %10–30 iyileşme sağladık.",
+      en: "Across different projects, help desk workload and response times improved by 30–70% and customer satisfaction by 15–40%, with a 10–30% improvement in costs and sales.",
+      tr: "Farklı projelerde help desk iş yükü ve yanıt süreleri %30–70, müşteri memnuniyeti %15–40 iyileşti; maliyet ve satışlarda %10–30 iyileşme sağlandı.",
     },
     tags: {
-      en: "Help desk · Technical service · Dealer support · RAG",
-      tr: "Help desk · Teknik servis · Bayi desteği · RAG",
+      en: "Help desk · RAG · LangGraph · Dialogflow CX",
+      tr: "Help desk · RAG · LangGraph · Dialogflow CX",
     },
   },
   {
@@ -125,6 +127,7 @@ export const caseStudies: CaseStudy[] = [
  * (lib/content.ts) dizin onayına kadar aynı kalır.
  */
 export const SITE_CASE_IDS = ["ai-ops"] as const;
-export const siteCaseStudies: CaseStudy[] = caseStudies.filter((item) =>
-  (SITE_CASE_IDS as readonly string[]).includes(item.id),
-);
+/** 12 Kasım 2026: öz geçmiş kipinde (lib/site-mode.ts) bütün projeler. */
+export const siteCaseStudies: CaseStudy[] = SELLING_ENABLED
+  ? caseStudies.filter((item) => (SITE_CASE_IDS as readonly string[]).includes(item.id))
+  : caseStudies;

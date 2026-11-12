@@ -1,7 +1,7 @@
 {
   "Metadata": {
-    "title": "Huntay AzerTürk — AI Consultant for Manufacturers",
-    "description": "For manufacturers and distributors with dealer and service networks, we answer the repetitive fault and documentation questions that tie up your central teams, with AI and without replacing your existing software. Across projects, help desk workload and response times improved by 30–70%."
+    "title": "Huntay AzerTürk — Software Architect",
+    "description": "Huntay AzerTürk: software architect with 13+ years of experience in backend platforms, distributed systems and applied AI. Microservices, cloud and IoT platforms, RAG and agent-based systems."
   },
   "Nav": {
     "about": "About",
@@ -21,14 +21,16 @@
     "packages": "Packages"
   },
   "Hero": {
-    "eyebrow": "Istanbul · Remote and on-site",
-    "role": "AI Consultant for Manufacturers",
-    "valueProp": "For manufacturers and distributors with dealer and service networks, we answer the repetitive fault and documentation questions that tie up your central teams, with AI and without replacing your existing software.",
+    "eyebrow": "Istanbul, Turkey",
+    "role": "Software Architect",
+    "valueProp": "13+ years designing and building backend platforms, distributed systems and applied AI.",
     "ctaBook": "Book an assessment call",
     "ctaPackages": "Packages & pricing",
     "linkChatgpt": "Open in ChatGPT",
     "linkClaude": "Claude & other assistants",
-    "ctaAssessment": "Free AI maturity test"
+    "ctaAssessment": "Free AI maturity test",
+    "ctaLinkedin": "My LinkedIn profile",
+    "ctaContact": "Contact"
   },
   "NotFound": {
     "title": "Page not found",
@@ -51,8 +53,8 @@
     "subtitle": "Outcomes engineered, not buzzwords."
   },
   "Cases": {
-    "title": "Case studies",
-    "subtitle": "Results from the field: the problem, what we did and what changed.",
+    "title": "Projects",
+    "subtitle": "Selected work: the problem, what was done and the outcome.",
     "action": "Action",
     "result": "Outcome",
     "allProjects": "About and experience"
@@ -171,7 +173,7 @@
   },
   "Contact": {
     "title": "Contact",
-    "subtitle": "Reach out directly about a technical service and help desk assistant.",
+    "subtitle": "Reach me on LinkedIn, by email or by phone.",
     "book": "Book a call",
     "linkedin": "LinkedIn",
     "medium": "Medium",
@@ -337,19 +339,19 @@
     "packages": "Packages & pricing"
   },
   "Expertise": {
-    "eyebrow": "Expertise and approach",
-    "title": "Systems that work in the field, not theory",
-    "body": "With 13+ years in systems architecture, I turn manufacturers' scattered documentation and service knowledge into a stable technical service and help desk assistant. Instead of theoretical advice, I build an end-to-end solution that speeds up technical requests from the field, without replacing your ERP or service software.",
-    "focusTitle": "Focus areas",
-    "focus1": "Technical support assistant for dealers and authorised service partners",
-    "focus2": "Knowledge base built from manuals, service bulletins and fault records",
-    "focus3": "Connecting the assistant to your ERP and service software without replacing them",
+    "eyebrow": "Expertise",
+    "title": "Simple, stable systems that scale",
+    "body": "My work focuses on system architecture, microservices, cloud and IoT platforms, and bringing AI into real products, from retrieval-augmented assistants to agent-based workflows. I care about architectures without needless complexity that teams can build on with ease.",
+    "focusTitle": "Areas of expertise",
+    "focus1": "Software architecture and microservices (.NET, Python)",
+    "focus2": "Cloud, IoT and event-driven platforms",
+    "focus3": "Applied AI: RAG, LangChain and LangGraph; technical leadership and mentoring",
     "book": "Book a 30-minute assessment call"
   },
   "AboutPage": {
     "title": "About",
-    "intro": "Huntay AzerTürk is an AI consultant for manufacturers with dealer and service networks. This page covers how I work, the key project, my experience and my writing.",
-    "metaTitle": "About — Huntay AzerTürk, AI Consultant for Manufacturers",
-    "metaDescription": "Huntay AzerTürk: 13+ years in systems architecture, an AI support assistant project and experience. AI consultant for manufacturers with dealer and service networks."
+    "intro": "Huntay AzerTürk is a software architect with 13+ years of experience. This page covers my approach, selected projects, technologies, experience and writing.",
+    "metaTitle": "About — Huntay AzerTürk, Software Architect",
+    "metaDescription": "Huntay AzerTürk: software architect with 13+ years in backend platforms, distributed systems and applied AI. Projects, experience, education and writing."
   }
 }

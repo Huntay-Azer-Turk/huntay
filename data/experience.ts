@@ -1,3 +1,4 @@
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import type { TimelineEntry } from "./types";
 
 /**
@@ -263,4 +264,8 @@ export const experience: TimelineEntry[] = [
  * Profesyonel iş geçmişi kalır. Veriler silinmedi; MCP get_profile ve search dizin onayına kadar aynı.
  */
 const SITE_HIDDEN_EXPERIENCE_IDS = new Set(["independent-bci", "startup-advisory", "early-clinical", "early-cyber", "early-ai"]);
-export const siteExperience: TimelineEntry[] = experience.filter((item) => !SITE_HIDDEN_EXPERIENCE_IDS.has(item.id));
+/** 12 Kasım 2026: öz geçmiş kipinde bütün kariyer; yalnız startup danışmanlığı yok (Huntay: "iş kuran" izleniminden çıkalım). */
+const CV_HIDDEN_EXPERIENCE_IDS = new Set(["startup-advisory"]);
+export const siteExperience: TimelineEntry[] = experience.filter(
+  (item) => !(SELLING_ENABLED ? SITE_HIDDEN_EXPERIENCE_IDS : CV_HIDDEN_EXPERIENCE_IDS).has(item.id),
+);

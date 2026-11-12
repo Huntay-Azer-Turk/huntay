@@ -2,9 +2,11 @@ import { About } from "@/components/sections/about";
 import { CaseStudies } from "@/components/sections/case-studies";
 import { ContactFooter } from "@/components/sections/contact-footer";
 import { Featured } from "@/components/sections/featured";
+import { TechStack } from "@/components/sections/tech-stack";
 import { Timeline } from "@/components/sections/timeline";
 import { Breadcrumbs } from "@/components/services/breadcrumbs";
 import { buildMetadata } from "@/lib/seo";
+import { SELLING_ENABLED } from "@/lib/site-mode";
 import { containerClass } from "@/lib/ui";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -46,6 +48,8 @@ export default async function AboutPage({ params }: Props) {
       </section>
       <About />
       <CaseStudies />
+      {/* 12 Kasım 2026: öz geçmiş kipinde teknoloji yığını yine görünür (lib/site-mode.ts). */}
+      {SELLING_ENABLED ? null : <TechStack />}
       <Timeline />
       <Featured />
       <ContactFooter />
