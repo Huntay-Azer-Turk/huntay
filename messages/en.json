@@ -341,7 +341,7 @@
   "Expertise": {
     "eyebrow": "Expertise",
     "title": "Simple, stable systems that scale",
-    "body": "My work focuses on system architecture, microservices, cloud and IoT platforms, and bringing AI into real products, from retrieval-augmented assistants to agent-based workflows. I care about architectures without needless complexity that teams can build on with ease.",
+    "body": "I build architectures without needless complexity that teams can build on with ease. In critical field systems, offline sites and AI products, I balance scalability, reliability and maintainability.",
     "focusTitle": "Areas of expertise",
     "focus1": "Software architecture and microservices (.NET, Python)",
     "focus2": "Cloud, IoT and event-driven platforms",
